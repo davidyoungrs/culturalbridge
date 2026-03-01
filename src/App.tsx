@@ -18,7 +18,7 @@ import {
   Moon,
   ArrowRightLeft,
 } from "lucide-react";
-import { COUNTRIES, INDUSTRIES, SCALE_LABELS } from "./constants/cultureData";
+import { COUNTRIES, INDUSTRIES, SCALE_LABELS, LEWIS_DESCRIPTIONS } from "./constants/cultureData";
 import { HOFSTEDE_DATA } from "./constants/hofstedeData";
 import { GLOBE_DATA } from "./constants/globeData";
 import { SCHWARTZ_DATA } from "./constants/schwartzData";
@@ -162,9 +162,28 @@ const App = () => {
 
           <div className="flex items-center gap-4">
             <div className="flex flex-wrap items-center gap-3 bg-white dark:bg-slate-900 p-2.5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
-              <SearchableSelect label="Home" options={countryOptions} value={homeCountry.name} onChange={(val) => setHomeCountry(COUNTRIES.find((c) => c.name === val)!)} />
+              <div className="flex flex-col gap-1">
+                <SearchableSelect label="Home" options={countryOptions} value={homeCountry.name} onChange={(val) => setHomeCountry(COUNTRIES.find((c) => c.name === val)!)} />
+                <div className="flex items-center gap-1.5 ml-1">
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: LEWIS_DESCRIPTIONS[homeCountry.lewis.primary].color }} />
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tight">
+                    {homeCountry.lewis.primary}
+                  </span>
+                </div>
+              </div>
+
               <ChevronRight className="w-4 h-4 text-slate-300 dark:text-slate-600 hidden md:block" />
-              <SearchableSelect label="Target" options={countryOptions} value={targetCountry.name} onChange={(val) => setTargetCountry(COUNTRIES.find((c) => c.name === val)!)} />
+
+              <div className="flex flex-col gap-1">
+                <SearchableSelect label="Target" options={countryOptions} value={targetCountry.name} onChange={(val) => setTargetCountry(COUNTRIES.find((c) => c.name === val)!)} />
+                <div className="flex items-center gap-1.5 ml-1">
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: LEWIS_DESCRIPTIONS[targetCountry.lewis.primary].color }} />
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tight">
+                    {targetCountry.lewis.primary}
+                  </span>
+                </div>
+              </div>
+
               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800 hidden md:block mx-1" />
               <SearchableSelect label="Industry" options={industryOptions} value={industry} onChange={(val) => setIndustry(val)} />
             </div>
