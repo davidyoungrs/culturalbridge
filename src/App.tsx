@@ -107,7 +107,7 @@ const App = () => {
     setLoading(true);
     try {
       const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }, { apiVersion: 'v1' });
       const prompt = `Analyze the cultural corridor between ${homeCountry.name} and ${targetCountry.name} in the ${industry} industry. 
       Synthesize insights from five key frameworks: Meyer (deltas: ${JSON.stringify(deltas)}), Hofstede, GLOBE, Schwartz, and the Lewis Model. 
       
