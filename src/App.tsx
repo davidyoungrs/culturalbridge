@@ -287,86 +287,6 @@ const App = () => {
             </div>
           </div>
 
-          {/* Unified Strategic Summary relocated here */}
-          <div className="lg:col-span-8 flex flex-col gap-5">
-            <div className={cn(
-              "rounded-3xl p-6 shadow-2xl relative overflow-hidden group border transition-all duration-500",
-              isDark ? "bg-slate-900 border-slate-800" : "bg-gradient-to-br from-indigo-600 to-violet-700 border-indigo-500 text-white"
-            )}>
-              {!isDark && <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-10 -translate-y-10 group-hover:scale-110 transition-transform" />}
-
-              <div className="relative z-10">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className={cn("p-2 rounded-lg backdrop-blur-sm", isDark ? "bg-indigo-500/20 text-indigo-400" : "bg-white/20 text-white")}>
-                      <ArrowRightLeft className="w-5 h-5" />
-                    </div>
-                    <h2 className="text-xl font-bold tracking-tight text-white">Unified Strategic Summary</h2>
-                  </div>
-                  <button
-                    onClick={generateSummary}
-                    disabled={loading}
-                    className={cn(
-                      "px-5 py-2 rounded-xl font-bold transition-all flex items-center gap-2 text-[10px] uppercase tracking-wider",
-                      isDark
-                        ? "bg-indigo-600 text-white hover:bg-indigo-500"
-                        : "bg-white text-indigo-600 hover:bg-indigo-50"
-                    )}
-                  >
-                    <Zap className={cn("w-3.5 h-3.5", loading && "animate-pulse")} />
-                    {loading ? "Synthesizing Advice..." : "Generate Briefing"}
-                  </button>
-                </div>
-
-                {aiSummary ? (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                    <div className="md:col-span-2">
-                      <p className={cn("text-base leading-relaxed mb-4", isDark ? "text-slate-300" : "text-indigo-50")} dangerouslySetInnerHTML={{ __html: aiSummary.narrative.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white dark:text-indigo-400">$1</strong>') }} />
-                      <div className="flex flex-wrap gap-2">
-                        {aiSummary.focusTags.map((tag, i) => (
-                          <span key={i} className={cn("border px-3 py-1 rounded-full text-[10px] font-semibold backdrop-blur-sm", isDark ? "bg-slate-950/50 border-slate-800 text-indigo-400" : "bg-white/10 border-white/20 text-white")}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className={cn("p-5 rounded-2xl backdrop-blur-md border", isDark ? "bg-slate-950/40 border-slate-800" : "bg-white/5 border-white/10")}>
-                      <p className={cn("text-[9px] font-bold uppercase tracking-widest mb-2", isDark ? "text-indigo-400" : "text-indigo-200")}>Strategic Advice</p>
-                      <p className={cn("text-xs italic leading-relaxed", isDark ? "text-slate-300" : "text-indigo-50")}>"{aiSummary.advice}"</p>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex flex-col items-center py-4 bg-white/5 dark:bg-slate-950/40 rounded-2xl border border-white/10 dark:border-slate-800/50">
-                    <div className="flex flex-col items-center mb-6 opacity-80">
-                      <p className="text-sm italic font-medium mb-1 text-white">Cross-Framework Intelligence pending...</p>
-                      <p className="text-[10px] text-indigo-100/60">Click "Generate Briefing" to synthesize 5 peer-reviewed cultural models.</p>
-                    </div>
-
-                    {!import.meta.env.VITE_GEMINI_API_KEY && (
-                      <div className="w-full max-w-md p-4 bg-indigo-500/10 border border-indigo-500/20 rounded-xl">
-                        <h4 className="text-[10px] font-bold uppercase tracking-widest text-indigo-200 mb-2 flex items-center gap-1.5">
-                          <Info className="w-3 h-3" /> Setup Required
-                        </h4>
-                        <p className="text-[11px] text-indigo-100/80 leading-relaxed mb-3">
-                          To enable AI synthesis, you must add your Google Gemini API Key to the project environment.
-                        </p>
-                        <div className="bg-slate-950/50 p-3 rounded-lg border border-white/5 font-mono text-[10px] text-indigo-300 select-all mb-3">
-                          VITE_GEMINI_API_KEY=your_key_here
-                        </div>
-                        <ol className="text-[10px] text-indigo-200/70 space-y-1 ml-4 list-decimal">
-                          <li>Create a <code className="text-white">.env</code> file in the project root.</li>
-                          <li>Paste your key using the format above.</li>
-                          <li>Restart the development server.</li>
-                        </ol>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-
           <div className="lg:col-span-6">
             <LewisModelCard homeCountry={homeCountry} targetCountry={targetCountry} />
           </div>
@@ -392,8 +312,8 @@ const App = () => {
           </div>
           <div className="text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Cultural Assist. Professional Edition.</div>
         </footer>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
