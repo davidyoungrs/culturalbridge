@@ -16,14 +16,12 @@ import {
   Zap,
   Sun,
   Moon,
-  ArrowRightLeft,
 } from "lucide-react";
 import { COUNTRIES, INDUSTRIES, SCALE_LABELS, LEWIS_DESCRIPTIONS } from "./constants/cultureData";
 import { HOFSTEDE_DATA } from "./constants/hofstedeData";
 import { GLOBE_DATA } from "./constants/globeData";
 import { SCHWARTZ_DATA } from "./constants/schwartzData";
 import { generateCulturalInsights } from "./lib/insightGenerator";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { cn } from "./lib/utils";
 import SearchableSelect from "./components/SearchableSelect";
 import LewisModelCard from "./components/LewisModelCard";
@@ -43,12 +41,6 @@ const App = () => {
   const [homeCountry, setHomeCountry] = useState(COUNTRIES[0]);
   const [targetCountry, setTargetCountry] = useState(COUNTRIES[1]);
   const [industry, setIndustry] = useState("None");
-  const [aiSummary, setAiSummary] = useState<{
-    narrative: string;
-    focusTags: string[];
-    advice: string;
-  } | null>(null);
-  const [loading, setLoading] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
   // Apply dark mode class to root for Tailwind selector
@@ -95,50 +87,6 @@ const App = () => {
       SCHWARTZ_DATA
     );
   }, [homeCountry, targetCountry, deltas]);
-
-  const generateSummary = async () => {
-    if (!import.meta.env.VITE_GEMINI_API_KEY) {
-      setAiSummary({
-        narrative: "Note: Gemini API Key not found. Add VITE_GEMINI_API_KEY to your .env file.",
-        focusTags: ["Config Error"],
-        advice: "API Key Required"
-      });
-      return;
-    }
-    setLoading(true);
-    try {
-      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }, { apiVersion: 'v1' });
-      const prompt = `Analyze the cultural corridor between ${homeCountry.name} and ${targetCountry.name} in the ${industry} industry. 
-      Synthesize insights from five key frameworks: Meyer (deltas: ${JSON.stringify(deltas)}), Hofstede, GLOBE, Schwartz, and the Lewis Model. 
-      
-      Your analysis must:
-      1. Identify the most critical **Focus Areas** for bridging these cultures.
-      2. Provide a high-impact narrative describing the transition.
-      3. Offer sharp, actionable strategic advice.
-
-      Return a JSON object with exactly these fields:
-      - narrative: A 1-2 sentence high-level summary (e.g., "Transitioning from a Linear-Active environment to a highly Reactive and Relationship-oriented one..."). Use markdown bolding for keywords.
-      - focusTags: An array of 3-4 labels identifying specific Focus Areas (e.g., ["Focus: Relationship Building", "Focus: Direct Communication", "Focus: Risk Mitigation"]).
-      - advice: A single concise string with 2-3 short, impactful strategic recommendations for a business leader.
-      
-      Keep it professional and high-impact. Return ONLY the JSON object.`;
-
-      const result = await model.generateContent(prompt);
-      const text = result.response.text();
-      const cleanJson = text.replace(/```json|```/g, "").trim();
-      setAiSummary(JSON.parse(cleanJson));
-    } catch (error: any) {
-      console.error("Error generating AI summary:", error);
-      setAiSummary({
-        narrative: "Analysis temporarily unavailable.",
-        focusTags: ["Error"],
-        advice: `Error: ${error.message || "Unknown error"}. Please check your network connection and API key.`
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className={cn(
