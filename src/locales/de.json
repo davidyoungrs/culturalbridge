@@ -1,0 +1,163 @@
+{
+    "title": "Die Kulturbrücke",
+    "subtitle": "Das vergleichende kulturelle Forschungsprojekt.",
+    "labels": {
+        "home": "Herkunft",
+        "target": "Ziel",
+        "industry": "Industrie"
+    },
+    "options": {
+        "baseline": "Basislinie"
+    },
+    "footer": {
+        "frameworks": "5 Peer-Review-Frameworks",
+        "copyright": "© 2026 Die Kulturbrücke. Pädagogisches / nicht-kommerzielles Forschungsprojekt."
+    },
+    "demo": {
+        "hook": "Kultur",
+        "hook_highlight": "brücke.",
+        "subtitle": "Das vergleichende kulturelle Forschungsprojekt.",
+        "scroll_indicator": "Das Framework erkunden",
+        "pitch_title": "Intelligenz ausstehend...",
+        "pitch_1": "Interkulturelle Intelligenz für eine vernetztere Welt. Die Kulturbrücke synthetisiert fünf Peer-Review-Frameworks, um die ",
+        "pitch_highlight": "zugrunde liegenden Muster",
+        "pitch_2": " der globalen Gesellschaft zu untersuchen.",
+        "quote_1": "\"Machen Sie interkulturelle Komplexität zu Ihrem größten strategischen Vorteil.\"",
+        "quote_2": "\"Umfasst Kerndatensätze für 122 Länder und gewährleistet die Vertretung aller wichtigen geografischen Regionen.\"",
+        "cta_title": "Bereit zu expandieren?",
+        "cta": "Mitwirken"
+    },
+    "dashboard": {
+        "cbi_title": "Kulturbrückenindex (CBI)",
+        "proprietary": "Proprietär",
+        "cbi_subtitle": "Abgeleitete übergeordnete Metadimensionen",
+        "chart": {
+            "relationshipTrust": "Vertrauen & Beziehung",
+            "adaptiveAgility": "Adaptive Agilität",
+            "processConsensus": "Prozesskonsens",
+            "performanceVelocity": "Leistungsgeschwindigkeit",
+            "communicationDirectness": "Kommunikationsdirektheit",
+            "strategicFocus": "Strategischer Fokus",
+            "empoweredEquality": "Gestärkte Gleichstellung"
+        },
+        "info": "Der Cultural Bridge Index (CBI) analysiert proprietäre Meta-Dimensionen, die aus einer gewichteten Synthese von fünf von Experten begutachteten Frameworks abgeleitet sind. Dieses Modell bietet eine originelle Vergleichsanalyse für Bildungs- und Forschungszwecke."
+    },
+    "gaps": {
+        "title": "Kritische Lücken & Empfehlungen",
+        "tactical": "Taktische Ausführung",
+        "aligned": "Kulturelle Profile sind stark aneinander ausgerichtet."
+    },
+    "insights": {
+        "relationshipTrust": {
+            "high": "Die Zielkultur priorisiert kollektive Harmonie und beziehungsgesteuertes Vertrauen.",
+            "low": "Die Zielkultur konzentriert sich auf aufgabenbezogene Zuverlässigkeit und unabhängige Leistung.",
+            "highCons": "Investieren Sie Zeit in soziale Beziehungen vor dem Geschäftlichen. Vertrauen ist persönlich.",
+            "lowCons": "Konzentrieren Sie sich auf Ergebnisse und die Einhaltung von Fristen. Die persönliche Beziehung folgt der Leistung."
+        },
+        "adaptiveAgility": {
+            "high": "Die Zielkultur fühlt sich mit Mehrdeutigkeit und schnellen Wechseln wohler.",
+            "low": "Die Zielkultur schätzt strukturelle Vorhersehbarkeit und detaillierte Vorausplanung.",
+            "highCons": "Bleiben Sie flexibel. Verlassen Sie sich nicht zu sehr auf feste Agenden; seien Sie bereit für kurzfristige Änderungen.",
+            "lowCons": "Sorgen Sie für klare Dokumentation und minimieren Sie Überraschungen. Halten Sie sich strikt an Zeitpläne."
+        },
+        "processConsensus": {
+            "high": "Entscheidungen sind kollaborativer und erfordern eine breite Zustimmung.",
+            "low": "Entscheidungen werden für mehr Geschwindigkeit eher von oben nach unten und zentral getroffen.",
+            "highCons": "Schaffen Sie Übereinstimmung durch informelles Networking ('Nemawashi') vor formellen Treffen.",
+            "lowCons": "Richten Sie Ihre Vorschläge an die wichtigsten Entscheidungsträger. Schnelligkeit wird oft über Konsens gestellt."
+        },
+        "performanceVelocity": {
+            "high": "Hoher Drang nach wettbewerbsfähiger Leistung und direktem Leistungsfeedback.",
+            "low": "Priorität auf Gruppenstabilität, Betriebszugehörigkeit und indirekte Feedbackschleifen.",
+            "highCons": "Setzen Sie ehrgeizige KPIs und scheuen Sie sich nicht vor direkter, konstruktiver Kritik.",
+            "lowCons": "Mildern Sie negatives Feedback ab. Bewerten Sie die soziale Auswirkung und langfristige Stabilität höher als kurzfristige Metriken."
+        },
+        "communicationDirectness": {
+            "high": "Botschaften werden explizit und wörtlich übermittelt (Low-Context).",
+            "low": "Botschaften sind vielschichtig und beruhen auf gemeinsamem Kontext (High-Context).",
+            "highCons": "Seien Sie direkt und klar. Vermeiden Sie subtile Andeutungen oder schwere Metaphern.",
+            "lowCons": "Hören Sie auf das, was NICHT gesagt wird. Achten Sie auf den Subtext, Körpersprache und Hierarchie."
+        },
+        "strategicFocus": {
+            "high": "Entscheidungen werden von langfristigen Prinzipien und tiefen theoretischen Grundlagen geleitet.",
+            "low": "Entscheidungen werden von unmittelbarer praktischer Anwendung und kurzfristigen Gewinnen geleitet.",
+            "highCons": "Erklären Sie das 'Warum' vor dem 'Wie'. Bauen Sie ein starkes konzeptionelles Argument auf.",
+            "lowCons": "Konzentrieren Sie sich auf den unmittelbaren ROI und praktische Ausführungsschritte. Halten Sie es umsetzbar."
+        },
+        "empoweredEquality": {
+            "high": "Präferenz für flache Strukturen, in denen Titel weniger zählen als der Beitrag.",
+            "low": "Präferenz für klare Hierarchien und Respekt vor formeller Autorität.",
+            "highCons": "Fördern Sie Bottom-up-Input. Sprechen Sie direkt mit jeder Ebene ohne Protokoll.",
+            "lowCons": "Respektieren Sie den Dienstweg. Verwenden Sie professionelle Titel und warten Sie auf formelle Vorstellungen."
+        }
+    },
+    "quiz": {
+        "title": "Kulturelles Stil-Assessment",
+        "numQuestions": "{{count}} Fragen",
+        "subtitle": "Entdecken Sie Ihr interkulturelles Kommunikationsprofil",
+        "yourProfile": "Ihr kulturelles Profil",
+        "profilePrefix": "Profil:",
+        "retake": "Bewertung wiederholen",
+        "reveal": "Mein kulturelles Profil anzeigen",
+        "q1": {
+            "scenario": "Wenn Sie die Arbeit eines Kollegen überprüfen, die korrigiert werden muss, tun Sie normalerweise Folgendes:",
+            "optA": "Die spezifischen Punkte sofort und klar ansprechen",
+            "optB": "Beobachtungen mitteilen, damit diese die Anpassungen selbst vornehmen können"
+        },
+        "q2": {
+            "scenario": "Wenn Sie kritische Projekt-Updates mit einem Partner teilen, bevorzugen Sie:",
+            "optA": "Die Fakten direkt präsentieren und sich auf die nächsten Schritte konzentrieren",
+            "optB": "Einen breiteren Kontext aufbauen und Auswirkungen schrittweise andeuten"
+        },
+        "q3": {
+            "scenario": "In der schriftlichen Geschäftskorrespondenz ist Ihr Stil typischerweise:",
+            "optA": "Präzise und auf das unmittelbare Ziel fokussiert",
+            "optB": "Kontextbezogen, mit Details und Nuancen"
+        },
+        "q4": {
+            "scenario": "Wenn Sie eine Initiative unter Zeitdruck leiten, neigen Sie dazu:",
+            "optA": "Die Hauptrichtung selbst zu bestimmen, um Dynamik zu erhalten",
+            "optB": "Erst kollektives Feedback einholen, bevor der Weg festgelegt wird"
+        },
+        "q5": {
+            "scenario": "Wenn Sie der Mehrheitsmeinung eines Teams widersprechen, tun Sie normalerweise Folgendes:",
+            "optA": "Ihre Perspektive zusammenfassen und für eine Alternative eintreten",
+            "optB": "Den finalen Gruppenkonsens unterstützen, um die Ausrichtung zu wahren"
+        },
+        "q6": {
+            "scenario": "Ihre bevorzugte Arbeitsumgebung beinhaltet:",
+            "optA": "Schnelle Iterationen, bei denen Entscheidungen durch aktive Führung getroffen werden",
+            "optB": "Umfassende Diskussionen, die alle verfügbaren Perspektiven integrieren"
+        },
+        "q7": {
+            "scenario": "Bei der Organisation Ihrer wöchentlichen Aktivitäten bevorzugen Sie Folgendes:",
+            "optA": "Einen festen Ablauf mit spezifischen Zeitfenstern für jede Aufgabe",
+            "optB": "Festlegung breiter Ziele und Anpassung des Fokus je nach Situation"
+        },
+        "q8": {
+            "scenario": "Zu Beginn eines geplanten Meetings ist Ihre Ankunft immer:",
+            "optA": "Leicht verfrüht – Pünktlichkeit zeigt Zuverlässigkeit",
+            "optB": "Variabel – Sie stoßen dazu, sobald die Gruppe vollzählig ist"
+        },
+        "q9": {
+            "scenario": "Wenn sich während eines Projekts unerwartet eine Möglichkeit bietet, würden Sie:",
+            "optA": "Den bestehenden Plan priorisieren und die neue Chance später prüfen",
+            "optB": "Den aktuellen Arbeitsablauf anpassen, um die Möglichkeit sofort zu erkunden"
+        },
+        "q10": {
+            "scenario": "Bei einer neuen Zusammenarbeit wird Vertrauen aufgebaut durch:",
+            "optA": "Nachweisbare Zuverlässigkeit und konstante Ergebnislieferungen",
+            "optB": "Nachhaltiges Engagement und das Verstehen persönlicher Motivationen"
+        },
+        "q11": {
+            "scenario": "Sie fühlen sich in einer Partnerschaft am sichersten, wenn:",
+            "optA": "Die Vereinbarung in detaillierten operativen Bedingungen festgehalten ist",
+            "optB": "Sie ein starkes gegenseitiges Verständnis mit der anderen Partei aufgebaut haben"
+        },
+        "q12": {
+            "scenario": "Auf Networking-Events bevorzugen Sie Folgendes:",
+            "optA": "Interaktionen maximieren und relevante Informationen effizient austauschen",
+            "optB": "Sich auf weniger, dafür bedeutsamere Gespräche konzentrieren"
+        }
+    }
+}

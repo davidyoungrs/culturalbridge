@@ -1,15 +1,14 @@
 /**
- * Cultural Style Assessment — "What's Your Cultural Profile?"
- *
- * Inspired by Myers-Briggs but adapted for cross-cultural management.
- * 12 scenario-based questions that assess the user across 4 cultural axes:
- *
- *   1. Communication Style:  Direct ◄──► Indirect
- *   2. Decision Making:      Individual ◄──► Consensus
- *   3. Time Orientation:     Structured ◄──► Flexible
- *   4. Trust Building:       Task-Based ◄──► Relationship-Based
- *
- * Result: A 4-letter cultural code (e.g., "DISF" = Direct, Individual, Structured, Task-Focused)
+ * Cultural Alignment Assessment — "Understanding Your Behavioral Profile"
+ * 
+ * 12 scenario-based questions that assess behavioral preferences across 4 neutral alignment axes:
+ * 
+ *   1. Information Flow:     Explicit ◄──► Implicit
+ *   2. Decision Framework:   Autonomous ◄──► Collaborative
+ *   3. Schedule Approach:    Linear ◄──► Fluid
+ *   4. Relationship Basis:   Objective-Based ◄──► Rapport-Based
+ * 
+ * Result: A 4-letter behavioral code (e.g., "ALOR" = Autonomous, Linear, Objective, Rapport-Based)
  */
 
 export type CulturalAxis = "communication" | "decision" | "time" | "trust";
@@ -22,44 +21,49 @@ export type AxisInfo = {
     lowCode: string;      // single letter
     highCode: string;     // single letter
     color: string;
+    description: string;
 };
 
 export const AXES: AxisInfo[] = [
     {
         axis: "communication",
-        label: "Communication Style",
-        lowLabel: "Direct",
-        highLabel: "Indirect",
-        lowCode: "D",
-        highCode: "N",
+        label: "Information Flow",
+        lowLabel: "Explicit",
+        highLabel: "Implicit",
+        lowCode: "E",
+        highCode: "M",
         color: "#6366f1",
+        description: "Measures whether meaning is conveyed primarily through direct, literal words (Explicit) or relies on shared context and nuance (Implicit).",
     },
     {
         axis: "decision",
-        label: "Decision Making",
-        lowLabel: "Individual",
-        highLabel: "Consensus",
-        lowCode: "I",
+        label: "Decision Framework",
+        lowLabel: "Autonomous",
+        highLabel: "Collaborative",
+        lowCode: "A",
         highCode: "C",
         color: "#f59e0b",
+        description: "Assesses the preference for independent, leader-driven decision-making vs. a consensus-oriented, team-based approach.",
     },
     {
         axis: "time",
-        label: "Time Orientation",
-        lowLabel: "Structured",
-        highLabel: "Flexible",
-        lowCode: "S",
+        label: "Schedule Approach",
+        lowLabel: "Linear",
+        highLabel: "Fluid",
+        lowCode: "L",
         highCode: "F",
         color: "#10b981",
+        description: "Identifies whether schedules are viewed as fixed commitments (Linear) or as flexible guidelines that shift with priorities (Fluid).",
     },
     {
         axis: "trust",
-        label: "Trust Building",
-        lowLabel: "Task-Focused",
-        highLabel: "Relationship-Focused",
-        lowCode: "T",
+        label: "Relationship Basis",
+        lowLabel: "Objective-Based",
+        highLabel: "Rapport-Based",
+        lowCode: "O",
         highCode: "R",
         color: "#ef4444",
+        description: "Determines if professional trust is built through technical competence and reliability (Objective) or through personal bonding and shared history (Rapport).",
     },
 ];
 
@@ -72,116 +76,112 @@ export type QuizQuestion = {
 };
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
-    // Communication — 3 questions
+    // Information Flow — 3 questions
     {
         id: 1,
         axis: "communication",
-        scenario: "A colleague's presentation has a significant flaw. You would:",
-        optionA: "Point it out directly so they can fix it quickly",
-        optionB: "Hint at the issue privately, letting them discover it themselves",
+        scenario: "When reviewing a colleague's work that requires correction, you usually:",
+        optionA: "Address the specific points immediately and clearly",
+        optionB: "Provide observations that allow them to identify the adjustments themselves",
     },
     {
         id: 2,
         axis: "communication",
-        scenario: "When delivering bad news to a client, you prefer to:",
-        optionA: "State the situation clearly and move to solutions",
-        optionB: "Provide context first, cushion the message, and imply the difficulty",
+        scenario: "When sharing critical project updates with a partner, you prefer to:",
+        optionA: "Present the facts directly and focus on next steps",
+        optionB: "Build a broader context and suggest implications gradually",
     },
     {
         id: 3,
         axis: "communication",
-        scenario: "In emails, your writing style tends to be:",
-        optionA: "Short, action-oriented, and to the point",
-        optionB: "Warm, contextual, with pleasantries before the ask",
+        scenario: "In professional written correspondence, your style is typically:",
+        optionA: "Concise and focused on the immediate objective",
+        optionB: "Contextual, incorporating detail and nuanced formatting",
     },
-    // Decision Making — 3 questions
+    // Decision Framework — 3 questions
     {
         id: 4,
         axis: "decision",
-        scenario: "You're leading a project with a tight deadline. You would:",
-        optionA: "Make the key decisions yourself to keep things moving",
-        optionB: "Gather input from the team before committing to a direction",
+        scenario: "When leading an initiative with significant time constraints, you tend to:",
+        optionA: "Determine the primary direction yourself to maintain momentum",
+        optionB: "Seek collective input before finalizing the path forward",
     },
     {
         id: 5,
         axis: "decision",
-        scenario: "When you disagree with a group decision, you typically:",
-        optionA: "Voice your objection clearly and advocate for your position",
-        optionB: "Accept the group's direction and work to make it succeed",
+        scenario: "If you find yourself disagreeing with a team's majority view, you usually:",
+        optionA: "Synthesize your perspective and advocate for an alternative",
+        optionB: "Support the final group consensus to maintain team alignment",
     },
     {
         id: 6,
         axis: "decision",
-        scenario: "Your ideal meeting structure is:",
-        optionA: "A quick standup where decisions are made on the spot",
-        optionB: "A thorough discussion where everyone's perspective is heard",
+        scenario: "Your preferred collaborative environment involves:",
+        optionA: "Rapid iterations where decisions are made through active leadership",
+        optionB: "Comprehensive discussions that integrate all available perspectives",
     },
-    // Time Orientation — 3 questions
+    // Schedule Approach — 3 questions
     {
         id: 7,
         axis: "time",
-        scenario: "When planning your work week, you prefer to:",
-        optionA: "Follow a detailed schedule with time blocks for each task",
-        optionB: "Keep things loose and adapt as priorities shift",
+        scenario: "When organizing your weekly activity, you prefer to:",
+        optionA: "Maintain a steady sequence with specific windows for each task",
+        optionB: "Establish broad goals and adapt your focus as situations evolve",
     },
     {
         id: 8,
         axis: "time",
-        scenario: "A meeting is scheduled for 2:00 PM. You arrive:",
-        optionA: "At 1:55 PM — being on time signals respect",
-        optionB: "Around 2:10 PM — the real conversation starts when people are ready",
+        scenario: "At the start of a scheduled assembly, your arrival is consistently:",
+        optionA: "Slightly early — appearing precisely when expected demonstrates reliability",
+        optionB: "Variable — you engage once the group has reached a critical mass",
     },
     {
         id: 9,
         axis: "time",
-        scenario: "Mid-project, an interesting tangential opportunity arises. You:",
-        optionA: "Stay focused on the original plan — finish first, explore later",
-        optionB: "Explore it now — the best ideas emerge from unexpected connections",
+        scenario: "If an unexpected opportunity emerges during a project, you would:",
+        optionA: "Prioritize the existing plan and evaluate the new lead later",
+        optionB: "Adjust the current workflow to explore the possibility immediately",
     },
-    // Trust Building — 3 questions
+    // Relationship Basis — 3 questions
     {
         id: 10,
         axis: "trust",
-        scenario: "When working with a new business partner, trust is built by:",
-        optionA: "Delivering quality work on time — results speak for themselves",
-        optionB: "Sharing a meal first — knowing someone personally is essential",
+        scenario: "In a new professional collaboration, confidence is established through:",
+        optionA: "Demonstrable reliability and the consistent delivery of outcomes",
+        optionB: "Sustained engagement and understanding personal motivations",
     },
     {
         id: 11,
         axis: "trust",
-        scenario: "You feel most confident in a deal when:",
-        optionA: "The contract is thorough with clear terms and SLAs",
-        optionB: "You have a strong personal rapport with the other party",
+        scenario: "You feel most secure in a partnership when:",
+        optionA: "The agreement is codified with detailed operational terms",
+        optionB: "You have established strong mutual understanding with the other party",
     },
     {
         id: 12,
         axis: "trust",
-        scenario: "At a conference, you prefer to:",
-        optionA: "Attend sessions and exchange business cards efficiently",
-        optionB: "Have longer conversations with fewer people over coffee",
+        scenario: "At professional networking events, you prefer to:",
+        optionA: "Maximize interactions and exchange relevant information efficiently",
+        optionB: "Focus on fewer, more meaningful conversations to build rapport",
     },
 ];
 
 /**
- * Cultural profile type descriptions
+ * Behavioral profile type descriptions
  */
 export const PROFILE_TYPES: Record<string, { title: string; emoji: string; description: string; bestWith: string; watchFor: string }> = {
-    "DIST": { title: "The Executor", emoji: "⚡", description: "You're a fast-moving, results-driven communicator who values efficiency. You say what you mean, decide quickly, and hold people to deadlines.", bestWith: "USA, Germany, Netherlands, Switzerland", watchFor: "May be perceived as blunt or impatient in high-context cultures." },
-    "DISR": { title: "The Connector", emoji: "🤝", description: "Direct in speech but warm in relationships. You build trust through genuine personal connections while keeping communication clear.", bestWith: "Australia, Israel, South Africa", watchFor: "Your directness may feel jarring in cultures that expect relationship before business." },
-    "DIFT": { title: "The Diplomat", emoji: "🎯", description: "You speak clearly but prefer inclusive decision-making. You balance efficiency with group harmony and value structured follow-through.", bestWith: "Canada, Scandinavia, New Zealand", watchFor: "Consensus-seeking may slow you down in fast-paced or hierarchical environments." },
-    "DIFR": { title: "The Bridge Builder", emoji: "🌉", description: "Direct communicator who values group harmony and deep relationships. You naturally mediate between different cultural styles.", bestWith: "UK, France (business)", watchFor: "You may over-invest in relationships when others just want the deliverable." },
-    "DIST_F": { title: "The Improviser", emoji: "🎭", description: "You say what you mean and decide quickly, but you're comfortable with fluid timelines. An action-oriented free spirit.", bestWith: "Israel, parts of Australia", watchFor: "Your flexibility with time may frustrate punctuality-driven cultures." },
-    "NIST": { title: "The Strategist", emoji: "♟️", description: "You read between the lines, make independent judgments, and value punctuality. You prefer to observe before acting.", bestWith: "Japan (business contexts), Finland", watchFor: "Your indirect style may be misread as evasion in direct cultures." },
-    "NISR": { title: "The Sage", emoji: "🧘", description: "You listen deeply, act independently when needed, but invest heavily in personal relationships. Patience is your superpower.", bestWith: "Japan, China, Vietnam", watchFor: "Your pace may feel too slow for action-oriented cultures." },
-    "NCFT": { title: "The Analyst", emoji: "📊", description: "Indirect, consensus-driven, flexible with time, but ultimately focused on the task at hand. You bring calm, thorough analysis.", bestWith: "South Korea, Indonesia, Thailand", watchFor: "May struggle in environments that demand quick, public decision-making." },
-    "NCFR": { title: "The Cultivator", emoji: "🌱", description: "You're the ultimate relationship builder — patient, consensus-oriented, flexible, and deeply invested in personal bonds.", bestWith: "Brazil, India, Saudi Arabia, Mexico", watchFor: "Task-oriented cultures may see you as unfocused or slow to deliver." },
-    "NCSR": { title: "The Elder", emoji: "🏛️", description: "You guide through indirect wisdom, build consensus, honor schedules, and invest deeply in relationships. Natural mentor figure.", bestWith: "China, Japan, South Korea", watchFor: "Very direct cultures may struggle to read your true position." },
-    "NCST": { title: "The Planner", emoji: "📋", description: "Thoughtful, indirect communicator who values group input and structured timelines. You plan meticulously and avoid surprises.", bestWith: "Germany (engineering), Japan (manufacturing)", watchFor: "Overly structured approach may stifle creativity in flexible cultures." },
-    "NIFT": { title: "The Observer", emoji: "🔭", description: "Quietly independent, you prefer subtle communication and flexible timelines. You read situations carefully before acting.", bestWith: "Finland, Hong Kong", watchFor: "Your independence may conflict with collectivist cultures." },
-    "NIFR": { title: "The Weaver", emoji: "🧵", description: "Indirect, independent, flexible, and relationship-focused. You quietly build deep connections while maintaining personal autonomy.", bestWith: "Parts of India, Iran", watchFor: "Your need for autonomy may seem disconnected in consensus cultures." },
-    "DICR": { title: "The Collaborator", emoji: "🎪", description: "Direct in speech, consensus-driven, relationship-first. You bring energy and warmth to group problem-solving.", bestWith: "Brazil (tech), South Africa", watchFor: "Your direct style in a consensus frame may confuse hierarchy-driven cultures." },
-    "DICS": { title: "The Facilitator", emoji: "🎛️", description: "Direct, consensus-driven, structured, and task-oriented. You run tight ships with everyone's input.", bestWith: "Scandinavia, Netherlands", watchFor: "May seem too process-heavy for fast-moving startup cultures." },
-    "DICF": { title: "The Campaigner", emoji: "📢", description: "Direct, consensus-driven, flexible with time. You lead by rallying people around shared vision.", bestWith: "Argentina, Spain (startups)", watchFor: "Your flexibility may conflict with deadline-strict environments." },
+    "EALR": { title: "The Accomplisher", emoji: "⚡", description: "You are a results-oriented communicator who values clarity and precision. You prefer autonomous progress but invest in strong group rapport.", bestWith: "USA, Canada, Australia", watchFor: "Your focus on clarity may be perceived as too direct in subtle environments." },
+    "EALO": { title: "The Driver", emoji: "🏎️", description: "Fast-paced, clear, and focused on logical outcomes. You value linear progress and high-accountability systems.", bestWith: "Germany, Switzerland, Netherlands", watchFor: "You may overlook relational nuances when focusing on tactical efficiency." },
+    "ECLR": { title: "The Harmonizer", emoji: "🤝", description: "You combine clear communication with a collaborative decision style. You value group unity as much as project objectives.", bestWith: "Scandinavia, New Zealand", watchFor: "Consensus-seeking may occasionally slow your response time." },
+    "ECLO": { title: "The Coordinator", emoji: "📊", description: "Clear, collaborative, and highly structured. You excel at managing complex projects through group transparency and detailed planning.", bestWith: "Singapore, UK", watchFor: "Your preference for structure may limit adaptability in fluid markets." },
+    "EAFR": { title: "The Dynamic", emoji: "🌪️", description: "A clear communicator who makes independent decisions and adapts quickly to changing timelines. Relationship-focused and agile.", bestWith: "South Africa, Israel", watchFor: "Your fluid approach to time may challenge partners with rigid schedules." },
+    "VALO": { title: "The Architect", emoji: "🏛️", description: "You prefer subtle communication, autonomous thinking, and highly structured environments. You plan deeply and act precisely.", bestWith: "Finland, Japan (corporate)", watchFor: "Your implicit style may leave direct-preference partners seeking more detail." },
+    "VALR": { title: "The Strategist", emoji: "♟️", description: "Subtle and independent, you build trust through long-term rapport. You value the underlying context of every interaction.", bestWith: "Japan, South Korea", watchFor: "Your preference for autonomy may seem disconnected in heavy consensus cultures." },
+    "VCLO": { title: "The Analyst", emoji: "🔬", description: "Quietly collaborative and highly structured. You value technical objective-based outcomes and group reliability.", bestWith: "Austria, Poland", watchFor: "You may find high-rapport environments distracting from the objective task." },
+    "VCLR": { title: "The Cultivator", emoji: "🌱", description: "You are the ultimate relationship builder — patient, collaborative, and deeply invested in the collective spirit and rapport.", bestWith: "Brazil, Mexico, Indonesia", watchFor: "Objective-focused partners may perceive your relational focus as a lack of urgency." },
+    "VCFR": { title: "The Mediator", emoji: "🕯️", description: "Patient, implicit, and highly adaptable. you excel at building group consensus through subtle influence and rapport.", bestWith: "India, Thailand, Saudi Arabia", watchFor: "Your fluid and implicit style may be misread as a lack of direction by linear thinkers." },
+    "VCLO_F": { title: "The Observer", emoji: "🔭", description: "You value group wisdom, implicit understanding, and flexible timelines. You wait for the right moment to integrate.", bestWith: "Vietnam, parts of West Africa", watchFor: "You may need to explicitly state your position in more assertive environments." },
+    "MCLR": { title: "The Weaver", emoji: "🧵", description: "Implicit, collaborative, and rapport-focused. You build deep, lasting structures through consensus and personal connection.", bestWith: "China, Southeast Asia", watchFor: "Direct communicators may struggle to identify your specific stance." },
 };
 
 /**

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, Search } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface Option {
     value: string;
@@ -14,6 +15,7 @@ interface SearchableSelectProps {
 }
 
 const SearchableSelect = ({ options, value, onChange, label }: SearchableSelectProps) => {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState("");
     const containerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +66,7 @@ const SearchableSelect = ({ options, value, onChange, label }: SearchableSelectP
                             <input
                                 ref={inputRef}
                                 type="text"
-                                placeholder="Search..."
+                                placeholder={t('common.search', 'Search...')}
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 className="w-full text-sm outline-none bg-transparent placeholder:text-slate-300"
@@ -72,7 +74,7 @@ const SearchableSelect = ({ options, value, onChange, label }: SearchableSelectP
                         </div>
                         <div className="max-h-[240px] overflow-y-auto overscroll-contain">
                             {filtered.length === 0 ? (
-                                <div className="px-3 py-4 text-xs text-slate-400 text-center">No results found</div>
+                                <div className="px-3 py-4 text-xs text-slate-400 text-center">{t('common.noResults', 'No results found')}</div>
                             ) : (
                                 filtered.map((opt) => (
                                     <button
@@ -84,8 +86,8 @@ const SearchableSelect = ({ options, value, onChange, label }: SearchableSelectP
                                             setSearch("");
                                         }}
                                         className={`w-full text-left px-3 py-2 text-sm hover:bg-indigo-50 transition-colors ${opt.value === value
-                                                ? "bg-indigo-50 text-indigo-700 font-bold"
-                                                : "text-slate-700 font-medium"
+                                            ? "bg-indigo-50 text-indigo-700 font-bold"
+                                            : "text-slate-700 font-medium"
                                             }`}
                                     >
                                         {opt.label}

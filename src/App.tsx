@@ -1,13 +1,5 @@
-import { useState, useMemo } from "react";
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
+import { useState, useMemo, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Globe2,
   Info,
@@ -17,31 +9,64 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import { COUNTRIES, INDUSTRIES, SCALE_LABELS, LEWIS_DESCRIPTIONS } from "./constants/cultureData";
-import { HOFSTEDE_DATA } from "./constants/hofstedeData";
-import { GLOBE_DATA } from "./constants/globeData";
-import { SCHWARTZ_DATA } from "./constants/schwartzData";
-import { generateCulturalInsights } from "./lib/insightGenerator";
+import { COUNTRIES, INDUSTRIES } from "./constants/cultureData";
+import { generateCBIInsights } from "./lib/insightGenerator";
+import { calculateCBI } from "./lib/culturalWeights";
 import { cn } from "./lib/utils";
+import { getLanguageForCountry } from "./lib/countryLanguageMap";
 import SearchableSelect from "./components/SearchableSelect";
-import LewisModelCard from "./components/LewisModelCard";
-import HofstedeCard from "./components/HofstedeCard";
-import GlobeCard from "./components/GlobeCard";
-import SchwartzCard from "./components/SchwartzCard";
+import CBIDashboard from "./components/CBIDashboard";
 import CulturalQuiz from "./components/CulturalQuiz";
 import DemoOne from "./components/DemoOne";
+import AssessmentResultsView from "./components/AssessmentResultsView";
 
 const countryOptions = COUNTRIES.map((c) => ({ value: c.name, label: c.name }));
-const industryOptions = [
-  { value: "None", label: "Baseline" },
-  ...Object.keys(INDUSTRIES).map((ind) => ({ value: ind, label: ind })),
-];
 
 const App = () => {
   const [homeCountry, setHomeCountry] = useState(COUNTRIES[0]);
   const [targetCountry, setTargetCountry] = useState(COUNTRIES[1]);
   const [industry, setIndustry] = useState("None");
   const [isDark, setIsDark] = useState(false);
+  const [showQuizResults, setShowQuizResults] = useState(false);
+  const [quizResult, setQuizResult] = useState<{ scores: Record<string, number>, profile: any, code: string } | null>(null);
+
+  const { t, i18n } = useTranslation();
+
+  const handleHomeCountryChange = (val: string) => {
+    const matched = COUNTRIES.find((c) => c.name === val);
+    if (matched) {
+      setHomeCountry(matched);
+      const newLang = getLanguageForCountry(matched.name);
+      i18n.changeLanguage(newLang);
+    }
+  };
+
+  useEffect(() => {
+    fetch('https://get.geojs.io/v1/ip/geo.json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.country) {
+          const countryName = data.country === 'United Kingdom' ? 'UK' :
+            data.country === 'United States' ? 'USA' :
+              data.country;
+
+          const matchedCountry = COUNTRIES.find(c =>
+            c.name.toLowerCase() === countryName.toLowerCase() ||
+            c.name.toLowerCase().includes(countryName.toLowerCase()) ||
+            countryName.toLowerCase().includes(c.name.toLowerCase())
+          );
+          if (matchedCountry) {
+            setHomeCountry(matchedCountry);
+          }
+        }
+      })
+      .catch((err) => console.log('Could not fetch location:', err));
+  }, []);
+
+  const handleQuizComplete = (scores: Record<string, number>, profile: any, code: string) => {
+    setQuizResult({ scores, profile, code });
+    setShowQuizResults(true);
+  };
 
   // Apply dark mode class to root for Tailwind selector
   const toggleDarkMode = () => {
@@ -49,44 +74,11 @@ const App = () => {
     document.documentElement.classList.toggle('dark');
   };
 
-  const chartData = useMemo(() => {
-    return Object.keys(SCALE_LABELS).map((key) => {
-      const scaleKey = key as keyof typeof SCALE_LABELS;
-      let homeScore = homeCountry.scores[scaleKey];
-      let targetScore = targetCountry.scores[scaleKey];
-
-      if (industry !== "None" && INDUSTRIES[industry][scaleKey]) {
-        const modifier = INDUSTRIES[industry][scaleKey]!;
-        homeScore = Math.max(1, Math.min(10, homeScore + modifier));
-        targetScore = Math.max(1, Math.min(10, targetScore + modifier));
-      }
-
-      return {
-        subject: SCALE_LABELS[key],
-        [homeCountry.name]: homeScore,
-        [targetCountry.name]: targetScore,
-        fullMark: 10,
-      };
-    });
-  }, [homeCountry, targetCountry, industry]);
-
-  const deltas = useMemo(() => {
-    return chartData.map((d) => ({
-      label: d.subject as string,
-      value: (d[targetCountry.name] as number) - (d[homeCountry.name] as number),
-    }));
-  }, [chartData, homeCountry.name, targetCountry.name]);
-
   const culturalInsights = useMemo(() => {
-    return generateCulturalInsights(
-      homeCountry,
-      targetCountry,
-      deltas,
-      HOFSTEDE_DATA,
-      GLOBE_DATA,
-      SCHWARTZ_DATA
-    );
-  }, [homeCountry, targetCountry, deltas]);
+    const homeCBI = calculateCBI(homeCountry);
+    const targetCBI = calculateCBI(targetCountry);
+    return generateCBIInsights(homeCBI, targetCBI);
+  }, [homeCountry, targetCountry]);
 
   return (
     <div className={cn(
@@ -105,40 +97,33 @@ const App = () => {
                   <Globe2 className="w-10 h-10 text-white" />
                 </div>
                 <h1 className="text-5xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-indigo-600 to-slate-900 dark:from-white dark:via-indigo-400 dark:to-white">
-                  Cultural Assist
+                  {t('title', 'The Cultural Bridge')}
                 </h1>
               </div>
               <p className="text-slate-500 dark:text-slate-400 font-bold text-lg leading-tight opacity-80 max-w-sm">
-                Strategic cultural intelligence for the modern global leader.
+                {t('subtitle', 'The comparative cultural research project.')}
               </p>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="flex flex-wrap items-center gap-3 bg-white dark:bg-slate-900 p-2.5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
                 <div className="flex flex-col gap-1">
-                  <SearchableSelect label="Home" options={countryOptions} value={homeCountry.name} onChange={(val) => setHomeCountry(COUNTRIES.find((c) => c.name === val)!)} />
-                  <div className="flex items-center gap-1.5 ml-1">
-                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: LEWIS_DESCRIPTIONS[homeCountry.lewis.primary].color }} />
-                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tight">
-                      {homeCountry.lewis.primary}
-                    </span>
-                  </div>
+                  <SearchableSelect label={t('labels.home', 'Home')} options={countryOptions} value={homeCountry.name} onChange={handleHomeCountryChange} />
+
                 </div>
 
                 <ChevronRight className="w-4 h-4 text-slate-300 dark:text-slate-600 hidden md:block" />
 
                 <div className="flex flex-col gap-1">
-                  <SearchableSelect label="Target" options={countryOptions} value={targetCountry.name} onChange={(val) => setTargetCountry(COUNTRIES.find((c) => c.name === val)!)} />
-                  <div className="flex items-center gap-1.5 ml-1">
-                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: LEWIS_DESCRIPTIONS[targetCountry.lewis.primary].color }} />
-                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tight">
-                      {targetCountry.lewis.primary}
-                    </span>
-                  </div>
+                  <SearchableSelect label={t('labels.target', 'Target')} options={countryOptions} value={targetCountry.name} onChange={(val) => setTargetCountry(COUNTRIES.find((c) => c.name === val)!)} />
+
                 </div>
 
                 <div className="w-px h-8 bg-slate-200 dark:bg-slate-800 hidden md:block mx-1" />
-                <SearchableSelect label="Industry" options={industryOptions} value={industry} onChange={(val) => setIndustry(val)} />
+                <SearchableSelect label={t('labels.industry', 'Industry')} options={[
+                  { value: "None", label: t('options.baseline', 'Baseline') },
+                  ...Object.keys(INDUSTRIES).map((ind) => ({ value: ind, label: ind }))
+                ]} value={industry} onChange={(val) => setIndustry(val)} />
               </div>
               <button
                 onClick={toggleDarkMode}
@@ -151,38 +136,15 @@ const App = () => {
         </header>
 
         <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5">
-          <div className="lg:col-span-8 bg-white dark:bg-slate-900 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col h-fit">
-            <div className="p-4 border-b border-slate-50 dark:border-slate-800 bg-slate-50/30 dark:bg-slate-950/20 flex items-center justify-between">
-              <h2 className="text-sm font-bold flex items-center gap-2 dark:text-slate-200">
-                Cultural Profile Overlay
-                <span className="text-[10px] font-normal bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 py-0.5 px-2 rounded-full uppercase tracking-wider">Erin Meyer</span>
-              </h2>
-              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-tight">
-                <div className="flex items-center gap-1"><div className="w-2.5 h-2.5 rounded-full bg-indigo-500" /><span className="text-slate-500">{homeCountry.name}</span></div>
-                <div className="flex items-center gap-1"><div className="w-2.5 h-2.5 rounded-full bg-emerald-500" /><span className="text-slate-500">{targetCountry.name}</span></div>
-              </div>
-            </div>
-            <div className="p-3 flex items-center justify-center">
-              <div className="w-full h-[400px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
-                    <PolarGrid stroke={isDark ? "#334155" : "#e2e8f0"} />
-                    <PolarAngleAxis dataKey="subject" tick={{ fill: isDark ? '#94a3b8' : '#64748b', fontSize: 10, fontWeight: 600 }} />
-                    <PolarRadiusAxis angle={30} domain={[0, 10]} axisLine={false} tick={false} />
-                    <Radar name={homeCountry.name} dataKey={homeCountry.name} stroke="#6366f1" fill="#6366f1" fillOpacity={0.2} strokeWidth={2.5} />
-                    <Radar name={targetCountry.name} dataKey={targetCountry.name} stroke="#10b981" fill="#10b981" fillOpacity={0.2} strokeWidth={2.5} />
-                    <Tooltip contentStyle={{ borderRadius: '10px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)', fontSize: '11px' }} />
-                  </RadarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
+          <div className="lg:col-span-8 h-full">
+            <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} isDark={isDark} />
           </div>
 
           {/* Critical Gaps Sidebar moved here for top alignment */}
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 flex-1 overflow-hidden flex flex-col max-h-[505px]">
               <h3 className="text-slate-400 dark:text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
-                <TrendingUp className="w-3 h-3" /> Critical Gaps & Recommendations
+                <TrendingUp className="w-3 h-3" /> {t('gaps.title', 'Critical Gaps & Recommendations')}
               </h3>
 
               <div className="flex-1 overflow-y-auto pr-1 space-y-3 custom-scrollbar">
@@ -194,12 +156,7 @@ const App = () => {
                       : (isDark ? "bg-slate-950/40 border-slate-800" : "bg-slate-50 border-slate-100")
                   )}>
                     <div className="flex items-center justify-between gap-2">
-                      <span className={cn(
-                        "text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-md tracking-wider shadow-sm",
-                        insight.framework === 'Meyer' ? "bg-indigo-100 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300" :
-                          insight.framework === 'Hofstede' ? "bg-amber-100 dark:bg-amber-900/60 text-amber-700 dark:text-amber-300" :
-                            insight.framework === 'GLOBE' ? "bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300" : "bg-purple-100 dark:bg-purple-900/60 text-purple-700 dark:text-purple-300"
-                      )}>
+                      <span className="bg-indigo-100 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-md tracking-wider shadow-sm">
                         {insight.framework}
                       </span>
                       <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500">Δ {insight.gap}</span>
@@ -207,20 +164,20 @@ const App = () => {
 
                     <div>
                       <h4 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                        {insight.dimension}
+                        {t(`dashboard.chart.${insight.key}`, insight.dimension)}
                         {insight.severity === 'high' && <Zap className="w-2.5 h-2.5 text-rose-500 fill-rose-500" />}
                       </h4>
                       <p className="text-[10px] text-slate-600 dark:text-slate-400 leading-snug mt-1 italic">
-                        "{insight.meaning}"
+                        "{t(`insights.${insight.key}.${insight.direction}`, insight.meaning)}"
                       </p>
                     </div>
 
                     <div className="mt-1 pt-2 border-t border-slate-200/60 dark:border-slate-800">
                       <p className="text-[10px] font-semibold text-slate-800 dark:text-slate-300 flex items-center gap-1.5 mb-1">
-                        <ChevronRight className="w-2.5 h-2.5 text-indigo-500" /> Tactical Execution
+                        <ChevronRight className="w-2.5 h-2.5 text-indigo-500" /> {t('gaps.tactical', 'Tactical Execution')}
                       </p>
                       <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug">
-                        {insight.consideration}
+                        {t(`insights.${insight.key}.${insight.direction}Cons`, insight.consideration)}
                       </p>
                     </div>
                   </div>
@@ -228,37 +185,37 @@ const App = () => {
                 {culturalInsights.length === 0 && (
                   <div className="flex flex-col items-center justify-center py-10 opacity-40">
                     <Globe2 className="w-8 h-8 mb-2" />
-                    <p className="text-xs font-medium">Cultural profiles are highly aligned.</p>
+                    <p className="text-xs font-medium">{t('gaps.aligned', 'Cultural profiles are highly aligned.')}</p>
                   </div>
                 )}
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-6">
-            <LewisModelCard homeCountry={homeCountry} targetCountry={targetCountry} />
-          </div>
-          <div className="lg:col-span-6">
-            <HofstedeCard homeCountryName={homeCountry.name} targetCountryName={targetCountry.name} />
-          </div>
-
-          <div className="lg:col-span-6">
-            <GlobeCard homeCountryName={homeCountry.name} targetCountryName={targetCountry.name} />
-          </div>
-          <div className="lg:col-span-6">
-            <SchwartzCard homeCountryName={homeCountry.name} targetCountryName={targetCountry.name} />
-          </div>
 
           <div className="lg:col-span-12">
-            <CulturalQuiz />
+            <CulturalQuiz onComplete={handleQuizComplete} />
           </div>
         </main>
 
+        {showQuizResults && quizResult && (
+          <AssessmentResultsView
+            userScores={quizResult.scores}
+            profile={quizResult.profile}
+            code={quizResult.code}
+            homeCountry={homeCountry}
+            targetCountry={targetCountry}
+            industry={industry}
+            onClose={() => setShowQuizResults(false)}
+            isDark={isDark}
+          />
+        )}
+
         <footer className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between text-slate-400 dark:text-slate-500 gap-4">
           <div className="flex items-center gap-3 text-xs font-black uppercase tracking-widest">
-            <Info className="w-4 h-4" /> 5 Peer-Reviewed Frameworks
+            <Info className="w-4 h-4" /> {t('footer.frameworks', '5 Peer-Reviewed Frameworks')}
           </div>
-          <div className="text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Cultural Assist. Professional Edition.</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest">{t('footer.copyright', '© 2026 The Cultural Bridge. Educational / Non-Commercial Research Project.')}</div>
         </footer>
       </div >
     </div >

@@ -1,18 +1,21 @@
 import { SCHWARTZ_DATA, SCHWARTZ_LABELS, SCHWARTZ_POLES } from "../constants/schwartzData";
+import { useTranslation } from "react-i18next";
 
 interface SchwartzCardProps {
     homeCountryName: string;
     targetCountryName: string;
+    citation?: string;
 }
 
-const SchwartzCard = ({ homeCountryName, targetCountryName }: SchwartzCardProps) => {
+const SchwartzCard = ({ homeCountryName, targetCountryName, citation }: SchwartzCardProps) => {
+    const { t } = useTranslation();
     const homeScores = SCHWARTZ_DATA[homeCountryName];
     const targetScores = SCHWARTZ_DATA[targetCountryName];
 
     if (!homeScores || !targetScores) {
         return (
             <div className="bg-white rounded-2xl p-6 shadow-xl shadow-slate-200/50 border border-slate-100">
-                <p className="text-sm text-slate-400 text-center">Schwartz data not available for one or both countries.</p>
+                <p className="text-sm text-slate-400 text-center">{t('schwartz.noData', 'Schwartz data not available for one or both countries.')}</p>
             </div>
         );
     }
@@ -21,12 +24,12 @@ const SchwartzCard = ({ homeCountryName, targetCountryName }: SchwartzCardProps)
         <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
             <div className="p-5 border-b border-slate-50 bg-slate-50/30">
                 <h2 className="text-lg font-bold flex items-center gap-2">
-                    Schwartz Values
+                    {t('schwartz.title', 'Schwartz Values')}
                     <span className="text-xs font-normal bg-purple-100 text-purple-700 py-0.5 px-2 rounded-full uppercase tracking-wider">
-                        7 Orientations
+                        {t('schwartz.subtitle', '7 Orientations')}
                     </span>
                 </h2>
-                <p className="text-xs text-slate-400 mt-1 font-medium">Shalom Schwartz's Theory of Basic Cultural Values (1–7 scale)</p>
+                <p className="text-xs text-slate-400 mt-1 font-medium">{t('schwartz.description', "Shalom Schwartz's Theory of Basic Cultural Values (1–7 scale)")}</p>
             </div>
 
             <div className="p-5">
@@ -57,9 +60,9 @@ const SchwartzCard = ({ homeCountryName, targetCountryName }: SchwartzCardProps)
                         return (
                             <div key={i} className="bg-slate-50 rounded-xl p-4 border border-slate-100">
                                 <div className="flex items-center justify-between mb-2">
-                                    <span className="text-xs font-bold text-slate-700">{pole.pole1}</span>
-                                    <span className="text-[10px] font-bold text-slate-400">vs</span>
-                                    <span className="text-xs font-bold text-slate-700">{pole.pole2}</span>
+                                    <span className="text-xs font-bold text-slate-700">{t(`schwartz.pole.${pole.pole1}`, pole.pole1)}</span>
+                                    <span className="text-[10px] font-bold text-slate-400">{t('schwartz.vs', 'vs')}</span>
+                                    <span className="text-xs font-bold text-slate-700">{t(`schwartz.pole.${pole.pole2}`, pole.pole2)}</span>
                                 </div>
 
                                 <div className="relative h-5 bg-gradient-to-r from-violet-100 via-slate-100 to-amber-100 rounded-full overflow-visible mb-1">
@@ -84,8 +87,8 @@ const SchwartzCard = ({ homeCountryName, targetCountryName }: SchwartzCardProps)
                                 </div>
 
                                 <div className="flex items-center justify-between text-[9px] text-slate-400 font-medium">
-                                    <span>← {pole.pole1}</span>
-                                    <span>{pole.pole2} →</span>
+                                    <span>← {t(`schwartz.pole.${pole.pole1}`, pole.pole1)}</span>
+                                    <span>{t(`schwartz.pole.${pole.pole2}`, pole.pole2)} →</span>
                                 </div>
                             </div>
                         );
@@ -93,7 +96,7 @@ const SchwartzCard = ({ homeCountryName, targetCountryName }: SchwartzCardProps)
                 </div>
 
                 {/* Individual value scores */}
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Value Breakdown</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">{t('schwartz.valueBreakdown', 'Value Breakdown')}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {Object.entries(SCHWARTZ_LABELS).map(([key, label]) => {
                         const homeVal = homeScores[key];
@@ -106,7 +109,7 @@ const SchwartzCard = ({ homeCountryName, targetCountryName }: SchwartzCardProps)
                                 <div className="flex items-center justify-between mb-1.5">
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: label.color }} />
-                                        <span className="text-[11px] font-bold text-slate-600">{label.full}</span>
+                                        <span className="text-[11px] font-bold text-slate-600">{t(`schwartz.dim.${key}`, label.full)}</span>
                                     </div>
                                     <div className="flex items-center gap-2 text-[10px] font-bold">
                                         <span className="text-indigo-500">{homeVal.toFixed(1)}</span>
@@ -128,6 +131,11 @@ const SchwartzCard = ({ homeCountryName, targetCountryName }: SchwartzCardProps)
                     })}
                 </div>
             </div>
+            {citation && (
+                <div className="px-5 py-2 border-t border-slate-50 bg-slate-50/20 text-[9px] text-slate-400 italic leading-tight">
+                    {citation}
+                </div>
+            )}
         </div>
     );
 };

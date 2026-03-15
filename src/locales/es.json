@@ -1,0 +1,163 @@
+{
+    "title": "El Puente Cultural",
+    "subtitle": "El proyecto de investigación cultural comparativa.",
+    "labels": {
+        "home": "Origen",
+        "target": "Destino",
+        "industry": "Industria"
+    },
+    "options": {
+        "baseline": "Línea base"
+    },
+    "footer": {
+        "frameworks": "5 Marcos Revisados por Pares",
+        "copyright": "© 2026 El Puente Cultural. Proyecto de Investigación Educativo / No Comercial."
+    },
+    "demo": {
+        "hook": "Puente",
+        "hook_highlight": "Cultural.",
+        "subtitle": "El proyecto de investigación cultural comparativa.",
+        "scroll_indicator": "Explorar el marco",
+        "pitch_title": "Inteligencia pendiente...",
+        "pitch_1": "Inteligencia intercultural para un mundo más conectado. El Puente Cultural sintetiza cinco marcos revisados por pares para explorar los ",
+        "pitch_highlight": "patrones subyacentes",
+        "pitch_2": " de la sociedad global.",
+        "quote_1": "\"Convirtiendo la complejidad intercultural en su mayor ventaja estratégica.\"",
+        "quote_2": "\"Incluye conjuntos de datos básicos para 122 países, lo que garantiza la representación en todas las principales regiones geográficas.\"",
+        "cta_title": "¿Listo para expandir?",
+        "cta": "Contribuir"
+    },
+    "dashboard": {
+        "cbi_title": "Índice de Puente Cultural (CBI)",
+        "proprietary": "Propietario",
+        "cbi_subtitle": "Metadimensiones derivadas de alto nivel",
+        "chart": {
+            "relationshipTrust": "Confianza y relación",
+            "adaptiveAgility": "Agilidad adaptativa",
+            "processConsensus": "Consenso de procesos",
+            "performanceVelocity": "Velocidad de rendimiento",
+            "communicationDirectness": "Dirección de comunicación",
+            "strategicFocus": "Enfoque estratégico",
+            "empoweredEquality": "Igualdad empoderada"
+        },
+        "info": "El Índice de Puente Cultural (CBI) analiza metadimensiones patentadas derivadas de una síntesis ponderada de 5 marcos revisados por pares. Este modelo proporciona un análisis comparativo original con fines educativos y de investigación."
+    },
+    "gaps": {
+        "title": "Brechas Críticas y Recomendaciones",
+        "tactical": "Ejecución Táctica",
+        "aligned": "Los perfiles culturales están altamente alineados."
+    },
+    "insights": {
+        "relationshipTrust": {
+            "high": "La cultura objetivo prioriza la armonía colectiva y la confianza basada en relaciones.",
+            "low": "La cultura objetivo se centra en la fiabilidad en tareas y el logro independiente.",
+            "highCons": "Invierta tiempo en relaciones sociales antes que en negocios. La confianza es personal.",
+            "lowCons": "Céntrese en dar resultados y cumplir plazos. La relación personal sigue al rendimiento."
+        },
+        "adaptiveAgility": {
+            "high": "La cultura objetivo se siente más cómoda con la ambigüedad y los cambios rápidos.",
+            "low": "La cultura objetivo valora la previsibilidad estructural y la planificación detallada.",
+            "highCons": "Manténgase flexible. Evite agendas estrictas; prepárese para cambios de última hora.",
+            "lowCons": "Proporcione documentación clara y minimice las sorpresas. Respete estrictamente los horarios."
+        },
+        "processConsensus": {
+            "high": "Las decisiones son más colaborativas y requieren un amplio consenso.",
+            "low": "Las decisiones son jerárquicas y centralizadas para mayor velocidad.",
+            "highCons": "Genere consenso a través de redes informales ('Nemawashi') antes de reuniones formales.",
+            "lowCons": "Dirija sus propuestas a los principales responsables de la toma de decisiones. La velocidad se prioriza sobre el consenso."
+        },
+        "performanceVelocity": {
+            "high": "Gran impulso hacia el logro competitivo y la retroalimentación directa sobre el rendimiento.",
+            "low": "Prioridad en la estabilidad del grupo, antigüedad y retroalimentación indirecta.",
+            "highCons": "Establezca KPIs ambiciosos y no tema la crítica directa y constructiva.",
+            "lowCons": "Suavice la retroalimentación negativa. Valore el impacto social y la estabilidad a largo plazo sobre las métricas a corto plazo."
+        },
+        "communicationDirectness": {
+            "high": "Los mensajes se entregan de forma explícita y literal (Bajo Contexto).",
+            "low": "Los mensajes son indirectos y dependen de un contexto compartido (Alto Contexto).",
+            "highCons": "Sea directo y claro. Evite indirectas o metáforas complejas.",
+            "lowCons": "Escuche lo que NO se dice. Preste atención al subtexto, el lenguaje corporal y la jerarquía."
+        },
+        "strategicFocus": {
+            "high": "Las decisiones están guiadas por principios a largo plazo y fundamentos teóricos profundos.",
+            "low": "Las decisiones están guiadas por aplicaciones prácticas inmediatas y ganancias a corto plazo.",
+            "highCons": "Explique el 'Por qué' antes del 'Cómo'. Construya un argumento conceptual sólido.",
+            "lowCons": "Céntrese en el ROI inmediato y los pasos prácticos de ejecución. Manténgalo accionable."
+        },
+        "empoweredEquality": {
+            "high": "Preferencia por estructuras horizontales donde los títulos importan menos que la contribución.",
+            "low": "Preferencia por jerarquías claras y deferencia a la autoridad formal.",
+            "highCons": "Fomente la participación de abajo hacia arriba. Hable directamente con cualquier nivel sin protocolos.",
+            "lowCons": "Respete la cadena de mando. Use títulos profesionales y espere presentaciones formales."
+        }
+    },
+    "quiz": {
+        "title": "Evaluación de Estilo Cultural",
+        "numQuestions": "{{count}} preguntas",
+        "subtitle": "Descubra su perfil de comunicación intercultural",
+        "yourProfile": "Su Perfil Cultural",
+        "profilePrefix": "Perfil:",
+        "retake": "Volver a realizar la evaluación",
+        "reveal": "Revelar Mi Perfil Cultural",
+        "q1": {
+            "scenario": "Al revisar el trabajo de un colega que requiere corrección, usted suele:",
+            "optA": "Abordar los puntos específicos de forma inmediata y clara",
+            "optB": "Hacer observaciones que le permitan identificar los ajustes por sí mismos"
+        },
+        "q2": {
+            "scenario": "Al compartir actualizaciones críticas con un socio, prefiere:",
+            "optA": "Presentar los hechos directamente y enfocarse en los siguientes pasos",
+            "optB": "Construir un contexto más amplio y sugerir implicaciones gradualmente"
+        },
+        "q3": {
+            "scenario": "En correspondencia profesional escrita, su estilo suele ser:",
+            "optA": "Conciso y centrado en el objetivo inmediato",
+            "optB": "Contextual, incorporando detalles y matices"
+        },
+        "q4": {
+            "scenario": "Al liderar una iniciativa con tiempo limitado, tiende a:",
+            "optA": "Determinar la dirección principal usted mismo para mantener el impulso",
+            "optB": "Buscar la opinión del equipo antes de finalizar el camino a seguir"
+        },
+        "q5": {
+            "scenario": "Si se encuentra en desacuerdo con la opinión mayoritaria del equipo, suele:",
+            "optA": "Sintetizar su perspectiva y defender una alternativa",
+            "optB": "Apoyar el consenso final del grupo para mantener la alineación"
+        },
+        "q6": {
+            "scenario": "Su entorno colaborativo preferido implica:",
+            "optA": "Iteraciones rápidas donde las decisiones se toman por liderazgo activo",
+            "optB": "Debates exhaustivos que integran todas las perspectivas disponibles"
+        },
+        "q7": {
+            "scenario": "Al organizar su actividad semanal, prefiere:",
+            "optA": "Mantener una secuencia constante con ventanas específicas para cada tarea",
+            "optB": "Establecer metas amplias y adaptar su enfoque según evolucionen las cosas"
+        },
+        "q8": {
+            "scenario": "Al inicio de una reunión programada, su llegada es consistentemente:",
+            "optA": "Ligeramente temprana: llegar puntualmente demuestra fiabilidad",
+            "optB": "Variable: participa una vez que el grupo alcanza una masa crítica"
+        },
+        "q9": {
+            "scenario": "Si surge una oportunidad inesperada durante un proyecto, usted:",
+            "optA": "Priorizar el plan existente y evaluar la nueva opción después",
+            "optB": "Ajustar el flujo actual para explorar la posibilidad de inmediato"
+        },
+        "q10": {
+            "scenario": "En una nueva colaboración, la confianza se establece mediante:",
+            "optA": "Fiabilidad demostrable y entrega consistente de resultados",
+            "optB": "Participación continua y comprensión de las motivaciones personales"
+        },
+        "q11": {
+            "scenario": "Se siente más seguro en una asociación cuando:",
+            "optA": "El acuerdo está codificado con términos operativos detallados",
+            "optB": "Ha establecido un fuerte entendimiento mutuo con la otra parte"
+        },
+        "q12": {
+            "scenario": "En eventos de networking profesional, prefiere:",
+            "optA": "Maximizar interacciones e intercambiar información eficientemente",
+            "optB": "Centrarse en menos conversaciones, pero más significativas"
+        }
+    }
+}

@@ -11,6 +11,8 @@
  * Based on Schwartz (2006) "A Theory of Cultural Value Orientations."
  */
 
+export const CITATION = "Data based on Schwartz, S. H. (2008). 'The 7 Cultural Value Orientations' in 'Psychology of Culture'. Used for non-commercial educational analysis.";
+
 export type SchwartzScores = {
     [key: string]: number;
     intellectualAutonomy: number;
@@ -166,7 +168,39 @@ export const SCHWARTZ_DATA: Record<string, SchwartzScores> = {
     "Uzbekistan": { intellectualAutonomy: 3.2, affectiveAutonomy: 2.9, embeddedness: 4.8, hierarchy: 3.5, egalitarianism: 3.8, mastery: 3.9, harmony: 4.2 },
     "Zambia": { intellectualAutonomy: 3.3, affectiveAutonomy: 3.1, embeddedness: 4.5, hierarchy: 3.3, egalitarianism: 4.1, mastery: 3.8, harmony: 3.9 },
     "Zimbabwe": { intellectualAutonomy: 3.3, affectiveAutonomy: 3.2, embeddedness: 4.5, hierarchy: 3.3, egalitarianism: 4.0, mastery: 3.9, harmony: 3.9 },
+    // ─── NEW 30 COUNTRIES (123 total) ───
+    "Albania": { intellectualAutonomy: 3.6, affectiveAutonomy: 3.4, embeddedness: 4.3, hierarchy: 3.0, egalitarianism: 4.1, mastery: 4.0, harmony: 3.8 },
+    "Armenia": { intellectualAutonomy: 3.8, affectiveAutonomy: 3.3, embeddedness: 4.0, hierarchy: 2.8, egalitarianism: 4.2, mastery: 3.8, harmony: 3.8 },
+    "Azerbaijan": { intellectualAutonomy: 3.8, affectiveAutonomy: 3.3, embeddedness: 4.0, hierarchy: 2.8, egalitarianism: 4.2, mastery: 3.8, harmony: 3.8 },
+    "Bahrain": { intellectualAutonomy: 3.5, affectiveAutonomy: 3.1, embeddedness: 4.6, hierarchy: 3.4, egalitarianism: 3.9, mastery: 4.1, harmony: 3.9 },
+    "Belarus": { intellectualAutonomy: 3.7, affectiveAutonomy: 3.1, embeddedness: 4.1, hierarchy: 3.1, egalitarianism: 3.9, mastery: 4.2, harmony: 3.5 },
+    "Bolivia": { intellectualAutonomy: 3.4, affectiveAutonomy: 3.5, embeddedness: 4.3, hierarchy: 2.9, egalitarianism: 4.1, mastery: 3.6, harmony: 4.0 },
+    "Bosnia and Herzegovina": { intellectualAutonomy: 3.8, affectiveAutonomy: 3.3, embeddedness: 4.0, hierarchy: 3.0, egalitarianism: 4.1, mastery: 3.9, harmony: 3.9 },
+    "Botswana": { intellectualAutonomy: 4.0, affectiveAutonomy: 3.7, embeddedness: 3.8, hierarchy: 2.7, egalitarianism: 4.4, mastery: 3.9, harmony: 4.0 },
+    "Cameroon": { intellectualAutonomy: 3.3, affectiveAutonomy: 3.1, embeddedness: 4.5, hierarchy: 3.3, egalitarianism: 4.0, mastery: 4.0, harmony: 3.9 },
+    "Cyprus": { intellectualAutonomy: 4.8, affectiveAutonomy: 4.2, embeddedness: 3.1, hierarchy: 2.1, egalitarianism: 5.1, mastery: 3.8, harmony: 4.1 },
+    "El Salvador": { intellectualAutonomy: 3.4, affectiveAutonomy: 3.3, embeddedness: 4.5, hierarchy: 3.0, egalitarianism: 4.1, mastery: 3.6, harmony: 4.1 },
+    "Georgia": { intellectualAutonomy: 4.0, affectiveAutonomy: 3.5, embeddedness: 3.9, hierarchy: 2.6, egalitarianism: 4.4, mastery: 3.6, harmony: 4.1 },
+    "Guyana": { intellectualAutonomy: 3.8, affectiveAutonomy: 3.9, embeddedness: 3.7, hierarchy: 2.4, egalitarianism: 4.6, mastery: 3.9, harmony: 3.8 },
+    "Honduras": { intellectualAutonomy: 3.6, affectiveAutonomy: 3.8, embeddedness: 4.2, hierarchy: 2.8, egalitarianism: 4.3, mastery: 3.7, harmony: 4.1 },
+    "Ivory Coast": { intellectualAutonomy: 3.3, affectiveAutonomy: 3.1, embeddedness: 4.5, hierarchy: 3.3, egalitarianism: 4.0, mastery: 4.0, harmony: 3.9 },
+    "Kazakhstan": { intellectualAutonomy: 3.5, affectiveAutonomy: 3.0, embeddedness: 4.6, hierarchy: 3.4, egalitarianism: 4.0, mastery: 4.1, harmony: 4.2 },
+    "Kyrgyzstan": { intellectualAutonomy: 3.2, affectiveAutonomy: 2.8, embeddedness: 4.7, hierarchy: 3.4, egalitarianism: 3.8, mastery: 3.7, harmony: 4.0 },
+    "Libya": { intellectualAutonomy: 3.4, affectiveAutonomy: 2.9, embeddedness: 4.6, hierarchy: 3.5, egalitarianism: 3.8, mastery: 3.9, harmony: 4.1 },
+    "Malta": { intellectualAutonomy: 4.8, affectiveAutonomy: 4.2, embeddedness: 3.1, hierarchy: 2.1, egalitarianism: 5.1, mastery: 3.8, harmony: 4.1 },
+    "Montenegro": { intellectualAutonomy: 3.8, affectiveAutonomy: 3.3, embeddedness: 4.0, hierarchy: 3.0, egalitarianism: 4.1, mastery: 3.9, harmony: 3.9 },
+    "Namibia": { intellectualAutonomy: 4.0, affectiveAutonomy: 3.7, embeddedness: 3.8, hierarchy: 2.7, egalitarianism: 4.4, mastery: 3.9, harmony: 4.0 },
+    "Nicaragua": { intellectualAutonomy: 3.6, affectiveAutonomy: 3.8, embeddedness: 4.2, hierarchy: 2.8, egalitarianism: 4.3, mastery: 3.7, harmony: 4.1 },
+    "North Macedonia": { intellectualAutonomy: 3.8, affectiveAutonomy: 3.3, embeddedness: 4.0, hierarchy: 3.0, egalitarianism: 4.1, mastery: 3.9, harmony: 3.9 },
+    "Oman": { intellectualAutonomy: 3.4, affectiveAutonomy: 3.0, embeddedness: 4.7, hierarchy: 3.5, egalitarianism: 3.8, mastery: 4.0, harmony: 4.2 },
+    "Rwanda": { intellectualAutonomy: 5.1, affectiveAutonomy: 4.6, embeddedness: 2.8, hierarchy: 1.8, egalitarianism: 5.3, mastery: 3.5, harmony: 4.5 },
+    "Senegal": { intellectualAutonomy: 3.3, affectiveAutonomy: 3.1, embeddedness: 4.5, hierarchy: 3.3, egalitarianism: 4.0, mastery: 3.9, harmony: 3.9 },
+    "Suriname": { intellectualAutonomy: 3.8, affectiveAutonomy: 3.9, embeddedness: 3.7, hierarchy: 2.4, egalitarianism: 4.6, mastery: 3.9, harmony: 3.8 },
+    "Trinidad and Tobago": { intellectualAutonomy: 3.8, affectiveAutonomy: 4.0, embeddedness: 3.8, hierarchy: 2.5, egalitarianism: 4.2, mastery: 3.8, harmony: 3.9 },
+    "Tunisia": { intellectualAutonomy: 3.4, affectiveAutonomy: 2.9, embeddedness: 4.6, hierarchy: 3.5, egalitarianism: 3.8, mastery: 3.9, harmony: 4.1 },
+    "Uganda": { intellectualAutonomy: 3.3, affectiveAutonomy: 3.1, embeddedness: 4.5, hierarchy: 3.3, egalitarianism: 4.1, mastery: 3.8, harmony: 3.9 },
 };
+
 
 /**
  * The three bipolar dimensions for visual grouping

@@ -4,6 +4,8 @@
  * Scores are on a scale of 1-10.
  */
 
+export const CITATION = "Data aggregated from Meyer, E. (2014). 'The Culture Map' and Lewis, R. D. (2006). 'When Cultures Collide'. Used for educational research purposes.";
+
 export const SCALE_LABELS: Record<string, string> = {
     communicating: "Communicating (Low vs High Context)",
     evaluating: "Evaluating (Direct vs Indirect Negative Feedback)",
@@ -449,7 +451,260 @@ const UNSORTED_COUNTRIES: Country[] = [
         lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 50, reactive: 35, traits: ["Resilient spirit", "Formal respect", "Relationship networks"] },
         scores: { communicating: 7, evaluating: 6, persuading: 6, leading: 8, deciding: 7, trusting: 8, disagreeing: 6, scheduling: 8 },
     },
+    // ─── NEW 20 COUNTRIES (RESTORED) ───
+    {
+        name: "Austria",
+        lewis: { primary: "Linear-Active", linearActive: 60, multiActive: 25, reactive: 15, traits: ["Direct and punctual", "Pragmatic", "Analytical lean"] },
+        scores: { communicating: 2, evaluating: 1, persuading: 5, leading: 4, deciding: 3, trusting: 4, disagreeing: 2, scheduling: 3 },
+    },
+    {
+        name: "Bangladesh",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 60, reactive: 30, traits: ["Widespread hospitality", "Indirect communication", "Patient persistence"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 4, leading: 9, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Belgium",
+        lewis: { primary: "Linear-Active", linearActive: 55, multiActive: 30, reactive: 15, traits: ["Diplomatic pragmatism", "Pluralistic focus", "Measured directness"] },
+        scores: { communicating: 3, evaluating: 3, persuading: 6, leading: 3, deciding: 4, trusting: 4, disagreeing: 3, scheduling: 3 },
+    },
+    {
+        name: "Croatia",
+        lewis: { primary: "Multi-Active", linearActive: 25, multiActive: 55, reactive: 20, traits: ["Adriatic openness", "Direct and firm", "Social cohesion"] },
+        scores: { communicating: 7, evaluating: 5, persuading: 4, leading: 7, deciding: 7, trusting: 8, disagreeing: 4, scheduling: 7 },
+    },
+    {
+        name: "Ecuador",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 75, reactive: 15, traits: ["Andean warmth", "Polite and indirect", "Relationship-first"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 5, leading: 8, deciding: 7, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Ethiopia",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 60, reactive: 25, traits: ["Ancient pride", "Formal courtesy", "Strong hierarchies"] },
+        scores: { communicating: 9, evaluating: 8, persuading: 4, leading: 8, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 8 },
+    },
+    {
+        name: "Ghana",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 70, reactive: 20, traits: ["Proverbial wisdom", "Deep hospitality", "Community focus"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 3, leading: 8, deciding: 7, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Hungary",
+        lewis: { primary: "Linear-Active", linearActive: 50, multiActive: 35, reactive: 15, traits: ["Analytical and direct", "Principled lean", "Socially reserved"] },
+        scores: { communicating: 4, evaluating: 3, persuading: 4, leading: 6, deciding: 6, trusting: 6, disagreeing: 4, scheduling: 5 },
+    },
+    {
+        name: "Iraq",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 70, reactive: 20, traits: ["Tribal loyalty", "Generous hosts", "Rhetorical flair"] },
+        scores: { communicating: 9, evaluating: 9, persuading: 3, leading: 9, deciding: 9, trusting: 10, disagreeing: 9, scheduling: 10 },
+    },
+    {
+        name: "Jamaica",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 70, reactive: 10, traits: ["Vocal expressiveness", "Loose time focus", "Informal trust"] },
+        scores: { communicating: 5, evaluating: 6, persuading: 8, leading: 4, deciding: 5, trusting: 7, disagreeing: 5, scheduling: 8 },
+    },
+    {
+        name: "Jordan",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 60, reactive: 25, traits: ["Refined hospitality", "Honor-based relations", "Measured context"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 4, leading: 8, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 8 },
+    },
+    {
+        name: "Lebanon",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 65, reactive: 15, traits: ["Commercial acumen", "Trilingual fluidity", "Social connectivity"] },
+        scores: { communicating: 8, evaluating: 7, persuading: 4, leading: 7, deciding: 7, trusting: 9, disagreeing: 7, scheduling: 8 },
+    },
+    {
+        name: "Morocco",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 60, reactive: 25, traits: ["Bazaar mentality", "Tactful indirectness", "Hospitality focus"] },
+        scores: { communicating: 9, evaluating: 8, persuading: 4, leading: 8, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Myanmar",
+        lewis: { primary: "Reactive", linearActive: 10, multiActive: 30, reactive: 60, traits: ["Quiet respect", "Indirect and polite", "Spiritual grounding"] },
+        scores: { communicating: 9, evaluating: 9, persuading: 4, leading: 8, deciding: 7, trusting: 9, disagreeing: 9, scheduling: 8 },
+    },
+    {
+        name: "Romania",
+        lewis: { primary: "Multi-Active", linearActive: 30, multiActive: 50, reactive: 20, traits: ["Latin-Balkan mix", "Eloquence", "Relationship importance"] },
+        scores: { communicating: 7, evaluating: 6, persuading: 5, leading: 7, deciding: 7, trusting: 8, disagreeing: 6, scheduling: 7 },
+    },
+    {
+        name: "Sri Lanka",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 55, reactive: 35, traits: ["Gentle courtesy", "High context", "Patient listeners"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 5, leading: 8, deciding: 7, trusting: 9, disagreeing: 8, scheduling: 8 },
+    },
+    {
+        name: "Taiwan",
+        lewis: { primary: "Reactive", linearActive: 20, multiActive: 30, reactive: 50, traits: ["Harmonious listenings", "Face-saving", "Technical precision"] },
+        scores: { communicating: 9, evaluating: 9, persuading: 6, leading: 6, deciding: 5, trusting: 8, disagreeing: 9, scheduling: 5 },
+    },
+    {
+        name: "Tanzania",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 60, reactive: 30, traits: ["Swahili politeness", "Collective effort", "Respectful slow pace"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 3, leading: 8, deciding: 7, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Ukraine",
+        lewis: { primary: "Multi-Active", linearActive: 30, multiActive: 55, reactive: 15, traits: ["Passionate resilience", "Direct evaluator", "Trust through trial"] },
+        scores: { communicating: 6, evaluating: 3, persuading: 5, leading: 8, deciding: 8, trusting: 9, disagreeing: 3, scheduling: 7 },
+    },
+    {
+        name: "Venezuela",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 80, reactive: 10, traits: ["High emotional heat", "Relationship priority", "Flexible with time"] },
+        scores: { communicating: 7, evaluating: 6, persuading: 5, leading: 7, deciding: 7, trusting: 8, disagreeing: 6, scheduling: 9 },
+    },
+    // ─── NEW 30 COUNTRIES ───
+    {
+        name: "Albania",
+        lewis: { primary: "Multi-Active", linearActive: 25, multiActive: 55, reactive: 20, traits: ["Hospitality (Besa)", "Direct but relational", "Strong family bonds"] },
+        scores: { communicating: 7, evaluating: 4, persuading: 4, leading: 8, deciding: 7, trusting: 9, disagreeing: 4, scheduling: 7 },
+    },
+    {
+        name: "Armenia",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 70, reactive: 20, traits: ["High emotionality", "Pride in heritage", "Close social circles"] },
+        scores: { communicating: 8, evaluating: 7, persuading: 5, leading: 8, deciding: 8, trusting: 10, disagreeing: 5, scheduling: 8 },
+    },
+    {
+        name: "Azerbaijan",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 60, reactive: 25, traits: ["Secular but traditional", "Respect for elders", "Business through tea"] },
+        scores: { communicating: 8, evaluating: 7, persuading: 4, leading: 9, deciding: 8, trusting: 9, disagreeing: 6, scheduling: 8 },
+    },
+    {
+        name: "Bahrain",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 50, reactive: 30, traits: ["Globalized merchant mind", "Social etiquette", "Honor-based trust"] },
+        scores: { communicating: 9, evaluating: 8, persuading: 4, leading: 9, deciding: 8, trusting: 10, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Belarus",
+        lewis: { primary: "Linear-Active", linearActive: 55, multiActive: 30, reactive: 15, traits: ["Reserved and stoic", "Pragmatic planning", "Doubt of outsiders"] },
+        scores: { communicating: 4, evaluating: 4, persuading: 5, leading: 8, deciding: 8, trusting: 6, disagreeing: 6, scheduling: 4 },
+    },
+    {
+        name: "Bolivia",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 70, reactive: 20, traits: ["Indigenous influence", "Collectivist lean", "Patient negotiators"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 6, leading: 8, deciding: 7, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Bosnia and Herzegovina",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 60, reactive: 20, traits: ["Multi-ethnic complexity", "Hospitality", "Passionate debaters"] },
+        scores: { communicating: 7, evaluating: 5, persuading: 4, leading: 7, deciding: 7, trusting: 9, disagreeing: 4, scheduling: 8 },
+    },
+    {
+        name: "Botswana",
+        lewis: { primary: "Multi-Active", linearActive: 30, multiActive: 50, reactive: 20, traits: ["Consensus culture (Kgotla)", "Stable pragmatism", "Respectful directness"] },
+        scores: { communicating: 6, evaluating: 6, persuading: 7, leading: 4, deciding: 3, trusting: 7, disagreeing: 5, scheduling: 5 },
+    },
+    {
+        name: "Cameroon",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 60, reactive: 30, traits: ["Linguistic diversity", "Vibrant markets", "Strong father-figures"] },
+        scores: { communicating: 9, evaluating: 8, persuading: 4, leading: 9, deciding: 8, trusting: 10, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Cyprus",
+        lewis: { primary: "Multi-Active", linearActive: 30, multiActive: 50, reactive: 20, traits: ["Mediterranean pace", "Family businesses", "Indirect conflict resolution"] },
+        scores: { communicating: 7, evaluating: 6, persuading: 7, leading: 5, deciding: 6, trusting: 8, disagreeing: 6, scheduling: 7 },
+    },
+    {
+        name: "El Salvador",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 70, reactive: 15, traits: ["Hardworking spirit", "Community-centric", "High formality"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 6, leading: 9, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Georgia",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 65, reactive: 20, traits: ["Knightly values", "Vivid eloquence", "Fierce independence"] },
+        scores: { communicating: 7, evaluating: 4, persuading: 6, leading: 8, deciding: 7, trusting: 10, disagreeing: 3, scheduling: 8 },
+    },
+    {
+        name: "Guyana",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 60, reactive: 20, traits: ["Anglo-Caribbean mix", "Social fluidity", "Spoken word value"] },
+        scores: { communicating: 5, evaluating: 6, persuading: 7, leading: 6, deciding: 7, trusting: 7, disagreeing: 5, scheduling: 7 },
+    },
+    {
+        name: "Honduras",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 70, reactive: 20, traits: ["Extended family focus", "Affable but cautious", "Indirect feedback"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 7, leading: 8, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "Ivory Coast",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 65, reactive: 25, traits: ["Francophone polish", "Social hierarchy", "Eloquent diplomacy"] },
+        scores: { communicating: 9, evaluating: 9, persuading: 5, leading: 9, deciding: 8, trusting: 9, disagreeing: 9, scheduling: 9 },
+    },
+    {
+        name: "Kazakhstan",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 50, reactive: 30, traits: ["Steppe hospitality", "Strong state respect", "Relationship pipelines"] },
+        scores: { communicating: 8, evaluating: 7, persuading: 5, leading: 9, deciding: 9, trusting: 9, disagreeing: 7, scheduling: 8 },
+    },
+    {
+        name: "Kyrgyzstan",
+        lewis: { primary: "Reactive", linearActive: 10, multiActive: 40, reactive: 50, traits: ["Humble respect", "Clan-based trust", "Slow-paced consensus"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 5, leading: 8, deciding: 7, trusting: 9, disagreeing: 8, scheduling: 8 },
+    },
+    {
+        name: "Libya",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 60, reactive: 30, traits: ["Bedouin code", "Tribe-based loyalty", "Indirect communicating"] },
+        scores: { communicating: 9, evaluating: 9, persuading: 4, leading: 9, deciding: 9, trusting: 10, disagreeing: 9, scheduling: 10 },
+    },
+    {
+        name: "Malta",
+        lewis: { primary: "Multi-Active", linearActive: 35, multiActive: 45, reactive: 20, traits: ["Archipelago identity", "Relational business", "British-influenced process"] },
+        scores: { communicating: 4, evaluating: 5, persuading: 7, leading: 4, deciding: 5, trusting: 7, disagreeing: 5, scheduling: 6 },
+    },
+    {
+        name: "Montenegro",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 60, reactive: 20, traits: ["Heroic tradition", "Direct honor", "Oral agreements"] },
+        scores: { communicating: 7, evaluating: 3, persuading: 4, leading: 8, deciding: 7, trusting: 9, disagreeing: 3, scheduling: 8 },
+    },
+    {
+        name: "Namibia",
+        lewis: { primary: "Linear-Active", linearActive: 50, multiActive: 30, reactive: 20, traits: ["Orderly systems", "Punctual focus", "Calm persistence"] },
+        scores: { communicating: 5, evaluating: 5, persuading: 7, leading: 5, deciding: 6, trusting: 6, disagreeing: 5, scheduling: 3 },
+    },
+    {
+        name: "Nicaragua",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 70, reactive: 15, traits: ["Resilient community", "Indirect and polite", "Social orientation"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 7, leading: 8, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
+    {
+        name: "North Macedonia",
+        lewis: { primary: "Multi-Active", linearActive: 25, multiActive: 55, reactive: 20, traits: ["Cultural crossroads", "Indirect evaluator", "Relationship nets"] },
+        scores: { communicating: 7, evaluating: 6, persuading: 5, leading: 7, deciding: 7, trusting: 9, disagreeing: 5, scheduling: 8 },
+    },
+    {
+        name: "Oman",
+        lewis: { primary: "Multi-Active", linearActive: 15, multiActive: 55, reactive: 30, traits: ["Gentle diplomacy", "Deeply respectful", "High context"] },
+        scores: { communicating: 10, evaluating: 9, persuading: 4, leading: 9, deciding: 8, trusting: 10, disagreeing: 9, scheduling: 9 },
+    },
+    {
+        name: "Rwanda",
+        lewis: { primary: "Reactive", linearActive: 20, multiActive: 30, reactive: 50, traits: ["Disciplined planning", "Reserved politeness", "Order-seeking"] },
+        scores: { communicating: 7, evaluating: 8, persuading: 6, leading: 6, deciding: 5, trusting: 8, disagreeing: 8, scheduling: 4 },
+    },
+    {
+        name: "Senegal",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 60, reactive: 30, traits: ["Téranga (Hospitality)", "Eloquence value", "Respect for age"] },
+        scores: { communicating: 9, evaluating: 8, persuading: 5, leading: 8, deciding: 8, trusting: 9, disagreeing: 8, scheduling: 10 },
+    },
+    {
+        name: "Suriname",
+        lewis: { primary: "Multi-Active", linearActive: 25, multiActive: 55, reactive: 20, traits: ["Pluralistic harmony", "Indirect approach", "Relationship-first"] },
+        scores: { communicating: 8, evaluating: 7, persuading: 6, leading: 7, deciding: 7, trusting: 9, disagreeing: 7, scheduling: 8 },
+    },
+    {
+        name: "Trinidad and Tobago",
+        lewis: { primary: "Multi-Active", linearActive: 30, multiActive: 55, reactive: 15, traits: ["Carnival mentality", "Relational trust", "Adaptable rhythm"] },
+        scores: { communicating: 5, evaluating: 6, persuading: 8, leading: 5, deciding: 6, trusting: 7, disagreeing: 5, scheduling: 7 },
+    },
+    {
+        name: "Tunisia",
+        lewis: { primary: "Multi-Active", linearActive: 20, multiActive: 60, reactive: 20, traits: ["Coastal openness", "Academic tradition", "Relationship-based"] },
+        scores: { communicating: 8, evaluating: 7, persuading: 5, leading: 8, deciding: 8, trusting: 9, disagreeing: 7, scheduling: 8 },
+    },
+    {
+        name: "Uganda",
+        lewis: { primary: "Multi-Active", linearActive: 10, multiActive: 65, reactive: 25, traits: ["Perpetual friendliness", "Relational time", "Oral communication focus"] },
+        scores: { communicating: 8, evaluating: 8, persuading: 5, leading: 8, deciding: 7, trusting: 9, disagreeing: 8, scheduling: 9 },
+    },
 ];
+
 
 export const COUNTRIES = UNSORTED_COUNTRIES.sort((a, b) => a.name.localeCompare(b.name));
 

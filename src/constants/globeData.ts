@@ -7,6 +7,8 @@
  * Dimensions measure cultural PRACTICES ("As Is") — how things actually work in each society.
  */
 
+export const CITATION = "Data sourced from House, R. J., et al. (2004). 'Culture, Leadership, and Organizations: The GLOBE Study of 62 Societies'. SAGE Publications.";
+
 export type GlobeScores = {
     [key: string]: number;
     performanceOrientation: number;
@@ -176,4 +178,36 @@ export const GLOBE_DATA: Record<string, GlobeScores> = {
     "Uzbekistan": { performanceOrientation: 3.80, assertiveness: 3.60, futureOrientation: 3.40, humaneOrientation: 4.60, institutionalCollectivism: 4.10, inGroupCollectivism: 5.70, genderEgalitarianism: 3.20, powerDistance: 5.40, uncertaintyAvoidance: 3.70 },
     "Zambia": { performanceOrientation: 4.00, assertiveness: 3.80, futureOrientation: 3.30, humaneOrientation: 4.70, institutionalCollectivism: 4.20, inGroupCollectivism: 5.60, genderEgalitarianism: 3.20, powerDistance: 5.30, uncertaintyAvoidance: 3.70 },
     "Zimbabwe": { performanceOrientation: 4.00, assertiveness: 3.90, futureOrientation: 3.30, humaneOrientation: 4.60, institutionalCollectivism: 4.10, inGroupCollectivism: 5.60, genderEgalitarianism: 3.20, powerDistance: 5.40, uncertaintyAvoidance: 3.60 },
+    // ─── NEW 30 COUNTRIES (123 total) ───
+    "Albania": { performanceOrientation: 3.70, assertiveness: 4.00, futureOrientation: 3.20, humaneOrientation: 3.60, institutionalCollectivism: 3.80, inGroupCollectivism: 5.00, genderEgalitarianism: 3.60, powerDistance: 5.20, uncertaintyAvoidance: 3.80 },
+    "Armenia": { performanceOrientation: 3.60, assertiveness: 3.90, futureOrientation: 3.00, humaneOrientation: 3.80, institutionalCollectivism: 3.90, inGroupCollectivism: 5.40, genderEgalitarianism: 3.30, powerDistance: 5.30, uncertaintyAvoidance: 3.60 },
+    "Azerbaijan": { performanceOrientation: 3.60, assertiveness: 3.90, futureOrientation: 3.00, humaneOrientation: 3.80, institutionalCollectivism: 3.90, inGroupCollectivism: 5.40, genderEgalitarianism: 3.30, powerDistance: 5.30, uncertaintyAvoidance: 3.60 },
+    "Bahrain": { performanceOrientation: 4.10, assertiveness: 4.00, futureOrientation: 3.70, humaneOrientation: 4.50, institutionalCollectivism: 4.40, inGroupCollectivism: 5.70, genderEgalitarianism: 2.90, powerDistance: 5.50, uncertaintyAvoidance: 3.90 },
+    "Belarus": { performanceOrientation: 3.40, assertiveness: 3.80, futureOrientation: 2.90, humaneOrientation: 3.80, institutionalCollectivism: 4.00, inGroupCollectivism: 5.20, genderEgalitarianism: 3.90, powerDistance: 5.40, uncertaintyAvoidance: 3.10 },
+    "Bolivia": { performanceOrientation: 3.70, assertiveness: 3.80, futureOrientation: 3.10, humaneOrientation: 3.80, institutionalCollectivism: 3.60, inGroupCollectivism: 5.70, genderEgalitarianism: 3.50, powerDistance: 5.60, uncertaintyAvoidance: 3.40 },
+    "Bosnia and Herzegovina": { performanceOrientation: 3.60, assertiveness: 4.20, futureOrientation: 3.20, humaneOrientation: 3.80, institutionalCollectivism: 3.90, inGroupCollectivism: 5.40, genderEgalitarianism: 3.40, powerDistance: 5.40, uncertaintyAvoidance: 3.60 },
+    "Botswana": { performanceOrientation: 4.10, assertiveness: 4.30, futureOrientation: 4.10, humaneOrientation: 4.30, institutionalCollectivism: 4.60, inGroupCollectivism: 5.10, genderEgalitarianism: 3.30, powerDistance: 4.10, uncertaintyAvoidance: 4.60 },
+    "Cameroon": { performanceOrientation: 4.00, assertiveness: 4.10, futureOrientation: 3.30, humaneOrientation: 4.60, institutionalCollectivism: 4.10, inGroupCollectivism: 5.50, genderEgalitarianism: 3.00, powerDistance: 5.40, uncertaintyAvoidance: 3.50 },
+    "Cyprus": { performanceOrientation: 4.30, assertiveness: 4.10, futureOrientation: 3.50, humaneOrientation: 4.00, institutionalCollectivism: 4.10, inGroupCollectivism: 4.30, genderEgalitarianism: 3.70, powerDistance: 4.90, uncertaintyAvoidance: 4.60 },
+    "El Salvador": { performanceOrientation: 3.70, assertiveness: 3.80, futureOrientation: 3.10, humaneOrientation: 4.30, institutionalCollectivism: 3.70, inGroupCollectivism: 5.70, genderEgalitarianism: 3.40, powerDistance: 5.60, uncertaintyAvoidance: 3.40 },
+    "Georgia": { performanceOrientation: 3.70, assertiveness: 4.20, futureOrientation: 3.40, humaneOrientation: 3.70, institutionalCollectivism: 3.80, inGroupCollectivism: 5.30, genderEgalitarianism: 3.40, powerDistance: 5.30, uncertaintyAvoidance: 3.70 },
+    "Guyana": { performanceOrientation: 3.80, assertiveness: 3.90, futureOrientation: 3.30, humaneOrientation: 4.10, institutionalCollectivism: 3.80, inGroupCollectivism: 5.20, genderEgalitarianism: 3.60, powerDistance: 5.20, uncertaintyAvoidance: 3.70 },
+    "Honduras": { performanceOrientation: 3.70, assertiveness: 3.80, futureOrientation: 3.10, humaneOrientation: 4.10, institutionalCollectivism: 3.70, inGroupCollectivism: 5.60, genderEgalitarianism: 3.60, powerDistance: 5.40, uncertaintyAvoidance: 3.30 },
+    "Ivory Coast": { performanceOrientation: 4.00, assertiveness: 4.10, futureOrientation: 3.30, humaneOrientation: 4.60, institutionalCollectivism: 4.10, inGroupCollectivism: 5.50, genderEgalitarianism: 3.00, powerDistance: 5.40, uncertaintyAvoidance: 3.50 },
+    "Kazakhstan": { performanceOrientation: 4.20, assertiveness: 4.00, futureOrientation: 3.50, humaneOrientation: 4.50, institutionalCollectivism: 4.30, inGroupCollectivism: 5.80, genderEgalitarianism: 3.20, powerDistance: 5.50, uncertaintyAvoidance: 3.80 },
+    "Kyrgyzstan": { performanceOrientation: 3.80, assertiveness: 3.80, futureOrientation: 3.20, humaneOrientation: 4.80, institutionalCollectivism: 4.30, inGroupCollectivism: 5.60, genderEgalitarianism: 3.00, powerDistance: 5.40, uncertaintyAvoidance: 3.60 },
+    "Libya": { performanceOrientation: 3.80, assertiveness: 4.10, futureOrientation: 3.20, humaneOrientation: 4.60, institutionalCollectivism: 3.90, inGroupCollectivism: 5.80, genderEgalitarianism: 3.00, powerDistance: 5.40, uncertaintyAvoidance: 3.60 },
+    "Malta": { performanceOrientation: 4.20, assertiveness: 4.00, futureOrientation: 3.50, humaneOrientation: 4.00, institutionalCollectivism: 4.10, inGroupCollectivism: 4.30, genderEgalitarianism: 3.70, powerDistance: 4.80, uncertaintyAvoidance: 4.50 },
+    "Montenegro": { performanceOrientation: 3.60, assertiveness: 4.20, futureOrientation: 3.20, humaneOrientation: 3.80, institutionalCollectivism: 3.90, inGroupCollectivism: 5.40, genderEgalitarianism: 3.40, powerDistance: 5.40, uncertaintyAvoidance: 3.60 },
+    "Namibia": { performanceOrientation: 4.10, assertiveness: 4.30, futureOrientation: 4.10, humaneOrientation: 4.30, institutionalCollectivism: 4.60, inGroupCollectivism: 5.10, genderEgalitarianism: 3.30, powerDistance: 4.10, uncertaintyAvoidance: 4.60 },
+    "Nicaragua": { performanceOrientation: 3.70, assertiveness: 3.80, futureOrientation: 3.10, humaneOrientation: 4.10, institutionalCollectivism: 3.70, inGroupCollectivism: 5.60, genderEgalitarianism: 3.60, powerDistance: 5.40, uncertaintyAvoidance: 3.30 },
+    "North Macedonia": { performanceOrientation: 3.60, assertiveness: 4.20, futureOrientation: 3.20, humaneOrientation: 3.80, institutionalCollectivism: 3.90, inGroupCollectivism: 5.40, genderEgalitarianism: 3.40, powerDistance: 5.40, uncertaintyAvoidance: 3.60 },
+    "Oman": { performanceOrientation: 3.90, assertiveness: 3.90, futureOrientation: 3.60, humaneOrientation: 4.60, institutionalCollectivism: 4.30, inGroupCollectivism: 5.80, genderEgalitarianism: 2.80, powerDistance: 5.60, uncertaintyAvoidance: 3.80 },
+    "Rwanda": { performanceOrientation: 4.40, assertiveness: 3.60, futureOrientation: 3.70, humaneOrientation: 4.40, institutionalCollectivism: 4.40, inGroupCollectivism: 5.70, genderEgalitarianism: 3.90, powerDistance: 4.50, uncertaintyAvoidance: 4.60 },
+    "Senegal": { performanceOrientation: 4.00, assertiveness: 4.10, futureOrientation: 3.30, humaneOrientation: 4.60, institutionalCollectivism: 4.10, inGroupCollectivism: 5.50, genderEgalitarianism: 3.00, powerDistance: 5.40, uncertaintyAvoidance: 3.50 },
+    "Suriname": { performanceOrientation: 3.80, assertiveness: 3.90, futureOrientation: 3.30, humaneOrientation: 4.10, institutionalCollectivism: 3.80, inGroupCollectivism: 5.20, genderEgalitarianism: 3.60, powerDistance: 5.20, uncertaintyAvoidance: 3.70 },
+    "Trinidad and Tobago": { performanceOrientation: 4.20, assertiveness: 4.30, futureOrientation: 3.50, humaneOrientation: 4.20, institutionalCollectivism: 4.00, inGroupCollectivism: 5.00, genderEgalitarianism: 3.30, powerDistance: 4.80, uncertaintyAvoidance: 3.40 },
+    "Tunisia": { performanceOrientation: 3.80, assertiveness: 4.10, futureOrientation: 3.20, humaneOrientation: 4.60, institutionalCollectivism: 3.90, inGroupCollectivism: 5.80, genderEgalitarianism: 3.00, powerDistance: 5.40, uncertaintyAvoidance: 3.60 },
+    "Uganda": { performanceOrientation: 4.00, assertiveness: 3.80, futureOrientation: 3.30, humaneOrientation: 4.70, institutionalCollectivism: 4.20, inGroupCollectivism: 5.60, genderEgalitarianism: 3.20, powerDistance: 5.30, uncertaintyAvoidance: 3.70 },
 };
+

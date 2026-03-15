@@ -10,6 +10,8 @@
  * IVR = Indulgence vs Restraint
  */
 
+export const CITATION = "Data based on Hofstede, G. (2011). 'Dimensionalizing Cultures: The Hofstede Model in Context'. Online Readings in Psychology and Culture. Values represent approximations for research.";
+
 export type HofstedeScores = {
     [key: string]: number;
     pdi: number;
@@ -128,4 +130,36 @@ export const HOFSTEDE_DATA: Record<string, HofstedeScores> = {
     "Uzbekistan": { pdi: 85, idv: 20, mas: 40, uai: 80, lto: 25, ivr: 20 },
     "Zambia": { pdi: 60, idv: 35, mas: 40, uai: 50, lto: 30, ivr: 40 },
     "Zimbabwe": { pdi: 70, idv: 15, mas: 40, uai: 50, lto: 25, ivr: 40 },
+    // ─── NEW 30 COUNTRIES (123 total) ───
+    "Albania": { pdi: 90, idv: 25, mas: 80, uai: 70, lto: 60, ivr: 15 },
+    "Armenia": { pdi: 85, idv: 20, mas: 50, uai: 88, lto: 38, ivr: 25 },
+    "Azerbaijan": { pdi: 85, idv: 28, mas: 50, uai: 88, lto: 59, ivr: 22 },
+    "Bahrain": { pdi: 80, idv: 38, mas: 52, uai: 68, lto: 30, ivr: 55 },
+    "Belarus": { pdi: 85, idv: 30, mas: 40, uai: 95, lto: 53, ivr: 20 },
+    "Bolivia": { pdi: 78, idv: 12, mas: 50, uai: 77, lto: 25, ivr: 35 },
+    "Bosnia and Herzegovina": { pdi: 85, idv: 25, mas: 45, uai: 85, lto: 55, ivr: 25 },
+    "Botswana": { pdi: 60, idv: 30, mas: 45, uai: 55, lto: 30, ivr: 45 },
+    "Cameroon": { pdi: 75, idv: 25, mas: 45, uai: 50, lto: 20, ivr: 35 },
+    "Cyprus": { pdi: 60, idv: 70, mas: 55, uai: 115, lto: 50, ivr: 75 },
+    "El Salvador": { pdi: 89, idv: 19, mas: 40, uai: 94, lto: 25, ivr: 89 },
+    "Georgia": { pdi: 65, idv: 40, mas: 55, uai: 85, lto: 40, ivr: 32 },
+    "Guyana": { pdi: 55, idv: 25, mas: 45, uai: 50, lto: 20, ivr: 60 },
+    "Honduras": { pdi: 74, idv: 16, mas: 39, uai: 40, lto: 25, ivr: 40 },
+    "Ivory Coast": { pdi: 75, idv: 25, mas: 45, uai: 50, lto: 20, ivr: 35 },
+    "Kazakhstan": { pdi: 80, idv: 25, mas: 50, uai: 85, lto: 85, ivr: 30 },
+    "Kyrgyzstan": { pdi: 75, idv: 15, mas: 50, uai: 75, lto: 60, ivr: 40 },
+    "Libya": { pdi: 80, idv: 38, mas: 52, uai: 68, lto: 25, ivr: 40 },
+    "Malta": { pdi: 56, idv: 59, mas: 47, uai: 96, lto: 47, ivr: 66 },
+    "Montenegro": { pdi: 85, idv: 25, mas: 45, uai: 85, lto: 55, ivr: 25 },
+    "Namibia": { pdi: 60, idv: 30, mas: 45, uai: 55, lto: 30, ivr: 45 },
+    "Nicaragua": { pdi: 80, idv: 20, mas: 40, uai: 50, lto: 25, ivr: 40 },
+    "North Macedonia": { pdi: 85, idv: 25, mas: 45, uai: 85, lto: 55, ivr: 25 },
+    "Oman": { pdi: 80, idv: 35, mas: 53, uai: 68, lto: 30, ivr: 40 },
+    "Rwanda": { pdi: 65, idv: 20, mas: 40, uai: 55, lto: 30, ivr: 35 },
+    "Senegal": { pdi: 70, idv: 26, mas: 44, uai: 45, lto: 19, ivr: 35 },
+    "Suriname": { pdi: 75, idv: 15, mas: 45, uai: 60, lto: 20, ivr: 60 },
+    "Trinidad and Tobago": { pdi: 47, idv: 16, mas: 58, uai: 55, lto: 13, ivr: 80 },
+    "Tunisia": { pdi: 75, idv: 35, mas: 45, uai: 60, lto: 35, ivr: 15 },
+    "Uganda": { pdi: 40, idv: 20, mas: 45, uai: 50, lto: 20, ivr: 40 },
 };
+

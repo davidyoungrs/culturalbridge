@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { ClipboardCheck, RotateCcw, Sparkles } from "lucide-react";
 import {
     QUIZ_QUESTIONS,
@@ -8,7 +9,12 @@ import {
     getProfileType,
 } from "../constants/quizData";
 
-const CulturalQuiz = () => {
+interface CulturalQuizProps {
+    onComplete?: (scores: Record<string, number>, profile: any, code: string) => void;
+}
+
+const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
+    const { t } = useTranslation();
     const [answers, setAnswers] = useState<Record<number, "a" | "b">>({});
     const [showResults, setShowResults] = useState(false);
 
@@ -22,6 +28,13 @@ const CulturalQuiz = () => {
 
     const handleAnswer = (questionId: number, answer: "a" | "b") => {
         setAnswers((prev) => ({ ...prev, [questionId]: answer }));
+    };
+
+    const handleReveal = () => {
+        setShowResults(true);
+        if (onComplete) {
+            onComplete(scores, profile, code);
+        }
     };
 
     const reset = () => {
@@ -40,7 +53,7 @@ const CulturalQuiz = () => {
             <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
                 <div className="p-5 border-b border-slate-50 bg-gradient-to-r from-violet-50 to-indigo-50">
                     <h2 className="text-lg font-bold flex items-center gap-2">
-                        Your Cultural Profile
+                        {t('quiz.yourProfile', 'Your Cultural Profile')}
                         <span className="text-xs font-normal bg-violet-100 text-violet-700 py-0.5 px-2 rounded-full uppercase tracking-wider">
                             {code}
                         </span>
@@ -53,11 +66,11 @@ const CulturalQuiz = () => {
                         <div className="flex items-center gap-3 mb-3">
                             <span className="text-3xl">{profile.emoji}</span>
                             <div>
-                                <h3 className="text-xl font-bold">{profile.title}</h3>
-                                <p className="text-indigo-200 text-xs font-bold uppercase tracking-wider">Profile: {code}</p>
+                                <h3 className="text-xl font-bold">{t(`profile.${code}.title`, profile.title)}</h3>
+                                <p className="text-indigo-200 text-xs font-bold uppercase tracking-wider">{t('quiz.profilePrefix', 'Profile:')} {code}</p>
                             </div>
                         </div>
-                        <p className="text-sm text-indigo-100 leading-relaxed font-medium">{profile.description}</p>
+                        <p className="text-sm text-indigo-100 leading-relaxed font-medium">{t(`profile.${code}.desc`, profile.description)}</p>
                     </div>
 
                     {/* Axis breakdown */}
@@ -68,16 +81,16 @@ const CulturalQuiz = () => {
                             return (
                                 <div key={axis.axis}>
                                     <div className="flex items-center justify-between mb-1.5">
-                                        <span className="text-xs font-bold text-slate-700">{axis.label}</span>
+                                        <span className="text-xs font-bold text-slate-700">{t(`axis.${axis.axis}.label`, axis.label)}</span>
                                         <span
                                             className="text-xs font-bold px-2 py-0.5 rounded-md"
                                             style={{ color: axis.color, backgroundColor: axis.color + "15" }}
                                         >
-                                            {isLow ? axis.lowLabel : axis.highLabel}
+                                            {isLow ? t(`axis.${axis.axis}.low`, axis.lowLabel) : t(`axis.${axis.axis}.high`, axis.highLabel)}
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[9px] text-slate-400 font-medium w-16 text-right shrink-0">{axis.lowLabel}</span>
+                                        <span className="text-[9px] text-slate-400 font-medium w-16 text-right shrink-0">{t(`axis.${axis.axis}.low`, axis.lowLabel)}</span>
                                         <div className="flex-1 relative h-3 bg-slate-100 rounded-full overflow-hidden">
                                             <div
                                                 className="absolute top-0 left-0 h-full rounded-full transition-all duration-700"
@@ -85,7 +98,7 @@ const CulturalQuiz = () => {
                                             />
                                             <div className="absolute top-0 left-1/2 w-px h-full bg-slate-300/60" />
                                         </div>
-                                        <span className="text-[9px] text-slate-400 font-medium w-16 shrink-0">{axis.highLabel}</span>
+                                        <span className="text-[9px] text-slate-400 font-medium w-16 shrink-0">{t(`axis.${axis.axis}.high`, axis.highLabel)}</span>
                                     </div>
                                 </div>
                             );
@@ -95,12 +108,12 @@ const CulturalQuiz = () => {
                     {/* Best with / Watch for */}
                     <div className="grid grid-cols-2 gap-3 mb-5">
                         <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-3">
-                            <h4 className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-1.5">✦ Natural Fit With</h4>
-                            <p className="text-xs text-emerald-800 font-medium leading-relaxed">{profile.bestWith}</p>
+                            <h4 className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-1.5">✦ {t('results.naturalFit', 'Natural Fit')}</h4>
+                            <p className="text-xs text-emerald-800 font-medium leading-relaxed">{t(`profile.${code}.bestWith`, profile.bestWith)}</p>
                         </div>
                         <div className="bg-amber-50 border border-amber-100 rounded-xl p-3">
-                            <h4 className="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-1.5">⚠ Watch For</h4>
-                            <p className="text-xs text-amber-800 font-medium leading-relaxed">{profile.watchFor}</p>
+                            <h4 className="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-1.5">⚠ {t('results.watchFor', 'Watch For')}</h4>
+                            <p className="text-xs text-amber-800 font-medium leading-relaxed">{t(`profile.${code}.watchFor`, profile.watchFor)}</p>
                         </div>
                     </div>
 
@@ -108,7 +121,7 @@ const CulturalQuiz = () => {
                         onClick={reset}
                         className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm py-2.5 rounded-xl transition-colors"
                     >
-                        <RotateCcw className="w-4 h-4" /> Retake Assessment
+                        <RotateCcw className="w-4 h-4" /> {t('quiz.retake', 'Retake Assessment')}
                     </button>
                 </div>
             </div>
@@ -120,13 +133,13 @@ const CulturalQuiz = () => {
             <div className="p-5 border-b border-slate-50 bg-slate-50/30">
                 <h2 className="text-lg font-bold flex items-center gap-2">
                     <ClipboardCheck className="w-5 h-5 text-violet-600" />
-                    Cultural Style Assessment
+                    {t('quiz.title', 'Cultural Style Assessment')}
                     <span className="text-xs font-normal bg-violet-100 text-violet-700 py-0.5 px-2 rounded-full uppercase tracking-wider">
-                        12 questions
+                        {t('quiz.numQuestions', '{{count}} questions', { count: 12 })}
                     </span>
                 </h2>
                 <p className="text-xs text-slate-400 mt-1 font-medium">
-                    Discover your personal cross-cultural communication profile
+                    {t('quiz.subtitle', 'Discover your personal cross-cultural communication profile')}
                 </p>
 
                 {/* Progress bar */}
@@ -149,13 +162,13 @@ const CulturalQuiz = () => {
                             style={{ color: group.color }}
                         >
                             <div className="w-2 h-2 rounded-full" style={{ backgroundColor: group.color }} />
-                            {group.label}
+                            {t(`axis.${group.axis}.label`, group.label)}
                         </h3>
 
                         <div className="space-y-3">
                             {group.questions.map((q) => (
                                 <div key={q.id} className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-                                    <p className="text-sm font-semibold text-slate-700 mb-3">{q.scenario}</p>
+                                    <p className="text-sm font-semibold text-slate-700 mb-3">{t(`quiz.q${q.id}.scenario`, q.scenario)}</p>
                                     <div className="space-y-2">
                                         <button
                                             onClick={() => handleAnswer(q.id, "a")}
@@ -164,7 +177,7 @@ const CulturalQuiz = () => {
                                                 : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"
                                                 }`}
                                         >
-                                            <span className="font-bold mr-1.5">A.</span> {q.optionA}
+                                            <span className="font-bold mr-1.5">A.</span> {t(`quiz.q${q.id}.optA`, q.optionA)}
                                         </button>
                                         <button
                                             onClick={() => handleAnswer(q.id, "b")}
@@ -173,7 +186,7 @@ const CulturalQuiz = () => {
                                                 : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"
                                                 }`}
                                         >
-                                            <span className="font-bold mr-1.5">B.</span> {q.optionB}
+                                            <span className="font-bold mr-1.5">B.</span> {t(`quiz.q${q.id}.optB`, q.optionB)}
                                         </button>
                                     </div>
                                 </div>
@@ -185,10 +198,10 @@ const CulturalQuiz = () => {
                 {/* Submit */}
                 {isComplete && (
                     <button
-                        onClick={() => setShowResults(true)}
+                        onClick={handleReveal}
                         className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition-all"
                     >
-                        <Sparkles className="w-4 h-4" /> Reveal My Cultural Profile
+                        <Sparkles className="w-4 h-4" /> {t('quiz.reveal', 'Reveal My Cultural Profile')}
                     </button>
                 )}
             </div>

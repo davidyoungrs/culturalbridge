@@ -1,18 +1,21 @@
 import { HOFSTEDE_DATA, HOFSTEDE_LABELS } from "../constants/hofstedeData";
+import { useTranslation } from "react-i18next";
 
 interface HofstedeCardProps {
     homeCountryName: string;
     targetCountryName: string;
+    citation?: string;
 }
 
-const HofstedeCard = ({ homeCountryName, targetCountryName }: HofstedeCardProps) => {
+const HofstedeCard = ({ homeCountryName, targetCountryName, citation }: HofstedeCardProps) => {
+    const { t } = useTranslation();
     const homeScores = HOFSTEDE_DATA[homeCountryName];
     const targetScores = HOFSTEDE_DATA[targetCountryName];
 
     if (!homeScores || !targetScores) {
         return (
             <div className="bg-white rounded-2xl p-6 shadow-xl shadow-slate-200/50 border border-slate-100">
-                <p className="text-sm text-slate-400 text-center">Hofstede data not available for one or both countries.</p>
+                <p className="text-sm text-slate-400 text-center">{t('hofstede.noData', 'Hofstede data not available for one or both countries.')}</p>
             </div>
         );
     }
@@ -23,12 +26,12 @@ const HofstedeCard = ({ homeCountryName, targetCountryName }: HofstedeCardProps)
         <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
             <div className="p-5 border-b border-slate-50 bg-slate-50/30">
                 <h2 className="text-lg font-bold flex items-center gap-2">
-                    Hofstede Dimensions
+                    {t('hofstede.title', 'Hofstede Dimensions')}
                     <span className="text-xs font-normal bg-blue-100 text-blue-700 py-0.5 px-2 rounded-full uppercase tracking-wider">
-                        6-D Model
+                        {t('hofstede.subtitle', '6-D Model')}
                     </span>
                 </h2>
-                <p className="text-xs text-slate-400 mt-1 font-medium">Geert Hofstede's cultural dimensions theory (0–100 scale)</p>
+                <p className="text-xs text-slate-400 mt-1 font-medium">{t('hofstede.description', "Geert Hofstede's cultural dimensions theory (0–100 scale)")}</p>
             </div>
 
             <div className="p-5">
@@ -55,8 +58,8 @@ const HofstedeCard = ({ homeCountryName, targetCountryName }: HofstedeCardProps)
                             <div key={key}>
                                 <div className="flex items-center justify-between mb-1">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-xs font-bold text-slate-700">{label.full}</span>
-                                        <span className="text-[10px] font-bold text-slate-300">{label.short}</span>
+                                        <span className="text-xs font-bold text-slate-700">{t(`hofstede.dim.${key}.full`, label.full)}</span>
+                                        <span className="text-[10px] font-bold text-slate-300">{t(`hofstede.dim.${key}.short`, label.short)}</span>
                                         {isSignificant && (
                                             <span className="text-[9px] font-bold bg-rose-100 text-rose-600 px-1.5 py-0.5 rounded-full">
                                                 Δ{diff}
@@ -71,8 +74,8 @@ const HofstedeCard = ({ homeCountryName, targetCountryName }: HofstedeCardProps)
 
                                 {/* Scale labels */}
                                 <div className="flex items-center justify-between mb-1.5">
-                                    <span className="text-[9px] text-slate-400 font-medium">{label.low}</span>
-                                    <span className="text-[9px] text-slate-400 font-medium">{label.high}</span>
+                                    <span className="text-[9px] text-slate-400 font-medium">{t(`hofstede.dim.${key}.low`, label.low)}</span>
+                                    <span className="text-[9px] text-slate-400 font-medium">{t(`hofstede.dim.${key}.high`, label.high)}</span>
                                 </div>
 
                                 {/* Dual bar */}
@@ -93,6 +96,11 @@ const HofstedeCard = ({ homeCountryName, targetCountryName }: HofstedeCardProps)
                     })}
                 </div>
             </div>
+            {citation && (
+                <div className="px-5 py-2 border-t border-slate-50 bg-slate-50/20 text-[9px] text-slate-400 italic leading-tight">
+                    {citation}
+                </div>
+            )}
         </div>
     );
 };
