@@ -38,8 +38,13 @@ const App = () => {
       setHomeCountry(matched);
       const newLang = getLanguageForCountry(matched.name);
       i18n.changeLanguage(newLang);
+      document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
     }
   };
+
+  useEffect(() => {
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+  }, [i18n.language]);
 
   useEffect(() => {
     fetch('https://get.geojs.io/v1/ip/geo.json')

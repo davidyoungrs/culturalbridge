@@ -1,5 +1,5 @@
-export function getLanguageForCountry(countryName: string): 'en' | 'es' | 'fr' | 'de' {
-    const languageMap: Record<string, 'en' | 'es' | 'fr' | 'de'> = {
+export function getLanguageForCountry(countryName: string): string {
+    const languageMap: Record<string, string> = {
         // Spanish
         "Argentina": "es",
         "Bolivia": "es",
@@ -30,7 +30,85 @@ export function getLanguageForCountry(countryName: string): 'en' | 'es' | 'fr' |
         // German
         "Austria": "de",
         "Germany": "de",
-        "Switzerland": "de"
+        "Switzerland": "de",
+
+        // Mandarin Chinese (zh)
+        "China": "zh",
+        "Taiwan": "zh",
+
+        // Hindi (hi)
+        "India": "hi",
+
+        // Arabic (ar)
+        "Egypt": "ar",
+        "UAE": "ar",
+        "Saudi Arabia": "ar",
+        "Kuwait": "ar",
+        "Qatar": "ar",
+        "Bahrain": "ar",
+        "Morocco": "ar",
+        "Tunisia": "ar",
+        "Iraq": "ar",
+        "Jordan": "ar",
+        "Lebanon": "ar",
+        "Oman": "ar",
+        "Libya": "ar",
+
+        // Portuguese (pt)
+        "Brazil": "pt",
+        "Portugal": "pt",
+
+        // Russian (ru)
+        "Russia": "ru",
+        "Belarus": "ru",
+        "Kazakhstan": "ru",
+        "Kyrgyzstan": "ru",
+
+        // Japanese (ja)
+        "Japan": "ja",
+
+        // Korean (ko)
+        "South Korea": "ko",
+
+        // Italian (it)
+        "Italy": "it",
+
+        // Turkish (tr)
+        "Turkey": "tr",
+
+        // Vietnamese (vi)
+        "Vietnam": "vi",
+
+        // Polish (pl)
+        "Poland": "pl",
+
+        // Indonesian (id)
+        "Indonesia": "id",
+
+        // Dutch (nl)
+        "Netherlands": "nl",
+
+        // Thai (th)
+        "Thailand": "th",
+
+        // Swedish (sv)
+        "Sweden": "sv",
+
+        // Greek (el)
+        "Greece": "el",
+        "Cyprus": "el",
+
+        // Czech (cs)
+        "Czech Republic": "cs",
+
+        // Romanian (ro)
+        "Romania": "ro",
+
+        // Hungarian (hu)
+        "Hungary": "hu",
+
+        // Danish (da)
+        "Denmark": "da"
     };
 
     return languageMap[countryName] || 'en';

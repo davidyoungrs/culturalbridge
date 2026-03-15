@@ -1,0 +1,115 @@
+{
+    "insights": {
+        "relationshipTrust": {
+            "high": "Target culture prioritizes collective harmony and relationship-driven trust.",
+            "low": "Target culture focuses on task-based reliability and independent achievement.",
+            "highCons": "Invest time in social rapport before business. Trust is personal, not just professional.",
+            "lowCons": "Focus on delivering results and meeting deadlines. Personal rapport follows performance."
+        },
+        "adaptiveAgility": {
+            "high": "Target culture is more comfortable with ambiguity and rapid pivots.",
+            "low": "Target culture values structural predictability and detailed forward planning.",
+            "highCons": "Stay flexible. Don't over-rely on fixed agendas; be ready for 'just-in-time' changes.",
+            "lowCons": "Provide clear documentation and minimize surprises. Adhere strictly to schedules."
+        },
+        "processConsensus": {
+            "high": "Decisions are more collaborative and require broad buy-in.",
+            "low": "Decisions are more top-down and centralized for speed.",
+            "highCons": "Build alignment through informal networking ('Nemawashi') before formal meetings.",
+            "lowCons": "Direct your proposals to the key decision-makers. Speed is often prioritized over consensus."
+        },
+        "performanceVelocity": {
+            "high": "High drive for competitive achievement and direct performance feedback.",
+            "low": "Priority on group stability, tenure, and indirect feedback loops.",
+            "highCons": "Set ambitious KPIs and don't be afraid of direct, constructive criticism.",
+            "lowCons": "Soften negative feedback. Value the social impact and long-term stability above short-term metrics."
+        },
+        "communicationDirectness": {
+            "high": "Messages are delivered explicitly and literally (Low-Context).",
+            "low": "Messages are layered and rely on shared context (High-Context).",
+            "highCons": "Be blunt and clear. Avoid subtle hints or heavy metaphors.",
+            "lowCons": "Listen for what is NOT said. Pay attention to subtext, body language, and hierarchy."
+        },
+        "strategicFocus": {
+            "high": "Decisions are guided by long-term principles and deep theoretical foundations.",
+            "low": "Decisions are guided by immediate practical application and short-term wins.",
+            "highCons": "Explain the 'Why' before the 'How'. Build a strong conceptual argument.",
+            "lowCons": "Focus on the immediate ROI and practical execution steps. Keep it actionable."
+        },
+        "empoweredEquality": {
+            "high": "Preference for flat structures where titles matter less than contribution.",
+            "low": "Preference for clear hierarchies and deference to formal authority.",
+            "highCons": "Encourage bottom-up input. Speak directly to any level without protocol.",
+            "lowCons": "Respect the chain of command. Use professional titles and wait for formal introductions."
+        }
+    },
+    "quiz": {
+        "title": "Cultural Style Assessment",
+        "numQuestions": "{{count}} questions",
+        "subtitle": "Discover your personal cross-cultural communication profile",
+        "yourProfile": "Your Cultural Profile",
+        "profilePrefix": "Profile:",
+        "retake": "Retake Assessment",
+        "reveal": "Reveal My Cultural Profile",
+        "q1": {
+            "scenario": "When reviewing a colleague's work that requires correction, you usually:",
+            "optA": "Address the specific points immediately and clearly",
+            "optB": "Provide observations that allow them to identify the adjustments themselves"
+        },
+        "q2": {
+            "scenario": "When sharing critical project updates with a partner, you prefer to:",
+            "optA": "Present the facts directly and focus on next steps",
+            "optB": "Build a broader context and suggest implications gradually"
+        },
+        "q3": {
+            "scenario": "In professional written correspondence, your style is typically:",
+            "optA": "Concise and focused on the immediate objective",
+            "optB": "Contextual, incorporating detail and nuanced formatting"
+        },
+        "q4": {
+            "scenario": "When leading an initiative with significant time constraints, you tend to:",
+            "optA": "Determine the primary direction yourself to maintain momentum",
+            "optB": "Seek collective input before finalizing the path forward"
+        },
+        "q5": {
+            "scenario": "If you find yourself disagreeing with a team's majority view, you usually:",
+            "optA": "Synthesize your perspective and advocate for an alternative",
+            "optB": "Support the final group consensus to maintain team alignment"
+        },
+        "q6": {
+            "scenario": "Your preferred collaborative environment involves:",
+            "optA": "Rapid iterations where decisions are made through active leadership",
+            "optB": "Comprehensive discussions that integrate all available perspectives"
+        },
+        "q7": {
+            "scenario": "When organizing your weekly activity, you prefer to:",
+            "optA": "Maintain a steady sequence with specific windows for each task",
+            "optB": "Establish broad goals and adapt your focus as situations evolve"
+        },
+        "q8": {
+            "scenario": "At the start of a scheduled assembly, your arrival is consistently:",
+            "optA": "Slightly early — appearing precisely when expected demonstrates reliability",
+            "optB": "Variable — you engage once the group has reached a critical mass"
+        },
+        "q9": {
+            "scenario": "If an unexpected opportunity emerges during a project, you would:",
+            "optA": "Prioritize the existing plan and evaluate the new lead later",
+            "optB": "Adjust the current workflow to explore the possibility immediately"
+        },
+        "q10": {
+            "scenario": "In a new professional collaboration, confidence is established through:",
+            "optA": "Demonstrable reliability and the consistent delivery of outcomes",
+            "optB": "Sustained engagement and understanding personal motivations"
+        },
+        "q11": {
+            "scenario": "You feel most secure in a partnership when:",
+            "optA": "The agreement is codified with detailed operational terms",
+            "optB": "You have established strong mutual understanding with the other party"
+        },
+        "q12": {
+            "scenario": "At professional networking events, you prefer to:",
+            "optA": "Maximize interactions and exchange relevant information efficiently",
+            "optB": "Focus on fewer, more meaningful conversations to build rapport"
+        }
+    }
+}

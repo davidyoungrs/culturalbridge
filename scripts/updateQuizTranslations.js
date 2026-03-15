@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const localesDir = path.join(process.cwd(), 'src/locales');
-const langs = ['en', 'es', 'fr', 'de'];
+const langs = ['en', 'es', 'fr', 'de', 'zh', 'hi', 'ar', 'pt', 'ru', 'ja', 'ko', 'it', 'tr', 'vi', 'pl', 'id', 'nl', 'th', 'sv', 'el', 'cs', 'ro', 'hu', 'da'];
 
 const quizData = {
     en: {
@@ -103,7 +103,7 @@ for (const lang of langs) {
     const file = path.join(localesDir, `${lang}.json`);
     const content = JSON.parse(fs.readFileSync(file, 'utf8'));
 
-    content.quiz = quizData[lang].quiz;
+    content.quiz = quizData[lang]?.quiz || quizData['en'].quiz; // Fallback to English quiz data
 
     fs.writeFileSync(file, JSON.stringify(content, null, 4));
 }
