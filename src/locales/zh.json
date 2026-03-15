@@ -1,115 +1,163 @@
 {
+    "title": "文化桥梁",
+    "subtitle": "比较文化研究项目。",
+    "labels": {
+        "home": "主页",
+        "target": "目标",
+        "industry": "行业"
+    },
+    "options": {
+        "baseline": "基线"
+    },
+    "footer": {
+        "frameworks": "5个同行评审框架",
+        "copyright": "©2026文化桥梁。教育/非商业研究项目。"
+    },
+    "demo": {
+        "hook": "文化",
+        "hook_highlight": "桥梁。",
+        "subtitle": "比较文化研究项目。",
+        "scroll_indicator": "探索框架",
+        "pitch_title": "情报待定...",
+        "pitch_1": "跨文化情报，打造更加互联的世界。文化桥梁综合了五个同行评审的框架来探索",
+        "pitch_highlight": "潜在模式",
+        "pitch_2": "全球社会的。",
+        "quote_1": "“将跨文化的复杂性转化为最大的战略优势。”",
+        "quote_2": "“包括 122 个国家/地区的核心数据集，确保在所有主要地理区域中具有代表性。”",
+        "cta_title": "准备好扩展了吗？",
+        "cta": "贡献"
+    },
+    "dashboard": {
+        "cbi_title": "文化桥梁指数 (CBI)",
+        "proprietary": "专有",
+        "cbi_subtitle": "派生的高级元维度",
+        "chart": {
+            "relationshipTrust": "信任与关系",
+            "adaptiveAgility": "适应性敏捷性",
+            "processConsensus": "流程共识",
+            "performanceVelocity": "绩效速度",
+            "communicationDirectness": "沟通直接性",
+            "strategicFocus": "战略重点",
+            "empoweredEquality": "赋予平等"
+        },
+        "info": "文化桥梁指数 (CBI) 分析源自 5 个同行评审框架的加权综合的专有元维度。该模型为教育和研究目的提供了原始的比较分析。"
+    },
+    "gaps": {
+        "title": "关键差距和建议",
+        "tactical": "战术执行",
+        "aligned": "文化概况高度一致。"
+    },
     "insights": {
         "relationshipTrust": {
-            "high": "Target culture prioritizes collective harmony and relationship-driven trust.",
-            "low": "Target culture focuses on task-based reliability and independent achievement.",
-            "highCons": "Invest time in social rapport before business. Trust is personal, not just professional.",
-            "lowCons": "Focus on delivering results and meeting deadlines. Personal rapport follows performance."
+            "high": "目标文化优先考虑集体和谐和关系驱动的信任。",
+            "low": "目标文化注重基于任务的可靠性和独立成就。",
+            "highCons": "在开展业务之前花时间建立社交融洽关系。信任是个人的，而不仅仅是专业的。",
+            "lowCons": "专注于交付结果并按时完成任务。个人融洽关系取决于绩效。"
         },
         "adaptiveAgility": {
-            "high": "Target culture is more comfortable with ambiguity and rapid pivots.",
-            "low": "Target culture values structural predictability and detailed forward planning.",
-            "highCons": "Stay flexible. Don't over-rely on fixed agendas; be ready for 'just-in-time' changes.",
-            "lowCons": "Provide clear documentation and minimize surprises. Adhere strictly to schedules."
+            "high": "目标文化更能适应模糊性和快速转变。",
+            "low": "目标文化重视结构的可预测性和详细的前瞻性规划。",
+            "highCons": "保持灵活性。不要过度依赖固定的议程；为“及时”变化做好准备。",
+            "lowCons": "提供清晰的文档并尽量减少意外情况。严格遵守时间表。"
         },
         "processConsensus": {
-            "high": "Decisions are more collaborative and require broad buy-in.",
-            "low": "Decisions are more top-down and centralized for speed.",
-            "highCons": "Build alignment through informal networking ('Nemawashi') before formal meetings.",
-            "lowCons": "Direct your proposals to the key decision-makers. Speed is often prioritized over consensus."
+            "high": "决策更具协作性，需要广泛的支持。",
+            "low": "决策更加自上而下且集中，以提高速度。",
+            "highCons": "在正式会议之前通过非正式网络（“Nemawashi”）建立联盟。",
+            "lowCons": "将您的建议提交给关键决策者。速度往往优先于共识。"
         },
         "performanceVelocity": {
-            "high": "High drive for competitive achievement and direct performance feedback.",
-            "low": "Priority on group stability, tenure, and indirect feedback loops.",
-            "highCons": "Set ambitious KPIs and don't be afraid of direct, constructive criticism.",
-            "lowCons": "Soften negative feedback. Value the social impact and long-term stability above short-term metrics."
+            "high": "对竞争成就和直接绩效反馈的高度驱动力。",
+            "low": "优先考虑团队稳定性、任期和间接反馈循环。",
+            "highCons": "设定雄心勃勃的 KPI，不要害怕直接的、建设性的批评。",
+            "lowCons": "软化负面反馈。重视社会影响和长期稳定性高于短期指标。"
         },
         "communicationDirectness": {
-            "high": "Messages are delivered explicitly and literally (Low-Context).",
-            "low": "Messages are layered and rely on shared context (High-Context).",
-            "highCons": "Be blunt and clear. Avoid subtle hints or heavy metaphors.",
-            "lowCons": "Listen for what is NOT said. Pay attention to subtext, body language, and hierarchy."
+            "high": "消息以明确且字面的方式传递（低上下文）。",
+            "low": "消息是分层的并依赖于共享上下文（高上下文）。",
+            "highCons": "直率、清晰。避免微妙的暗示或沉重的隐喻。",
+            "lowCons": "听听没有说的话。注意潜台词、肢体语言和层次结构。"
         },
         "strategicFocus": {
-            "high": "Decisions are guided by long-term principles and deep theoretical foundations.",
-            "low": "Decisions are guided by immediate practical application and short-term wins.",
-            "highCons": "Explain the 'Why' before the 'How'. Build a strong conceptual argument.",
-            "lowCons": "Focus on the immediate ROI and practical execution steps. Keep it actionable."
+            "high": "决策以长期原则和深厚的理论基础为指导。",
+            "low": "决策以立即实际应用和短期胜利为指导。",
+            "highCons": "在“如何”之前解释“为什么”。建立强有力的概念论证。",
+            "lowCons": "关注即时投资回报率和实际执行步骤。保持其可操作性。"
         },
         "empoweredEquality": {
-            "high": "Preference for flat structures where titles matter less than contribution.",
-            "low": "Preference for clear hierarchies and deference to formal authority.",
-            "highCons": "Encourage bottom-up input. Speak directly to any level without protocol.",
-            "lowCons": "Respect the chain of command. Use professional titles and wait for formal introductions."
+            "high": "偏好扁平结构，其中头衔的重要性不如贡献。",
+            "low": "偏好清晰的等级制度并尊重正式权威。",
+            "highCons": "鼓励自下而上的输入。无需协议即可直接与任何级别通话。",
+            "lowCons": "尊重指挥链。使用专业头衔并等待正式介绍。"
         }
     },
     "quiz": {
-        "title": "Cultural Style Assessment",
-        "numQuestions": "{{count}} questions",
-        "subtitle": "Discover your personal cross-cultural communication profile",
-        "yourProfile": "Your Cultural Profile",
-        "profilePrefix": "Profile:",
-        "retake": "Retake Assessment",
-        "reveal": "Reveal My Cultural Profile",
+        "title": "文化风格评估",
+        "numQuestions": "{{count}} 问题",
+        "subtitle": "发现您的个人跨文化沟通概况",
+        "yourProfile": "您的文化概况",
+        "profilePrefix": "概况：",
+        "retake": "重新参加评估",
+        "reveal": "展示我的文化概况",
         "q1": {
-            "scenario": "When reviewing a colleague's work that requires correction, you usually:",
-            "optA": "Address the specific points immediately and clearly",
-            "optB": "Provide observations that allow them to identify the adjustments themselves"
+            "scenario": "在审查同事的工作时，需要纠正时，您通常会：",
+            "optA": "立即明确地解决具体问题",
+            "optB": "提供观察结果，使他们能够自己识别调整"
         },
         "q2": {
-            "scenario": "When sharing critical project updates with a partner, you prefer to:",
-            "optA": "Present the facts directly and focus on next steps",
-            "optB": "Build a broader context and suggest implications gradually"
+            "scenario": "与合作伙伴共享关键项目更新时，您更喜欢：",
+            "optA": "直接陈述事实并专注于后续步骤",
+            "optB": "建立更广泛的背景并逐步提出建议"
         },
         "q3": {
-            "scenario": "In professional written correspondence, your style is typically:",
-            "optA": "Concise and focused on the immediate objective",
-            "optB": "Contextual, incorporating detail and nuanced formatting"
+            "scenario": "在专业的书面信函中，您的风格通常是：",
+            "optA": "简洁并专注于眼前的目标",
+            "optB": "结合上下文，融入细节和细致入微的格式"
         },
         "q4": {
-            "scenario": "When leading an initiative with significant time constraints, you tend to:",
-            "optA": "Determine the primary direction yourself to maintain momentum",
-            "optB": "Seek collective input before finalizing the path forward"
+            "scenario": "当领导一项有重大时间限制的计划时，您倾向于：",
+            "optA": "自己确定主要方向以保持动力",
+            "optB": "在最终确定前进路径之前寻求集体意见"
         },
         "q5": {
-            "scenario": "If you find yourself disagreeing with a team's majority view, you usually:",
-            "optA": "Synthesize your perspective and advocate for an alternative",
-            "optB": "Support the final group consensus to maintain team alignment"
+            "scenario": "如果您发现自己不同意团队的多数观点，您通常会：",
+            "optA": "综合您的观点并倡导替代方案",
+            "optB": "支持最终的小组共识以保持团队一致性"
         },
         "q6": {
-            "scenario": "Your preferred collaborative environment involves:",
-            "optA": "Rapid iterations where decisions are made through active leadership",
-            "optB": "Comprehensive discussions that integrate all available perspectives"
+            "scenario": "您首选的协作环境包括：",
+            "optA": "通过积极领导做出决策的快速迭代",
+            "optB": "整合所有可用内容的全面讨论观点"
         },
         "q7": {
-            "scenario": "When organizing your weekly activity, you prefer to:",
-            "optA": "Maintain a steady sequence with specific windows for each task",
-            "optB": "Establish broad goals and adapt your focus as situations evolve"
+            "scenario": "组织每周活动时，您更喜欢：",
+            "optA": "为每项任务保持稳定的顺序和特定的窗口",
+            "optB": "建立广泛的目标并根据情况的变化调整您的重点"
         },
         "q8": {
-            "scenario": "At the start of a scheduled assembly, your arrival is consistently:",
-            "optA": "Slightly early — appearing precisely when expected demonstrates reliability",
-            "optB": "Variable — you engage once the group has reached a critical mass"
+            "scenario": "在预定的集会开始时，您的到达始终如一：",
+            "optA": "稍早 - 在预期时间准确出现，证明可靠性",
+            "optB": "可变 - 一旦团队达到临界规模，您就参与"
         },
         "q9": {
-            "scenario": "If an unexpected opportunity emerges during a project, you would:",
-            "optA": "Prioritize the existing plan and evaluate the new lead later",
-            "optB": "Adjust the current workflow to explore the possibility immediately"
+            "scenario": "如果项目期间出现意外机会，您会：",
+            "optA": "优先考虑现有计划，稍后评估新领导",
+            "optB": "调整当前工作流程立即探索可能性"
         },
         "q10": {
-            "scenario": "In a new professional collaboration, confidence is established through:",
-            "optA": "Demonstrable reliability and the consistent delivery of outcomes",
-            "optB": "Sustained engagement and understanding personal motivations"
+            "scenario": "在新的专业合作中，信心是通过以下方式建立的：",
+            "optA": "明显的可靠性和一致的成果交付",
+            "optB": "持续参与和理解个人动机"
         },
         "q11": {
-            "scenario": "You feel most secure in a partnership when:",
-            "optA": "The agreement is codified with detailed operational terms",
-            "optB": "You have established strong mutual understanding with the other party"
+            "scenario": "在以下情况下，您在合作伙伴关系中感到最有安全感：",
+            "optA": "协议中包含详细的操作条款",
+            "optB": "您已经建立了牢固的相互理解与另一方"
         },
         "q12": {
-            "scenario": "At professional networking events, you prefer to:",
-            "optA": "Maximize interactions and exchange relevant information efficiently",
-            "optB": "Focus on fewer, more meaningful conversations to build rapport"
+            "scenario": "在专业社交活动中，您更喜欢：",
+            "optA": "最大化互动并有效地交换相关信息",
+            "optB": "专注于更少、更有意义的对话，以建立融洽关系"
         }
     }
 }

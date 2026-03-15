@@ -1,4 +1,52 @@
 {
+    "title": "Kulturní Most",
+    "subtitle": "Srovnávací projekt kulturního výzkumu.",
+    "labels": {
+        "home": "Domů",
+        "target": "Cíl",
+        "industry": "Průmysl"
+    },
+    "options": {
+        "baseline": "Základní Čára"
+    },
+    "footer": {
+        "frameworks": "5 Recenzovaných Rámců",
+        "copyright": "© 2026 The Cultural Bridge. Vzdělávací / Nekomerční."
+    },
+    "demo": {
+        "hook": "Kulturní",
+        "hook_highlight": "Most.",
+        "subtitle": "Srovnávací projekt kulturního výzkumu.",
+        "scroll_indicator": "Prozkoumat rámec",
+        "pitch_title": "Sbírání dat...",
+        "pitch_1": "Mezikulturní inteligence pro propojenější svět. Kulturní most syntetizuje pět recenzovaných rámců, aby prozkoumal ",
+        "pitch_highlight": "základní vzorce",
+        "pitch_2": " globální společnosti.",
+        "quote_1": "\"Proměňte mezikulturní složitost ve svou největší výhodu.\"",
+        "quote_2": "\"Obsahuje hlavní datové sady pro 122 zemí.\"",
+        "cta_title": "Jste připraveni k expanzi?",
+        "cta": "Přispět"
+    },
+    "dashboard": {
+        "cbi_title": "Index Kulturního Mostu (CBI)",
+        "proprietary": "Vlastní",
+        "cbi_subtitle": "Odvozené Metadimenze na Vysoké Úrovni",
+        "chart": {
+            "relationshipTrust": "Důvěra a Vztahy",
+            "adaptiveAgility": "Adaptivní Agilita",
+            "processConsensus": "Procesní Konsensus",
+            "performanceVelocity": "Rychlost Výkonu",
+            "communicationDirectness": "Přímost Komunikace",
+            "strategicFocus": "Strategické Zaměření",
+            "empoweredEquality": "Oprávněná Rovnost"
+        },
+        "info": "Tento index analyzuje vlastní metadimenze odvozené z 5 recenzovaných modelů."
+    },
+    "gaps": {
+        "title": "Kritické Mezery a Doporučení",
+        "tactical": "Taktické Provedení",
+        "aligned": "Kulturní profily jsou vysoce sladěny."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

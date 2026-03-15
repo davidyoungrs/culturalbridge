@@ -1,4 +1,52 @@
 {
+    "title": "文化の架け橋 (The Cultural Bridge)",
+    "subtitle": "比較文化研究プロジェクト。",
+    "labels": {
+        "home": "自国",
+        "target": "対象国",
+        "industry": "業界"
+    },
+    "options": {
+        "baseline": "基準"
+    },
+    "footer": {
+        "frameworks": "5つの査読済みフレームワーク",
+        "copyright": "© 2026 The Cultural Bridge. 教育・非営利研究プロジェクト。"
+    },
+    "demo": {
+        "hook": "文化の",
+        "hook_highlight": "架け橋。",
+        "subtitle": "比較文化研究プロジェクト。",
+        "scroll_indicator": "フレームワークを探索する",
+        "pitch_title": "インテリジェンス待機中...",
+        "pitch_1": "よりつながった世界のための異文化インテリジェンス。文化の架け橋は、グローバル社会の ",
+        "pitch_highlight": "根本的なパターン",
+        "pitch_2": " を探求するために5つの査読済みフレームワークを統合します。",
+        "quote_1": "「異文化の複雑さを最大の戦略的優位性に変える。」",
+        "quote_2": "「122か国のコアデータセットを含み、主要な全地理的地域を網羅。」",
+        "cta_title": "拡大の準備はできましたか？",
+        "cta": "貢献する"
+    },
+    "dashboard": {
+        "cbi_title": "カルチュラル・ブリッジ・インデックス (CBI)",
+        "proprietary": "独自開発",
+        "cbi_subtitle": "派生した高レベルのメタ次元",
+        "chart": {
+            "relationshipTrust": "信頼と人間関係",
+            "adaptiveAgility": "適応的敏捷性",
+            "processConsensus": "プロセスの合意",
+            "performanceVelocity": "パフォーマンスの速度",
+            "communicationDirectness": "コミュニケーションの直接性",
+            "strategicFocus": "戦略的焦点",
+            "empoweredEquality": "権限を与えられた平等"
+        },
+        "info": "このインデックスは、5つの査読済みモデルの加重統合から派生した独自のメタ次元を分析します。"
+    },
+    "gaps": {
+        "title": "重要なギャップと推奨事項",
+        "tactical": "戦術的実行",
+        "aligned": "文化的プロファイルは非常に整合しています。"
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

@@ -1,4 +1,52 @@
 {
+    "title": "Kulturbroen",
+    "subtitle": "Det komparative kulturelle forskningsprojekt.",
+    "labels": {
+        "home": "Hjem",
+        "target": "Mål",
+        "industry": "Branche"
+    },
+    "options": {
+        "baseline": "Basislinje"
+    },
+    "footer": {
+        "frameworks": "5 Peer-Reviewed Frameworks",
+        "copyright": "© 2026 The Cultural Bridge. Uddannelsesprojekt."
+    },
+    "demo": {
+        "hook": "Kultur",
+        "hook_highlight": "broen.",
+        "subtitle": "Det komparative kulturelle forskningsprojekt.",
+        "scroll_indicator": "Udforsk rammen",
+        "pitch_title": "Intelligens afventer...",
+        "pitch_1": "Tværekulturel intelligens til en mere forbundet verden. Kulturbroen integrerer fem rammer for at udforske ",
+        "pitch_highlight": "grundlæggende mønstre",
+        "pitch_2": " i det globale samfund.",
+        "quote_1": "\"Gør tværkulturel kompleksitet til din største fordel.\"",
+        "quote_2": "\"Inkluderer kernedata for 122 lande.\"",
+        "cta_title": "Klar til at udvide?",
+        "cta": "Bidrage"
+    },
+    "dashboard": {
+        "cbi_title": "Kulturbroen Indeks (CBI)",
+        "proprietary": "Proprietær",
+        "cbi_subtitle": "Højniveau Meta-Dimensioner",
+        "chart": {
+            "relationshipTrust": "Tillid og Relationer",
+            "adaptiveAgility": "Adaptiv Agilitet",
+            "processConsensus": "Proces Konsensus",
+            "performanceVelocity": "Ydelseshastighed",
+            "communicationDirectness": "Direkte Kommunikation",
+            "strategicFocus": "Strategisk Fokus",
+            "empoweredEquality": "Bemyndiget Lighed"
+        },
+        "info": "Dette indeks analyserer proprietære meta-dimensioner, der er afledt af en vægtet syntese af 5 modeller."
+    },
+    "gaps": {
+        "title": "Kritiske Kløfter & Anbefalinger",
+        "tactical": "Taktisk Udførelse",
+        "aligned": "Kulturprofilerne er stærkt tilpasset."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

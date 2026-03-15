@@ -1,4 +1,52 @@
 {
+    "title": "Jembatan Budaya",
+    "subtitle": "Proyek penelitian budaya komparatif.",
+    "labels": {
+        "home": "Asal",
+        "target": "Target",
+        "industry": "Industri"
+    },
+    "options": {
+        "baseline": "Garis Dasar"
+    },
+    "footer": {
+        "frameworks": "5 Kerangka Kerja yang Ditinjau Sejawat",
+        "copyright": "© 2026 The Cultural Bridge. Proyek Pendidikan / Penelitian Non-Komersial."
+    },
+    "demo": {
+        "hook": "Jembatan",
+        "hook_highlight": "Budaya.",
+        "subtitle": "Proyek penelitian budaya komparatif.",
+        "scroll_indicator": "Jelajahi kerangka",
+        "pitch_title": "Kecerdasan tertunda...",
+        "pitch_1": "Kecerdasan lintas budaya untuk dunia yang lebih terhubung. Jembatan Budaya mensintesis lima kerangka kerja untuk mengeksplorasi ",
+        "pitch_highlight": "pola yang mendasarinya",
+        "pitch_2": " dari masyarakat global.",
+        "quote_1": "\"Ubah kompleksitas lintas budaya menjadi keunggulan strategis terbesar Anda.\"",
+        "quote_2": "\"Termasuk set data inti untuk 122 negara, memastikan representasi di semua wilayah.\"",
+        "cta_title": "Siap untuk berkembang?",
+        "cta": "Menyumbang"
+    },
+    "dashboard": {
+        "cbi_title": "Indeks Jembatan Budaya (CBI)",
+        "proprietary": "Eksklusif",
+        "cbi_subtitle": "Meta-Dimensi Tingkat Tinggi",
+        "chart": {
+            "relationshipTrust": "Kepercayaan & Hubungan",
+            "adaptiveAgility": "Kelincahan Adaptif",
+            "processConsensus": "Konsensus Proses",
+            "performanceVelocity": "Kecepatan Kinerja",
+            "communicationDirectness": "Kelugasan Komunikasi",
+            "strategicFocus": "Fokus Strategis",
+            "empoweredEquality": "Kesetaraan yang Diberdayakan"
+        },
+        "info": "Indeks ini menganalisis meta-dimensi berpemilik yang berasal dari sintesis 5 kerangka kerja."
+    },
+    "gaps": {
+        "title": "Kesenjangan Kritis & Rekomendasi",
+        "tactical": "Eksekusi Taktis",
+        "aligned": "Profil budaya sangat selaras."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

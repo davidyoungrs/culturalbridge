@@ -1,4 +1,52 @@
 {
+    "title": "Most Kulturowy",
+    "subtitle": "Projekt porównawczych badań kulturowych.",
+    "labels": {
+        "home": "Dom",
+        "target": "Cel",
+        "industry": "Branża"
+    },
+    "options": {
+        "baseline": "Linia Bazowa"
+    },
+    "footer": {
+        "frameworks": "5 Ram Recenzowanych",
+        "copyright": "© 2026 The Cultural Bridge. Projekt Badawczy i Edukacyjny."
+    },
+    "demo": {
+        "hook": "Most",
+        "hook_highlight": "Kulturowy.",
+        "subtitle": "Projekt porównawczych badań kulturowych.",
+        "scroll_indicator": "Eksploruj ramy",
+        "pitch_title": "Inteligencja w toku...",
+        "pitch_1": "Inteligencja międzykulturowa dla bardziej połączonego świata. Most Kulturowy syntetyzuje pięć ram w celu zbadania ",
+        "pitch_highlight": "ukrytych wzorców",
+        "pitch_2": " globalnego społeczeństwa.",
+        "quote_1": "\"Przekształcanie międzykulturowej złożoności w Twoją największą przewagę strategiczną.\"",
+        "quote_2": "\"Zawiera podstawowe zestawy danych dla 122 krajów we wszystkich głównych regionach geograficznych.\"",
+        "cta_title": "Gotowy na ekspansję?",
+        "cta": "Wpłać"
+    },
+    "dashboard": {
+        "cbi_title": "Indeks Mostu Kulturowego (CBI)",
+        "proprietary": "Zastrzeżony",
+        "cbi_subtitle": "Pochodne Metawymiary Wysokiego Poziomu",
+        "chart": {
+            "relationshipTrust": "Zaufanie i Relacje",
+            "adaptiveAgility": "Elastyczność Adaptacyjna",
+            "processConsensus": "Konsensus Procesowy",
+            "performanceVelocity": "Prędkość Wydajności",
+            "communicationDirectness": "Bezpośredniość Komunikacji",
+            "strategicFocus": "Cele Strategiczne",
+            "empoweredEquality": "Pełnomocna Równość"
+        },
+        "info": "Ten indeks analizuje zastrzeżone metawymiary oparte na ważonej syntezie 5 recenzowanych modeli."
+    },
+    "gaps": {
+        "title": "Krytyczne Luki i Rekomendacje",
+        "tactical": "Realizacja Taktyczna",
+        "aligned": "Profile kulturowe są wysoce ze sobą powiązane."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

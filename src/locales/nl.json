@@ -1,4 +1,52 @@
 {
+    "title": "De Culturele Brug",
+    "subtitle": "Het vergelijkende culturele onderzoeksproject.",
+    "labels": {
+        "home": "Thuis",
+        "target": "Doel",
+        "industry": "Industrie"
+    },
+    "options": {
+        "baseline": "Basislijn"
+    },
+    "footer": {
+        "frameworks": "5 Peer-Reviewed Frameworks",
+        "copyright": "© 2026 The Cultural Bridge. Educatief / Niet-commercieel Onderzoeksproject."
+    },
+    "demo": {
+        "hook": "Culturele",
+        "hook_highlight": "Brug.",
+        "subtitle": "Het vergelijkende culturele onderzoeksproject.",
+        "scroll_indicator": "Verken het framework",
+        "pitch_title": "Intelligentie in afwachting...",
+        "pitch_1": "Cross-culturele intelligentie voor een meer verbonden wereld. De Culturele Brug synthetiseert vijf frameworks om de ",
+        "pitch_highlight": "onderliggende patronen",
+        "pitch_2": " van de wereldwijde samenleving te verkennen.",
+        "quote_1": "\"Breek de cross-culturele complexiteit af als uw grootste strategische voordeel.\"",
+        "quote_2": "\"Inclusief datasets voor 122 landen in alle grote geografische regio's.\"",
+        "cta_title": "Klaar om uit te breiden?",
+        "cta": "Bijdragen"
+    },
+    "dashboard": {
+        "cbi_title": "Culturele Brug Index (CBI)",
+        "proprietary": "Eigen",
+        "cbi_subtitle": "Afgeleide Hoog-niveau Meta-Dimensies",
+        "chart": {
+            "relationshipTrust": "Vertrouwen & Relaties",
+            "adaptiveAgility": "Adaptieve Wendbaarheid",
+            "processConsensus": "Proces Consensus",
+            "performanceVelocity": "Prestatiesnelheid",
+            "communicationDirectness": "Directe Communicatie",
+            "strategicFocus": "Strategische Focus",
+            "empoweredEquality": "Gemachtigde Gelijkheid"
+        },
+        "info": "Deze index analyseert eigen meta-dimensies die zijn afgeleid van een gewogen synthese van 5 peer-reviewed modellen."
+    },
+    "gaps": {
+        "title": "Kritische Hiaten & Aanbevelingen",
+        "tactical": "Tactische Uitvoering",
+        "aligned": "Culturele profielen zijn sterk afgestemd."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

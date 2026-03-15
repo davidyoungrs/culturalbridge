@@ -1,4 +1,52 @@
 {
+    "title": "Kulturbryggan",
+    "subtitle": "Det jämförande kulturforskningsprojektet.",
+    "labels": {
+        "home": "Hem",
+        "target": "Mål",
+        "industry": "Bransch"
+    },
+    "options": {
+        "baseline": "Baslinje"
+    },
+    "footer": {
+        "frameworks": "5 Granskade Ramverk",
+        "copyright": "© 2026 The Cultural Bridge. Utbildnings / Icke-kommersiellt Forskningsprojekt."
+    },
+    "demo": {
+        "hook": "Kultur",
+        "hook_highlight": "bryggan.",
+        "subtitle": "Det jämförande kulturforskningsprojektet.",
+        "scroll_indicator": "Utforska ramverket",
+        "pitch_title": "Intelligens väntar...",
+        "pitch_1": "Tvär-kulturell intelligens för en mer sammankopplad värld. Kulturbryggan syntetiserar fem granskade ramverk för att utforska de ",
+        "pitch_highlight": "underliggande mönstren",
+        "pitch_2": " i det globala samhället.",
+        "quote_1": "\"Vänd tvärkulturell komplexitet till din största strategiska fördel.\"",
+        "quote_2": "\"Inkluderar kärndatamängder för 122 länder, vilket säkerställer representation över alla geografiska regioner.\"",
+        "cta_title": "Redo att expandera?",
+        "cta": "Bidra"
+    },
+    "dashboard": {
+        "cbi_title": "Kulturbryggeindex (CBI)",
+        "proprietary": "Proprietär",
+        "cbi_subtitle": "Härledda Högnivå Metadimensioner",
+        "chart": {
+            "relationshipTrust": "Tillit & Relation",
+            "adaptiveAgility": "Adaptiv Rörlighet",
+            "processConsensus": "Process Konsensus",
+            "performanceVelocity": "Prestationshastighet",
+            "communicationDirectness": "Rakhet i Kommunikation",
+            "strategicFocus": "Strategiskt Fokus",
+            "empoweredEquality": "Bemyndigad Jämlikhet"
+        },
+        "info": "Indexet analyserar proprietära metadimensioner härledda från en viktad syntes av 5 granskade modeller."
+    },
+    "gaps": {
+        "title": "Kritiska Klyftor & Rekommendationer",
+        "tactical": "Taktiskt Genomförande",
+        "aligned": "Kulturella profiler är mycket anpassade."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

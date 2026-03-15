@@ -1,4 +1,52 @@
 {
+    "title": "Nhịp Cầu Văn Hóa",
+    "subtitle": "Dự án nghiên cứu văn hóa so sánh.",
+    "labels": {
+        "home": "Trang Chủ",
+        "target": "Mục Tiêu",
+        "industry": "Ngành"
+    },
+    "options": {
+        "baseline": "Đường Cơ Sở"
+    },
+    "footer": {
+        "frameworks": "5 Khung Chuyên Gia Đánh Giá",
+        "copyright": "© 2026 The Cultural Bridge. Dự án Giáo dục / Phi thương mại."
+    },
+    "demo": {
+        "hook": "Nhịp Cầu",
+        "hook_highlight": "Văn Hóa.",
+        "subtitle": "Dự án nghiên cứu văn hóa so sánh.",
+        "scroll_indicator": "Khám phá cấu trúc",
+        "pitch_title": "Đang chờ thông minh...",
+        "pitch_1": "Khả năng thấu hiểu đa văn hóa cho một thế giới kết nối hơn. Nhịp Cầu Văn Hóa tổng hợp năm khuôn khổ để khám phá ",
+        "pitch_highlight": "các mẫu cơ bản",
+        "pitch_2": " của xã hội toàn cầu.",
+        "quote_1": "\"Biến sự phức tạp đa văn hóa thành lợi thế chiến lược lớn nhất của bạn.\"",
+        "quote_2": "\"Bao gồm các tập dữ liệu cốt lõi cho 122 quốc gia, đảm bảo đại diện trên tất cả các khu vực.\"",
+        "cta_title": "Sẵn sàng mở rộng?",
+        "cta": "Đóng Góp"
+    },
+    "dashboard": {
+        "cbi_title": "Chỉ Số Nhịp Cầu Văn Hóa (CBI)",
+        "proprietary": "Độc Quyền",
+        "cbi_subtitle": "Siêu Không Gian Cấp Cao Phái Sinh",
+        "chart": {
+            "relationshipTrust": "Niềm Tin & Mối Quan Hệ",
+            "adaptiveAgility": "Sự Khéo Léo Thích Ứng",
+            "processConsensus": "Quy Trình Đồng Thuận",
+            "performanceVelocity": "Tốc Độ Hiệu Suất",
+            "communicationDirectness": "Tính Trực Tiếp Chuyên Giao",
+            "strategicFocus": "Trọng Tâm Chiến Lược",
+            "empoweredEquality": "Bình Đẳng Trao Quyền"
+        },
+        "info": "Chỉ số này phân tích các siêu không gian độc quyền có nguồn gốc từ sự tổng hợp của 5 khuôn khổ đánh giá đồng cấp."
+    },
+    "gaps": {
+        "title": "Khoảng Trống Quan Trọng & Đề Xuất",
+        "tactical": "Thực Thi Chiến Thuật",
+        "aligned": "Các hồ sơ văn hóa có sự liên kết cao."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

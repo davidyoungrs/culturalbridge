@@ -1,4 +1,52 @@
 {
+    "title": "Il Ponte Culturale",
+    "subtitle": "Il progetto di ricerca culturale comparativa.",
+    "labels": {
+        "home": "Origine",
+        "target": "Destinazione",
+        "industry": "Settore"
+    },
+    "options": {
+        "baseline": "Linea di Base"
+    },
+    "footer": {
+        "frameworks": "5 Strutture Sottoposte a Revisione Paritaria",
+        "copyright": "© 2026 The Cultural Bridge. Progetto di Ricerca Educativo / Non Commerciale."
+    },
+    "demo": {
+        "hook": "Ponte",
+        "hook_highlight": "Culturale.",
+        "subtitle": "Il progetto di ricerca culturale comparativa.",
+        "scroll_indicator": "Esplora la struttura",
+        "pitch_title": "Intelligenza in sospeso...",
+        "pitch_1": "Intelligenza interculturale per un mondo più connesso. Il Ponte Culturale sintetizza cinque modelli per esplorare i ",
+        "pitch_highlight": "modelli sottostanti",
+        "pitch_2": " della società globale.",
+        "quote_1": "\"Trasformare la complessità interculturale nel tuo più grande vantaggio strategico.\"",
+        "quote_2": "\"Include set di dati principali per 122 paesi, garantendo la rappresentanza in tutte le principali regioni geografiche.\"",
+        "cta_title": "Pronto per l'espansione?",
+        "cta": "Contribuisci"
+    },
+    "dashboard": {
+        "cbi_title": "Indice del Ponte Culturale (CBI)",
+        "proprietary": "Proprietario",
+        "cbi_subtitle": "Meta-Dimensioni di Alto Livello Derivate",
+        "chart": {
+            "relationshipTrust": "Fiducia e Relazioni",
+            "adaptiveAgility": "Agilità Adattiva",
+            "processConsensus": "Consenso di Processo",
+            "performanceVelocity": "Velocità di Performance",
+            "communicationDirectness": "Direttezza della Comunicazione",
+            "strategicFocus": "Focus Strategico",
+            "empoweredEquality": "Uguaglianza Emancipata"
+        },
+        "info": "L'Indice analizza meta-dimensioni proprietarie derivate da una sintesi ponderata di 5 modelli sottoposti a revisione paritaria."
+    },
+    "gaps": {
+        "title": "Lacune Critiche e Raccomandazioni",
+        "tactical": "Esecuzione Tattica",
+        "aligned": "I profili culturali sono altamente allineati."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

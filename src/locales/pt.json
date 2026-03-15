@@ -1,4 +1,52 @@
 {
+    "title": "A Ponte Cultural",
+    "subtitle": "O projeto de pesquisa cultural comparativa.",
+    "labels": {
+        "home": "Origem",
+        "target": "Destino",
+        "industry": "Indústria"
+    },
+    "options": {
+        "baseline": "Linha de Base"
+    },
+    "footer": {
+        "frameworks": "5 Estruturas Revisadas por Pares",
+        "copyright": "© 2026 The Cultural Bridge. Projeto de Pesquisa Educacional / Não Comercial."
+    },
+    "demo": {
+        "hook": "Ponte",
+        "hook_highlight": "Cultural.",
+        "subtitle": "O projeto de pesquisa cultural comparativa.",
+        "scroll_indicator": "Explorar a estrutura",
+        "pitch_title": "Inteligência pendente...",
+        "pitch_1": "Inteligência intercultural para um mundo mais conectado. A Ponte Cultural sintetiza cinco estruturas revisadas por pares para explorar os ",
+        "pitch_highlight": "padrões subjacentes",
+        "pitch_2": " da sociedade global.",
+        "quote_1": "\"Transformando a complexidade intercultural em sua maior vantagem estratégica.\"",
+        "quote_2": "\"Inclui conjuntos de dados para 122 países, garantindo representação em todas as principais regiões.\"",
+        "cta_title": "Pronto para expandir?",
+        "cta": "Contribuir"
+    },
+    "dashboard": {
+        "cbi_title": "Índice Ponte Cultural (CBI)",
+        "proprietary": "Proprietário",
+        "cbi_subtitle": "Meta-Dimensões de Alto Nível Derivadas",
+        "chart": {
+            "relationshipTrust": "Confiança & Relacionamento",
+            "adaptiveAgility": "Agilidade Adaptativa",
+            "processConsensus": "Consenso de Processo",
+            "performanceVelocity": "Velocidade de Desempenho",
+            "communicationDirectness": "Criatividade de Comunicação",
+            "strategicFocus": "Foco Estratégico",
+            "empoweredEquality": "Igualdade Empoderada"
+        },
+        "info": "O Índice analisa meta-dimensões proprietárias derivadas de uma síntese ponderada de 5 estruturas revisadas por pares."
+    },
+    "gaps": {
+        "title": "Lacunas Críticas & Recomendações",
+        "tactical": "Execução Tática",
+        "aligned": "Os perfis culturais estão altamente alinhados."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

@@ -1,4 +1,52 @@
 {
+    "title": "Podul Cultural",
+    "subtitle": "Proiectul de cercetare culturală comparativă.",
+    "labels": {
+        "home": "Acasă",
+        "target": "Țintă",
+        "industry": "Industrie"
+    },
+    "options": {
+        "baseline": "Nivel de Bază"
+    },
+    "footer": {
+        "frameworks": "5 Cadre Evaluate",
+        "copyright": "© 2026 The Cultural Bridge. Proiect Educațional."
+    },
+    "demo": {
+        "hook": "Podul",
+        "hook_highlight": "Cultural.",
+        "subtitle": "Proiectul de cercetare culturală comparativă.",
+        "scroll_indicator": "Explorați cadrul",
+        "pitch_title": "Inteligență în așteptare...",
+        "pitch_1": "Inteligență transculturală pentru o lume mai conectată. Podul Cultural sintetizează cinci cadre pentru a explora ",
+        "pitch_highlight": "tiparele de bază",
+        "pitch_2": " ale societății globale.",
+        "quote_1": "\"Transformă complexitatea multiculturală în cel mai mare avantaj al tău.\"",
+        "quote_2": "\"Include seturi de date de bază pentru 122 de țări.\"",
+        "cta_title": "Gata de extindere?",
+        "cta": "Contribuie"
+    },
+    "dashboard": {
+        "cbi_title": "Indicele Podului Cultural (CBI)",
+        "proprietary": "Proprietar",
+        "cbi_subtitle": "Meta-dimensiuni Derivate",
+        "chart": {
+            "relationshipTrust": "Încredere și Relații",
+            "adaptiveAgility": "Agilitate Adaptativă",
+            "processConsensus": "Consens de Proces",
+            "performanceVelocity": "Viteza de Performanță",
+            "communicationDirectness": "Comunicare Directă",
+            "strategicFocus": "Esențial Strategic",
+            "empoweredEquality": "Egalitate Împuternicită"
+        },
+        "info": "Acest indicator analizează meta-dimensiunile proprietare derivate din 5 modele."
+    },
+    "gaps": {
+        "title": "Lacune Critice și Recomandări",
+        "tactical": "Execuție Tactică",
+        "aligned": "Profilele culturale sunt foarte aliniate."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

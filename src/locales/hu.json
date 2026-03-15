@@ -1,4 +1,52 @@
 {
+    "title": "A Kulturális Híd",
+    "subtitle": "Az összehasonlító kulturális kutatási projekt.",
+    "labels": {
+        "home": "Kezdőlap",
+        "target": "Cél",
+        "industry": "Iparág"
+    },
+    "options": {
+        "baseline": "Alapvonal"
+    },
+    "footer": {
+        "frameworks": "5 Szakértői Keretrendszer",
+        "copyright": "© 2026 The Cultural Bridge. Oktatási / Nem profitorientált."
+    },
+    "demo": {
+        "hook": "Kulturális",
+        "hook_highlight": "Híd.",
+        "subtitle": "Az összehasonlító kulturális kutatási projekt.",
+        "scroll_indicator": "Fedezze fel a keretrendszert",
+        "pitch_title": "Intelligencia folyamatban...",
+        "pitch_1": "Interkulturális intelligencia egy összekapcsoltabb világért. A Kulturális Híd öt keretrendszert szintetizál, hogy feltárja a globális társadalom ",
+        "pitch_highlight": "mögöttes mintáit",
+        "pitch_2": ".",
+        "quote_1": "\"Alakítsa az interkulturális komplexitást a legnagyobb stratégiai előnyévé.\"",
+        "quote_2": "\"122 ország alapvető adatkészleteit tartalmazza.\"",
+        "cta_title": "Készen áll a bővítésre?",
+        "cta": "Közreműködés"
+    },
+    "dashboard": {
+        "cbi_title": "Kulturális Híd Index (CBI)",
+        "proprietary": "Szabadalmaztatott",
+        "cbi_subtitle": "Származtatott Magas Szintű Meta-Dimenziók",
+        "chart": {
+            "relationshipTrust": "Bizalom és Kapcsolat",
+            "adaptiveAgility": "Adaptív Agilitás",
+            "processConsensus": "Folyamatkonszenzus",
+            "performanceVelocity": "Teljesítmény Sebesség",
+            "communicationDirectness": "Kommunikáció Közvetlensége",
+            "strategicFocus": "Stratégiai Fókusz",
+            "empoweredEquality": "Felhatalmazott Egyenlőség"
+        },
+        "info": "Ez az index olyan saját meta-dimenziókat elemez, amelyek 5 szakértői modell súlyozott szintéziséből származnak."
+    },
+    "gaps": {
+        "title": "Kritikus Hiányosságok és Javaslatok",
+        "tactical": "Taktikai Végrehajtás",
+        "aligned": "A kulturális profilok nagyon hasonlóak."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

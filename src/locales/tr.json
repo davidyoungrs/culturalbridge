@@ -1,4 +1,52 @@
 {
+    "title": "Kültürel Köprü",
+    "subtitle": "Karşılaştırmalı kültürel araştırma projesi.",
+    "labels": {
+        "home": "Ev",
+        "target": "Hedef",
+        "industry": "Sektör"
+    },
+    "options": {
+        "baseline": "Taban Çizgisi"
+    },
+    "footer": {
+        "frameworks": "5 Hakemli Çerçeve",
+        "copyright": "© 2026 The Cultural Bridge. Eğitim ve Ticari Olmayan Araştırma Projesi."
+    },
+    "demo": {
+        "hook": "Kültürel",
+        "hook_highlight": "Köprü.",
+        "subtitle": "Karşılaştırmalı kültürel araştırma projesi.",
+        "scroll_indicator": "Çerçeveyi Keşfedin",
+        "pitch_title": "Zeka bekleniyor...",
+        "pitch_1": "Daha bağlantılı bir dünya için kültürlerarası zeka. Kültürel Köprü, küresel toplumun ",
+        "pitch_highlight": "temel kalıplarını",
+        "pitch_2": " keşfetmek için beş çerçeveyi sentezler.",
+        "quote_1": "\"Kültürlerarası karmaşıklığı en büyük stratejik avantajınıza dönüştürmek.\"",
+        "quote_2": "\"Tüm ana coğrafi bölgelerde temsili sağlayan 122 ülke için temel veri setlerini içerir.\"",
+        "cta_title": "Genişlemeye hazır mısınız?",
+        "cta": "Katkıda Bulun"
+    },
+    "dashboard": {
+        "cbi_title": "Kültürel Köprü Endeksi (CBI)",
+        "proprietary": "Tescilli",
+        "cbi_subtitle": "Türetilmiş Üst Düzey Meta-Boyutlar",
+        "chart": {
+            "relationshipTrust": "Güven ve İlişki",
+            "adaptiveAgility": "Uyarlanabilir Çeviklik",
+            "processConsensus": "Süreç Fikir Birliği",
+            "performanceVelocity": "Performans Hızı",
+            "communicationDirectness": "İletişim Doğrudanlığı",
+            "strategicFocus": "Stratejik Odaklanma",
+            "empoweredEquality": "Güçlendirilmiş Eşitlik"
+        },
+        "info": "Bu Endeks, 5 hakemli çerçevenin ağırlıklı sentezinden türetilen tescilli meta-boyutları analiz eder."
+    },
+    "gaps": {
+        "title": "Kritik Boşluklar ve Öneriler",
+        "tactical": "Taktik Uygulama",
+        "aligned": "Kültürel profiller oldukça uyumludur."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

@@ -1,4 +1,52 @@
 {
+    "title": "문화의 다리 (The Cultural Bridge)",
+    "subtitle": "비교 문화 연구 프로젝트.",
+    "labels": {
+        "home": "홈",
+        "target": "대상구",
+        "industry": "산업"
+    },
+    "options": {
+        "baseline": "기준선"
+    },
+    "footer": {
+        "frameworks": "5개의 동료 검토 프레임워크",
+        "copyright": "© 2026 The Cultural Bridge. 교육 / 비상업적 연구 프로젝트."
+    },
+    "demo": {
+        "hook": "문화의",
+        "hook_highlight": "다리.",
+        "subtitle": "비교 문화 연구 프로젝트.",
+        "scroll_indicator": "프레임워크 탐색",
+        "pitch_title": "인텔리전스 대기 중...",
+        "pitch_1": "더욱 연결된 세상을 위한 다문화 인텔리전스. 문화의 다리는 5가지 동료 검토 프레임워크를 종합하여 글로벌 사회의 ",
+        "pitch_highlight": "기본 패턴",
+        "pitch_2": " 을 탐구합니다.",
+        "quote_1": "\"이문화의 복잡성을 가장 큰 전략적 이점으로 전환하십시오.\"",
+        "quote_2": "\"모든 주요 지리적 지역을 포괄하는 122개국의 핵심 데이터 세트를 포함합니다.\"",
+        "cta_title": "확장할 준비가 되셨습니까?",
+        "cta": "공헌하기"
+    },
+    "dashboard": {
+        "cbi_title": "문화 교량 지수 (CBI)",
+        "proprietary": "독점",
+        "cbi_subtitle": "파생된 고수준 메타 차원",
+        "chart": {
+            "relationshipTrust": "신뢰 및 관계",
+            "adaptiveAgility": "적응적 민첩성",
+            "processConsensus": "프로세스 합의",
+            "performanceVelocity": "성과 속도",
+            "communicationDirectness": "커뮤니케이션 직접성",
+            "strategicFocus": "전략적 초점",
+            "empoweredEquality": "권한이 부여된 평등"
+        },
+        "info": "이 지수는 5개의 동료 검토 모델의 가중 종합에서 파생된 독점적인 메타 차원을 분석합니다."
+    },
+    "gaps": {
+        "title": "핵심 격차 및 권장 사항",
+        "tactical": "전술적 실행",
+        "aligned": "문화적 프로필이 매우 일치합니다."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",

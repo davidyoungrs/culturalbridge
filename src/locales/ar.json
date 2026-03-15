@@ -1,4 +1,52 @@
 {
+    "title": "الجسر الثقافي (The Cultural Bridge)",
+    "subtitle": "مشروع البحث الثقافي المقارن.",
+    "labels": {
+        "home": "الوطن (Home)",
+        "target": "الهدف (Target)",
+        "industry": "الصناعة (Industry)"
+    },
+    "options": {
+        "baseline": "خط الأساس (Baseline)"
+    },
+    "footer": {
+        "frameworks": "5 أطر خاضعة لمراجعة النظراء",
+        "copyright": "© 2026 The Cultural Bridge. مشروع بحثي تعليمي / غير تجاري."
+    },
+    "demo": {
+        "hook": "الجسر",
+        "hook_highlight": "الثقافي.",
+        "subtitle": "مشروع البحث الثقافي المقارن.",
+        "scroll_indicator": "استكشف الإطار",
+        "pitch_title": "الذكاء قيد الانتظار...",
+        "pitch_1": "ذكاء متعدد الثقافات من أجل عالم أكثر ترابطاً. يجمع الجسر الثقافي بين خمسة أطر خاضعة لمراجعة النظراء لاستكشاف ",
+        "pitch_highlight": "الأنماط الأساسية",
+        "pitch_2": " للمجتمع العالمي.",
+        "quote_1": "\"تحويل التعقيد متعدد الثقافات إلى أعظم ميزة استراتيجية لديك.\"",
+        "quote_2": "\"يتضمن مجموعات بيانات أساسية لـ 122 دولة، مما يضمن التمثيل عبر جميع المناطق الجغرافية الرئيسية.\"",
+        "cta_title": "مستعد للتوسع؟",
+        "cta": "ساهم"
+    },
+    "dashboard": {
+        "cbi_title": "مؤشر الجسر الثقافي (CBI)",
+        "proprietary": "خاص",
+        "cbi_subtitle": "الأبعاد الوصفية عالية المستوى المشتقة",
+        "chart": {
+            "relationshipTrust": "الثقة والعلاقات",
+            "adaptiveAgility": "الرشاقة التكيفية",
+            "processConsensus": "الإجماع على العملية",
+            "performanceVelocity": "سرعة الأداء",
+            "communicationDirectness": "مباشرة الاتصال",
+            "strategicFocus": "التركيز الاستراتيجي",
+            "empoweredEquality": "المساواة الممكنة"
+        },
+        "info": "يحلل مؤشر الجسر الثقافي الأبعاد الوصفية الخاصة المستمدة من توليف مرجح لخمسة أطر عمل خاضعة لمراجعة النظراء."
+    },
+    "gaps": {
+        "title": "الفجوات الحرجة والتوصيات",
+        "tactical": "التنفيذ التكتيكي",
+        "aligned": "الملفات الثقافية متوافقة للغاية."
+    },
     "insights": {
         "relationshipTrust": {
             "high": "Target culture prioritizes collective harmony and relationship-driven trust.",
