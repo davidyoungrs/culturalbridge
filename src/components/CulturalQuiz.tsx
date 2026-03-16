@@ -17,6 +17,8 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     const { t } = useTranslation();
     const [answers, setAnswers] = useState<Record<number, "a" | "b">>({});
     const [showResults, setShowResults] = useState(false);
+    const [showLeadForm, setShowLeadForm] = useState(false);
+    const [leadData, setLeadData] = useState({ firstName: '', email: '' });
 
     const progress = Object.keys(answers).length;
     const total = QUIZ_QUESTIONS.length;
@@ -31,6 +33,14 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     };
 
     const handleReveal = () => {
+        setShowLeadForm(true);
+    };
+
+    const handleLeadSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Placeholder for CRM integration / backend API call
+        console.log("Lead captured:", leadData);
+
         setShowResults(true);
         if (onComplete) {
             onComplete(scores, profile, code);
@@ -40,6 +50,8 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     const reset = () => {
         setAnswers({});
         setShowResults(false);
+        setShowLeadForm(false);
+        setLeadData({ firstName: '', email: '' });
     };
 
     // Group questions by axis
@@ -123,6 +135,59 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
                     >
                         <RotateCcw className="w-4 h-4" /> {t('quiz.retake', 'Retake Assessment')}
                     </button>
+                </div>
+            </div>
+        );
+    }
+
+    if (showLeadForm && !showResults) {
+        return (
+            <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
+                <div className="p-5 border-b border-slate-50 bg-gradient-to-r from-violet-50 to-indigo-50">
+                    <h2 className="text-lg font-bold flex items-center gap-2 text-indigo-900">
+                        {t('quiz.almostThere', 'Almost There!')}
+                    </h2>
+                </div>
+                <div className="p-5">
+                    <p className="text-sm text-slate-600 font-medium mb-5">
+                        {t('quiz.leadPrompt', 'Enter your name and email to reveal your comprehensive cultural profile and tailored insights.')}
+                    </p>
+                    <form onSubmit={handleLeadSubmit} className="space-y-4">
+                        <div>
+                            <label htmlFor="firstName" className="block text-xs font-bold text-slate-700 mb-1">
+                                {t('quiz.firstName', 'First Name')}
+                            </label>
+                            <input
+                                type="text"
+                                id="firstName"
+                                required
+                                value={leadData.firstName}
+                                onChange={(e) => setLeadData(prev => ({ ...prev, firstName: e.target.value }))}
+                                className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all font-medium text-slate-800"
+                                placeholder="Jane"
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="email" className="block text-xs font-bold text-slate-700 mb-1">
+                                {t('quiz.email', 'Email Address')}
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                required
+                                value={leadData.email}
+                                onChange={(e) => setLeadData(prev => ({ ...prev, email: e.target.value }))}
+                                className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all font-medium text-slate-800"
+                                placeholder="jane@company.com"
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition-all mt-4"
+                        >
+                            <Sparkles className="w-4 h-4" /> {t('quiz.submitLead', 'See My Results')}
+                        </button>
+                    </form>
                 </div>
             </div>
         );
