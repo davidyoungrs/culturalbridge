@@ -36,15 +36,16 @@ const App = () => {
     const matched = COUNTRIES.find((c) => c.name === val);
     if (matched) {
       setHomeCountry(matched);
-      const newLang = getLanguageForCountry(matched.name);
-      i18n.changeLanguage(newLang);
-      document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
     }
   };
 
   useEffect(() => {
-    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
-  }, [i18n.language]);
+    const newLang = getLanguageForCountry(homeCountry.name);
+    if (i18n.language !== newLang) {
+      i18n.changeLanguage(newLang);
+    }
+    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+  }, [homeCountry.name, i18n]);
 
   useEffect(() => {
     fetch('https://get.geojs.io/v1/ip/geo.json')
