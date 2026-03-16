@@ -12,6 +12,7 @@ import { AXES } from "../constants/quizData";
 import { calculateCBI, calculateUserCBI } from "../lib/culturalWeights";
 import { generateCBIInsights } from "../lib/insightGenerator";
 import type { Country } from "../constants/cultureData";
+import CBIDashboard from "./CBIDashboard";
 
 import { cn } from "../lib/utils";
 
@@ -39,7 +40,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
     profile,
     code,
     targetCountry,
-    homeCountry: _homeCountry,
+    homeCountry,
     industry: _industry = "None",
     onClose,
     isDark = false
@@ -225,7 +226,9 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     </div>
                 </div>
 
-
+                <div className="mt-16">
+                    <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} isDark={isDark} />
+                </div>
 
                 <div className="mt-16 flex justify-center">
                     <button
