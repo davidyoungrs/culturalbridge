@@ -7,27 +7,12 @@ import {
     Info,
     ArrowLeft
 } from "lucide-react";
-import {
-    Radar,
-    RadarChart,
-    PolarGrid,
-    PolarAngleAxis,
-    PolarRadiusAxis,
-    ResponsiveContainer,
-    Tooltip,
-} from "recharts";
+
 import { AXES } from "../constants/quizData";
 import { calculateCBI, calculateUserCBI } from "../lib/culturalWeights";
 import { generateCBIInsights } from "../lib/insightGenerator";
 import type { Country } from "../constants/cultureData";
-import { SCALE_LABELS, INDUSTRIES, CITATION as MEYER_CITATION } from "../constants/cultureData";
-import { CITATION as HOFSTEDE_CITATION } from "../constants/hofstedeData";
-import { CITATION as GLOBE_CITATION } from "../constants/globeData";
-import { CITATION as SCHWARTZ_CITATION } from "../constants/schwartzData";
-import LewisModelCard from "./LewisModelCard";
-import HofstedeCard from "./HofstedeCard";
-import GlobeCard from "./GlobeCard";
-import SchwartzCard from "./SchwartzCard";
+
 import { cn } from "../lib/utils";
 
 interface AssessmentResultsViewProps {
@@ -54,8 +39,8 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
     profile,
     code,
     targetCountry,
-    homeCountry,
-    industry = "None",
+    homeCountry: _homeCountry,
+    industry: _industry = "None",
     onClose,
     isDark = false
 }) => {
@@ -67,26 +52,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
         return generateCBIInsights(userCBI, targetCBI);
     }, [userCBI, targetCBI]);
 
-    const chartData = useMemo(() => {
-        return Object.keys(SCALE_LABELS).map((key) => {
-            const scaleKey = key as keyof typeof SCALE_LABELS;
-            let homeScore = homeCountry.scores[scaleKey];
-            let targetScore = targetCountry.scores[scaleKey];
 
-            if (industry !== "None" && INDUSTRIES[industry] && INDUSTRIES[industry][scaleKey]) {
-                const modifier = INDUSTRIES[industry][scaleKey]!;
-                homeScore = Math.max(1, Math.min(10, homeScore + modifier));
-                targetScore = Math.max(1, Math.min(10, targetScore + modifier));
-            }
-
-            return {
-                subject: SCALE_LABELS[key],
-                [homeCountry.name]: homeScore,
-                [targetCountry.name]: targetScore,
-                fullMark: 10,
-            };
-        });
-    }, [homeCountry, targetCountry, industry]);
 
     return (
         <div className={cn(
@@ -259,51 +225,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     </div>
                 </div>
 
-                <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-5">
-                    <div className="lg:col-span-12 bg-white dark:bg-slate-900 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col h-fit">
-                        <div className="p-4 border-b border-slate-50 dark:border-slate-800 bg-slate-50/30 dark:bg-slate-950/20 flex items-center justify-between">
-                            <h2 className="text-sm font-bold flex items-center gap-2 dark:text-slate-200">
-                                {t('results.overlay', 'Cultural Dimensions Overlay')}
-                                <span className="text-[10px] font-normal bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 py-0.5 px-2 rounded-full uppercase tracking-wider font-bold">{t('results.framework', 'The Culture Map Framework')}</span>
-                            </h2>
-                            <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-tight">
-                                <div className="flex items-center gap-1"><div className="w-2.5 h-2.5 rounded-full bg-indigo-500" /><span className="text-slate-500">{homeCountry.name}</span></div>
-                                <div className="flex items-center gap-1"><div className="w-2.5 h-2.5 rounded-full bg-emerald-500" /><span className="text-slate-500">{targetCountry.name}</span></div>
-                            </div>
-                        </div>
-                        <div className="p-4 flex items-center justify-center">
-                            <div className="w-full h-[350px]">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
-                                        <PolarGrid stroke={isDark ? "#334155" : "#e2e8f0"} />
-                                        <PolarAngleAxis dataKey="subject" tick={{ fill: isDark ? '#94a3b8' : '#64748b', fontSize: 10, fontWeight: 600 }} />
-                                        <PolarRadiusAxis angle={30} domain={[0, 10]} axisLine={false} tick={false} />
-                                        <Radar name={homeCountry.name} dataKey={homeCountry.name} stroke="#6366f1" fill="#6366f1" fillOpacity={0.2} strokeWidth={2.5} />
-                                        <Radar name={targetCountry.name} dataKey={targetCountry.name} stroke="#10b981" fill="#10b981" fillOpacity={0.2} strokeWidth={2.5} />
-                                        <Tooltip contentStyle={{ borderRadius: '10px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)', fontSize: '11px', backgroundColor: isDark ? '#1e293b' : '#fff', color: isDark ? '#f1f5f9' : '#1e293b' }} />
-                                    </RadarChart>
-                                </ResponsiveContainer>
-                            </div>
-                        </div>
-                        <div className="px-5 py-2 border-t border-slate-50 dark:border-slate-800 bg-slate-50/20 dark:bg-slate-950/20 text-[9px] text-slate-400 italic leading-tight">
-                            {MEYER_CITATION}
-                        </div>
-                    </div>
 
-                    <div className="lg:col-span-6">
-                        <LewisModelCard homeCountry={homeCountry} targetCountry={targetCountry} citation={MEYER_CITATION} />
-                    </div>
-                    <div className="lg:col-span-6">
-                        <HofstedeCard homeCountryName={homeCountry.name} targetCountryName={targetCountry.name} citation={HOFSTEDE_CITATION} />
-                    </div>
-
-                    <div className="lg:col-span-6">
-                        <GlobeCard homeCountryName={homeCountry.name} targetCountryName={targetCountry.name} citation={GLOBE_CITATION} />
-                    </div>
-                    <div className="lg:col-span-6">
-                        <SchwartzCard homeCountryName={homeCountry.name} targetCountryName={targetCountry.name} citation={SCHWARTZ_CITATION} />
-                    </div>
-                </div>
 
                 <div className="mt-16 flex justify-center">
                     <button
