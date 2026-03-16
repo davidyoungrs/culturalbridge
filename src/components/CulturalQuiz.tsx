@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { ClipboardCheck, RotateCcw, Sparkles } from "lucide-react";
+import { ClipboardCheck, RotateCcw, Sparkles, Loader2 } from "lucide-react";
 import {
     QUIZ_QUESTIONS,
     AXES,
@@ -8,6 +8,7 @@ import {
     getProfileCode,
     getProfileType,
 } from "../constants/quizData";
+import { submitToAirtable } from "../lib/airtable";
 
 interface CulturalQuizProps {
     onComplete?: (scores: Record<string, number>, profile: any, code: string) => void;
@@ -18,6 +19,7 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     const [answers, setAnswers] = useState<Record<number, "a" | "b">>({});
     const [showResults, setShowResults] = useState(false);
     const [showLeadForm, setShowLeadForm] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [leadData, setLeadData] = useState({ firstName: '', email: '' });
 
     const progress = Object.keys(answers).length;
@@ -36,14 +38,21 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
         setShowLeadForm(true);
     };
 
-    const handleLeadSubmit = (e: React.FormEvent) => {
+    const handleLeadSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Placeholder for CRM integration / backend API call
-        console.log("Lead captured:", leadData);
+        setIsSubmitting(true);
 
-        setShowResults(true);
-        if (onComplete) {
-            onComplete(scores, profile, code);
+        try {
+            await submitToAirtable(leadData.firstName, leadData.email);
+            console.log("Lead captured:", leadData);
+        } catch (error) {
+            console.error("Failed to submit lead", error);
+        } finally {
+            setIsSubmitting(false);
+            setShowResults(true);
+            if (onComplete) {
+                onComplete(scores, profile, code);
+            }
         }
     };
 
@@ -183,9 +192,14 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition-all mt-4"
+                            disabled={isSubmitting}
+                            className={`w-full flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition-all mt-4 ${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''}`}
                         >
-                            <Sparkles className="w-4 h-4" /> {t('quiz.submitLead', 'See My Results')}
+                            {isSubmitting ? (
+                                <><Loader2 className="w-4 h-4 animate-spin" /> {t('quiz.submitting', 'Submitting...')}</>
+                            ) : (
+                                <><Sparkles className="w-4 h-4" /> {t('quiz.submitLead', 'See My Results')}</>
+                            )}
                         </button>
                     </form>
                 </div>
