@@ -1,51 +1,51 @@
 {
-    "title": "文化桥梁",
-    "subtitle": "比较文化研究项目。",
+    "title": "The Cultural Bridge",
+    "subtitle": "The comparative cultural research project.",
     "labels": {
-        "home": "主页",
-        "target": "目标",
-        "industry": "行业"
+        "home": "Home",
+        "target": "Target",
+        "industry": "Industry"
     },
     "options": {
-        "baseline": "基线"
+        "baseline": "Baseline"
     },
     "footer": {
-        "frameworks": "5个同行评审框架",
-        "copyright": "©2026文化桥梁。教育/非商业研究项目。"
+        "frameworks": "5 Peer-Reviewed Frameworks",
+        "copyright": "© 2026 The Cultural Bridge. Educational / Non-Commercial Research Project."
     },
     "demo": {
-        "hook": "文化",
-        "hook_highlight": "桥梁。",
-        "subtitle": "比较文化研究项目。",
-        "scroll_indicator": "探索框架",
-        "pitch_title": "情报待定...",
-        "pitch_1": "跨文化情报，打造更加互联的世界。文化桥梁综合了五个同行评审的框架来探索",
-        "pitch_highlight": "潜在模式",
-        "pitch_2": "全球社会的。",
-        "quote_1": "“将跨文化的复杂性转化为最大的战略优势。”",
-        "quote_2": "“包括 122 个国家/地区的核心数据集，确保在所有主要地理区域中具有代表性。”",
-        "cta_title": "准备好扩展了吗？",
-        "cta": "贡献"
+        "hook": "Cultural",
+        "hook_highlight": "Bridge.",
+        "subtitle": "The comparative cultural research project.",
+        "scroll_indicator": "Explore the framework",
+        "pitch_title": "Intelligence pending...",
+        "pitch_1": "Cross-cultural intelligence for a more connected world. The Cultural Bridge synthesizes five peer-reviewed frameworks to explore the ",
+        "pitch_highlight": "underlying patterns",
+        "pitch_2": " of global society.",
+        "quote_1": "\"Turning cross-cultural complexity into your greatest strategic advantage.\"",
+        "quote_2": "\"Includes core datasets for 122 countries, ensuring representation across all major geographic regions.\"",
+        "cta_title": "Ready to expand?",
+        "cta": "Contribute"
     },
     "dashboard": {
-        "cbi_title": "文化桥梁指数 (CBI)",
-        "proprietary": "专有",
-        "cbi_subtitle": "派生的高级元维度",
+        "cbi_title": "Cultural Bridge Index (CBI)",
+        "proprietary": "Proprietary",
+        "cbi_subtitle": "Derived High-Level Meta-Dimensions",
         "chart": {
-            "relationshipTrust": "信任与关系",
-            "adaptiveAgility": "适应性敏捷性",
-            "processConsensus": "流程共识",
-            "performanceVelocity": "绩效速度",
-            "communicationDirectness": "沟通直接性",
-            "strategicFocus": "战略重点",
-            "empoweredEquality": "赋予平等"
+            "relationshipTrust": "Trust & Relationship",
+            "adaptiveAgility": "Adaptive Agility",
+            "processConsensus": "Process Consensus",
+            "performanceVelocity": "Performance Velocity",
+            "communicationDirectness": "Communication Directness",
+            "strategicFocus": "Strategic Focus",
+            "empoweredEquality": "Empowered Equality"
         },
-        "info": "文化桥梁指数 (CBI) 分析源自 5 个同行评审框架的加权综合的专有元维度。该模型为教育和研究目的提供了原始的比较分析。"
+        "info": "The Cultural Bridge Index (CBI) analyzes proprietary meta-dimensions derived from a weighted synthesis of 5 peer-reviewed frameworks. This model provides original comparative analysis for educational and research purposes."
     },
     "gaps": {
-        "title": "关键差距和建议",
-        "tactical": "战术执行",
-        "aligned": "文化概况高度一致。"
+        "title": "Critical Gaps & Recommendations",
+        "tactical": "Tactical Execution",
+        "aligned": "Cultural profiles are highly aligned."
     },
     "insights": {
         "relationshipTrust": {

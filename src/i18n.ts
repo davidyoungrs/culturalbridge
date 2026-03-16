@@ -26,6 +26,19 @@ import cs from './locales/cs.json';
 import ro from './locales/ro.json';
 import hu from './locales/hu.json';
 import da from './locales/da.json';
+import fi from './locales/fi.json';
+import no from './locales/no.json';
+import tl from './locales/tl.json';
+import bg from './locales/bg.json';
+import et from './locales/et.json';
+import is from './locales/is.json';
+import lv from './locales/lv.json';
+import lt from './locales/lt.json';
+import sr from './locales/sr.json';
+import sk from './locales/sk.json';
+import uk from './locales/uk.json';
+import hy from './locales/hy.json';
+import ka from './locales/ka.json';
 
 i18n
     .use(LanguageDetector)
@@ -55,7 +68,20 @@ i18n
             cs: { translation: cs },
             ro: { translation: ro },
             hu: { translation: hu },
-            da: { translation: da }
+            da: { translation: da },
+            fi: { translation: fi },
+            no: { translation: no },
+            tl: { translation: tl },
+            bg: { translation: bg },
+            et: { translation: et },
+            is: { translation: is },
+            lv: { translation: lv },
+            lt: { translation: lt },
+            sr: { translation: sr },
+            sk: { translation: sk },
+            uk: { translation: uk },
+            hy: { translation: hy },
+            ka: { translation: ka }
         },
         fallbackLng: 'en',
         interpolation: {

@@ -63,6 +63,8 @@ export function getLanguageForCountry(countryName: string): string {
         "Belarus": "ru",
         "Kazakhstan": "ru",
         "Kyrgyzstan": "ru",
+        "Uzbekistan": "ru",
+        "Azerbaijan": "ru",
 
         // Japanese (ja)
         "Japan": "ja",
@@ -108,7 +110,22 @@ export function getLanguageForCountry(countryName: string): string {
         "Hungary": "hu",
 
         // Danish (da)
-        "Denmark": "da"
+        "Denmark": "da",
+
+        // New Languages
+        "Finland": "fi",
+        "Norway": "no",
+        "Philippines": "tl",
+        "Bulgaria": "bg",
+        "Estonia": "et",
+        "Iceland": "is",
+        "Latvia": "lv",
+        "Lithuania": "lt",
+        "Serbia": "sr",
+        "Slovakia": "sk",
+        "Ukraine": "uk",
+        "Armenia": "hy",
+        "Georgia": "ka"
     };
 
     return languageMap[countryName] || 'en';

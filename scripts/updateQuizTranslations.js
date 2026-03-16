@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const localesDir = path.join(process.cwd(), 'src/locales');
-const langs = ['en', 'es', 'fr', 'de', 'zh', 'hi', 'ar', 'pt', 'ru', 'ja', 'ko', 'it', 'tr', 'vi', 'pl', 'id', 'nl', 'th', 'sv', 'el', 'cs', 'ro', 'hu', 'da'];
+const langs = ['en', 'es', 'fr', 'de', 'zh', 'hi', 'ar', 'pt', 'ru', 'ja', 'ko', 'it', 'tr', 'vi', 'pl', 'id', 'nl', 'th', 'sv', 'el', 'cs', 'ro', 'hu', 'da', 'fi', 'no', 'tl', 'bg', 'et', 'is', 'lv', 'lt', 'sr', 'sk', 'uk', 'hy', 'ka'];
 
 const quizData = {
     en: {
