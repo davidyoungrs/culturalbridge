@@ -159,5 +159,9 @@
             "optA": "Maximize interactions and exchange relevant information efficiently",
             "optB": "Focus on fewer, more meaningful conversations to build rapport"
         }
+    },
+    "results": {
+        "naturalFit": "ბუნებრივი თავსებადობა",
+        "adaptationGuide": "ადაპტაციის სახელმძღვანელო"
     }
 }

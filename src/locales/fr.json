@@ -159,5 +159,9 @@
             "optA": "Maximiser les interactions et échanger des informations efficacement",
             "optB": "Vous concentrer sur moins de conversations, mais plus significatives"
         }
+    },
+    "results": {
+        "naturalFit": "Compatibilité naturelle avec",
+        "adaptationGuide": "Guide d'adaptation"
     }
 }

@@ -159,5 +159,9 @@
             "optA": "Maximize interactions and exchange relevant information efficiently",
             "optB": "Focus on fewer, more meaningful conversations to build rapport"
         }
+    },
+    "results": {
+        "naturalFit": "자연스러운 조화",
+        "adaptationGuide": "적응 가이드"
     }
 }
