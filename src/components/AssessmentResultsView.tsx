@@ -12,8 +12,6 @@ import {
     Download
 } from "lucide-react";
 
-// @ts-ignore
-import html2pdf from "html2pdf.js";
 
 import { AXES } from "../constants/quizData";
 import { calculateCBI, calculateUserCBI } from "../lib/culturalWeights";
@@ -70,6 +68,8 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
         actionElements.forEach(el => (el as HTMLElement).style.display = 'none');
 
         try {
+            // Dynamic import: html2pdf.js (~500KB) is only fetched when user clicks Download
+            const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set(opt).from(element).save();
         } finally {
             actionElements.forEach(el => (el as HTMLElement).style.display = '');

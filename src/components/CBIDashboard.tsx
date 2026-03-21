@@ -1,3 +1,4 @@
+import React from "react";
 import type { Country } from "../constants/cultureData";
 import { calculateCBI, CBI_DESCRIPTIONS } from "../lib/culturalWeights";
 import { Info, BarChart3, Radar as RadarIcon } from "lucide-react";
@@ -142,4 +143,4 @@ const CBIDashboard = ({ homeCountry, targetCountry, isDark = false }: CBIDashboa
     );
 };
 
-export default CBIDashboard;
+export default React.memo(CBIDashboard);

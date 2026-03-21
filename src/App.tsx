@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Globe2,
@@ -18,9 +18,10 @@ import SearchableSelect from "./components/SearchableSelect";
 import CBIDashboard from "./components/CBIDashboard";
 import CulturalQuiz from "./components/CulturalQuiz";
 import DemoOne from "./components/DemoOne";
-import AssessmentResultsView from "./components/AssessmentResultsView";
-import PrivacyModal from "./components/PrivacyModal";
-import TermsModal from "./components/TermsModal";
+
+const AssessmentResultsView = lazy(() => import("./components/AssessmentResultsView"));
+const PrivacyModal = lazy(() => import("./components/PrivacyModal"));
+const TermsModal = lazy(() => import("./components/TermsModal"));
 
 const countryOptions = COUNTRIES.map((c) => ({ value: c.name, label: c.name }));
 
@@ -36,12 +37,12 @@ const App = () => {
 
   const { t, i18n } = useTranslation();
 
-  const handleHomeCountryChange = (val: string) => {
+  const handleHomeCountryChange = useCallback((val: string) => {
     const matched = COUNTRIES.find((c) => c.name === val);
     if (matched) {
       setHomeCountry(matched);
     }
-  };
+  }, []);
 
   useEffect(() => {
     const newLang = getLanguageForCountry(homeCountry.name);
@@ -73,10 +74,10 @@ const App = () => {
       .catch((err) => console.log('Could not fetch location:', err));
   }, []);
 
-  const handleQuizComplete = (scores: Record<string, number>, profile: any, code: string) => {
+  const handleQuizComplete = useCallback((scores: Record<string, number>, profile: any, code: string) => {
     setQuizResult({ scores, profile, code });
     setShowQuizResults(true);
-  };
+  }, []);
 
   // Apply dark mode class to root for Tailwind selector
   const toggleDarkMode = () => {
@@ -219,21 +220,23 @@ const App = () => {
           </div>
         </main>
 
-        {showQuizResults && quizResult && (
-          <AssessmentResultsView
-            userScores={quizResult.scores}
-            profile={quizResult.profile}
-            code={quizResult.code}
-            homeCountry={homeCountry}
-            targetCountry={targetCountry}
-            industry={industry}
-            onClose={() => setShowQuizResults(false)}
-            isDark={isDark}
-          />
-        )}
+        <Suspense fallback={null}>
+          {showQuizResults && quizResult && (
+            <AssessmentResultsView
+              userScores={quizResult.scores}
+              profile={quizResult.profile}
+              code={quizResult.code}
+              homeCountry={homeCountry}
+              targetCountry={targetCountry}
+              industry={industry}
+              onClose={() => setShowQuizResults(false)}
+              isDark={isDark}
+            />
+          )}
 
-        <PrivacyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} isDark={isDark} />
-        <TermsModal isOpen={showTerms} onClose={() => setShowTerms(false)} isDark={isDark} />
+          <PrivacyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} isDark={isDark} />
+          <TermsModal isOpen={showTerms} onClose={() => setShowTerms(false)} isDark={isDark} />
+        </Suspense>
 
         <footer className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between text-slate-400 dark:text-slate-500 gap-4">
           <div className="flex items-center gap-3 text-xs font-black uppercase tracking-widest">

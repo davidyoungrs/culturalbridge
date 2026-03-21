@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ClipboardCheck, RotateCcw, Sparkles, Loader2 } from "lucide-react";
 import {
@@ -309,4 +309,4 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     );
 };
 
-export default CulturalQuiz;
+export default React.memo(CulturalQuiz);
