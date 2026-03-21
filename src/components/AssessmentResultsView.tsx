@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useRef } from "react";
+import gsap from "gsap";
 import {
     Sparkles,
     TrendingUp,
@@ -17,6 +18,7 @@ import type { Country } from "../constants/cultureData";
 import CBIDashboard from "./CBIDashboard";
 
 import { cn } from "../lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface AssessmentResultsViewProps {
     userScores: Record<string, number>;
@@ -35,8 +37,6 @@ interface AssessmentResultsViewProps {
     isDark?: boolean;
 }
 
-import { useTranslation } from "react-i18next";
-
 const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
     userScores,
     profile,
@@ -48,6 +48,8 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
     isDark = false
 }) => {
     const { t } = useTranslation();
+    const containerRef = useRef<HTMLDivElement>(null);
+
     const userCBI = useMemo(() => calculateUserCBI(userScores), [userScores]);
     const targetCBI = useMemo(() => calculateCBI(targetCountry), [targetCountry]);
 
@@ -55,16 +57,31 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
         return generateCBIInsights(userCBI, targetCBI);
     }, [userCBI, targetCBI]);
 
-
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline();
+            
+            tl.from(".animate-header", { y: -20, opacity: 0, duration: 0.6, ease: "power3.out" })
+              .from(".animate-hero", { scale: 0.95, opacity: 0, duration: 0.7, ease: "back.out(1.2)" }, "-=0.4")
+              .from(".animate-dimension", { x: -20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.3")
+              .from(".animate-insight", { y: 20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.5")
+              .from(".animate-dashboard", { y: 40, opacity: 0, scale: 0.98, duration: 0.8, ease: "power3.out" }, "-=0.4")
+              .from(".animate-social", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.2");
+        }, containerRef);
+        
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <div className={cn(
+        <div 
+            ref={containerRef}
+            className={cn(
             "fixed inset-0 z-[100] overflow-y-auto transition-colors duration-300",
             isDark ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"
         )}>
             <div className="max-w-4xl mx-auto px-4 py-12 md:py-20">
                 {/* Header */}
-                <div className="flex items-center justify-between mb-10">
+                <div className="animate-header flex items-center justify-between mb-10">
                     <button
                         onClick={onClose}
                         className="flex items-center gap-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors group"
@@ -79,9 +96,8 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Left Column: Profile Summary */}
-                    <div className="lg:col-span-12">
+                    <div className="lg:col-span-12 animate-hero">
                         <div className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800 rounded-3xl p-8 md:p-10 text-white shadow-2xl shadow-indigo-500/20 relative overflow-hidden">
-                            {/* Decorative elements */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-400/10 rounded-full blur-2xl -ml-24 -mb-24" />
 
@@ -107,7 +123,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     {/* Middle Column: Dimension Breakdown */}
                     <div className="lg:col-span-7 space-y-6">
                         <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800">
-                            <h2 className="text-xl font-black mb-6 flex items-center gap-2">
+                            <h2 className="animate-dimension text-xl font-black mb-6 flex items-center gap-2">
                                 <Info className="w-5 h-5 text-indigo-500" />
                                 {t('results.dimensionBreakdown', 'Dimension Breakdown')}
                             </h2>
@@ -117,7 +133,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                                     const score = userScores[axis.axis] || 50;
                                     const isLow = score < 50;
                                     return (
-                                        <div key={axis.axis} className="group">
+                                        <div key={axis.axis} className="animate-dimension group">
                                             <div className="flex items-center justify-between mb-3">
                                                 <div className="flex flex-col">
                                                     <span className="text-sm font-black uppercase tracking-wider text-slate-800 dark:text-slate-200">{t(`axis.${axis.axis}.label`, axis.label)}</span>
@@ -153,13 +169,13 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/40 rounded-3xl p-6">
+                            <div className="animate-insight bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/40 rounded-3xl p-6">
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3 flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> {t('results.naturalFit', 'Natural Fit With')}
                                 </h4>
                                 <p className="text-sm text-emerald-800 dark:text-emerald-200 font-bold leading-relaxed">{t(`profile.bestWith.${code}`, profile.bestWith)}</p>
                             </div>
-                            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-3xl p-6">
+                            <div className="animate-insight bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/40 rounded-3xl p-6">
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-3 flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-amber-500" /> {t('results.adaptationGuide', 'Adaptation Guide')}
                                 </h4>
@@ -171,18 +187,18 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     {/* Right Column: Insights */}
                     <div className="lg:col-span-5">
                         <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 sticky top-10">
-                            <h2 className="text-xl font-black mb-1 flex items-center gap-2">
+                            <h2 className="animate-insight text-xl font-black mb-1 flex items-center gap-2">
                                 <TrendingUp className="w-5 h-5 text-indigo-500" />
                                 {t('results.criticalGaps', 'Critical Gaps')}
                             </h2>
-                            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-6">
+                            <p className="animate-insight text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-6">
                                 {t('results.personalizedFor', 'Personalized for your profile vs. {{country}}', { country: targetCountry.name })}
                             </p>
 
                             <div className="space-y-4">
                                 {insights.map((insight, i) => (
                                     <div key={i} className={cn(
-                                        "flex flex-col gap-3 p-5 rounded-2xl border transition-all",
+                                        "animate-insight flex flex-col gap-3 p-5 rounded-2xl border transition-all",
                                         insight.severity === 'high'
                                             ? (isDark ? "bg-rose-950/20 border-rose-900/40" : "bg-rose-50/50 border-rose-100")
                                             : (isDark ? "bg-slate-950/40 border-slate-800" : "bg-slate-50/80 border-slate-100")
@@ -218,7 +234,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                                     </div>
                                 ))}
                                 {insights.length === 0 && (
-                                    <div className="flex flex-col items-center justify-center py-16 opacity-30">
+                                    <div className="animate-insight flex flex-col items-center justify-center py-16 opacity-30">
                                         <Sparkles className="w-10 h-10 mb-4" />
                                         <p className="text-sm font-black uppercase tracking-widest text-center">{t('results.highlyAligned', 'Profiles Highly Aligned')}</p>
                                     </div>
@@ -228,14 +244,14 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     </div>
                 </div>
 
-                <div className="mt-16">
+                <div className="mt-16 animate-dashboard">
                     <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} isDark={isDark} />
                 </div>
 
                 <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button
                         onClick={onClose}
-                        className="w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
+                        className="animate-social w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
                     >
                         {t('results.return', 'Return to Dashboard')}
                     </button>
@@ -244,7 +260,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just discovered my cross-cultural leadership archetype is "${t(`profile.title.${code}`, profile.title)} ${profile.emoji}" via the Cultural Bridge Index! Discover your global leadership profile:`)}&url=${encodeURIComponent('https://cultural-assist.vercel.app/')}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1DA1F2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#1DA1F2]/20"
+                        className="animate-social w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1DA1F2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#1DA1F2]/20"
                     >
                         <Twitter className="w-4 h-4 fill-current" /> {t('results.shareX', 'Share on X')}
                     </a>
@@ -253,7 +269,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://cultural-assist.vercel.app/')}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#0A66C2]/20"
+                        className="animate-social w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#0A66C2]/20"
                     >
                         <Linkedin className="w-4 h-4 fill-current text-white" /> {t('results.shareLinkedIn', 'Share on LinkedIn')}
                     </a>
