@@ -66,7 +66,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
               .from(".animate-dimension", { x: -20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.3")
               .from(".animate-insight", { y: 20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.5")
               .from(".animate-dashboard", { y: 40, opacity: 0, scale: 0.98, duration: 0.8, ease: "power3.out" }, "-=0.4")
-              .from(".animate-social", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.2");
+              .from(".animate-action-btn", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.2");
         }, containerRef);
         
         return () => ctx.revert();
@@ -251,7 +251,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                 <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button
                         onClick={onClose}
-                        className="animate-social w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
+                        className="animate-action-btn w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
                     >
                         {t('results.return', 'Return to Dashboard')}
                     </button>
@@ -260,7 +260,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just discovered my cross-cultural leadership archetype is "${t(`profile.title.${code}`, profile.title)} ${profile.emoji}" via the Cultural Bridge Index! Discover your global leadership profile:`)}&url=${encodeURIComponent(window.location.origin)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="animate-social w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1DA1F2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#1DA1F2]/20"
+                        className="animate-action-btn w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1DA1F2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#1DA1F2]/20"
                     >
                         <Twitter className="w-4 h-4 fill-current" /> {t('results.shareX', 'Share on X')}
                     </a>
@@ -269,7 +269,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="animate-social w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#0A66C2]/20"
+                        className="animate-action-btn w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#0A66C2]/20"
                     >
                         <Linkedin className="w-4 h-4 fill-current text-white" /> {t('results.shareLinkedIn', 'Share on LinkedIn')}
                     </a>
