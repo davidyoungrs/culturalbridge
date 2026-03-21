@@ -26,7 +26,7 @@ export default async function handler(req: any, res: any) {
             isAllowed = true;
         } else if (allowedOrigins.includes(origin)) {
             isAllowed = true;
-        } else if (origin.endsWith('.vercel.app') && origin.includes('cultural-')) {
+        } else if (origin.endsWith('.vercel.app') && origin.includes('cultural')) {
             isAllowed = true;
         }
     }
@@ -50,7 +50,7 @@ export default async function handler(req: any, res: any) {
     const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown_ip';
     const now = Date.now();
     const WINDOW_MS = 60 * 60 * 1000; // 1 hour window
-    const MAX_REQUESTS = 2; // Strict limit
+    const MAX_REQUESTS = 20; // 20 requests per hour per IP to allow for corporate network sharing
 
     if (rateLimitMap.has(ip)) {
         const data = rateLimitMap.get(ip);
