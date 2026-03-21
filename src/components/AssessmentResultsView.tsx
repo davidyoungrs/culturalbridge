@@ -251,7 +251,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                 <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button
                         onClick={onClose}
-                        className="animate-action-btn w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
+                        className="w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
                     >
                         {t('results.return', 'Return to Dashboard')}
                     </button>
