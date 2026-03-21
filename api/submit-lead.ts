@@ -17,7 +17,23 @@ export default async function handler(req: any, res: any) {
         process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '' 
     ];
 
-    let isAllowed = true; // TEMPORARY DEBUG: allow all origins to ensure a custom domain isn't being blocked
+    const isDevelopment = process.env.NODE_ENV !== 'production';
+    
+    let isAllowed = false;
+    if (origin) {
+        // Allow localhost ONLY in development mode
+        if (isDevelopment && origin.startsWith('http://localhost')) {
+            isAllowed = true;
+        } 
+        // Allow whitelisted production domains
+        else if (allowedOrigins.includes(origin)) {
+            isAllowed = true;
+        } 
+        // Fallback: Allow any Vercel preview domain branching from this project
+        else if (origin.endsWith('.vercel.app') && origin.includes('cultural-')) {
+            isAllowed = true;
+        }
+    }
 
     if (!isAllowed) {
         console.warn(`Blocked unauthorized request from origin: ${origin || 'UNKNOWN'}`);
@@ -40,7 +56,7 @@ export default async function handler(req: any, res: any) {
     
     const now = Date.now();
     const WINDOW_MS = 60 * 60 * 1000; // 1 hour window
-    const MAX_REQUESTS = 100; // DEBUG: Bumped to 100 so you don't lock yourself out while testing online
+    const MAX_REQUESTS = 2; // Strict limit: 2 successful submissions per hour per IP
 
     if (rateLimitMap.has(ip)) {
         const data = rateLimitMap.get(ip);
