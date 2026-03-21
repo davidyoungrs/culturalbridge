@@ -1,4 +1,4 @@
-export async function submitToAirtable(firstName: string, email: string, phoneNumber?: string) {
+export async function submitToAirtable(firstName: string, email: string, phoneNumber?: string, profileData?: any) {
     try {
         // LOCALHOST DEVELOPMENT FALLBACK:
         // Because "npm run dev" doesn't run Vercel's backend /api directory, we directly hook into Airtable
@@ -39,7 +39,7 @@ export async function submitToAirtable(firstName: string, email: string, phoneNu
         const response = await fetch('/api/submit-lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName, email, phoneNumber })
+            body: JSON.stringify({ firstName, email, phoneNumber, profileData })
         });
 
         // Safely parse JSON to prevent SyntaxErrors if a 404 HTML page is returned

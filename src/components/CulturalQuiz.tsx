@@ -43,7 +43,12 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
         setIsSubmitting(true);
 
         try {
-            await submitToAirtable(leadData.firstName, leadData.email, leadData.phoneNumber);
+            const translatedTitle = t(`profile.${code}.title`, profile.title);
+            await submitToAirtable(leadData.firstName, leadData.email, leadData.phoneNumber, {
+                code,
+                title: translatedTitle,
+                emoji: profile.emoji
+            });
             console.log("Lead captured:", leadData.firstName);
         } catch (error) {
             console.error("Failed to submit lead", error);
