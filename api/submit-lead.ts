@@ -2,7 +2,6 @@
 import { Resend } from 'resend';
 
 const rateLimitMap = new Map<string, { count: number, timestamp: number }>();
-const resend = new Resend(process.env.RESEND_API_KEY || '');
 
 export default async function handler(req: any, res: any) {
     // 1. Check HTTP Method
@@ -109,6 +108,7 @@ export default async function handler(req: any, res: any) {
         // --- 5. SEND AUTOMATED EMAIL ---
         if (profileData && process.env.RESEND_API_KEY) {
             try {
+                const resend = new Resend(process.env.RESEND_API_KEY);
                 console.log("Sending automated email to:", email);
                 const { error: emailError } = await resend.emails.send({
                     from: 'Cultural Assist <onboarding@resend.dev>',
