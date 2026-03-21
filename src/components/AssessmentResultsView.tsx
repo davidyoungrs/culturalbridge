@@ -257,7 +257,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     </button>
 
                     <a
-                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just discovered my cross-cultural leadership archetype is "${t(`profile.title.${code}`, profile.title)} ${profile.emoji}" via the Cultural Bridge Index! Discover your global leadership profile:`)}&url=${encodeURIComponent(window.location.origin)}`}
+                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${t(`profile.title.${code}`, profile.title)} ${profile.emoji}\n${code}\n${t(`profile.description.${code}`, profile.description)}\n\nGet your own Cultural comparison here:`)}&url=${encodeURIComponent(window.location.origin)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1DA1F2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#1DA1F2]/20"
@@ -265,14 +265,21 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                         <Twitter className="w-4 h-4 fill-current" /> {t('results.shareX', 'Share on X')}
                     </a>
 
-                    <a
-                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <button
+                        onClick={async () => {
+                            const text = `${t(`profile.title.${code}`, profile.title)} ${profile.emoji}\n${code}\n${t(`profile.description.${code}`, profile.description)}\n\nGet your own Cultural comparison here: ${window.location.origin}`;
+                            try {
+                                await navigator.clipboard.writeText(text);
+                                alert("Your results have been copied to your clipboard!\n\nPaste (Ctrl+V or Cmd+V) them into the LinkedIn post window that is opening now.");
+                            } catch (err) {
+                                console.error('Failed to auto-copy', err);
+                            }
+                            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}`, '_blank');
+                        }}
                         className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#0A66C2]/20"
                     >
                         <Linkedin className="w-4 h-4 fill-current text-white" /> {t('results.shareLinkedIn', 'Share on LinkedIn')}
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
