@@ -1,3 +1,6 @@
+// Global map to hold rate-limiting data across warm instances
+const rateLimitMap = new Map<string, { count: number, timestamp: number }>();
+
 export default async function handler(req: any, res: any) {
     // 1. Check HTTP Method
     if (req.method !== 'POST' && req.method !== 'OPTIONS') {
@@ -46,6 +49,32 @@ export default async function handler(req: any, res: any) {
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
+
+    // --- 4. RATE LIMITING ---
+    // Extract IP address (Vercel uses x-forwarded-for)
+    const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown_ip';
+    
+    const now = Date.now();
+    const WINDOW_MS = 60 * 60 * 1000; // 1 hour window
+    const MAX_REQUESTS = 2; // Strict limit: 2 successful submissions per hour per IP
+
+    if (rateLimitMap.has(ip)) {
+        const data = rateLimitMap.get(ip);
+        if (data && now - data.timestamp < WINDOW_MS) {
+            if (data.count >= MAX_REQUESTS) {
+                console.warn(`Rate limit completely exhausted for IP: ${ip}`);
+                return res.status(429).json({ success: false, error: 'Too many requests. Please try again later.' });
+            }
+            data.count++;
+        } else {
+            // Window expired, reset counter
+            rateLimitMap.set(ip, { count: 1, timestamp: now });
+        }
+    } else {
+        // First request from this IP
+        rateLimitMap.set(ip, { count: 1, timestamp: now });
+    }
+    // --- END RATE LIMITING ---
 
     const { firstName, email, phoneNumber } = req.body;
 
