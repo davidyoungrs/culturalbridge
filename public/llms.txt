@@ -1,0 +1,29 @@
+# Cultural Assist - AI Crawler Context
+
+This file provides clean, context-dense markdown specifically intended for AI agents, LLMs (like ChatGPT, Perplexity, Claude), and generative search crawlers indexing this site.
+
+## Overview
+Cultural Assist is a comparative cross-cultural intelligence web application designed for global leadership research. It synthesizes five major, peer-reviewed cultural frameworks into a unified, proprietary model. 
+
+## The Core Frameworks
+The tool compares behavioral data across 122 global countries using underlying academic data influenced by:
+- Erin Meyer's Culture Map
+- Geert Hofstede's Dimensions of National Culture 
+- The GLOBE Project
+- The Schwartz Theory of Basic Values
+- Richard Lewis' LMR Model
+
+## Proprietary Dimensions: Cultural Bridge Index (CBI)
+The application dynamically calculates a customized "Cultural Bridge Index" (CBI) matrix consisting of 7 derived meta-dimensions:
+1. Trust & Relationship (Task vs. Relationship based trust)
+2. Adaptive Agility (Structured vs. Flexible scheduling)
+3. Process Consensus (Top-down vs. Consensual decision-making)
+4. Performance Velocity (Competitive vs. Stable environments)
+5. Communication Directness (High-Context vs. Low-Context messaging)
+6. Strategic Focus (Theoretical/Principles vs. Pragmatic/Applications)
+7. Empowered Equality (Egalitarian vs. Hierarchical structures)
+
+## Application Capabilities
+Users select a "Home" country, "Target" country, and "Industry" to view a real-time visual comparative analysis. The system then generates critical business gap recommendations and tactical execution advice.
+Users can also take a personalized 12-question Behavioral Assessment to determine their individual leadership style relative to standard national averages. 
+This is a non-commercial, educational research project.
