@@ -5,7 +5,9 @@ import {
     Zap,
     ChevronRight,
     Info,
-    ArrowLeft
+    ArrowLeft,
+    Twitter,
+    Linkedin
 } from "lucide-react";
 
 import { AXES } from "../constants/quizData";
@@ -230,13 +232,31 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} isDark={isDark} />
                 </div>
 
-                <div className="mt-16 flex justify-center">
+                <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button
                         onClick={onClose}
-                        className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
+                        className="w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
                     >
-                        {t('results.return', 'Return to Research Dashboard')}
+                        {t('results.return', 'Return to Dashboard')}
                     </button>
+
+                    <a
+                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just discovered my cross-cultural leadership archetype is "${t(`profile.title.${code}`, profile.title)} ${profile.emoji}" via the Cultural Bridge Index! Discover your global leadership profile:`)}&url=${encodeURIComponent('https://cultural-assist.vercel.app/')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1DA1F2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#1DA1F2]/20"
+                    >
+                        <Twitter className="w-4 h-4 fill-current" /> {t('results.shareX', 'Share on X')}
+                    </a>
+
+                    <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://cultural-assist.vercel.app/')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#0A66C2]/20"
+                    >
+                        <Linkedin className="w-4 h-4 fill-current text-white" /> {t('results.shareLinkedIn', 'Share on LinkedIn')}
+                    </a>
                 </div>
             </div>
         </div>
