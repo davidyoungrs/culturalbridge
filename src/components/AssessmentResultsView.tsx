@@ -257,7 +257,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     </button>
 
                     <a
-                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just discovered my cross-cultural leadership archetype is "${t(`profile.title.${code}`, profile.title)} ${profile.emoji}" via the Cultural Bridge Index! Discover your global leadership profile:`)}&url=${encodeURIComponent('https://cultural-assist.vercel.app/')}`}
+                        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just discovered my cross-cultural leadership archetype is "${t(`profile.title.${code}`, profile.title)} ${profile.emoji}" via the Cultural Bridge Index! Discover your global leadership profile:`)}&url=${encodeURIComponent(window.location.origin)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="animate-social w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1DA1F2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#1DA1F2]/20"
@@ -266,7 +266,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     </a>
 
                     <a
-                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://cultural-assist.vercel.app/')}`}
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="animate-social w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#0A66C2]/20"
