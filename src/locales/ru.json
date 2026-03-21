@@ -1,5 +1,5 @@
 {
-    "title": "Культурный Мост (The Cultural Bridge)",
+    "title": "Культурный Мост (Cultural Assist)",
     "subtitle": "Проект сравнительных культурных исследований.",
     "labels": {
         "home": "Дом",
@@ -11,7 +11,7 @@
     },
     "footer": {
         "frameworks": "5 Рецензируемых Структур",
-        "copyright": "© 2026 The Cultural Bridge. Образовательный проект."
+        "copyright": "© 2026 Cultural Assist. Образовательный проект."
     },
     "demo": {
         "hook": "Культурный",

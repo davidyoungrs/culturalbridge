@@ -1,5 +1,5 @@
 {
-    "title": "الجسر الثقافي (The Cultural Bridge)",
+    "title": "الجسر الثقافي (Cultural Assist)",
     "subtitle": "مشروع البحث الثقافي المقارن.",
     "labels": {
         "home": "الوطن (Home)",
@@ -11,7 +11,7 @@
     },
     "footer": {
         "frameworks": "5 أطر خاضعة لمراجعة النظراء",
-        "copyright": "© 2026 The Cultural Bridge. مشروع بحثي تعليمي / غير تجاري."
+        "copyright": "© 2026 Cultural Assist. مشروع بحثي تعليمي / غير تجاري."
     },
     "demo": {
         "hook": "الجسر",

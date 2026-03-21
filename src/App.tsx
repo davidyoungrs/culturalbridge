@@ -19,6 +19,8 @@ import CBIDashboard from "./components/CBIDashboard";
 import CulturalQuiz from "./components/CulturalQuiz";
 import DemoOne from "./components/DemoOne";
 import AssessmentResultsView from "./components/AssessmentResultsView";
+import PrivacyModal from "./components/PrivacyModal";
+import TermsModal from "./components/TermsModal";
 
 const countryOptions = COUNTRIES.map((c) => ({ value: c.name, label: c.name }));
 
@@ -29,6 +31,8 @@ const App = () => {
   const [isDark, setIsDark] = useState(false);
   const [showQuizResults, setShowQuizResults] = useState(false);
   const [quizResult, setQuizResult] = useState<{ scores: Record<string, number>, profile: any, code: string } | null>(null);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
 
   const { t, i18n } = useTranslation();
 
@@ -80,6 +84,17 @@ const App = () => {
     document.documentElement.classList.toggle('dark');
   };
 
+  useEffect(() => {
+    const handleOpenPrivacy = () => setShowPrivacy(true);
+    const handleOpenTerms = () => setShowTerms(true);
+    window.addEventListener('openPrivacyPolicy', handleOpenPrivacy);
+    window.addEventListener('openTermsAndConditions', handleOpenTerms);
+    return () => {
+        window.removeEventListener('openPrivacyPolicy', handleOpenPrivacy);
+        window.removeEventListener('openTermsAndConditions', handleOpenTerms);
+    };
+  }, []);
+
   const culturalInsights = useMemo(() => {
     const homeCBI = calculateCBI(homeCountry);
     const targetCBI = calculateCBI(targetCountry);
@@ -103,7 +118,7 @@ const App = () => {
                   <Globe2 className="w-10 h-10 text-white" />
                 </div>
                 <h1 className="text-5xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-indigo-600 to-slate-900 dark:from-white dark:via-indigo-400 dark:to-white">
-                  {t('title', 'The Cultural Bridge')}
+                  {t('title', 'Cultural Assist')}
                 </h1>
               </div>
               <p className="text-slate-500 dark:text-slate-400 font-bold text-lg leading-tight opacity-80 max-w-sm">
@@ -217,11 +232,18 @@ const App = () => {
           />
         )}
 
+        <PrivacyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} isDark={isDark} />
+        <TermsModal isOpen={showTerms} onClose={() => setShowTerms(false)} isDark={isDark} />
+
         <footer className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between text-slate-400 dark:text-slate-500 gap-4">
           <div className="flex items-center gap-3 text-xs font-black uppercase tracking-widest">
             <Info className="w-4 h-4" /> {t('footer.frameworks', '5 Peer-Reviewed Frameworks')}
           </div>
-          <div className="text-[10px] font-bold uppercase tracking-widest">{t('footer.copyright', '© 2026 The Cultural Bridge. Educational / Non-Commercial Research Project.')}</div>
+          <div className="flex items-center gap-6">
+            <button onClick={() => setShowTerms(true)} className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors hidden sm:block">Terms</button>
+            <button onClick={() => setShowPrivacy(true)} className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">Privacy Policy</button>
+            <div className="text-[10px] font-bold uppercase tracking-widest">{t('footer.copyright', '© 2026 Cultural Assist. Educational / Non-Commercial Research Project.')}</div>
+          </div>
         </footer>
       </div >
     </div >

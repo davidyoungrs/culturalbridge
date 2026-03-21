@@ -190,10 +190,13 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
                                 placeholder="jane@company.com"
                             />
                         </div>
+                        <div className="mt-5 mb-2 text-[10px] text-slate-500 dark:text-slate-400 leading-snug">
+                            By submitting your information, you consent to our <button type="button" onClick={() => window.dispatchEvent(new Event('openPrivacyPolicy'))} className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Privacy Policy</button> and agree to our <button type="button" onClick={() => window.dispatchEvent(new Event('openTermsAndConditions'))} className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Terms & Conditions</button>. You can request deletion at any time in accordance with GDPR.
+                        </div>
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className={`w-full flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition-all mt-4 ${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''}`}
+                            className={`w-full flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition-all ${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''}`}
                         >
                             {isSubmitting ? (
                                 <><Loader2 className="w-4 h-4 animate-spin" /> {t('quiz.submitting', 'Submitting...')}</>

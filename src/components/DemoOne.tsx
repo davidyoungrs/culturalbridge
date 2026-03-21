@@ -1,5 +1,5 @@
 import TextBlockAnimation from "./ui/text-block-animation";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function DemoOne() {
@@ -23,7 +23,7 @@ export default function DemoOne() {
                         >
                             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none mb-4">
                                 {t('demo.hook', 'Cultural')}<br />
-                                <span className="text-indigo-600 dark:text-indigo-400">{t('demo.hook_highlight', 'Bridge.')}</span>
+                                <span className="text-indigo-600 dark:text-indigo-400">{t('demo.hook_highlight', 'Assist.')}</span>
                             </h1>
                         </TextBlockAnimation>
 
@@ -77,26 +77,7 @@ export default function DemoOne() {
                     </div>
                 </section>
 
-                {/* 3. FOOTER: Call to Action */}
-                <footer className="py-32 flex flex-col items-center justify-center bg-white dark:bg-slate-950">
-                    <TextBlockAnimation blockColor="#ef4444" duration={0.8}>
-                        <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">{t('demo.cta_title', 'Ready to expand?')}</h3>
-                    </TextBlockAnimation>
 
-                    <TextBlockAnimation blockColor="#6366f1" duration={0.9}>
-                        <a
-                            href="https://github.com/davidyoungrs/culturalbridge"
-                            className="group flex items-center gap-4 text-5xl md:text-7xl lg:text-8xl font-black hover:text-indigo-600 dark:hover:text-indigo-400 transition-all cursor-pointer"
-                        >
-                            {t('demo.cta', 'Contribute')}
-                            <Mail className="w-12 h-12 md:w-16 md:h-16 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" />
-                        </a>
-                    </TextBlockAnimation>
-
-                    <div className="mt-20 text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                        {t('footer.copyright', '© 2026 The Cultural Bridge. Educational / Non-Commercial Research Project.')}
-                    </div>
-                </footer>
             </div>
         </div>
     );
