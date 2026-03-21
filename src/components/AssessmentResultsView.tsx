@@ -8,8 +8,12 @@ import {
     Info,
     ArrowLeft,
     Twitter,
-    Linkedin
+    Linkedin,
+    Download
 } from "lucide-react";
+
+// @ts-ignore
+import html2pdf from "html2pdf.js";
 
 import { AXES } from "../constants/quizData";
 import { calculateCBI, calculateUserCBI } from "../lib/culturalWeights";
@@ -49,6 +53,28 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
 }) => {
     const { t } = useTranslation();
     const containerRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    const handleDownloadPDF = async () => {
+        if (!contentRef.current) return;
+        const element = contentRef.current;
+        const opt = {
+            margin:       0.5,
+            filename:     `Cultural_Bridge_Report_${code}.pdf`,
+            image:        { type: 'jpeg' as const, quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true, logging: false },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' as const }
+        };
+
+        const actionElements = element.querySelectorAll('.pdf-exclude');
+        actionElements.forEach(el => (el as HTMLElement).style.display = 'none');
+
+        try {
+            await html2pdf().set(opt).from(element).save();
+        } finally {
+            actionElements.forEach(el => (el as HTMLElement).style.display = '');
+        }
+    };
 
     const userCBI = useMemo(() => calculateUserCBI(userScores), [userScores]);
     const targetCBI = useMemo(() => calculateCBI(targetCountry), [targetCountry]);
@@ -79,9 +105,9 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
             "fixed inset-0 z-[100] overflow-y-auto transition-colors duration-300",
             isDark ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"
         )}>
-            <div className="max-w-4xl mx-auto px-4 py-12 md:py-20">
+            <div ref={contentRef} className="max-w-4xl mx-auto px-4 py-12 md:py-20">
                 {/* Header */}
-                <div className="animate-header flex items-center justify-between mb-10">
+                <div className="animate-header flex items-center justify-between mb-10 pdf-exclude">
                     <button
                         onClick={onClose}
                         className="flex items-center gap-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors group"
@@ -248,12 +274,19 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} isDark={isDark} />
                 </div>
 
-                <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 pdf-exclude">
                     <button
                         onClick={onClose}
                         className="w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
                     >
                         {t('results.return', 'Return to Dashboard')}
+                    </button>
+
+                    <button
+                        onClick={handleDownloadPDF}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-rose-600 dark:bg-rose-500 text-white font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-rose-600/20"
+                    >
+                        <Download className="w-4 h-4" /> {t('results.downloadPdf', 'Download PDF Report')}
                     </button>
 
                     <a
