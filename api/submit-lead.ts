@@ -1,6 +1,50 @@
 export default async function handler(req: any, res: any) {
-    if (req.method !== 'POST') {
+    // 1. Check HTTP Method
+    if (req.method !== 'POST' && req.method !== 'OPTIONS') {
         return res.status(405).json({ success: false, error: 'Method Not Allowed' });
+    }
+
+    // 2. STRICT CORS (Cross-Origin Resource Sharing) Protection
+    const origin = req.headers.origin;
+    
+    const allowedOrigins = [
+        'https://cultural-assist.vercel.app',
+        'https://the-cultural-bridge.vercel.app',
+        // Dynamically allow Vercel production/preview environments provided by process.env
+        process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '' 
+    ];
+
+    const isDevelopment = process.env.NODE_ENV !== 'production';
+    
+    let isAllowed = false;
+    if (origin) {
+        // Allow localhost ONLY in development mode
+        if (isDevelopment && origin.startsWith('http://localhost')) {
+            isAllowed = true;
+        } 
+        // Allow whitelisted production domains
+        else if (allowedOrigins.includes(origin)) {
+            isAllowed = true;
+        } 
+        // Fallback: Allow any Vercel preview domain branching from this project
+        else if (origin.endsWith('.vercel.app') && origin.includes('cultural-')) {
+            isAllowed = true;
+        }
+    }
+
+    if (!isAllowed) {
+        console.warn(`Blocked unauthorized request from origin: ${origin || 'UNKNOWN'}`);
+        return res.status(403).json({ success: false, error: 'Forbidden' });
+    }
+
+    // 3. Set standard CORS headers (Browser Requirement)
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    // Respond successfully to CORS pre-flight requests (OPTIONS method)
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
     }
 
     const { firstName, email, phoneNumber } = req.body;
