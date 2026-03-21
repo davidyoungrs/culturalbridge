@@ -48,15 +48,19 @@ export async function submitToAirtable(firstName: string, email: string, phoneNu
             const data = await response.json();
             if (!response.ok || !data.success) {
                 console.error("Server API error:", data.error);
+                if (typeof window !== 'undefined') window.alert(`SERVER DATA ERROR: ${data.error}`);
                 return { success: false, error: data.error };
             }
             return { success: true };
         } else {
+            const errText = await response.text();
+            if (typeof window !== 'undefined') window.alert(`VERCEL FATAL 500 ERROR: The Vercel server crashed entirely. Text: ${errText.substring(0, 100)}`);
             return { success: false, error: `Invalid response from server: ${response.status}` };
         }
 
     } catch (error) {
         console.error("Error submitting lead:", error);
+        if (typeof window !== 'undefined') window.alert(`CRITICAL NETWORK CATCH: ${error}`);
         return { success: false, error };
     }
 }

@@ -78,7 +78,7 @@ export default async function handler(req: any, res: any) {
     const tableName = process.env.VITE_AIRTABLE_TABLE_NAME || process.env.AIRTABLE_TABLE_NAME;
 
     if (!pat || !baseId || !tableName) {
-        return res.status(500).json({ success: false, error: 'Server misconfiguration' });
+        return res.status(500).json({ success: false, error: `Server misconfiguration. Keys missing: PAT=${!!pat}, BASE=${!!baseId}, TABLE=${!!tableName}` });
     }
 
     try {
@@ -99,6 +99,12 @@ export default async function handler(req: any, res: any) {
                 ]
             })
         });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Airtable API error:", errorText);
+            return res.status(500).json({ success: false, error: `Airtable Auth/Format Error: ${errorText}` });
+        }
 
         // --- 5. SEND AUTOMATED EMAIL ---
         if (profileData && process.env.RESEND_API_KEY) {
