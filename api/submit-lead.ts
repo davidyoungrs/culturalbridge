@@ -3,10 +3,17 @@ export default async function handler(req: any, res: any) {
         return res.status(405).json({ success: false, error: 'Method Not Allowed' });
     }
 
-    const { firstName, email } = req.body;
+    const { firstName, email, phoneNumber } = req.body;
 
     if (!firstName || !email) {
         return res.status(400).json({ success: false, error: 'Missing fields' });
+    }
+
+    // HONEYPOT: If the hidden 'phoneNumber' field is filled out, this is a spam bot.
+    // We immediately return success to trick the bot into thinking it worked.
+    if (phoneNumber && phoneNumber.trim() !== '') {
+        console.warn('Spam bot detected via honeypot field.', { email });
+        return res.status(200).json({ success: true });
     }
 
     // Use process.env on the server. We fallback to VITE_ so you don't instantly break 

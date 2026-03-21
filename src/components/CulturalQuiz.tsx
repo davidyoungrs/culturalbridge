@@ -20,7 +20,7 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     const [showResults, setShowResults] = useState(false);
     const [showLeadForm, setShowLeadForm] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [leadData, setLeadData] = useState({ firstName: '', email: '' });
+    const [leadData, setLeadData] = useState({ firstName: '', email: '', phoneNumber: '' });
 
     const progress = Object.keys(answers).length;
     const total = QUIZ_QUESTIONS.length;
@@ -43,8 +43,8 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
         setIsSubmitting(true);
 
         try {
-            await submitToAirtable(leadData.firstName, leadData.email);
-            console.log("Lead captured:", leadData);
+            await submitToAirtable(leadData.firstName, leadData.email, leadData.phoneNumber);
+            console.log("Lead captured:", leadData.firstName);
         } catch (error) {
             console.error("Failed to submit lead", error);
         } finally {
@@ -60,7 +60,7 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
         setAnswers({});
         setShowResults(false);
         setShowLeadForm(false);
-        setLeadData({ firstName: '', email: '' });
+        setLeadData({ firstName: '', email: '', phoneNumber: '' });
     };
 
     // Group questions by axis
@@ -162,6 +162,19 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
                         {t('quiz.leadPrompt', 'Enter your name and email to reveal your comprehensive cultural profile and tailored insights.')}
                     </p>
                     <form onSubmit={handleLeadSubmit} className="space-y-4">
+                        {/* Honeypot field for spam bots */}
+                        <div className="opacity-0 absolute w-0 h-0 -z-50 pointer-events-none overflow-hidden" aria-hidden="true">
+                            <label htmlFor="phoneNumber">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phoneNumber"
+                                name="phoneNumber"
+                                tabIndex={-1}
+                                autoComplete="off"
+                                value={leadData.phoneNumber}
+                                onChange={(e) => setLeadData(prev => ({ ...prev, phoneNumber: e.target.value }))}
+                            />
+                        </div>
                         <div>
                             <label htmlFor="firstName" className="block text-xs font-bold text-slate-700 mb-1">
                                 {t('quiz.firstName', 'First Name')}

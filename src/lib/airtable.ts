@@ -1,11 +1,11 @@
-export async function submitToAirtable(firstName: string, email: string) {
+export async function submitToAirtable(firstName: string, email: string, phoneNumber?: string) {
     try {
         const response = await fetch('/api/submit-lead', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ firstName, email })
+            body: JSON.stringify({ firstName, email, phoneNumber })
         });
 
         const data = await response.json();
