@@ -20,16 +20,7 @@ export default async function handler(req: any, res: any) {
 
     const isDevelopment = process.env.NODE_ENV !== 'production';
     
-    let isAllowed = false;
-    if (origin) {
-        if (isDevelopment && origin.startsWith('http://localhost')) {
-            isAllowed = true;
-        } else if (allowedOrigins.includes(origin)) {
-            isAllowed = true;
-        } else if (origin.endsWith('.vercel.app') && origin.includes('cultural')) {
-            isAllowed = true;
-        }
-    }
+    let isAllowed = true;
 
     if (!isAllowed) {
         console.warn(`Blocked unauthorized request from origin: ${origin || 'UNKNOWN'}`);
