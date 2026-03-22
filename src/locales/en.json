@@ -162,6 +162,8 @@
     },
     "results": {
         "naturalFit": "Natural Fit With",
-        "adaptationGuide": "Adaptation Guide"
+        "adaptationGuide": "Adaptation Guide",
+        "downloadPDF": "Download PDF Report",
+        "generating": "Generating"
     }
 }

@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useRef } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import gsap from "gsap";
 import {
     Sparkles,
@@ -53,26 +53,43 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
+    const [isGenerating, setIsGenerating] = useState(false);
+
     const handleDownloadPDF = async () => {
-        if (!contentRef.current) return;
+        if (!contentRef.current || isGenerating) return;
+        
+        setIsGenerating(true);
         const element = contentRef.current;
         const opt = {
-            margin:       0.5,
+            margin:       0.3, // Slightly smaller margin for more content space
             filename:     `Cultural_Bridge_Report_${code}.pdf`,
-            image:        { type: 'jpeg' as const, quality: 0.98 },
-            html2canvas:  { scale: 2, useCORS: true, logging: false },
+            image:        { type: 'jpeg' as const, quality: 0.95 },
+            html2canvas:  { 
+                scale: 1.5, // Reduced from 2 to 1.5 for better performance
+                useCORS: true, 
+                logging: false,
+                letterRendering: true // Better text rendering
+            },
             jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' as const }
         };
 
+        // Hide UI elements that shouldn't be in the PDF
         const actionElements = element.querySelectorAll('.pdf-exclude');
         actionElements.forEach(el => (el as HTMLElement).style.display = 'none');
 
         try {
-            // Dynamic import: html2pdf.js (~500KB) is only fetched when user clicks Download
+            // Small delay to ensure any dynamic layout shifts are settled
+            await new Promise(resolve => setTimeout(resolve, 100));
+
+            // Dynamic import: html2pdf.js (~500KB)
             const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set(opt).from(element).save();
+        } catch (error) {
+            console.error("PDF Generation failed:", error);
+            alert("Sorry, there was an error generating your PDF. Please try again or use the browser print function (Cmd+P).");
         } finally {
             actionElements.forEach(el => (el as HTMLElement).style.display = '');
+            setIsGenerating(false);
         }
     };
 
@@ -284,9 +301,19 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
 
                     <button
                         onClick={handleDownloadPDF}
-                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-rose-600 dark:bg-rose-500 text-white font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-rose-600/20"
+                        disabled={isGenerating}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-rose-600 dark:bg-rose-500 text-white font-black uppercase tracking-widest text-xs px-10 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-rose-600/20 disabled:opacity-75 disabled:cursor-not-allowed"
                     >
-                        <Download className="w-4 h-4" /> {t('results.downloadPdf', 'Download PDF Report')}
+                        {isGenerating ? (
+                            <>
+                                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                {t('results.generating')}...
+                            </>
+                        ) : (
+                            <>
+                                <Download className="w-4 h-4" /> {t('results.downloadPDF', 'Download PDF Report')}
+                            </>
+                        )}
                     </button>
 
                     <a
