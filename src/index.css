@@ -22,3 +22,52 @@ body {
 #root {
   width: 100%;
 }
+
+/* 📄 PDF Export Styles - Critical for html2canvas compatibility */
+.is-pdf-export {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  width: 1000px !important; /* Fixed width for consistent rendering */
+  margin: 0 !important;
+  padding: 20px !important;
+}
+
+.is-pdf-export * {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+  animation: none !important;
+  text-shadow: none !important;
+}
+
+.is-pdf-export .bg-white\/80,
+.is-pdf-export .bg-white\/50,
+.is-pdf-export .bg-slate-50\/50,
+.is-pdf-export .bg-indigo-50\/50 {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.is-pdf-export .border-white\/40,
+.is-pdf-export .border-white\/50,
+.is-pdf-export .border-white\/20 {
+  border-color: #e2e8f0 !important;
+}
+
+.is-pdf-export .text-transparent {
+  color: #0f172a !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  background-image: none !important;
+}
+
+/* Hide background accents during PDF export */
+.is-pdf-export .blur-3xl {
+  display: none !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}

@@ -66,29 +66,26 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
             // 2. Scroll to top to ensure html2canvas starts from correct viewport position
             window.scrollTo(0, 0);
 
-            // 3. Hide UI elements that shouldn't be in the PDF
+            // 3. Hide UI elements and apply PDF-safe styles
             const element = contentRef.current;
+            element.classList.add('is-pdf-export');
+            
             const actionElements = element.querySelectorAll('.pdf-exclude');
             actionElements.forEach(el => (el as HTMLElement).style.display = 'none');
 
-            // 4. Wait for GSAP animations to fully complete and for layout to settle
-            // Increased from 100ms to 500ms for better reliability
-            await new Promise(resolve => setTimeout(resolve, 500));
+            // 4. Wait for styles to settle and animations to pause
+            await new Promise(resolve => setTimeout(resolve, 800));
 
             const opt = {
-                margin:       [0.4, 0.4, 0.4, 0.4] as [number, number, number, number], // Top, Left, Bottom, Right
+                margin:       [0.2, 0.2, 0.2, 0.2] as [number, number, number, number],
                 filename:     `Cultural_Bridge_Report_${code}.pdf`,
                 image:        { type: 'jpeg' as const, quality: 0.98 }, 
                 html2canvas:  { 
-                    scale: 1.25, // Optimized balance of quality vs memory usage
+                    scale: 2, // Higher scale for print quality
                     useCORS: true, 
-                    allowTaint: true,
-                    logging: true, // Enable for easier debugging during testing
+                    logging: false, 
                     letterRendering: true,
-                    scrollX: 0,
-                    scrollY: 0,
-                    windowWidth: document.documentElement.offsetWidth,
-                    windowHeight: document.documentElement.offsetHeight
+                    windowWidth: 1000 // Match the fixed width in CSS
                 },
                 jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' as const }
             };
@@ -97,7 +94,8 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
             const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set(opt).from(element).save();
 
-            // 6. Restore UI elements and scroll position
+            // 6. Restore original state
+            element.classList.remove('is-pdf-export');
             actionElements.forEach(el => (el as HTMLElement).style.display = '');
             window.scrollTo(scrollX, scrollY);
 
