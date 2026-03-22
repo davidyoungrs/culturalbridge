@@ -9,6 +9,7 @@ import {
     getProfileType,
 } from "../constants/quizData";
 import { submitToAirtable } from "../lib/airtable";
+import { cn } from "../lib/utils";
 
 interface CulturalQuizProps {
     onComplete?: (scores: Record<string, number>, profile: any, code: string) => void;
@@ -254,7 +255,7 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
                 </div>
             </div>
 
-            <div className="p-5 space-y-6 max-h-[600px] overflow-y-auto">
+            <div className="p-5 space-y-8">
                 {grouped.map((group) => (
                     <div key={group.axis}>
                         <h3
@@ -296,14 +297,26 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
                 ))}
 
                 {/* Submit */}
-                {isComplete && (
+                <div className="mt-4">
                     <button
                         onClick={handleReveal}
-                        className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition-all"
+                        disabled={!isComplete}
+                        className={cn(
+                            "w-full flex items-center justify-center gap-2 font-bold text-sm py-4 rounded-xl shadow-lg transition-all",
+                            isComplete
+                                ? "bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white hover:scale-[1.02] active:scale-[0.98]"
+                                : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed shadow-none"
+                        )}
                     >
-                        <Sparkles className="w-4 h-4" /> {t('quiz.reveal', 'Reveal My Cultural Profile')}
+                        {isComplete ? <Sparkles className="w-5 h-5 shadow-sm" /> : <Loader2 className="w-5 h-5 opacity-40 animate-pulse" />}
+                        {t('quiz.reveal', 'Reveal My Cultural Profile')}
                     </button>
-                )}
+                    {!isComplete && (
+                        <p className="text-center text-[10px] text-slate-400 mt-3 font-bold uppercase tracking-widest">
+                            {t('quiz.answerAll', 'Answer all 12 questions to unlock')}
+                        </p>
+                    )}
+                </div>
             </div>
         </div>
     );

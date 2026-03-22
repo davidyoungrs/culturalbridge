@@ -8,6 +8,7 @@ import {
   Zap,
   Sun,
   Moon,
+  ClipboardCheck,
 } from "lucide-react";
 import { COUNTRIES, INDUSTRIES } from "./constants/cultureData";
 import { generateCBIInsights } from "./lib/insightGenerator";
@@ -34,6 +35,7 @@ const App = () => {
   const [quizResult, setQuizResult] = useState<{ scores: Record<string, number>, profile: any, code: string } | null>(null);
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(false);
 
   const { t, i18n } = useTranslation();
 
@@ -160,6 +162,26 @@ const App = () => {
         <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5">
           <div className="lg:col-span-8 h-full">
             <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} isDark={isDark} />
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => {
+                  setShowQuiz(true);
+                  setTimeout(() => {
+                    document.getElementById('quiz-section')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
+                className={cn(
+                  "group flex items-center gap-3 px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm transition-all shadow-xl hover:scale-105 active:scale-95",
+                  showQuiz 
+                    ? "bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed shadow-none" 
+                    : "bg-indigo-600 text-white shadow-indigo-600/20 hover:bg-indigo-700"
+                )}
+                disabled={showQuiz}
+              >
+                <ClipboardCheck className="w-5 h-5" />
+                {t('quiz.take_assessment', 'Take Personal Assessment')}
+              </button>
+            </div>
           </div>
 
           {/* Critical Gaps Sidebar moved here for top alignment */}
@@ -215,9 +237,11 @@ const App = () => {
           </div>
 
 
-          <div className="lg:col-span-12">
-            <CulturalQuiz onComplete={handleQuizComplete} />
-          </div>
+          {showQuiz && (
+            <div id="quiz-section" className="lg:col-span-12 animate-in fade-in slide-in-from-bottom-5 duration-700">
+              <CulturalQuiz onComplete={handleQuizComplete} />
+            </div>
+          )}
         </main>
 
         <Suspense fallback={null}>
