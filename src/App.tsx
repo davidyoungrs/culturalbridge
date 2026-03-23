@@ -17,6 +17,7 @@ import SearchableSelect from "./components/SearchableSelect";
 import CBIDashboard from "./components/CBIDashboard";
 import CulturalQuiz from "./components/CulturalQuiz";
 import DemoOne from "./components/DemoOne";
+import { AEOFAQ } from "./components/AEOFAQ";
 
 const AssessmentResultsView = lazy(() => import("./components/AssessmentResultsView"));
 const PrivacyModal = lazy(() => import("./components/PrivacyModal"));
@@ -89,11 +90,11 @@ const App = () => {
     };
   }, []);
 
-  const culturalInsights = useMemo(() => {
-    const homeCBI = calculateCBI(homeCountry);
-    const targetCBI = calculateCBI(targetCountry);
-    return generateCBIInsights(homeCBI, targetCBI);
-  }, [homeCountry, targetCountry]);
+    const culturalInsights = useMemo(() => {
+        const homeCBI = calculateCBI(homeCountry);
+        const targetCBI = calculateCBI(targetCountry);
+        return generateCBIInsights(homeCBI, targetCBI, targetCountry.name);
+    }, [homeCountry, targetCountry]);
 
   return (
     <div className="min-h-screen font-sans transition-colors duration-300 overflow-x-hidden bg-slate-50 text-slate-900">
@@ -205,6 +206,12 @@ const App = () => {
                       <p className="text-[11px] text-slate-500 leading-relaxed font-bold">
                         {t(`insights.${insight.key}.${insight.direction}Cons`, insight.consideration)}
                       </p>
+                      {insight.anchor && (
+                        <div className="mt-3 p-2 bg-slate-50 rounded-xl border border-slate-100 italic text-[10px] text-indigo-600 font-semibold leading-tight">
+                          <span className="font-black uppercase text-[8px] tracking-widest block mb-1 opacity-50">Cultural Anchor</span>
+                          {insight.anchor}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -224,6 +231,10 @@ const App = () => {
               <CulturalQuiz onComplete={handleQuizComplete} />
             </div>
           )}
+
+          <div className="lg:col-span-12">
+            <AEOFAQ />
+          </div>
         </main>
  
         <Suspense fallback={null}>

@@ -1,4 +1,5 @@
 import { type CBIScores } from "./culturalWeights";
+import { CCUB_DATA } from "../constants/ccubData";
 
 export interface CulturalInsight {
     framework: "CBI";
@@ -9,6 +10,7 @@ export interface CulturalInsight {
     meaning: string;
     consideration: string;
     severity: "high" | "medium" | "low";
+    anchor?: string;
 }
 
 const getCBIInsight = (key: keyof CBIScores, homeVal: number, targetVal: number): Partial<CulturalInsight> | null => {
@@ -72,7 +74,8 @@ const getCBIInsight = (key: keyof CBIScores, homeVal: number, targetVal: number)
 
 export const generateCBIInsights = (
     homeCBI: CBIScores,
-    targetCBI: CBIScores
+    targetCBI: CBIScores,
+    targetCountryName?: string
 ): CulturalInsight[] => {
     const allInsights: CulturalInsight[] = [];
 
@@ -83,6 +86,9 @@ export const generateCBIInsights = (
         const gap = Math.abs(targetVal - homeVal);
 
         if (insightData) {
+            const countryCCUB = targetCountryName ? CCUB_DATA[targetCountryName] : null;
+            const relevantArtifact = countryCCUB?.find(a => a.cbiDimension === key);
+
             allInsights.push({
                 framework: "CBI",
                 dimension: key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
@@ -92,6 +98,7 @@ export const generateCBIInsights = (
                 meaning: insightData.meaning!,
                 consideration: insightData.consideration!,
                 severity: gap >= 40 ? "high" : "medium",
+                anchor: relevantArtifact?.description
             });
         }
     });

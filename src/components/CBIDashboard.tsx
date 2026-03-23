@@ -13,6 +13,8 @@ import {
 } from "recharts";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { CCUB_DATA } from "../constants/ccubData";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 interface CBIDashboardProps {
     homeCountry: Country;
@@ -72,16 +74,49 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, }: CBIDashboardPro
         </div>
     );
 
-    const radarData = {
-        columns: [
-            { id: 'relationshipTrust', label: 'Trust & Relationship', framework: 'Hofstede', color: '#6366f1' },
-            { id: 'adaptiveAgility', label: 'Adaptive Agility', framework: 'Trompenaars', color: '#10b981' },
-            { id: 'processConsensus', label: 'Process Consensus', framework: 'Lewis', color: '#ef4444' },
-            { id: 'performanceVelocity', label: 'Performance Velocity', framework: 'Erin Meyer', color: '#eab308' },
-            { id: 'communicationDirectness', label: 'Communication Directness', framework: 'Hall', color: '#a855f7' },
-            { id: 'strategicFocus', label: 'Strategic Focus', framework: 'Hofstede', color: '#f97316' },
-            { id: 'empoweredEquality', label: 'Empowered Equality', framework: 'Trompenaars', color: '#06b6d4' },
-        ]
+
+    const CulturalVisualDNA = ({ countryName }: { countryName: string }) => {
+        const artifacts = CCUB_DATA[countryName];
+        if (!artifacts) return null;
+
+        return (
+            <div className="mt-8 pt-8 border-t border-slate-100">
+                <div className="flex items-center gap-2 mb-6">
+                    <Sparkles className="w-4 h-4 text-indigo-500" />
+                    <h3 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">
+                        Visual Cultural DNA <span className="text-indigo-600/50 ml-1">Powered by CCUB</span>
+                    </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {artifacts.map((art) => (
+                        <div key={art.id} className="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 border border-slate-200/50 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+                            <img 
+                                src={art.imageUrl} 
+                                alt={art.description} 
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                            <div className="absolute bottom-0 left-0 right-0 p-4">
+                                <span className="inline-block px-2 py-0.5 bg-white/20 backdrop-blur-md rounded-md text-[9px] font-black uppercase tracking-widest text-white mb-2">
+                                    {art.category}
+                                </span>
+                                <p className="text-[10px] text-slate-100 font-bold leading-snug line-clamp-2">
+                                    {art.description}
+                                </p>
+                                {art.cbiDimension && (
+                                    <div className="mt-2 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                                        <ArrowRight className="w-3 h-3 text-indigo-400" />
+                                        <span className="text-[9px] font-black text-indigo-300 uppercase tracking-tighter">
+                                            Maps to {art.cbiDimension.replace(/([A-Z])/g, ' $1').trim()}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
     };
 
     return (
@@ -165,17 +200,6 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, }: CBIDashboardPro
                     </div>
                 )}
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                    {radarData.columns.slice(0, 4).map((col: any) => (
-                        <div key={col.id} className="bg-slate-50/50 border border-slate-100 p-3 rounded-2xl transition-all hover:bg-white hover:shadow-md hover:-translate-y-1">
-                            <div className="flex items-center gap-2 mb-1">
-                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: col.color }} />
-                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{col.framework}</span>
-                            </div>
-                            <div className="text-xs font-black text-slate-800 truncate">{String(t(`dashboard.chart.${col.id}`, col.label))}</div>
-                        </div>
-                    ))}
-                </div>
 
                                 <div className="mt-4 p-4 rounded-xl bg-slate-50/50 border border-slate-100 flex items-start gap-3">
                     <Info className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
@@ -183,6 +207,8 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, }: CBIDashboardPro
                         {String(t('dashboard.info', 'The Cultural Bridge Index (CBI) analyzes proprietary meta-dimensions derived from a weighted synthesis of 5 peer-reviewed frameworks. This model provides original comparative analysis for educational and research purposes.'))}
                     </p>
                 </div>
+
+                <CulturalVisualDNA countryName={targetCountry.name} />
             </div>
         </div>
     );

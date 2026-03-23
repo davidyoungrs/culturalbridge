@@ -111,8 +111,8 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
     const targetCBI = useMemo(() => calculateCBI(targetCountry), [targetCountry]);
 
     const insights = useMemo(() => {
-        return generateCBIInsights(userCBI, targetCBI);
-    }, [userCBI, targetCBI]);
+        return generateCBIInsights(userCBI, targetCBI, targetCountry.name);
+    }, [userCBI, targetCBI, targetCountry.name]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -286,6 +286,12 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                                             <p className="text-xs text-slate-500 leading-relaxed font-semibold">
                                                 {t(`insights.${insight.key}.${insight.direction}Cons`, insight.consideration)}
                                             </p>
+                                            {insight.anchor && (
+                                                <div className="mt-3 p-3 bg-white rounded-xl border border-slate-100 italic text-[10px] text-indigo-600 font-semibold leading-tight shadow-sm">
+                                                    <span className="font-black uppercase text-[8px] tracking-widest block mb-1 opacity-50">Cultural Anchor</span>
+                                                    {insight.anchor}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 ))}
