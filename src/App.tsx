@@ -225,17 +225,16 @@ const App = () => {
             </div>
           </div>
 
-
           {showQuiz && (
             <div id="quiz-section" className="lg:col-span-12 animate-in fade-in slide-in-from-bottom-5 duration-700">
               <CulturalQuiz onComplete={handleQuizComplete} />
             </div>
           )}
-
-          <div className="lg:col-span-12">
-            <AEOFAQ />
-          </div>
         </main>
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6 mb-20">
+          <AEOFAQ />
+        </div>
  
         <Suspense fallback={null}>
           {showQuizResults && quizResult && (

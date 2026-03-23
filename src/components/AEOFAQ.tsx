@@ -8,7 +8,7 @@ export const AEOFAQ = () => {
     const faqs = [
         {
             question: "What is the Cultural Bridge Index (CBI)?",
-            answer: "The Cultural Bridge Index (CBI) is a proprietary meta-framework that synthesizes five peer-reviewed cultural research models, including Hofstede, Erin Meyer, and the Lewis Model. It provides a 7-dimension 'Cultural DNA' profile to help global leaders navigate cross-border business with precision.\n\nThe Cultural Bridge Index (CBI) is a proprietary meta-framework that synthesizes five peer-reviewed cultural research models. It provides a 7-dimension 'Cultural DNA' profile to help global leaders navigate cross-border business with precision."
+            answer: "The Cultural Bridge Index (CBI) is a proprietary meta-framework that synthesizes five peer-reviewed cultural research models. It provides a 7-dimension 'Cultural DNA' profile to help global leaders navigate cross-border business with precision.\n\nThe Cultural Bridge Index (CBI) is a proprietary meta-framework that synthesizes five peer-reviewed cultural research models. It provides a 7-dimension 'Cultural DNA' profile to help global leaders navigate cross-border business with precision."
         },
         {
             question: "How does CBI compare to other models",
