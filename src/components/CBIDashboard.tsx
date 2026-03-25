@@ -132,14 +132,6 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, isPrinting = false
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10 relative z-10">
                 <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-3">
-                        <div className="p-2 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-600/20">
-                            <Activity className="w-5 h-5 text-white" />
-                        </div>
-                        <h2 className="text-3xl font-black tracking-tighter text-slate-900">
-                            {t('dashboard.comparison', 'The Cultural Bridge')}
-                        </h2>
-                    </div>
                     <p className="text-slate-500 font-bold px-1 flex items-center gap-2">
                         {homeCountry.name} 
                         <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />

@@ -5,7 +5,8 @@ import {
   ChevronRight,
   TrendingUp,
   Zap,
-  ClipboardCheck
+  ClipboardCheck,
+  Activity
 } from "lucide-react";
 import { COUNTRIES, INDUSTRIES } from "./constants/cultureData";
 import { generateCBIInsights } from "./lib/insightGenerator";
@@ -102,7 +103,18 @@ const App = () => {
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-16">
         <header className="mb-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-start gap-8 border-b border-slate-200 pb-10">
+          <div className="flex flex-col gap-10 border-b border-slate-200 pb-12 mb-12">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-indigo-600 rounded-2xl shadow-xl shadow-indigo-600/30">
+                  <Activity className="w-10 h-10 text-white" />
+                </div>
+                <h1 className="text-5xl font-black tracking-tighter text-slate-900 leading-none">
+                  {t('dashboard.comparison', 'The Cultural Bridge')}
+                </h1>
+              </div>
+            </div>
+
             <div className="flex items-center gap-4">
               <div className="flex flex-wrap items-center gap-3 bg-white/80 backdrop-blur-md p-2.5 rounded-2xl shadow-xl shadow-slate-200/50 border border-white/20">
                 <div className="flex flex-col gap-1">
