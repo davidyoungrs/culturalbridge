@@ -301,19 +301,28 @@ const TravelAdviceDashboard: React.FC = () => {
                                         <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 flex items-center gap-1.5">
                                             <AlertTriangle className="w-3 h-3 text-amber-500" /> Malaria Risk
                                         </p>
-                                        <p className="text-sm font-semibold text-slate-700 leading-relaxed">{report.health.malariaRisk}</p>
-                                        {report.health.whoCountryUrl && (
-                                            <a href={report.health.whoCountryUrl} target="_blank" rel="noopener noreferrer"
-                                                className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-emerald-600 hover:text-emerald-800 transition-colors">
-                                                WHO Country Health Data <ExternalLink className="w-2.5 h-2.5" />
-                                            </a>
-                                        )}
-                                        {!report.health.whoCountryUrl && (
-                                            <a href={`https://www.who.int/health-topics/malaria#tab=tab_1`} target="_blank" rel="noopener noreferrer"
-                                                className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-indigo-600 transition-colors">
-                                                WHO Malaria Overview <ExternalLink className="w-2.5 h-2.5" />
-                                            </a>
-                                        )}
+                                        <p className="text-sm font-semibold text-slate-700 leading-relaxed mb-3">{report.health.malariaRisk}</p>
+                                        
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            {report.health.whoCountryUrl && (
+                                                <a href={report.health.whoCountryUrl} target="_blank" rel="noopener noreferrer"
+                                                    className="inline-flex items-center justify-center p-2.5 bg-white border border-slate-200 rounded-xl gap-2 text-[10px] font-black uppercase tracking-widest text-emerald-600 hover:border-emerald-200 hover:bg-emerald-50 transition-all">
+                                                    WHO Site <ExternalLink className="w-2.5 h-2.5" />
+                                                </a>
+                                            )}
+                                            {report.health.cdcUrl && (
+                                                <a href={report.health.cdcUrl} target="_blank" rel="noopener noreferrer"
+                                                    className="inline-flex items-center justify-center p-2.5 bg-white border border-slate-200 rounded-xl gap-2 text-[10px] font-black uppercase tracking-widest text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all">
+                                                    CDC Advice <ExternalLink className="w-2.5 h-2.5" />
+                                                </a>
+                                            )}
+                                            {report.health.travelHealthProUrl && (
+                                                <a href={report.health.travelHealthProUrl} target="_blank" rel="noopener noreferrer"
+                                                    className="inline-flex items-center justify-center p-2.5 bg-white border border-slate-200 rounded-xl gap-2 text-[10px] font-black uppercase tracking-widest text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-all sm:col-span-2 mt-1">
+                                                    TravelHealthPro (UK) <ExternalLink className="w-2.5 h-2.5" />
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
 
                                     {/* Polio Alert */}

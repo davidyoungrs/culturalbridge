@@ -250,6 +250,10 @@ const Home = () => {
 
         <footer className="mt-16 pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between text-slate-400 gap-4">
           <div className="flex items-center gap-6">
+            <a href="/traveladvice" className="text-[10px] font-black text-indigo-600 uppercase tracking-widest hover:text-indigo-700 transition-colors flex items-center gap-1.5">
+              <Globe2 className="w-3 h-3" /> Global Travel Advice
+            </a>
+            <div className="w-px h-3 bg-slate-200 hidden sm:block" />
             <button onClick={() => setShowTerms(true)} className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors hidden sm:block">Terms</button>
             <button onClick={() => setShowPrivacy(true)} className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors">Privacy Policy</button>
             <div className="text-[10px] font-bold uppercase tracking-widest">{t('footer.copyright', '© 2026 Cultural Assist. Educational / Non-Commercial Research Project.')}</div>

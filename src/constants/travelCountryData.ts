@@ -55,6 +55,8 @@ export interface CountryTravelData {
     yellowFeverRisk?: string;          // e.g. "No risk" / "Risk present" / "Mandatory on arrival from endemic countries"
     malariaRisk: string;
     whoCountryUrl?: string;            // WHO country page for malaria/health details
+    cdcUrl?: string;                   // CDC country-specific health link
+    travelHealthProUrl?: string;       // TravelHealthPro (UK) country-specific health link
     polioAlert: boolean;
     healthNotes?: string[];
   };
@@ -106,7 +108,11 @@ export const getFallbackCountryData = (countryName: string): CountryTravelData =
         { name: 'Hepatitis A', requirement: 'Recommended' },
         { name: 'Typhoid', requirement: 'Recommended' },
       ],
+      yellowFeverRisk: 'Check official requirements below.',
       malariaRisk: 'Check the WHO malaria risk map for this specific destination before travel. Consult a travel health clinic at least 6 weeks before departure.',
+      whoCountryUrl: 'https://www.who.int/countries/',
+      cdcUrl: `https://wwwnc.cdc.gov/travel/destinations/traveler/none/${slug}`,
+      travelHealthProUrl: `https://travelhealthpro.org.uk/countries`,
       polioAlert: false,
       healthNotes: ['Consult a travel health clinic or GP at least 6–8 weeks before departure for personalised vaccination advice.'],
     },
