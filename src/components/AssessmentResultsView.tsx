@@ -104,19 +104,39 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                             const style = window.getComputedStyle(htmlEl);
                             
                             ['color', 'backgroundColor', 'borderColor', 'fill', 'stroke'].forEach(prop => {
-                                const val = (style as any)[prop];
+                                let val = (style as any)[prop];
                                 if (val && (val.includes('oklch') || val.includes('oklab'))) {
-                                    if (prop === 'color') htmlEl.style.color = '#1e293b';
-                                    if (prop === 'backgroundColor') htmlEl.style.backgroundColor = val.includes('white') ? '#ffffff' : '#f8fafc';
-                                    if (prop === 'borderColor') htmlEl.style.borderColor = '#e2e8f0';
-                                    if (prop === 'fill') htmlEl.style.fill = val.includes('6366f1') ? '#6366f1' : (val.includes('10b981') ? '#10b981' : '#4f46e5');
-                                    if (prop === 'stroke') htmlEl.style.stroke = val.includes('6366f1') ? '#6366f1' : (val.includes('10b981') ? '#10b981' : '#4f46e5');
+                                    // Map common brand colors found in the app
+                                    if (val.includes('0.627 0.265 254.6') || val.includes('indigo-600')) {
+                                        if (prop === 'backgroundColor') htmlEl.style.backgroundColor = '#4f46e5';
+                                        if (prop === 'color') htmlEl.style.color = '#ffffff';
+                                        if (prop === 'fill') htmlEl.style.fill = '#4f46e5';
+                                    } else if (val.includes('0.923 0.021 255.43') || val.includes('indigo-50')) {
+                                        if (prop === 'backgroundColor') htmlEl.style.backgroundColor = '#eef2ff';
+                                    } else if (val.includes('0.546 0.245 26.29') || val.includes('rose-600')) {
+                                        if (prop === 'backgroundColor') htmlEl.style.backgroundColor = '#e11d48';
+                                    } else {
+                                        // Generic fallbacks that respect rough brightness
+                                        if (prop === 'color') htmlEl.style.color = '#1e293b';
+                                        if (prop === 'backgroundColor') {
+                                            // Preserve transparency if it looks like a white/black alpha
+                                            if (val.includes('1 0 0') || val.includes('rgba(255, 255, 255')) {
+                                                htmlEl.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                                            } else {
+                                                htmlEl.style.backgroundColor = '#f8fafc';
+                                            }
+                                        }
+                                        if (prop === 'borderColor') htmlEl.style.borderColor = '#e2e8f0';
+                                        if (prop === 'fill') htmlEl.style.fill = '#6366f1';
+                                        if (prop === 'stroke') htmlEl.style.stroke = '#6366f1';
+                                    }
                                 }
                             });
                         });
                     }
                 },
-                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' as const }
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' as const },
+                pagebreak:    { mode: 'avoid' }
             };
 
             // 5. Dynamic import and generate
@@ -352,6 +372,16 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                         targetCountry={targetCountry} 
                         isPrinting={isGenerating}
                     />
+                </div>
+
+                {/* PDF Footer: Copyright & Contact */}
+                <div className="hidden pdf-only flex-col items-center gap-2 mt-12 pt-8 border-t border-slate-100 text-center">
+                    <p className="text-[10px] font-black tracking-widest text-slate-400 uppercase">
+                        © {new Date().getFullYear()} The Cultural Bridge Index. All Rights Reserved.
+                    </p>
+                    <p className="text-[10px] font-bold text-indigo-600">
+                        Contact us: info@reallysimpleapps.com
+                    </p>
                 </div>
 
                 <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 pdf-exclude">
