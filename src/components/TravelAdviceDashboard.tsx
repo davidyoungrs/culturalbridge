@@ -13,6 +13,7 @@ import {
     Info,
     MapPin,
     Newspaper,
+    Syringe,
 } from 'lucide-react';
 import { COUNTRIES } from '../constants/cultureData';
 import SearchableSelect from './SearchableSelect';
@@ -117,7 +118,7 @@ const TravelAdviceDashboard: React.FC = () => {
                             <Loader2 className="w-12 h-12 text-indigo-600 animate-spin" />
                         </div>
                         <p className="text-sm font-black uppercase tracking-widest text-slate-400 mt-4">Syncing Official Sources…</p>
-                        <p className="text-xs font-semibold text-slate-300 mt-1">INTERPOL · WHO · US Dept · FCDO · Canada · NZ</p>
+                        <p className="text-xs font-semibold text-slate-300 mt-1">INTERPOL · WHO · TuGo · US Dept · FCDO · Canada · NZ</p>
                     </div>
                 )}
 
@@ -204,7 +205,7 @@ const TravelAdviceDashboard: React.FC = () => {
 
                                     <p className="text-sm text-slate-600 font-medium leading-relaxed">{report.visaEntry.visaInfo}</p>
 
-                                    {report.visaEntry.entryNotes && report.visaEntry.entryNotes.length > 0 && (
+                                {report.visaEntry.entryNotes && report.visaEntry.entryNotes.length > 0 && (
                                         <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
                                             {report.visaEntry.entryNotes.map((note, i) => (
                                                 <p key={i} className="text-xs text-slate-500 font-semibold flex gap-2">
@@ -215,10 +216,24 @@ const TravelAdviceDashboard: React.FC = () => {
                                     )}
                                 </div>
 
-                                <a href={report.visaEntry.iataReference} target="_blank" rel="noopener noreferrer"
-                                    className="mt-6 w-full py-3.5 bg-slate-900 text-white rounded-2xl font-black text-center text-[11px] uppercase tracking-widest hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow">
-                                    Verify with IATA Timatic <ExternalLink className="w-3.5 h-3.5" />
-                                </a>
+                                <div className="mt-6 space-y-2">
+                                    <a href={report.visaEntry.iataReference} target="_blank" rel="noopener noreferrer"
+                                        className="w-full py-3.5 bg-slate-900 text-white rounded-2xl font-black text-center text-[11px] uppercase tracking-widest hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow">
+                                        Verify with IATA Timatic <ExternalLink className="w-3.5 h-3.5" />
+                                    </a>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <a href={`https://www.ivisa.com/${report.countryName.toLowerCase().replace(/\s+/g, '-')}`}
+                                            target="_blank" rel="noopener noreferrer"
+                                            className="py-2.5 bg-indigo-50 text-indigo-700 rounded-xl font-bold text-center text-[10px] uppercase tracking-widest hover:bg-indigo-100 transition-all flex items-center justify-center gap-1">
+                                            iVisa Check <ExternalLink className="w-2.5 h-2.5" />
+                                        </a>
+                                        <a href="https://apply.joinsherpa.com/travel-restrictions"
+                                            target="_blank" rel="noopener noreferrer"
+                                            className="py-2.5 bg-slate-100 text-slate-700 rounded-xl font-bold text-center text-[10px] uppercase tracking-widest hover:bg-slate-200 transition-all flex items-center justify-center gap-1">
+                                            Sherpa Entry <ExternalLink className="w-2.5 h-2.5" />
+                                        </a>
+                                    </div>
+                                </div>
                             </section>
                         </div>
 
@@ -248,12 +263,57 @@ const TravelAdviceDashboard: React.FC = () => {
                                 </div>
 
                                 <div className="md:col-span-2 space-y-3">
+                                    {/* Yellow Fever Risk */}
+                                    {(() => {
+                                        const yfVax = report.health.vaccinations.find(v =>
+                                            v.name.toLowerCase().includes('yellow fever'));
+                                        const yfRisk = report.health.yellowFeverRisk;
+                                        const yfText = yfRisk ||
+                                            (yfVax?.requirement === 'Mandatory'
+                                                ? `Mandatory — ${yfVax.notes ?? 'Required for entry or exit to certain countries.'}`
+                                                : yfVax?.requirement === 'Recommended'
+                                                ? `Recommended — ${yfVax.notes ?? 'Consider vaccination before travel.'}`
+                                                : 'No Yellow Fever risk for this destination.');
+                                        const isMandatory = yfText.toLowerCase().startsWith('mandatory') || yfVax?.requirement === 'Mandatory';
+                                        const isRecommended = !isMandatory && (yfText.toLowerCase().startsWith('recommended') || yfVax?.requirement === 'Recommended');
+                                        return (
+                                            <div className={cn(
+                                                'p-4 rounded-2xl border',
+                                                isMandatory ? 'bg-rose-50 border-rose-200' : isRecommended ? 'bg-amber-50 border-amber-200' : 'bg-emerald-50 border-emerald-200'
+                                            )}>
+                                                <p className={cn('text-[10px] font-black uppercase tracking-widest mb-1.5 flex items-center gap-1.5',
+                                                    isMandatory ? 'text-rose-600' : isRecommended ? 'text-amber-600' : 'text-emerald-600')}>
+                                                    <Syringe className="w-3 h-3" /> Yellow Fever
+                                                    {isMandatory && <span className="bg-rose-100 text-rose-700 border border-rose-200 px-1.5 rounded-full text-[8px] font-black uppercase">Mandatory</span>}
+                                                    {isRecommended && <span className="bg-amber-100 text-amber-700 border border-amber-200 px-1.5 rounded-full text-[8px] font-black uppercase">Recommended</span>}
+                                                    {!isMandatory && !isRecommended && <span className="bg-emerald-100 text-emerald-700 border border-emerald-200 px-1.5 rounded-full text-[8px] font-black uppercase">No Risk</span>}
+                                                </p>
+                                                <p className={cn('text-xs font-semibold leading-relaxed',
+                                                    isMandatory ? 'text-rose-700' : isRecommended ? 'text-amber-700' : 'text-emerald-700')}>
+                                                    {yfText}
+                                                </p>
+                                            </div>
+                                        );
+                                    })()}
+
                                     {/* Malaria */}
                                     <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                                         <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 flex items-center gap-1.5">
                                             <AlertTriangle className="w-3 h-3 text-amber-500" /> Malaria Risk
                                         </p>
                                         <p className="text-sm font-semibold text-slate-700 leading-relaxed">{report.health.malariaRisk}</p>
+                                        {report.health.whoCountryUrl && (
+                                            <a href={report.health.whoCountryUrl} target="_blank" rel="noopener noreferrer"
+                                                className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-emerald-600 hover:text-emerald-800 transition-colors">
+                                                WHO Country Health Data <ExternalLink className="w-2.5 h-2.5" />
+                                            </a>
+                                        )}
+                                        {!report.health.whoCountryUrl && (
+                                            <a href={`https://www.who.int/health-topics/malaria#tab=tab_1`} target="_blank" rel="noopener noreferrer"
+                                                className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-indigo-600 transition-colors">
+                                                WHO Malaria Overview <ExternalLink className="w-2.5 h-2.5" />
+                                            </a>
+                                        )}
                                     </div>
 
                                     {/* Polio Alert */}
