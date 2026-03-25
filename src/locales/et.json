@@ -10,7 +10,7 @@
         "baseline": "Baseline"
     },
     "footer": {
-        "frameworks": "5 Peer-Reviewed Frameworks",
+        "frameworks": "",
         "copyright": "© 2026 Cultural Assist. Educational / Non-Commercial Research Project."
     },
     "demo": {
@@ -19,7 +19,7 @@
         "subtitle": "The comparative cultural research project.",
         "scroll_indicator": "Explore the framework",
         "pitch_title": "Intelligence pending...",
-        "pitch_1": "Cross-cultural intelligence for a more connected world. Cultural Assist synthesizes five peer-reviewed frameworks to explore the ",
+        "pitch_1": "Cross-cultural intelligence for a more connected world. Cultural Assist synthesizes peer-reviewed frameworks to explore the ",
         "pitch_highlight": "underlying patterns",
         "pitch_2": " of global society.",
         "quote_1": "\"Turning cross-cultural complexity into your greatest strategic advantage.\"",
@@ -40,7 +40,7 @@
             "strategicFocus": "Strategic Focus",
             "empoweredEquality": "Empowered Equality"
         },
-        "info": "The Cultural Bridge Index (CBI) analyzes proprietary meta-dimensions derived from a weighted synthesis of 5 peer-reviewed frameworks. This model provides original comparative analysis for educational and research purposes."
+        "info": "The Cultural Bridge Index (CBI) analyzes proprietary meta-dimensions derived from a weighted synthesis of peer-reviewed frameworks. This model provides original comparative analysis for educational and research purposes."
     },
     "gaps": {
         "title": "Critical Gaps & Recommendations",

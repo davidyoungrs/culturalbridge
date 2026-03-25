@@ -43,15 +43,8 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     // Scroll to top of quiz when state changes to lead form or results
     useEffect(() => {
         if ((showLeadForm || showResults) && containerRef.current) {
-            // Wait a frame for the new content to render
-            requestAnimationFrame(() => {
-                const elementTop = containerRef.current?.getBoundingClientRect().top || 0;
-                const offset = 80; // Offset for sticky header if any
-                window.scrollTo({
-                    top: window.scrollY + elementTop - offset,
-                    behavior: 'smooth'
-                });
-            });
+            // Use scrollIntoView with start alignment for consistent positioning
+            containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }, [showLeadForm, showResults]);
 

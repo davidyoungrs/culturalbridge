@@ -5,8 +5,7 @@ import {
   ChevronRight,
   TrendingUp,
   Zap,
-  ClipboardCheck,
-  Info
+  ClipboardCheck
 } from "lucide-react";
 import { COUNTRIES, INDUSTRIES } from "./constants/cultureData";
 import { generateCBIInsights } from "./lib/insightGenerator";
@@ -103,18 +102,7 @@ const App = () => {
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-16">
         <header className="mb-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-slate-200 pb-10">
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-4">
-                <div className="p-2.5 bg-indigo-600 rounded-2xl shadow-xl shadow-indigo-600/20">
-                  <Globe2 className="w-10 h-10 text-white" />
-                </div>
-                <h1 className="text-5xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-indigo-600 to-slate-900">
-                  {t('title', 'Cultural Assist')}
-                </h1>
-              </div>
-            </div>
-
+          <div className="flex flex-col md:flex-row md:items-end justify-start gap-8 border-b border-slate-200 pb-10">
             <div className="flex items-center gap-4">
               <div className="flex flex-wrap items-center gap-3 bg-white/80 backdrop-blur-md p-2.5 rounded-2xl shadow-xl shadow-slate-200/50 border border-white/20">
                 <div className="flex flex-col gap-1">
@@ -250,9 +238,6 @@ const App = () => {
         </Suspense>
 
         <footer className="mt-16 pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between text-slate-400 gap-4">
-          <div className="flex items-center gap-3 text-xs font-black uppercase tracking-widest">
-            <Info className="w-4 h-4" /> {t('footer.frameworks', '5 Peer-Reviewed Frameworks')}
-          </div>
           <div className="flex items-center gap-6">
             <button onClick={() => setShowTerms(true)} className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors hidden sm:block">Terms</button>
             <button onClick={() => setShowPrivacy(true)} className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors">Privacy Policy</button>

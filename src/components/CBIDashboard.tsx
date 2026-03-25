@@ -212,7 +212,7 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, isPrinting = false
                                 <div className="mt-4 p-4 rounded-xl bg-slate-50/50 border border-slate-100 flex items-start gap-3">
                     <Info className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
                     <p className="text-[11px] text-slate-500 leading-relaxed italic font-medium">
-                        {String(t('dashboard.info', 'The Cultural Bridge Index (CBI) analyzes proprietary meta-dimensions derived from a weighted synthesis of 5 peer-reviewed frameworks. This model provides original comparative analysis for educational and research purposes.'))}
+                        {String(t('dashboard.info', 'The Cultural Bridge Index (CBI) analyzes proprietary meta-dimensions derived from a weighted synthesis of peer-reviewed frameworks. This model provides original comparative analysis for educational and research purposes.'))}
                     </p>
                 </div>
 
