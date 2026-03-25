@@ -1,7 +1,7 @@
 import React from "react";
 import type { Country } from "../constants/cultureData";
 import { calculateCBI, CBI_DESCRIPTIONS } from "../lib/culturalWeights";
-import { Info, BarChart3, Radar as RadarIcon, Activity } from "lucide-react";
+import { Info, BarChart3, Radar as RadarIcon } from "lucide-react";
 import {
     Radar,
     RadarChart,
