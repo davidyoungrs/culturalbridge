@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GlobalTravelAdviceReport",
+  "description": "Unified data structure for aggregated travel advice from global sources.",
+  "type": "object",
+  "required": ["countryId", "countryName", "security", "visaEntry", "health"],
+  "properties": {
+    "countryId": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 or alpha-3 code."
+    },
+    "countryName": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "overallStatus": {
+          "type": "string",
+          "enum": ["Exercise Normal Precautions", "Exercise Increased Caution", "Reconsider Travel", "Do Not Travel"]
+        },
+        "highlights": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "interpolNotices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "visaEntry": {
+      "type": "object",
+      "properties": {
+        "passportValidity": { "type": "string", "example": "6 months beyond date of arrival" },
+        "visaRequired": { "type": "boolean" },
+        "visaInfo": { "type": "string" },
+        "iataReference": { "type": "string", "format": "uri" }
+      }
+    },
+    "health": {
+      "type": "object",
+      "properties": {
+        "vaccinations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "requirement": { "type": "string", "enum": ["Mandatory", "Recommended", "Optional"] }
+            }
+          }
+        },
+        "malariaRisk": { "type": "string" },
+        "polioAlert": { "type": "boolean" }
+      }
+    },
+    "officialSources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "agency": { "type": "string" },
+          "url": { "type": "string", "format": "uri" }
+    }
+  }
+}
+}
+}

@@ -12,9 +12,10 @@ interface SearchableSelectProps {
     value: string;
     onChange: (value: string) => void;
     label: string;
+    placeholder?: string;
 }
 
-const SearchableSelect = ({ options, value, onChange, label }: SearchableSelectProps) => {
+const SearchableSelect = ({ options, value, onChange, label, placeholder }: SearchableSelectProps) => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState("");
@@ -55,7 +56,9 @@ const SearchableSelect = ({ options, value, onChange, label }: SearchableSelectP
                     onClick={() => { setIsOpen(!isOpen); setSearch(""); }}
                     className="flex items-center gap-2 bg-slate-50 rounded-lg py-1.5 px-3 text-sm font-semibold outline-none w-full min-w-[130px] text-left hover:bg-slate-100 transition-colors"
                 >
-                    <span className="flex-1 truncate">{selectedLabel}</span>
+                    <span className="flex-1 truncate text-slate-700">
+                        {value ? selectedLabel : (placeholder || t('common.search', 'Search...'))}
+                    </span>
                     <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </button>
 
