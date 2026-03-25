@@ -27,7 +27,7 @@ body {
 .is-pdf-export {
   background-color: #ffffff !important;
   color: #0f172a !important;
-  width: 1000px !important; /* Fixed width for consistent rendering */
+  width: 1000px !important; /* Fixed width for consistency */
   margin: 0 !important;
   padding: 20px !important;
 }
@@ -40,21 +40,52 @@ body {
   transition: none !important;
   animation: none !important;
   text-shadow: none !important;
+  /* Attempt global color fallback */
 }
 
-.is-pdf-export .bg-white\/80,
-.is-pdf-export .bg-white\/50,
-.is-pdf-export .bg-slate-50\/50,
-.is-pdf-export .bg-indigo-50\/50 {
-  background-color: #ffffff !important;
-  opacity: 1 !important;
-}
+/* OKLCH Fallbacks for html2canvas compatibility - TAILWIND V4 COMPAT */
+.is-pdf-export .bg-indigo-600, .is-pdf-export [class*="bg-indigo-600"] { background-color: #4f46e5 !important; }
+.is-pdf-export .bg-indigo-700, .is-pdf-export [class*="bg-indigo-700"] { background-color: #4338ca !important; }
+.is-pdf-export .bg-indigo-500, .is-pdf-export [class*="bg-indigo-500"] { background-color: #6366f1 !important; }
+.is-pdf-export .bg-indigo-100, .is-pdf-export [class*="bg-indigo-100"] { background-color: #e0e7ff !important; }
+.is-pdf-export .bg-indigo-50, .is-pdf-export [class*="bg-indigo-50"] { background-color: #eff6ff !important; }
+.is-pdf-export .text-indigo-600, .is-pdf-export [class*="text-indigo-600"] { color: #4f46e5 !important; }
+.is-pdf-export .text-indigo-700, .is-pdf-export [class*="text-indigo-700"] { color: #4338ca !important; }
+.is-pdf-export .text-indigo-500, .is-pdf-export [class*="text-indigo-500"] { color: #6366f1 !important; }
+.is-pdf-export .text-indigo-100, .is-pdf-export [class*="text-indigo-100"] { color: #e0e7ff !important; }
+.is-pdf-export .text-indigo-400, .is-pdf-export [class*="text-indigo-400"] { color: #818cf8 !important; }
 
-.is-pdf-export .border-white\/40,
-.is-pdf-export .border-white\/50,
-.is-pdf-export .border-white\/20 {
-  border-color: #e2e8f0 !important;
-}
+.is-pdf-export .bg-emerald-50, .is-pdf-export [class*="bg-emerald-50"] { background-color: #ecfdf5 !important; }
+.is-pdf-export .bg-emerald-100, .is-pdf-export [class*="bg-emerald-100"] { background-color: #d1fae5 !important; }
+.is-pdf-export .bg-emerald-500, .is-pdf-export [class*="bg-emerald-500"] { background-color: #10b981 !important; }
+.is-pdf-export .text-emerald-800, .is-pdf-export [class*="text-emerald-800"] { color: #065f46 !important; }
+.is-pdf-export .text-emerald-600, .is-pdf-export [class*="text-emerald-600"] { color: #059669 !important; }
+
+.is-pdf-export .bg-amber-50, .is-pdf-export [class*="bg-amber-50"] { background-color: #fffbeb !important; }
+.is-pdf-export .bg-amber-500, .is-pdf-export [class*="bg-amber-500"] { background-color: #f59e0b !important; }
+.is-pdf-export .text-amber-800, .is-pdf-export [class*="text-amber-800"] { color: #92400e !important; }
+.is-pdf-export .text-amber-600, .is-pdf-export [class*="text-amber-600"] { color: #d97706 !important; }
+
+.is-pdf-export .bg-rose-50, .is-pdf-export [class*="bg-rose-50"] { background-color: #fff1f2 !important; }
+.is-pdf-export .bg-rose-100, .is-pdf-export [class*="bg-rose-100"] { background-color: #ffe4e6 !important; }
+.is-pdf-export .bg-rose-500, .is-pdf-export [class*="bg-rose-500"] { background-color: #ef4444 !important; }
+.is-pdf-export .bg-rose-600, .is-pdf-export [class*="bg-rose-600"] { background-color: #e11d48 !important; }
+.is-pdf-export .text-rose-500, .is-pdf-export [class*="text-rose-500"] { color: #ef4444 !important; }
+.is-pdf-export .text-rose-700, .is-pdf-export [class*="text-rose-700"] { color: #be123c !important; }
+
+.is-pdf-export .bg-slate-50, .is-pdf-export [class*="bg-slate-50"] { background-color: #f8fafc !important; }
+.is-pdf-export .bg-slate-100, .is-pdf-export [class*="bg-slate-100"] { background-color: #f1f5f9 !important; }
+.is-pdf-export .bg-slate-200, .is-pdf-export [class*="bg-slate-200"] { background-color: #e2e8f0 !important; }
+.is-pdf-export .bg-slate-900, .is-pdf-export [class*="bg-slate-900"] { background-color: #0f172a !important; }
+.is-pdf-export .text-slate-900, .is-pdf-export [class*="text-slate-900"] { color: #0f172a !important; }
+.is-pdf-export .text-slate-600, .is-pdf-export [class*="text-slate-600"] { color: #475569 !important; }
+.is-pdf-export .text-slate-500, .is-pdf-export [class*="text-slate-500"] { color: #64748b !important; }
+.is-pdf-export .text-slate-400, .is-pdf-export [class*="text-slate-400"] { color: #94a3b8 !important; }
+.is-pdf-export .text-slate-800, .is-pdf-export [class*="text-slate-800"] { color: #1e293b !important; }
+.is-pdf-export .border-slate-100, .is-pdf-export [class*="border-slate-100"] { border-color: #f1f5f9 !important; }
+.is-pdf-export .border-slate-200, .is-pdf-export [class*="border-slate-200"] { border-color: #e2e8f0 !important; }
+
+.is-pdf-export .bg-violet-800, .is-pdf-export [class*="bg-violet-800"] { background-color: #5b21b6 !important; }
 
 .is-pdf-export .text-transparent {
   color: #0f172a !important;
@@ -63,9 +94,25 @@ body {
   background-image: none !important;
 }
 
+/* Force hex colors for Recharts SVGs */
+.is-pdf-export svg path[fill="#6366f1"], .is-pdf-export svg path[fill*="oklch"] { fill: #6366f1 !important; }
+.is-pdf-export svg path[stroke="#6366f1"], .is-pdf-export svg path[stroke*="oklch"] { stroke: #6366f1 !important; }
+.is-pdf-export svg path[fill="#10b981"] { fill: #10b981 !important; }
+.is-pdf-export svg path[stroke="#10b981"] { stroke: #10b981 !important; }
+
 /* Hide background accents during PDF export */
 .is-pdf-export .blur-3xl {
   display: none !important;
+}
+
+/* Ensure Recharts containers have dimensions during export */
+.is-pdf-export .recharts-responsive-container {
+  min-height: 450px !important;
+  width: 100% !important;
+}
+
+.is-pdf-export .recharts-wrapper {
+  overflow: visible !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar {

@@ -27,13 +27,7 @@ export default function DemoOne() {
                             </h1>
                         </TextBlockAnimation>
 
-                        <div className="mt-8">
-                            <TextBlockAnimation blockColor="#1e293b" delay={0.6}>
-                                <p className="text-xl md:text-2xl font-medium text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                                    {t('demo.subtitle', 'The comparative cultural research project.')}
-                                </p>
-                            </TextBlockAnimation>
-                        </div>
+                        <div className="mt-8" />
                     </div>
 
                     {/* Scroll Indicator */}

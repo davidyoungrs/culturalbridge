@@ -81,11 +81,32 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                 filename:     `Cultural_Bridge_Report_${code}.pdf`,
                 image:        { type: 'jpeg' as const, quality: 0.98 }, 
                 html2canvas:  { 
-                    scale: 2, // Higher scale for print quality
+                    scale: 2, 
                     useCORS: true, 
                     logging: false, 
                     letterRendering: true,
-                    windowWidth: 1000 // Match the fixed width in CSS
+                    windowWidth: 1000,
+                    onclone: (clonedDoc: Document) => {
+                        // Nuclear Fix for oklch: html2canvas does not support it.
+                        // We iterate through all elements in the cloned document and force-convert computed oklch to hex.
+                        const elements = clonedDoc.querySelectorAll('*');
+                        elements.forEach(el => {
+                            const htmlEl = el as HTMLElement;
+                            const style = window.getComputedStyle(htmlEl);
+                            
+                            ['color', 'backgroundColor', 'borderColor', 'fill', 'stroke'].forEach(prop => {
+                                const val = (style as any)[prop];
+                                if (val && val.includes('oklch')) {
+                                    // Default fallbacks for the most common colors
+                                    if (prop === 'color') htmlEl.style.color = '#1e293b';
+                                    if (prop === 'backgroundColor') htmlEl.style.backgroundColor = val.includes('white') ? '#ffffff' : '#f8fafc';
+                                    if (prop === 'borderColor') htmlEl.style.borderColor = '#e2e8f0';
+                                    if (prop === 'fill') htmlEl.style.fill = val.includes('6366f1') ? '#6366f1' : (val.includes('10b981') ? '#10b981' : '#4f46e5');
+                                    if (prop === 'stroke') htmlEl.style.stroke = val.includes('6366f1') ? '#6366f1' : (val.includes('10b981') ? '#10b981' : '#4f46e5');
+                                }
+                            });
+                        });
+                    }
                 },
                 jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' as const }
             };
@@ -93,7 +114,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
             // 5. Dynamic import and generate
             const html2pdf = (await import('html2pdf.js')).default;
             await html2pdf().set(opt).from(element).save();
-
+            
             // 6. Restore original state
             element.classList.remove('is-pdf-export');
             actionElements.forEach(el => (el as HTMLElement).style.display = '');
@@ -102,6 +123,13 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
         } catch (error) {
             console.error("PDF Generation failed details:", error);
             alert("Sorry, there was an unexpected error generating your PDF report. Please try again or use the browser print function (Cmd+P) as a backup.");
+            
+            // Ensure cleanup on failure
+            if (contentRef.current) {
+                contentRef.current.classList.remove('is-pdf-export');
+                const actionEls = contentRef.current.querySelectorAll('.pdf-exclude');
+                actionEls.forEach(el => (el as HTMLElement).style.display = '');
+            }
         } finally {
             setIsGenerating(false);
         }
@@ -122,8 +150,12 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
               .from(".animate-hero", { scale: 0.95, opacity: 0, duration: 0.7, ease: "back.out(1.2)" }, "-=0.4")
               .from(".animate-dimension", { x: -20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.3")
               .from(".animate-insight", { y: 20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.5")
-              .from(".animate-dashboard", { y: 40, opacity: 0, scale: 0.98, duration: 0.8, ease: "power3.out" }, "-=0.4")
-              .from(".animate-action-btn", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.2");
+              .from(".animate-dashboard", { y: 40, opacity: 0, scale: 0.98, duration: 0.8, ease: "power3.out" }, "-=0.4");
+            
+            const actionBtn = document.querySelector(".animate-action-btn");
+            if (actionBtn) {
+              tl.from(".animate-action-btn", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.2");
+            }
         }, containerRef);
         
         return () => ctx.revert();
@@ -307,7 +339,11 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                 </div>
 
                 <div className="mt-16 animate-dashboard">
-                    <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} />
+                    <CBIDashboard 
+                        homeCountry={homeCountry} 
+                        targetCountry={targetCountry} 
+                        isPrinting={isGenerating}
+                    />
                 </div>
 
                 <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 pdf-exclude">

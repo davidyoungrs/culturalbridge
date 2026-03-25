@@ -113,9 +113,6 @@ const App = () => {
                   {t('title', 'Cultural Assist')}
                 </h1>
               </div>
-              <p className="text-slate-500 font-bold text-lg leading-tight opacity-80 max-w-sm">
-                {t('subtitle', 'The comparative cultural research project.')}
-              </p>
             </div>
 
             <div className="flex items-center gap-4">
@@ -143,9 +140,9 @@ const App = () => {
         </header>
 
         <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5">
-          <div className="lg:col-span-8 h-full">
+          <div className="lg:col-span-8 h-auto lg:h-full">
             <CBIDashboard homeCountry={homeCountry} targetCountry={targetCountry} />
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex justify-center pb-12 lg:pb-0">
               <button
                 onClick={() => {
                   setShowQuiz(true);

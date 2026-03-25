@@ -15,14 +15,16 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { CCUB_DATA } from "../constants/ccubData";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { cn } from "../lib/utils";
 
 interface CBIDashboardProps {
     homeCountry: Country;
     targetCountry: Country;
     industry?: string;
+    isPrinting?: boolean;
 }
 
-const CBIDashboard = ({ homeCountry, targetCountry, industry, }: CBIDashboardProps) => {
+const CBIDashboard = ({ homeCountry, targetCountry, industry, isPrinting = false }: CBIDashboardProps) => {
     const { t } = useTranslation();
     const [view, setView] = useState<'radar' | 'bars'>('radar');
     const homeCBI = calculateCBI(homeCountry);
@@ -120,7 +122,10 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, }: CBIDashboardPro
     };
 
     return (
-        <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-slate-200/60 border border-white/50 h-full flex flex-col relative overflow-hidden">
+        <div className={cn(
+            "bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-slate-200/60 border border-white/50 flex flex-col relative overflow-hidden",
+            isPrinting ? "h-auto" : "h-auto lg:h-full"
+        )}>
             {/* Visual background accents */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50/50 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-50/50 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none" />
@@ -132,7 +137,7 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, }: CBIDashboardPro
                             <Activity className="w-5 h-5 text-white" />
                         </div>
                         <h2 className="text-3xl font-black tracking-tighter text-slate-900">
-                            {t('dashboard.comparison', 'Cultural DNA Comparison')}
+                            {t('dashboard.comparison', 'The Cultural Bridge')}
                         </h2>
                     </div>
                     <p className="text-slate-500 font-bold px-1 flex items-center gap-2">
@@ -168,8 +173,11 @@ const CBIDashboard = ({ homeCountry, targetCountry, industry, }: CBIDashboardPro
 
             <div className="flex-1 relative z-10">
                 {view === 'radar' ? (
-                    <div className="h-[400px] w-full">
-                        <ResponsiveContainer width="100%" height="100%">
+                    <div 
+                        className="w-full" 
+                        style={{ height: isPrinting ? '450px' : '400px' }}
+                    >
+                        <ResponsiveContainer width="100%" height="100%" minHeight={isPrinting ? 450 : 0}>
                             <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
                                 <PolarGrid stroke="#e2e8f0" />
                                 <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748b', fontSize: 9, fontWeight: 700 }} />
