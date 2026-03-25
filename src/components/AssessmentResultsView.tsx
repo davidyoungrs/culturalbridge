@@ -87,8 +87,17 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                     letterRendering: true,
                     windowWidth: 1000,
                     onclone: (clonedDoc: Document) => {
-                        // Nuclear Fix for oklch: html2canvas does not support it.
-                        // We iterate through all elements in the cloned document and force-convert computed oklch to hex.
+                        // Critical Fix: html2canvas parser crashes on Tailwind v4 'oklch' colors in stylesheets.
+                        // We must sanitize all <style> tags in the cloned document.
+                        const styleTags = clonedDoc.querySelectorAll('style');
+                        styleTags.forEach(tag => {
+                            if (tag.textContent) {
+                                // Strip all 'ok' color functions (oklch, oklab) which crash the canvas parser
+                                tag.textContent = tag.textContent.replace(/ok(lch|lab)\([^)]+\)/g, '#6366f1');
+                            }
+                        });
+
+                        // Also force-convert computed ok colors to hex for individual elements
                         const elements = clonedDoc.querySelectorAll('*');
                         elements.forEach(el => {
                             const htmlEl = el as HTMLElement;
@@ -96,8 +105,7 @@ const AssessmentResultsView: React.FC<AssessmentResultsViewProps> = ({
                             
                             ['color', 'backgroundColor', 'borderColor', 'fill', 'stroke'].forEach(prop => {
                                 const val = (style as any)[prop];
-                                if (val && val.includes('oklch')) {
-                                    // Default fallbacks for the most common colors
+                                if (val && (val.includes('oklch') || val.includes('oklab'))) {
                                     if (prop === 'color') htmlEl.style.color = '#1e293b';
                                     if (prop === 'backgroundColor') htmlEl.style.backgroundColor = val.includes('white') ? '#ffffff' : '#f8fafc';
                                     if (prop === 'borderColor') htmlEl.style.borderColor = '#e2e8f0';
