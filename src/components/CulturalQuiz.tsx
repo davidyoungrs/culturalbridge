@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { ClipboardCheck, RotateCcw, Sparkles, Loader2 } from "lucide-react";
 import {
@@ -22,6 +22,7 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     const [showLeadForm, setShowLeadForm] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [leadData, setLeadData] = useState({ firstName: '', email: '', phoneNumber: '' });
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const progress = Object.keys(answers).length;
     const total = QUIZ_QUESTIONS.length;
@@ -38,6 +39,21 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     const handleReveal = () => {
         setShowLeadForm(true);
     };
+
+    // Scroll to top of quiz when state changes to lead form or results
+    useEffect(() => {
+        if ((showLeadForm || showResults) && containerRef.current) {
+            // Wait a frame for the new content to render
+            requestAnimationFrame(() => {
+                const elementTop = containerRef.current?.getBoundingClientRect().top || 0;
+                const offset = 80; // Offset for sticky header if any
+                window.scrollTo({
+                    top: window.scrollY + elementTop - offset,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    }, [showLeadForm, showResults]);
 
     const handleLeadSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -230,7 +246,7 @@ const CulturalQuiz: React.FC<CulturalQuizProps> = ({ onComplete }) => {
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
+        <div ref={containerRef} className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
             <div className="p-5 border-b border-slate-50 bg-slate-50/30">
                 <h2 className="text-lg font-bold flex items-center gap-2">
                     <ClipboardCheck className="w-5 h-5 text-violet-600" />
