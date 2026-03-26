@@ -95,4 +95,60 @@ This thesis is organized into seven chapters. Following this introduction, **Cha
 
 ---
 
-[End of Volume 1. Volume 2 (Chapter 2: Literature Review) Pending...]
+## Chapter 2: Literature Review: A Genealogy of Cultural Theory
+
+### 2.1 From Anthropology to Management: The Evolution of "Culture"
+The study of culture as a variable in organizational performance has its roots in mid-twentieth-century anthropology, but its transition into the managerial sciences was catalyzed by the post-WWII expansion of multinational corporations. Early scholars like Edward T. Hall (1959) introduced the concept of "High-Context" and "Low-Context" communication, which remains a cornerstone of the *Cultural Assist* platform. Hall’s work suggested that culture is not just a set of beliefs, but a "silent language" of space, time, and interpersonal distance.
+
+In the 1970s and 80s, the field shifted from qualitative ethnography to quantitative dimensional analysis. This period was dominated by the search for "universal dimensions" that could explain variance in human behavior across borders without falling into the trap of idiosyncratic description.
+
+### 2.2 The Big Three: Hofstede, Meyer, and the GLOBE Study
+#### 2.2.1 Geert Hofstede and the IBM Studies
+Hofstede’s work (1980) represents the first large-scale attempt to quantify culture. By analyzing survey data from over 100,000 IBM employees across 40 countries, he identified four (later six) dimensions: Power Distance, Individualism, Masculinity, and Uncertainty Avoidance. While groundbreaking, Hofstede’s model has been critiqued for its "Ecological Fallacy"—the assumption that national-level mean scores can be applied to individuals—and its perceived Western bias.
+
+#### 2.2.2 The GLOBE Study (House et al., 2004)
+The *Global Leadership and Organizational Behavior Effectiveness* (GLOBE) research program expanded Hofstede’s work by involving 170 researchers who studied 17,300 managers in 62 societies. GLOBE introduced more nuanced dimensions like "Future Orientation" and "Performance Orientation," which are leveraged in the CBI to differentiate between "Execution" cultures and "Relationship" cultures.
+
+#### 2.2.3 Erin Meyer and the Strategic Turn
+Erin Meyer’s *The Culture Map* (2014) represents a transition from sociological observation to tactical application. Her eight-scale framework (Communicating, Evaluating, Persuading, Leading, Deciding, Trusting, Disagreeing, and Scheduling) is designed specifically for the professional context. The *Cultural Assist* platform integrates Meyer’s "Trusting" and "Deciding" scales as foundational meta-dimensions for its behavioral archetypes.
+
+### 2.3 Limitations of Current Frameworks: The Problem of "The Statics"
+The most significant limitation across all current frameworks is their **Temporal and Environmental Staticity**. These models assume that a culture’s position on a scale is fixed and independent of external stressors. However, contemporary scholarship in "Complexity Theory" suggests that cultural manifestation is a dynamic system. A culture with high "Uncertainty Avoidance" (Hofstede) will behave very differently during a global pandemic (WHO data) than during a period of economic boom (FX data). 
+
+Current literature fails to address the **"Adaptive Overlap"**: how the digital-native generation is smoothing some cultural differences while reinforcing others through algorithmic echo chambers. This dissertation fills this gap by proposing the "Dynamic Cultural Analytics" (DCA) model.
+
+---
+
+## Chapter 3: Methodology and the Cultural Bridge Index (CBI)
+
+### 3.1 Constructing the Meta-Framework: Synthesis Methodology
+The **Cultural Bridge Index (CBI)** is not a "new" data set, but a syncretic meta-index. The synthesis methodology involves three distinct phases:
+1.  **Normalization**: Converting disparate scales (e.g., Hofstede’s 1-100 scores and Meyer’s qualitative positions) into a normalized 0-100 interval scale.
+2.  **Weighting**: Assigning importance to dimensions based on their "Impact on Global Leadership." For instance, "Communication Directness" is weighted higher than "Masculinity" in the CBI because of its immediate effect on remote-team productivity.
+3.  **Aggregation**: Using a weighted mean algorithm to compute the seven CBI meta-dimensions.
+
+### 3.2 The Seven Meta-Dimensions of the CBI
+The platform categorizes cultural data into seven pillars:
+1.  **Relationship Trust (RT)**: Merges Meyer’s Trusting scale and GLOBE’s Institutional Collectivism.
+2.  **Adaptive Agility (AA)**: Derived from Hofstede’s Uncertainty Avoidance and GLOBE’s Future Orientation.
+3.  **Process Consensus (PC)**: Synthesizes Meyer’s Deciding scale and Hofstede’s Power Distance.
+4.  **Performance Velocity (PV)**: Re-weights GLOBE’s Performance Orientation and Hofstede’s Masculinity/Femininity.
+5.  **Communication Directness (CD)**: A direct implementation of Hall’s High/Low Context theory, refined by Meyer’s Evaluating scale.
+6.  **Strategic Focus (SF)**: Based on Meyer’s Persuading scale (Principles-first vs. Applications-first).
+7.  **Empowered Equality (EE)**: An evolution of Power Distance, adjusted for modern flat-org trends.
+
+### 3.3 Diagnostic Validation: The 12-Point Situational Assessment
+The *Cultural Assist* quiz uses "Situational Judgment Testing" (SJT) methodology. Unlike trait-based surveys ("I like working in groups"), SJTs present professional dilemmas ("Your boss makes a mistake in a meeting; what do you do?"). This reduces "Self-Selection Bias" and provides a more accurate reflection of behavioral intent.
+
+The scoring logic maps each binary response to a point on the CBI spectrum. The final "4-letter code" (e.g., DXPA) represents a quadrant-based archetype where:
+- **D/I**: Direct vs. Indirect Communication.
+- **V/S**: Velocity vs. Stability Orientation.
+- **P/H**: Parity vs. Hierarchy Preference.
+- **A/F**: Agile vs. Fixed Planning.
+
+This mapping allows for a rapid "Difference Quotient" calculation between the user and any of the 119 nations in the dataset.
+
+---
+
+[End of Volume 2. Volume 3 (Chapter 4: Architecture & Chapter 5: Data Governance) Pending...]
+
