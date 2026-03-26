@@ -25,7 +25,12 @@ export const AEOFAQ = () => {
         {
             question: "Is the Cultural Bridge Index scientifically validated?",
             answer: "CBI is an educational and research synthesis of peer-reviewed data from leading cross-cultural scholars. It is designed to modernize classical frameworks for the 2026 digital and remote-first global economy."
+        },
+        {
+            question: "Where can I find real-time security and visa requirements for my destination?",
+            answer: "Our Global Travel Advice portal provides aggregated real-time intelligence from INTERPOL, WHO, and sovereign agencies. You can access integrated security alerts, health requirements, and visa direction for 119 countries by visiting our Travel Portal at /traveladvice."
         }
+
     ];
 
     return (
