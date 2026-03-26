@@ -27,17 +27,32 @@ export type { CountryTravelData, OfficialSource, VaccinationEntry } from '../con
 const fetchTuGoData = async (isoCode: string): Promise<{ advisoryText?: string; advisoryLevel?: number } | null> => {
   const key = import.meta.env.VITE_TUGO_API_KEY as string | undefined;
   if (!key) return null;
+
+  const normalizedCode = isoCode.toUpperCase();
+  
   try {
-    const res = await fetch(`https://api.tugo.com/v1/travelsafe/countries/${isoCode}`, {
+    const res = await fetch(`https://api.tugo.com/v1/travelsafe/countries/${normalizedCode}`, {
       headers: { 'X-Auth-API-Key': key },
     });
-    if (!res.ok) return null;
+    
+    if (!res.ok) {
+      if (res.status === 503) {
+        console.warn(`[TuGo Service] API is temporarily down (503) for ${normalizedCode}. Falling back to curated data.`);
+      } else {
+        console.warn(`[TuGo Service] API returned status ${res.status} for ${normalizedCode}.`);
+      }
+      return null;
+    }
+    
     const json = await res.json();
+    console.log(`[TuGo Service] Successfully synced live data for ${normalizedCode}`);
+    
     return {
       advisoryText: json?.advisoryText ?? undefined,
       advisoryLevel: json?.advisoryLevel ?? undefined,
     };
-  } catch {
+  } catch (error) {
+    console.error(`[TuGo Service] Connection error:`, error);
     return null;
   }
 };
@@ -56,8 +71,12 @@ export const getTravelAdvice = async (countryName: string): Promise<CountryTrave
 
   if (tugo?.advisoryText) {
     // Prepend TuGo's live advisory summary to the highlights array (deduplicated)
-    const tugoHighlight = `[TuGo Live] ${tugo.advisoryText}`;
-    const alreadyPresent = merged.security.highlights.some(h => h.startsWith('[TuGo'));
+    const advisorySummary = tugo.advisoryText.trim();
+    const tugoHighlight = `[TuGo Live Advisory] ${advisorySummary}`;
+    
+    // Check if we already have a live update to prevent duplicates on re-fetch
+    const alreadyPresent = merged.security.highlights.some(h => h.includes('[TuGo Live Advisory]'));
+    
     if (!alreadyPresent) {
       merged = {
         ...merged,

@@ -22,6 +22,8 @@ import type { CountryTravelData } from '../lib/travelService';
 import { cn } from '../lib/utils';
 import { WeatherForecast } from './WeatherForecast';
 import { TravelerEssentials } from './TravelerEssentials';
+import SiteFooter from './SiteFooter';
+
 
 const countryOptions = COUNTRIES.map((c) => ({ value: c.name, label: c.name }));
 
@@ -97,7 +99,7 @@ const TravelAdviceDashboard: React.FC = () => {
                     </span>
                     <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight leading-none">Official Travel Intelligence</h2>
                     <p className="text-slate-500 font-medium mb-8 leading-relaxed">
-                        Aggregated security, health, and visa requirements from<br className="hidden sm:block" /> international sovereign agencies and the WHO.
+                        Aggregated travel advice, security, health, and visa requirements from<br className="hidden sm:block" /> international sovereign agencies and the WHO.
                     </p>
 
                     <div className="bg-white p-2 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200/80 flex items-center gap-2 max-w-sm mx-auto">
@@ -128,7 +130,12 @@ const TravelAdviceDashboard: React.FC = () => {
                 {!isLoading && report && (
                     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-6">
 
-                        {/* Advisory Banner */}
+                        <WeatherForecast 
+                            countryName={report.countryName} 
+                            capital={report.capital} 
+                            coordinates={report.coordinates} 
+                        />
+
                         <div className={cn('rounded-3xl border-2 p-6 flex flex-col md:flex-row items-start md:items-center gap-5', cfg.bg, cfg.border)}>
                             <div className={cn('p-4 rounded-2xl border bg-white/60', cfg.border)}>
                                 <AlertTriangle className={cn('w-9 h-9', cfg.icon)} />
@@ -149,9 +156,7 @@ const TravelAdviceDashboard: React.FC = () => {
                                 <p className={cn('text-sm font-black', cfg.text)}>{new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
                             </div>
                         </div>
-
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                             {/* Security Section */}
                             <section className="bg-white rounded-3xl p-7 shadow-lg shadow-slate-100 border border-slate-100">
                                 <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-5 flex items-center gap-2">
@@ -359,11 +364,6 @@ const TravelAdviceDashboard: React.FC = () => {
                                 <Info className="w-4 h-4 text-indigo-500" /> Destination Intelligence
                             </h4>
                             <TravelerEssentials essentials={report.essentials} />
-                            <WeatherForecast 
-                                countryName={report.countryName} 
-                                capital={report.capital} 
-                                coordinates={report.coordinates} 
-                            />
                         </section>
 
                         {/* Official Sources */}
@@ -398,9 +398,9 @@ const TravelAdviceDashboard: React.FC = () => {
                 )}
             </main>
 
-            {/* Footer */}
-            <footer className="mt-20 border-t border-slate-200 bg-white py-12 px-4">
-                <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-slate-400">
+            {/* Footer Information & Site Navigation */}
+            <div className="max-w-7xl mx-auto px-4 md:px-6 mt-20 opacity-90">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-slate-400 pb-12 border-b border-slate-200">
                     <div>
                         <p className="text-[10px] font-black uppercase tracking-widest mb-3">Content Licensing</p>
                         <p className="text-[10px] leading-relaxed font-semibold">
@@ -420,9 +420,11 @@ const TravelAdviceDashboard: React.FC = () => {
                         </p>
                     </div>
                 </div>
-            </footer>
+                <SiteFooter />
+            </div>
         </div>
     );
 };
 
 export default TravelAdviceDashboard;
+

@@ -14,6 +14,8 @@ export const americasData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
       currency: { name: 'US Dollar', code: 'USD', symbol: '$' },
       plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
       drivingSide: 'right'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/usa',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-states',flag:'🇨🇦'}] },
@@ -28,6 +30,8 @@ export const americasData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '190', ambulance: '192', fire: '193' },
       currency: { name: 'Brazilian Real', code: 'BRL', symbol: 'R$' },
       plugTypes: ['N'],
+      voltage: '127 V / 220 V',
+      frequency: '60 Hz',
       drivingSide: 'right'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/brazil-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/brazil',flag:'🇬🇧'}] },
@@ -42,6 +46,8 @@ export const americasData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
       currency: { name: 'Mexican Peso', code: 'MXN', symbol: '$' },
       plugTypes: ['A', 'B'],
+      voltage: '127 V',
+      frequency: '60 Hz',
       drivingSide: 'right'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/mexico',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/mexico',flag:'🇨🇦'}] },
@@ -53,6 +59,14 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'90 days beyond arrival (recommended 6 months)', visaRequired:false, visaInfo:'90-day visa-free for most Western nationals. Extendable to 180 days. Mandatory: Pre-register at migrationcolombia.gov.co via "Check-Mig" form before arrival.', iataReference:iata('CO') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Required for entry to national parks.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'High malaria risk in low-altitude rural areas (Pacific coast, Amazon basin). No risk in Bogota, Medellin, or Cartagena.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/col/', cdcUrl:cdc('colombia'), travelHealthProUrl:thp(53, 'colombia'), polioAlert:false, healthNotes:['Zika and Dengue are present below 2,300m.'] },
+    essentials: { 
+      emergencyNumbers: { police: '123', ambulance: '123', fire: '123' },
+      currency: { name: 'Colombian Peso', code: 'COP', symbol: '$' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/colombia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/colombia',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/colombia',flag:'🇨🇦'}] },
 
   'Argentina': { countryId:'AR', countryName:'Argentina', capital:'Buenos Aires',
@@ -65,18 +79,13 @@ export const americasData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '911', ambulance: '107', fire: '100' },
       currency: { name: 'Argentine Peso', code: 'ARS', symbol: '$' },
       plugTypes: ['C', 'I'],
+      voltage: '230 V',
+      frequency: '50 Hz',
       drivingSide: 'right'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/argentina-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/argentina',flag:'🇬🇧'}] },
 
 
-  'Australia': { countryId:'AU', countryName:'Australia',
-    security:{ overallStatus:'Exercise Normal Precautions',
-      highlights:['Australia is exceptionally safe. Terrorism threat level is "Possible".','Natural hazards: Bushfires (November–March) are a severe risk. Flooding is common in Queensland and NSW.','Wildlife: While deadly snake/spider encounters are rare in cities, follow signpost warnings. High risk of shark attacks and jellyfish (stingers) in northern waters and West Australia.','UV Exposure: Australia has some of the world\'s highest skin cancer rates. Strong sun protection is mandatory.','Ocean safety: Thousands of drownings occur — only swim between the red and yellow flags on patrolled beaches.'],
-      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
-    visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:true, visaInfo:'All visitors (except NZ citizens) require a visa or ETA (Electronic Travel Authority). US, UK, EU, CA citizens must apply for an ETA via the Australian ETA app before travel.', iataReference:iata('AU') },
-    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/aus/', cdcUrl:cdc('australia'), travelHealthProUrl:thp(15, 'australia'), polioAlert:false },
-    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/australia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/australia',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/australia',flag:'🇨🇦'}] },
 
   'Venezuela': { countryId:'VE', countryName:'Venezuela',
     security:{ overallStatus:'Do Not Travel',
@@ -84,6 +93,14 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa required for almost all Western nationals (US, UK, CA). Extremely difficult to obtain. US citizens are generally barred from entry.', iataReference:iata('VE') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Polio',requirement:'Recommended'}], malariaRisk:'High malaria risk throughout Venezuela. Chemoprophylaxis essential.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/ven/', cdcUrl:cdc('venezuela'), travelHealthProUrl:thp(239, 'venezuela'), polioAlert:true, healthNotes:['Malnutrition and lack of electricity/water make all medical care high-risk.'] },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '171', fire: '171' },
+      currency: { name: 'Venezuelan Bolívar', code: 'VES', symbol: 'Bs.S' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/venezuela-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/venezuela',flag:'🇬🇧'}] },
 
   'Jamaica': { countryId:'JM', countryName:'Jamaica',
@@ -92,7 +109,16 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:false, visaInfo:'Most Western nationals (US, UK, CA) do not require a visa for tourism up to 90 days.', iataReference:iata('JM') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/jam/', cdcUrl:cdc('jamaica'), travelHealthProUrl:thp(113, 'jamaica'), polioAlert:false, healthNotes:['Dengue outbreaks are common.'] },
+    essentials: { 
+      emergencyNumbers: { police: '119', ambulance: '110', fire: '110' },
+      currency: { name: 'Jamaican Dollar', code: 'JMD', symbol: 'J$' },
+      plugTypes: ['A', 'B'],
+      voltage: '110 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/jamaica-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/jamaica',flag:'🇬🇧'}] },
+
 
   'Costa Rica': { countryId:'CR', countryName:'Costa Rica',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -100,7 +126,16 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:false, visaInfo:'Most Western nationals enter visa-free for 90 days (180 days for some from 2024). Entry stamp is mandatory.', iataReference:iata('CR') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'Low risk in Limón province. No risk in San José or main Pacific resorts.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/cri/', cdcUrl:cdc('costa-rica'), travelHealthProUrl:thp(58, 'costa-rica'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
+      currency: { name: 'Costa Rican Colón', code: 'CRC', symbol: '₡' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/costa-rica-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/costa-rica',flag:'🇬🇧'}] },
+
 
   'Cuba': { countryId:'CU', countryName:'Cuba',
     security:{ overallStatus:'Exercise Increased Caution',
@@ -108,7 +143,16 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'A "Tourist Card" (Tarjeta del Turista) is required for most — obtain through airlines, travel agents, or Cuban embassies. US citizens must travel under one of 12 authorized categories (tourism is officially banned).', iataReference:iata('CU'), entryNotes:['Evidence of medical insurance is mandatory for entry.'] },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/cub/', cdcUrl:cdc('cuba'), travelHealthProUrl:thp(60, 'cuba'), polioAlert:false, healthNotes:['Severe medicine shortages — carry a full medical kit.'] },
+    essentials: { 
+      emergencyNumbers: { police: '106', ambulance: '104', fire: '105' },
+      currency: { name: 'Cuban Peso', code: 'CUP', symbol: '₱' },
+      plugTypes: ['A', 'B', 'C', 'L'],
+      voltage: '110 V / 220 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cuba-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/cuba',flag:'🇬🇧'}] },
+
 
   'Panama': { countryId:'PA', countryName:'Panama',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -116,7 +160,16 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'3 months beyond arrival (recommended 6 months)', visaRequired:false, visaInfo:'Most Western nationals enter visa-free for 90–180 days. Must show $500 cash or credit card limit and return ticket.', iataReference:iata('PA') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'Low risk in Guna Yala, Darien, and Ngäbe-Buglé regions. No risk in Panama City or Canal zone.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/pan/', cdcUrl:cdc('panama'), travelHealthProUrl:thp(174, 'panama'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '104', ambulance: '103', fire: '103' },
+      currency: { name: 'Panamanian Balboa', code: 'PAB', symbol: 'B/.' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/panama-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/panama',flag:'🇬🇧'}] },
+
 
   'Honduras': { countryId:'HN', countryName:'Honduras',
     security:{ overallStatus:'Reconsider Travel',
@@ -124,6 +177,14 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'3 months beyond stay', visaRequired:false, visaInfo:'90-day visa-free for US, UK, EU, CA citizens. Central America-4 (CA-4) Agreement allows free travel between Honduras, El Salvador, Guatemala, and Nicaragua.', iataReference:iata('HN') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'Low risk throughout Honduras below 1,500m. Highest risk in Colón and Gracias a Dios regions.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/hnd/', cdcUrl:cdc('honduras'), travelHealthProUrl:thp(101, 'honduras'), polioAlert:false, healthNotes:['Dengue outbreaks are common.'] },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '911', fire: '198' },
+      currency: { name: 'Honduran Lempira', code: 'HNL', symbol: 'L' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/honduras-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/honduras',flag:'🇬🇧'}] },
 
   'Guatemala': { countryId:'GT', countryName:'Guatemala',
@@ -132,5 +193,189 @@ export const americasData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'90-day visa-free. Member of the CA-4 Agreement.', iataReference:iata('GT') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Yellow Fever',requirement:'Recommended'}], malariaRisk:'Low risk throughout Guatemala (except at high altitudes). Highest risk in Escuintla and Petén regions.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/gtm/', cdcUrl:cdc('guatemala'), travelHealthProUrl:thp(96, 'guatemala'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '110', ambulance: '128', fire: '122' },
+      currency: { name: 'Guatemalan Quetzal', code: 'GTQ', symbol: 'Q' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/guatemala-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/guatemala',flag:'🇬🇧'}] },
+
+  'Canada': { countryId:'CA', countryName:'Canada', capital:'Ottawa',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Canada is very safe. Major cities like Toronto, Vancouver, and Montreal have very low violent crime rates compared to US counterparts.','Natural hazards: Severe winter weather (Dec–Mar) can cause flight cancellations and hazardous driving. Wildfires are common in summer in Western Canada (BC, Alberta).','Public demonstrations occur in major cities, particularly around Parliament Hill in Ottawa, but are generally peaceful.'],
+      interpolNotices:[{title:'INTERPOL Ottawa News',url:'https://www.interpol.int/en/Who-we-are/Member-countries/Americas/CANADA'}] },
+    visaEntry:{ passportValidity:'Valid for duration of intended stay', visaRequired:false, visaInfo:'Citizens of US, UK, EU, AU, NZ receive an Electronic Travel Authorization (eTA) for entry by air. US citizens do not need an eTA.', iataReference:iata('CA') },
+    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/can/', cdcUrl:cdc('canada'), travelHealthProUrl:thp(44, 'canada'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
+      currency: { name: 'Canadian Dollar', code: 'CAD', symbol: '$' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/canada-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/canada',flag:'🇬🇧'}] },
+
+  'Chile': { countryId:'CL', countryName:'Chile', capital:'Santiago',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Chile is one of the safest countries in South America. Petty crime (theft from vehicles, pickpocketing) is high in Santiago (Valparaíso and Viña del Mar).','Demonstrations: Political protests are common in Santiago (Plaza Italia) and can lead to clashes with police (Carabineros) and use of water cannons.','Seismic Risk: Chile is highly seismically active. Familiarise yourself with earthquake procedures.','Forest fires are common during the dry summer months (Dec–Mar).'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Visa-free for 90 days for most Western nationals. A "Tourist Card" is issued on arrival — do not lose it as it is required for departure.', iataReference:iata('CL') },
+    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/chl/', cdcUrl:cdc('chile'), travelHealthProUrl:thp(48, 'chile'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '133', ambulance: '131', fire: '132' },
+      currency: { name: 'Chilean Peso', code: 'CLP', symbol: '$' },
+      plugTypes: ['C', 'L'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/chile-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/chile',flag:'🇬🇧'}] },
+
+  'Peru': { countryId:'PE', countryName:'Peru', capital:'Lima',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['Crime: Petty theft and street crime are common in Lima, Cusco, and Arequipa. Express kidnappings from rogue taxis occur — use only app-based or official airport taxis.','Social unrest: Protests and roadblocks occur periodically in the Andes (Cusco, Puno, Arequipa) and can disrupt travel to Machu Picchu.','Reconsider Travel: Border areas with Colombia and the VRAEM region due to terrorism and drug trafficking.','Altitude sickness: Essential to acclimatise when visiting Cusco (3,400m) or Lake Titicaca (3,800m).'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Most Western nationals enter visa-free for up to 90 or 183 days. Immigration cards are now digital (TAM Virtual).', iataReference:iata('PE') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Recommended for travel to Amazon regions.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'High risk in Loreto and Amazon regions. No risk in Lima, Cusco, or Machu Picchu.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/per/', cdcUrl:cdc('peru'), travelHealthProUrl:thp(177, 'peru'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '105', ambulance: '117', fire: '116' },
+      currency: { name: 'Peruvian Sol', code: 'PEN', symbol: 'S/.' },
+      plugTypes: ['A', 'C'],
+      voltage: '220 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/peru-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/peru',flag:'🇬🇧'}] },
+
+  'Uruguay': { countryId:'UY', countryName:'Uruguay', capital:'Montevideo',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Uruguay is the safest country in South America. Petty crime (pickpocketing) occurs in Montevideo (Ciudad Vieja) and during summer in beach resorts (Punta del Este).','Demonstrations occur in Montevideo (Independence Plaza) but are peaceful.','Road safety: Driving is generally safe, though speed limits are strictly enforced via cameras.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:false, visaInfo:'90-day visa-free for most Western nationals.', iataReference:iata('UY') },
+    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/ury/', cdcUrl:cdc('uruguay'), travelHealthProUrl:thp(236, 'uruguay'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '105', fire: '104' },
+      currency: { name: 'Uruguayan Peso', code: 'UYU', symbol: '$' },
+      plugTypes: ['C', 'L', 'I'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uruguay-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/uruguay',flag:'🇬🇧'}] },
+
+  'Paraguay': { countryId:'PY', countryName:'Paraguay', capital:'Asunción',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Petty crime: Street crime and mugging occur in Asunción and Ciudad del Este. Avoid walking alone at night.','Border regions: High risk in the "Triple Frontier" (Brazil/Argentina/Paraguay border) due to narcotics trafficking and illicit trade.','Reconsider Travel: San Pedro, Concepción, and Amambay departments due to activity by the EPP (Paraguayan People’s Army) guerrilla group.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'90-day visa-free for most. US citizens require a visa (since 2021).', iataReference:iata('PY') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory',notes:'Required if arriving from a risk country.'},{name:'Hepatitis A',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/pry/', cdcUrl:cdc('paraguay'), travelHealthProUrl:thp(176, 'paraguay'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '141', fire: '132' },
+      currency: { name: 'Paraguayan Guaraní', code: 'PYG', symbol: '₲' },
+      plugTypes: ['C'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/paraguay-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/paraguay',flag:'🇬🇧'}] },
+
+  'Ecuador': { countryId:'EC', countryName:'Ecuador', capital:'Quito',
+    security:{ overallStatus:'Reconsider Travel',
+      highlights:['State of Emergency (2024): Escalation in drug-gang violence. Curfews and military checks are in effect. Targeted bombings and kidnappings occurred in Guayaquil and Quito.','Violent crime: High risk in Guayaquil (Port cities) and Esmeraldas. Coastal provinces are most affected.','Kidnapping: Increase in "express" kidnappings for ransom.','Galapagos Islands: Remain very safe and are generally exempt from mainland security issues.','Natural hazards: Active volcanoes (Cotopaxi, Tungurahua); high seismic risk.'],
+      interpolNotices:[{title:'INTERPOL Quito News',url:'https://www.interpol.int/en/Who-we-are/Member-countries/Americas/ECUADOR'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'90-day visa-free. Entry to Galapagos requires a special transit control card ($20) and park fee ($100–$200).', iataReference:iata('EC') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Required for Amazon travel.'},{name:'Hepatitis A',requirement:'Recommended'}], malariaRisk:'High risk in Amazon and coastal regions below 1,500m. No risk in Quito or Galapagos.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/ecu/', cdcUrl:cdc('ecuador'), travelHealthProUrl:thp(69, 'ecuador'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
+      currency: { name: 'US Dollar', code: 'USD', symbol: '$' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ecuador-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/ecuador',flag:'🇬🇧'}] },
+
+  'Bolivia': { countryId:'BO', countryName:'Bolivia', capital:'Sucre / La Paz',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['Civil unrest: Frequent roadblocks and protests (bloqueos) can occur with little notice and last for days, affecting travel between major cities (Santa Cruz, La Paz, Cochabamba).','Crime: Street crime and "express" kidnappings in La Paz and Santa Cruz. Use only official radio taxis.','Natural hazards: Flash flooding and landslides during rainy season (Nov–Mar).','Altitude sickness: La Paz is at 3,600m; Salar de Uyuni is at 3,650m — acclimatisation is critical.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'US citizens require a visa ($160). UK, EU, CA, AU, NZ citizens are visa-free for 90 days.', iataReference:iata('BO') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Required for entry if arriving from or going to endemic areas.'},{name:'Hepatitis A',requirement:'Recommended'}], malariaRisk:'Low risk in tropical areas below 2,500m (Beni, Pando, Santa Cruz). No risk in La Paz or Uyuni.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/bol/', cdcUrl:cdc('bolivia'), travelHealthProUrl:thp(30, 'bolivia'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '110', ambulance: '161', fire: '119' },
+      currency: { name: 'Boliviano', code: 'BOB', symbol: 'Bs' },
+      plugTypes: ['A', 'C'],
+      voltage: '115 V / 230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bolivia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/bolivia',flag:'🇬🇧'}] },
+
+  'Guyana': { countryId:'GY', countryName:'Guyana', capital:'Georgetown',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['Crime: Armed robbery and assault are common in Georgetown, particularly in Tiger Bay, Albouystown, and South Georgetown. Avoid walking alone at night.','Infrastructure: Roads are often poorly maintained; avoid travel outside Georgetown at night.','Border dispute: Simmering tensions with Venezuela over the Essequibo region — monitor local news if travelling near the border.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Visa-free for 90 days for most Western nationals.', iataReference:iata('GY') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory'},{name:'Malaria prophylaxis',requirement:'Recommended'}], malariaRisk:'High risk throughout Guyana, including the interior. Low risk in Georgetown.', yellowFeverRisk:'Mandatory', whoCountryUrl:'https://www.who.int/countries/guy/', cdcUrl:cdc('guyana'), travelHealthProUrl:thp(98, 'guyana'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '913', fire: '912' },
+      currency: { name: 'Guyanese Dollar', code: 'GYD', symbol: '$' },
+      plugTypes: ['A', 'B', 'D', 'G'],
+      voltage: '120 V / 240 V',
+      frequency: '60 Hz',
+      drivingSide: 'left'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/guyana-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/guyana',flag:'🇬🇧'}] },
+
+  'Suriname': { countryId:'SR', countryName:'Suriname', capital:'Paramaribo',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Suriname is generally safe, but petty crime is rising in Paramaribo. Avoid poorly lit areas at night.','Road safety: Poor road conditions in the interior. Inland travel requires 4WD or chartered flights.','Civil unrest: Occasional protests related to economic reforms.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Most Western nationals must pay an "Entry Fee" ($25) online before travel instead of a visa.', iataReference:iata('SR') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory'},{name:'Hepatitis A',requirement:'Recommended'}], malariaRisk:'Low risk in the interior. No risk in Paramaribo or coastal areas.', yellowFeverRisk:'Mandatory', whoCountryUrl:'https://www.who.int/countries/sur/', cdcUrl:cdc('suriname'), travelHealthProUrl:thp(208, 'suriname'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '115', ambulance: '113', fire: '110' },
+      currency: { name: 'Surinamese Dollar', code: 'SRD', symbol: '$' },
+      plugTypes: ['C', 'F'],
+      voltage: '127 V / 220 V',
+      frequency: '60 Hz',
+      drivingSide: 'left'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/suriname-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/suriname',flag:'🇬🇧'}] },
+
+  'El Salvador': { countryId:'SV', countryName:'El Salvador', capital:'San Salvador',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['State of Exception (2022–2024): Significant reduction in gang violence due to mass arrests. While street safety has improved, civil liberties are restricted, and foreigners can be detained without due process.','Crime: Petty crime still occurs in tourist areas and on public buses.','Natural hazards: High seismic and volcanic activity; coastal storm risk.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'90-day visa-free. US citizens must pay $12 for a Tourist Card on arrival.', iataReference:iata('SV') },
+    health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'Very low risk. No prophylaxis required.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/slv/', cdcUrl:cdc('el-salvador'), travelHealthProUrl:thp(70, 'el-salvador'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '132', fire: '913' },
+      currency: { name: 'US Dollar / Bitcoin', code: 'USD', symbol: '$' },
+      plugTypes: ['A', 'B'],
+      voltage: '115 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/el-salvador-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/el-salvador',flag:'🇬🇧'}] },
+
+  'Nicaragua': { countryId:'NI', countryName:'Nicaragua', capital:'Managua',
+    security:{ overallStatus:'Reconsider Travel',
+      highlights:['Political climate: Government restricts dissent; arbitrary arrests of foreigners and seizure of devices occur. Avoid any political discussion or protest.','Crime: Petty theft and violent crimes like armed robbery occur in Managua and along the Caribbean coast.','Healthcare: Limited outside Managua; severe cases often require evacuation.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'90-day visa-free for most. Must buy a Tourist Card ($10) on arrival.', iataReference:iata('NI') },
+    health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'Low risk throughout Nicaragua. Highest risk in Puerto Cabezas and Caribbean coast.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/nic/', cdcUrl:cdc('nicaragua'), travelHealthProUrl:thp(162, 'nicaragua'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '118', ambulance: '128', fire: '115' },
+      currency: { name: 'Córdoba', code: 'NIO', symbol: 'C$' },
+      plugTypes: ['A', 'B'],
+      voltage: '120 V',
+      frequency: '60 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nicaragua-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/nicaragua',flag:'🇬🇧'}] },
 };

@@ -46,6 +46,8 @@ export interface TravelerEssentials {
     symbol: string;
   };
   plugTypes: string[];
+  voltage: string;
+  frequency: string;
   drivingSide: 'left' | 'right';
 }
 
@@ -138,6 +140,8 @@ export const getFallbackCountryData = (countryName: string): CountryTravelData =
       emergencyNumbers: { police: '112', ambulance: '112', fire: '112' },
       currency: { name: 'Local Currency', code: '---', symbol: '¤' },
       plugTypes: ['C', 'F'],
+      voltage: '230 V',
+      frequency: '50 Hz',
       drivingSide: 'right'
     },
     officialSources: [

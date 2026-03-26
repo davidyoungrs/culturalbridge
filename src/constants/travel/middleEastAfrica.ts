@@ -14,6 +14,8 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '911', ambulance: '997', fire: '998' },
       currency: { name: 'Saudi Riyal', code: 'SAR', symbol: 'SR' },
       plugTypes: ['G'],
+      voltage: '230 V',
+      frequency: '60 Hz',
       drivingSide: 'right'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saudi-arabia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/saudi-arabia',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/saudi-arabia',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/saudi-arabia',flag:'🇳🇿'},{agency:'iVisa Saudi e-Visa',url:'https://www.ivisa.com/saudi-arabia',flag:'🌐'}] },
@@ -29,6 +31,8 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '999', ambulance: '998', fire: '997' },
       currency: { name: 'UAE Dirham', code: 'AED', symbol: 'د.إ' },
       plugTypes: ['G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
       drivingSide: 'right'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/united-arab-emirates-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/united-arab-emirates',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-arab-emirates',flag:'🇨🇦'}] },
@@ -40,6 +44,14 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'Security Alert: Ongoing conflict in the region',url:'https://www.gov.uk/foreign-travel-advice/israel'}] },
     visaEntry:{ passportValidity:'6 months beyond departure recommended', visaRequired:false, visaInfo:'Most Western nationals enter visa-free for 90 days under the "Electronic Travel Authorization" (ETA-IL) — apply at israel-entry.piba.gov.il from 2024–2025. Israel no longer stamps passports (uses paper slip).', iataReference:iata('IL'), entryNotes:['Evidence of travel to Iran, Iraq, or other regional nations may result in extra questioning but is not a bar to entry.'] },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/isr/', cdcUrl:cdc('israel'), travelHealthProUrl:thp(110, 'israel'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '100', ambulance: '101', fire: '102' },
+      currency: { name: 'Israeli New Shekel', code: 'ILS', symbol: '₪' },
+      plugTypes: ['C', 'H', 'M'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/israel-west-bank-and-gaza-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/israel',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/israel',flag:'🇳🇿'}] },
 
   'Iran': { countryId:'IR', countryName:'Iran',
@@ -48,7 +60,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond departure', visaRequired:true, visaInfo:'e-Visa required for most visitors. US, UK, and Canadian passport holders MUST be on an organised tour with an approved guide. Iran has recently 2024 waived visas for 33 nationalities for 15-day stays (including UAE, Qatar, Bahrain, Saudi Arabia, Japan, Indonesia, Mexico, Brazil, Vietnam, Croatia, Serbia, Belarus) — check current status.', iataReference:iata('IR') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Rabies',requirement:'Optional'}], malariaRisk:'Low risk in southeastern provinces (Sistan and Baluchestan, Hormozgan, Kerman). No risk in Tehran, Esfahan, or Shiraz.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/irn/', cdcUrl:cdc('iran'), travelHealthProUrl:thp(107, 'iran'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '110', ambulance: '115', fire: '125' },
+      currency: { name: 'Iranian Rial', code: 'IRR', symbol: '﷼' },
+      plugTypes: ['C', 'F'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iran-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/iran',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/iran',flag:'🇨🇦'}] },
+
 
   'Iraq': { countryId:'IQ', countryName:'Iraq',
     security:{ overallStatus:'Do Not Travel',
@@ -56,7 +77,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa on Arrival (VoA) available for dozens of nationalities (US, UK, EU, CA, AU, NZ) at most major airports for USD $75. Stays up to 60 days. Separate visa required for Kurdistan Region if entering there (e-Visa available for KRI).', iataReference:iata('IQ') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Polio',requirement:'Recommended'}], malariaRisk:'Very low risk in northern areas during summer. No risk in Baghdad or southern marshes.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/irq/', cdcUrl:cdc('iraq'), travelHealthProUrl:thp(108, 'iraq'), polioAlert:true },
+    essentials: { 
+      emergencyNumbers: { police: '104', ambulance: '122', fire: '115' },
+      currency: { name: 'Iraqi Dinar', code: 'IQD', symbol: 'ع.د' },
+      plugTypes: ['C', 'D', 'G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iraq-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/iraq',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/iraq',flag:'🇳🇿'}] },
+
 
   'Jordan': { countryId:'JO', countryName:'Jordan',
     security:{ overallStatus:'Exercise Increased Caution',
@@ -64,7 +94,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa on Arrival (VoA) available for most Western nationalities at Queen Alia International Airport for JOD 40. The "Jordan Pass" (jordanpass.jo) includes the visa fee and entry to 40+ sites including Petra — highly recommended for tourism.', iataReference:iata('JO'), entryNotes:['Ensure your Jordan Pass is purchased more than 2 days before arrival for the visa waiver to apply.'] },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/jor/', cdcUrl:cdc('jordan'), travelHealthProUrl:thp(115, 'jordan'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
+      currency: { name: 'Jordanian Dinar', code: 'JOD', symbol: 'د.ا' },
+      plugTypes: ['C', 'D', 'F', 'G', 'J'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/jordan-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/jordan',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/jordan',flag:'🇳🇿'}] },
+
 
   'Lebanon': { countryId:'LB', countryName:'Lebanon',
     security:{ overallStatus:'Do Not Travel',
@@ -72,7 +111,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'Security Alert: Ongoing conflict in Southern Lebanon',url:'https://www.gov.uk/foreign-travel-advice/lebanon'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Most Western nationals receive a free 30-day Visa on Arrival (VoA). STAMP POLICY: Entry will be DENIED if your passport contains any evidence of travel to Israel (stamps, visas, border exit receipts).', iataReference:iata('LB') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/lbn/', cdcUrl:cdc('lebanon'), travelHealthProUrl:thp(126, 'lebanon'), polioAlert:false, healthNotes:['Severe medicine shortages — carry a full supply of all essentials.','Waterborne diseases are increasing due to infrastructure failure.'] },
+    essentials: { 
+      emergencyNumbers: { police: '112', ambulance: '140', fire: '175' },
+      currency: { name: 'Lebanese Pound', code: 'LBP', symbol: 'ل.ل' },
+      plugTypes: ['A', 'B', 'C', 'D', 'G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lebanon-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/lebanon',flag:'🇬🇧'}] },
+
 
   'Egypt': { countryId:'EG', countryName:'Egypt', capital:'Cairo',
     security:{ overallStatus:'Exercise Increased Caution',
@@ -84,6 +132,8 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '122', ambulance: '123', fire: '180' },
       currency: { name: 'Egyptian Pound', code: 'EGP', symbol: 'E£' },
       plugTypes: ['C', 'F'],
+      voltage: '220 V',
+      frequency: '50 Hz',
       drivingSide: 'right'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/egypt-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/egypt',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/egypt',flag:'🇳🇿'}] },
@@ -95,6 +145,14 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'e-Visa and Visa on Arrival available for business travellers. Tourist visas generally require application at a Nigerian embassy with a letter of invitation.', iataReference:iata('NG') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory',notes:'Proof of vaccination is required for all travellers over 9 months old.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Polio',requirement:'Recommended'},{name:'Meningitis',requirement:'Recommended',notes:'For travel in the "meningitis belt" (North) during dry season (Dec–June).'},{name:'Rabies',requirement:'Optional'}], malariaRisk:'High malaria risk throughout Nigeria year-round. Chemoprophylaxis essential.', yellowFeverRisk:'Mandatory', whoCountryUrl:'https://www.who.int/countries/nga/', cdcUrl:cdc('nigeria'), travelHealthProUrl:thp(165, 'nigeria'), polioAlert:true, healthNotes:['Cholera and Lassa Fever outbreaks occur frequently.','Use bottled water only.'] },
+    essentials: { 
+      emergencyNumbers: { police: '112', ambulance: '112', fire: '112' },
+      currency: { name: 'Nigerian Naira', code: 'NGN', symbol: '₦' },
+      plugTypes: ['D', 'G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/nigeria',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/nigeria',flag:'🇨🇦'}] },
 
   'Kenya': { countryId:'KE', countryName:'Kenya',
@@ -103,7 +161,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Kenya replaced its visa system with the "Electronic Travel Authorisation" (eTA) from 2024. All foreign nationals must apply at etakenya.go.ke before travel — standard processing 3 working days.', iataReference:iata('KE') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Certificate required if arriving from an endemic country.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Polio',requirement:'Recommended'},{name:'Rabies',requirement:'Optional'}], malariaRisk:'High malaria risk throughout Kenya, including safari parks (Maasai Mara, Samburu), coastal regions (Mombasa, Lamu), and Western Kenya. Low risk in Nairobi city centre and highlands above 2,500m.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/ken/', cdcUrl:cdc('kenya'), travelHealthProUrl:thp(117, 'kenya'), polioAlert:false, healthNotes:['Dengue and Chikungunya are present on the coast.','Drink only bottled or filtered water.','Cholera outbreaks occur sporadically.'] },
+    essentials: { 
+      emergencyNumbers: { police: '999', ambulance: '999', fire: '999' },
+      currency: { name: 'Kenyan Shilling', code: 'KES', symbol: 'KSh' },
+      plugTypes: ['G'],
+      voltage: '240 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kenya-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/kenya',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/kenya',flag:'🇳🇿'}] },
+
 
   'South Africa': { countryId:'ZA', countryName:'South Africa', capital:'Pretoria',
     security:{ overallStatus:'Exercise Increased Caution',
@@ -115,6 +182,8 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       emergencyNumbers: { police: '10111', ambulance: '10177', fire: '10177' },
       currency: { name: 'South African Rand', code: 'ZAR', symbol: 'R' },
       plugTypes: ['C', 'M', 'N'],
+      voltage: '230 V',
+      frequency: '50 Hz',
       drivingSide: 'left'
     },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/south-africa-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/south-africa',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/south-africa',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/south-africa',flag:'🇳🇿'}] },
@@ -126,7 +195,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'Valid for duration of stay (6 months recommended)', visaRequired:false, visaInfo:'Most Western nationals enter visa-free for 90 days. No e-Visa or VoA needed for tourist stays.', iataReference:iata('MA') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/mar/', cdcUrl:cdc('morocco'), travelHealthProUrl:thp(154, 'morocco'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '190', ambulance: '150', fire: '150' },
+      currency: { name: 'Moroccan Dirham', code: 'MAD', symbol: 'DH' },
+      plugTypes: ['C', 'E'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/morocco-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/morocco',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/morocco',flag:'🇨🇦'}] },
+
 
   'Algeria': { countryId:'DZ', countryName:'Algeria',
     security:{ overallStatus:'Reconsider Travel',
@@ -134,7 +212,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visas must be applied for at an Algerian embassy. Letter of invitation or hotel booking required. US nationals must have an approved guide for Saharan travel.', iataReference:iata('DZ') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Polio',requirement:'Recommended'}], malariaRisk:'Low risk in southern Saharan areas during summer. No risk in Algiers or coastal cities.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/dza/', cdcUrl:cdc('algeria'), travelHealthProUrl:thp(3, 'algeria'), polioAlert:true },
+    essentials: { 
+      emergencyNumbers: { police: '17', ambulance: '14', fire: '14' },
+      currency: { name: 'Algerian Dinar', code: 'DZD', symbol: 'د.ج' },
+      plugTypes: ['C', 'F'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/algeria-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/algeria',flag:'🇬🇧'}] },
+
 
   'Tunisia': { countryId:'TN', countryName:'Tunisia',
     security:{ overallStatus:'Exercise Increased Caution',
@@ -142,7 +229,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'3 months beyond departure (6 months recommended)', visaRequired:false, visaInfo:'Western nationals (US, UK, EU, CA, AU, NZ) do not require a visa for stays up to 90 days. Ensure your entry is stamped.', iataReference:iata('TN') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/tun/', cdcUrl:cdc('tunisia'), travelHealthProUrl:thp(226, 'tunisia'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '197', ambulance: '190', fire: '198' },
+      currency: { name: 'Tunisian Dinar', code: 'TND', symbol: 'د.ت' },
+      plugTypes: ['C', 'E'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tunisia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/tunisia',flag:'🇬🇧'}] },
+
 
   'Libya': { countryId:'LY', countryName:'Libya',
     security:{ overallStatus:'Do Not Travel',
@@ -150,7 +246,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visas are nearly impossible for Western tourists to obtain — travel is strongly discouraged.', iataReference:iata('LY') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory',notes:'For arrivals from endemic countries.'},{name:'Polio',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'Mandatory (Transit)', whoCountryUrl:'https://www.who.int/countries/lby/', cdcUrl:cdc('libya'), travelHealthProUrl:thp(129, 'libya'), polioAlert:true },
+    essentials: { 
+      emergencyNumbers: { police: '193', ambulance: '193', fire: '193' },
+      currency: { name: 'Libyan Dinar', code: 'LYD', symbol: 'ل.د' },
+      plugTypes: ['C', 'D', 'F', 'L'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/libya-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/libya',flag:'🇬🇧'}] },
+
 
   'Ethiopia': { countryId:'ET', countryName:'Ethiopia',
     security:{ overallStatus:'Reconsider Travel',
@@ -158,7 +263,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'e-Visa required for all travellers at evisa.gov.et ($82 USD). US and European nationals can get e-Visa. Visa on Arrival available for AU citizens at Addis Ababa Bole International Airport.', iataReference:iata('ET') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory',notes:'Certificate required if arriving from or transiting through an endemic country.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Polio',requirement:'Recommended'},{name:'Meningitis',requirement:'Recommended',notes:'For northern Ethiopia dry season.'}], malariaRisk:'High malaria risk throughout Ethiopia below 2,000m, including Danakil Depression, Omo Valley, and Lalibela areas. No risk in Addis Ababa (altitude 2,355m).', yellowFeverRisk:'Mandatory (Transit)', whoCountryUrl:'https://www.who.int/countries/eth/', cdcUrl:cdc('ethiopia'), travelHealthProUrl:thp(76, 'ethiopia'), polioAlert:true, healthNotes:['Cholera and Dengue outbreaks occur regularly.','Tap water is not safe.'] },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '907', fire: '939' },
+      currency: { name: 'Ethiopian Birr', code: 'ETB', symbol: 'Br' },
+      plugTypes: ['C', 'F', 'G'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ethiopia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/ethiopia',flag:'🇬🇧'}] },
+
 
   'Ghana': { countryId:'GH', countryName:'Ghana',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -166,6 +280,14 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Most Western nationals (US, UK, CA, AU, NZ) require a visa in advance from a Ghanaian embassy. Ensure you have a letter of invitation or hotel booking.', iataReference:iata('GH') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory',notes:'Proof of vaccination is required for all travellers over 9 months old.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Meningitis',requirement:'Recommended',notes:'For northern dry season.'},{name:'Rabies',requirement:'Optional'}], malariaRisk:'High malaria risk throughout Ghana year-round. Chemoprophylaxis essential.', yellowFeverRisk:'Mandatory', whoCountryUrl:'https://www.who.int/countries/gha/', cdcUrl:cdc('ghana'), travelHealthProUrl:thp(89, 'ghana'), polioAlert:false, healthNotes:['Cholera and Dengue outbreaks occur.','Use bottled water only.'] },
+    essentials: { 
+      emergencyNumbers: { police: '191', ambulance: '193', fire: '192' },
+      currency: { name: 'Ghanaian Cedi', code: 'GHS', symbol: 'GH₵' },
+      plugTypes: ['D', 'G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ghana-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/ghana',flag:'🇬🇧'}] },
 
   'Tanzania': { countryId:'TZ', countryName:'Tanzania',
@@ -174,7 +296,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'e-Visa available online at eservices.immigration.go.tz. US citizens pay $100 for a 1-year multiple entry visa; others pay $50 for a 3-month single entry. Visa on Arrival (VoA) also available at major airports.', iataReference:iata('TZ') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory',notes:'Certificate required if arriving from an endemic country.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Rabies',requirement:'Optional'}], malariaRisk:'High malaria risk throughout Tanzania including safari parks (Serengeti, Ngorongoro), Zanzibar islands, and Lake Victoria. Chemoprophylaxis essential.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/tza/', cdcUrl:cdc('tanzania'), travelHealthProUrl:thp(220, 'tanzania'), polioAlert:false, healthNotes:['Dengue fever outbreaks occur on Zanzibar and the mainland.','Sleep under a treated bed net.'] },
+    essentials: { 
+      emergencyNumbers: { police: '112', ambulance: '112', fire: '112' },
+      currency: { name: 'Tanzanian Shilling', code: 'TZS', symbol: 'TSh' },
+      plugTypes: ['D', 'G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tanzania-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/tanzania',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/tanzania',flag:'🇳🇿'}] },
+
 
   'Kuwait': { countryId:'KW', countryName:'Kuwait',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -182,7 +313,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa on Arrival available at Kuwait airport for US, UK, EU, CA, AU, NZ ($10 USD). e-Visa also available via evisa.moi.gov.kw.', iataReference:iata('KW') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/kwt/', cdcUrl:cdc('kuwait'), travelHealthProUrl:thp(122, 'kuwait'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '112', ambulance: '112', fire: '112' },
+      currency: { name: 'Kuwaiti Dinar', code: 'KWD', symbol: 'KD' },
+      plugTypes: ['C', 'G'],
+      voltage: '240 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kuwait-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/kuwait',flag:'🇬🇧'}] },
+
 
   'Qatar': { countryId:'QA', countryName:'Qatar',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -190,7 +330,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Most Western nationals (US, UK, EU, CA, AU, NZ) enter visa-free for 30–90 days (Waiver system). e-Visa required for others.', iataReference:iata('QA') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/qat/', cdcUrl:cdc('qatar'), travelHealthProUrl:thp(183, 'qatar'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '999', ambulance: '999', fire: '999' },
+      currency: { name: 'Qatari Riyal', code: 'QAR', symbol: 'QR' },
+      plugTypes: ['G'],
+      voltage: '240 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/qatar-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/qatar',flag:'🇬🇧'}] },
+
 
   'Oman': { countryId:'OM', countryName:'Oman',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -198,7 +347,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Citizens of 103 countries (including US, UK, EU, CA, AU, NZ) receive free 14-day visa-free entry. Long-term e-Visa available at evisa.rop.gov.om.', iataReference:iata('OM') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No significant malaria risk for tourists.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/omn/', cdcUrl:cdc('oman'), travelHealthProUrl:thp(170, 'oman'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '9999', ambulance: '9999', fire: '9999' },
+      currency: { name: 'Omani Rial', code: 'OMR', symbol: 'RO' },
+      plugTypes: ['G'],
+      voltage: '240 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/oman-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/oman',flag:'🇬🇧'}] },
+
 
   'Bahrain': { countryId:'BH', countryName:'Bahrain',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -206,7 +364,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa on Arrival or e-Visa (evisa.gov.bh) available for most Western nationalities ($12–$66 USD depending on duration).', iataReference:iata('BH') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/bhr/', cdcUrl:cdc('bahrain'), travelHealthProUrl:thp(20, 'bahrain'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '999', ambulance: '999', fire: '999' },
+      currency: { name: 'Bahraini Dinar', code: 'BHD', symbol: 'BD' },
+      plugTypes: ['G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bahrain-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/bahrain',flag:'🇬🇧'}] },
+
 
   'Pakistan': { countryId:'PK', countryName:'Pakistan',
     security:{ overallStatus:'Do Not Travel',
@@ -214,7 +381,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'e-Visa required for most visitors. Online application at visa.nadra.gov.pk. US, UK, and CA passport holders must provide specified documents.', iataReference:iata('PK') },
     health:{ vaccinations:[{name:'Polio',requirement:'Recommended'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'High malaria risk throughout Pakistan year-round. Chemoprophylaxis essential.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/pak/', cdcUrl:cdc('pakistan'), travelHealthProUrl:thp(171, 'pakistan'), polioAlert:true },
+    essentials: { 
+      emergencyNumbers: { police: '15', ambulance: '115', fire: '16' },
+      currency: { name: 'Pakistani Rupee', code: 'PKR', symbol: '₨' },
+      plugTypes: ['C', 'D', 'G', 'M'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/pakistan-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/pakistan',flag:'🇬🇧'}] },
+
 
   'Rwanda': { countryId:'RW', countryName:'Rwanda',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -222,7 +398,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa on Arrival (VoA) available for all nationalities for USD $50 for 30 days. Commonwealth citizens (except UK/AU/CA) receive free visas.', iataReference:iata('RW') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory',notes:'Certificate required if arriving from an endemic country.'}], malariaRisk:'High malaria risk throughout Rwanda year-round. Chemoprophylaxis essential.', yellowFeverRisk:'Mandatory (Transit)', whoCountryUrl:'https://www.who.int/countries/rwa/', cdcUrl:cdc('rwanda'), travelHealthProUrl:thp(187, 'rwanda'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '112', ambulance: '912', fire: '111' },
+      currency: { name: 'Rwandan Franc', code: 'RWF', symbol: 'RF' },
+      plugTypes: ['C', 'J'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/rwanda-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/rwanda',flag:'🇬🇧'}] },
+
 
   'Zambia': { countryId:'ZM', countryName:'Zambia',
     security:{ overallStatus:'Exercise Normal Precautions',
@@ -230,7 +415,16 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Most Western nationals (US, UK, EU, CA, AU, NZ) receive free 90-day visa-free entry. KAZA Univisa available for travel between Zambia and Zimbabwe.', iataReference:iata('ZM') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'High malaria risk throughout Zambia. Chemoprophylaxis essential.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/zmb/', cdcUrl:cdc('zambia'), travelHealthProUrl:thp(247, 'zambia'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '991', ambulance: '992', fire: '993' },
+      currency: { name: 'Zambian Kwacha', code: 'ZMW', symbol: 'ZK' },
+      plugTypes: ['C', 'D', 'G'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zambia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/zambia',flag:'🇬🇧'}] },
+
 
   'Zimbabwe': { countryId:'ZW', countryName:'Zimbabwe',
     security:{ overallStatus:'Exercise Increased Caution',
@@ -238,5 +432,140 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa on Arrival (VoA) available for most Western nationalities ($30–$45 USD). KAZA Univisa ($50) recommended for travel to Victoria Falls (allows entry to Zambia).', iataReference:iata('ZW') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'High malaria risk in low-altitude areas including Victoria Falls and safari parks. Low risk in Harare and Bulawayo cities.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/zwe/', cdcUrl:cdc('zimbabwe'), travelHealthProUrl:thp(248, 'zimbabwe'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '995', ambulance: '994', fire: '993' },
+      currency: { name: 'Zimbabwe Gold', code: 'ZiG', symbol: 'ZiG' },
+      plugTypes: ['D', 'G'],
+      voltage: '220 V / 240 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zimbabwe-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/zimbabwe',flag:'🇬🇧'}] },
+
+  'Armenia': { countryId:'AM', countryName:'Armenia', capital:'Yerevan',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['Conflict with Azerbaijan: Stay away from the border regions with Azerbaijan due to sporadic clashes and military tension. Nagorno-Karabakh is currently under Azerbaijani control but the region remains volatile.','Protests: Regular political demonstrations in Yerevan (Republic Square). Avoid crowds as they can turn confrontational.','Natural hazards: Armenia is in a seismically active zone.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:false, visaInfo:'180-day visa-free for most Western nationals.', iataReference:iata('AM') },
+    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/arm/', cdcUrl:cdc('armenia'), travelHealthProUrl:thp(13, 'armenia'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '102', ambulance: '103', fire: '101' },
+      currency: { name: 'Armenian Dram', code: 'AMD', symbol: '֏' },
+      plugTypes: ['C', 'F'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/armenia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/armenia',flag:'🇬🇧'}] },
+
+  'Azerbaijan': { countryId:'AZ', countryName:'Azerbaijan', capital:'Baku',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['Border closure: Land borders are currently closed for entry/exit; travel is only possible via air through Baku International Airport.','Nagorno-Karabakh: Avoid all travel to areas near the border with Armenia. Unexploded ordnance and landmines are a major risk in former conflict zones.','Authoritarian climate: Avoid political discussions or photography of military/security installations.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'ASAN e-Visa is required for most Western nationals. Apply via evisa.gov.az.', iataReference:iata('AZ') },
+    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/aze/', cdcUrl:cdc('azerbaijan'), travelHealthProUrl:thp(17, 'azerbaijan'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '102', ambulance: '103', fire: '101' },
+      currency: { name: 'Azerbaijani Manat', code: 'AZN', symbol: '₼' },
+      plugTypes: ['C', 'F'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/azerbaijan-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/azerbaijan',flag:'🇬🇧'}] },
+
+  'Botswana': { countryId:'BW', countryName:'Botswana', capital:'Gaborone',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Botswana is one of the safest countries in Africa. Crime is relatively low compared to neighboring countries.','Petty crime (burglaries, phone snatching) occurs in Gaborone and Francistown.','Wildlife: Road travel at night is dangerous due to elephants and stray cattle on unfenced roads.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond stay', visaRequired:false, visaInfo:'90-day visa-free for most Western nationals.', iataReference:iata('BW') },
+    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'},{name:'Hepatitis A',requirement:'Recommended'}], malariaRisk:'Risk in the northern half of the country (Okavango Delta, Chobe) particularly from November to June.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/bwa/', cdcUrl:cdc('botswana'), travelHealthProUrl:thp(32, 'botswana'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '999', ambulance: '997', fire: '998' },
+      currency: { name: 'Botswana Pula', code: 'BWP', symbol: 'P' },
+      plugTypes: ['D', 'G', 'M'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/botswana-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/botswana',flag:'🇬🇧'}] },
+
+  'Cameroon': { countryId:'CM', countryName:'Cameroon', capital:'Yaoundé',
+    security:{ overallStatus:'Reconsider Travel',
+      highlights:['Boko Haram/ISIS-WA: High risk of terrorism in the Far North region.','Anglophone Crisis: Civil war and separatist violence in the North-West and South-West regions. Do Not Travel to these areas.','Kidnapping: High risk in border areas with Nigeria and CAR.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa required for almost all Western nationals. E-visa available at evisacam.cm.', iataReference:iata('CM') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory'},{name:'Polio',requirement:'Recommended'}], malariaRisk:'High risk throughout the country year-round.', yellowFeverRisk:'High risk', whoCountryUrl:'https://www.who.int/countries/cmr/', cdcUrl:cdc('cameroon'), travelHealthProUrl:thp(41, 'cameroon'), polioAlert:true },
+    essentials: { 
+      emergencyNumbers: { police: '117', ambulance: '119', fire: '118' },
+      currency: { name: 'Central African CFA Franc', code: 'XAF', symbol: 'FCFA' },
+      plugTypes: ['C', 'E'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cameroon-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/cameroon',flag:'🇬🇧'}] },
+  'Ivory Coast': { countryId:'CI', countryName:'Ivory Coast', capital:'Yamoussoukro',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['Terrorism: High threat in northern border areas with Burkina Faso and Mali due to spillover from the Sahel conflict.','Crime: Armed robberies and carjackings occur in Abidjan, particularly in the "Zone 4" and "Plateau" areas at night.','Civil unrest: Political tensions can lead to protests; monitor local news carefully.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'E-visa available for most Western nationals at snedai.com. Must be printed and presented upon arrival.', iataReference:iata('CI') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory'}], malariaRisk:'High risk throughout the country year-round.', yellowFeverRisk:'High risk', whoCountryUrl:'https://www.who.int/countries/civ/', cdcUrl:cdc('cote-divoire'), travelHealthProUrl:thp(58, 'cote-divoire'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '111', ambulance: '185', fire: '180' },
+      currency: { name: 'West African CFA Franc', code: 'XOF', symbol: 'CFA' },
+      plugTypes: ['C', 'E'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cote-d-ivoire-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/cote-divoire',flag:'🇬🇧'}] },
+
+  'Namibia': { countryId:'NA', countryName:'Namibia', capital:'Windhoek',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Generally very safe. Petty crime (theft from vehicles) is the main concern in Windhoek and Swakopmund.','Road safety: Driving is on the left. High risk of accidents on gravel roads due to speed and dust. Avoid driving at night due to wildlife.','Health: In northern regions, be aware of malaria risk.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond stay', visaRequired:false, visaInfo:'90-day visa-free for most Western nationals.', iataReference:iata('NA') },
+    health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'Risk in northern regions (Zambezi, Kavango) throughout the year.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/nam/', cdcUrl:cdc('namibia'), travelHealthProUrl:thp(155, 'namibia'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '10111', ambulance: '211111', fire: '211111' },
+      currency: { name: 'Namibian Dollar', code: 'NAD', symbol: 'N$' },
+      plugTypes: ['D', 'M'],
+      voltage: '220 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/namibia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/namibia',flag:'🇬🇧'}] },
+
+  'Senegal': { countryId:'SN', countryName:'Senegal', capital:'Dakar',
+    security:{ overallStatus:'Exercise Normal Precautions',
+      highlights:['Senegal is one of the more stable countries in West Africa.','Crime: Pickpocketing and bag snatching are common in Dakar, particularly in বাজারের (markets) and on beaches.','Casamance region: Ongoing low-level conflict; stick to main roads and avoid travel near the border with Guinea-Bissau.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'90-day visa-free for most Western nationals.', iataReference:iata('SN') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended'}], malariaRisk:'High risk throughout the country year-round.', yellowFeverRisk:'High risk', whoCountryUrl:'https://www.who.int/countries/sen/', cdcUrl:cdc('senegal'), travelHealthProUrl:thp(193, 'senegal'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '17', ambulance: '15', fire: '18' },
+      currency: { name: 'West African CFA Franc', code: 'XOF', symbol: 'CFA' },
+      plugTypes: ['C', 'D', 'E', 'K'],
+      voltage: '230 V',
+      frequency: '50 Hz',
+      drivingSide: 'right'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/senegal-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/senegal',flag:'🇬🇧'}] },
+
+  'Uganda': { countryId:'UG', countryName:'Uganda', capital:'Kampala',
+    security:{ overallStatus:'Exercise Increased Caution',
+      highlights:['Terrorism: Threat from ADF (Allied Democratic Forces) in border areas with DRC. Bombings have occurred in Kampala.','Crime: Armed robberies and home invasions occur in Kampala and larger towns. Avoid walking alone at night.','Anti-LGBTQ+ laws: Uganda has some of the world\'s harshest anti-LGBTQ+ laws. Being identified as LGBTQ+ can result in life imprisonment or the death penalty in extreme cases. Extreme caution is urged.'],
+      interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
+    visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'E-visa is mandatory via visas.immigration.go.ug. No visa-on-arrival.', iataReference:iata('UG') },
+    health:{ vaccinations:[{name:'Yellow Fever',requirement:'Mandatory'},{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'High risk throughout the country year-round.', yellowFeverRisk:'High risk', whoCountryUrl:'https://www.who.int/countries/uga/', cdcUrl:cdc('uganda'), travelHealthProUrl:thp(229, 'uganda'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '999', ambulance: '911', fire: '911' },
+      currency: { name: 'Ugandan Shilling', code: 'UGX', symbol: 'USh' },
+      plugTypes: ['G'],
+      voltage: '240 V',
+      frequency: '50 Hz',
+      drivingSide: 'left'
+    },
+    officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uganda-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/uganda',flag:'🇬🇧'}] },
 };

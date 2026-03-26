@@ -130,6 +130,9 @@ export const WeatherForecast: React.FC<WeatherForecastProps> = ({ countryName, c
                             <div className="flex items-end gap-1 mb-1">
                                 <span className="text-lg font-black text-slate-800 leading-none">{day.maxTemp}°</span>
                                 <span className="text-[10px] font-bold text-slate-400 leading-tight pb-0.5">/ {day.minTemp}°</span>
+                                <span className="text-[9px] font-bold text-slate-300 leading-tight pb-0.5 ml-1">
+                                    ({Math.round(day.maxTemp * 9/5 + 32)}°F)
+                                </span>
                             </div>
                             <p className="text-[9px] font-black uppercase tracking-wider text-slate-500 truncate">
                                 {getWeatherDesc(day.weatherCode)}
