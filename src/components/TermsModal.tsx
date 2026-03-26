@@ -61,6 +61,32 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
                             The proprietary algorithms, visual designs, and conceptual syntheses (such as the CBI framework) presented in this application are the intellectual property of the creators. You may not reproduce, distribute, or commercially exploit this content without explicit permission.
                         </p>
                     </section>
+
+                    <section className="space-y-2">
+                        <h3 className="text-base font-black text-indigo-600">5. Open Source Disclosures & Attribution</h3>
+                        <p>
+                            This project is powered by open-source software. We gratefully acknowledge the following core libraries and their contributors:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-1 text-[11px] text-slate-500">
+                            <li><strong>React & React DOM</strong> (Meta Platforms, Inc.) – MIT License</li>
+                            <li><strong>Vite</strong> (Evan You) – MIT License</li>
+                            <li><strong>Lucide React</strong> (Lucide Contributors) – ISC License</li>
+                            <li><strong>Tailwind CSS</strong> (Tailwind Labs) – MIT License</li>
+                            <li><strong>i18next & react-i18next</strong> (Jan Mühlemann) – MIT License</li>
+                            <li><strong>Framer Motion</strong> (Independent) – MIT License</li>
+                            <li><strong>Recharts</strong> (Recharts Group) – MIT License</li>
+                            <li><strong>html2pdf.js</strong> (Erik Koopmans) – MIT License</li>
+                        </ul>
+                        <p className="mt-4">
+                            <strong>Data Attribution:</strong>
+                        </p>
+                        <ul className="list-disc pl-5 space-y-1 text-[11px] text-slate-500">
+                            <li><strong>Weather Data</strong>: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Open-Meteo</a> (CC BY 4.0)</li>
+                            <li><strong>Sovereign Travel Advisories</strong>: Aggregated under Creative Commons BY-NC-SA 3.0 IGO</li>
+                            <li><strong>FX Benchmarking</strong>: Sourced from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" className="hover:underline">ExchangeRate-API</a> and Frankfurter.</li>
+                        </ul>
+                    </section>
+
                 </div>
 
                 {/* Footer */}
