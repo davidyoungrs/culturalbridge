@@ -81,10 +81,13 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
                             <strong>Data Attribution:</strong>
                         </p>
                         <ul className="list-disc pl-5 space-y-1 text-[11px] text-slate-500">
+                            <li><strong>Global Travel Safe Alerts</strong>: Powered by <a href="https://www.tugo.com" target="_blank" rel="noopener noreferrer" className="hover:underline">TuGo API</a></li>
+                            <li><strong>Health & Pandemic Data</strong>: Sourced from the <strong>World Health Organization (WHO)</strong></li>
+                            <li><strong>Sovereign Security Intelligence</strong>: Aggregated from the <strong>UK FCO</strong>, <strong>US State Department</strong>, <strong>Government of Canada</strong>, and <strong>INTERPOL</strong></li>
                             <li><strong>Weather Data</strong>: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Open-Meteo</a> (CC BY 4.0)</li>
-                            <li><strong>Sovereign Travel Advisories</strong>: Aggregated under Creative Commons BY-NC-SA 3.0 IGO</li>
-                            <li><strong>FX Benchmarking</strong>: Sourced from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" className="hover:underline">ExchangeRate-API</a> and Frankfurter.</li>
+                            <li><strong>FX Benchmarking</strong>: Sourced from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" className="hover:underline">ExchangeRate-API</a> and Frankfurter</li>
                         </ul>
+
                     </section>
 
                 </div>

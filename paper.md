@@ -35,11 +35,13 @@ Data processing and secure external integrations are handled via **Vercel Server
 - **CORS and Origin Protection**: Strict CORS headers are enforced at the backend level, ensuring that only authorized domains can invoke the research-heavy API endpoints.
 
 ### 2.3 Integration Conduits
-The platform orchestrates data flow from several high-fidelity sources:
-- **TuGo Travel Safe API**: Provides the "Live Layer" for travel advisories, health alerts, and security levels.
-- **Open-Meteo**: Provides non-commercial weather data through a stateless API, allowing for real-time environmental context without API key overhead.
-- **ExchangeRate-API**: Supplies real-time financial benchmarks, which the platform processes to provide single-column FX visualizations for traveler convenience.
-- **Airtable**: Functions as a headless CMS for lead capture and flexible data storage, allowing researchers to manage assessment data without code deployments.
+The platform orchestrates data flow from several high-fidelity academic and governmental sources:
+- **TuGo Travel Safe API**: Provides the "Live Layer" for real-time security advisories, health alerts, and emergency contacts.
+- **Global Health Architecture**: Integrates pandemic and vaccine data from the **World Health Organization (WHO)**.
+- **Diplomatic Intelligence Network**: Aggregates official travel advice from the **UK Foreign, Commonwealth & Development Office (FCDO)**, the **US Department of State**, and **INTERPOL**.
+- **Open-Meteo**: Provides meteorological context through a stateless API ecosystem.
+- **Financial Benchmarking**: Supplies real-time currency pairs via **ExchangeRate-API** for economic context.
+
 
 ## 3. Methodology: The Cultural Bridge Index (CBI)
 
