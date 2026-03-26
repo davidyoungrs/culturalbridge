@@ -27,8 +27,9 @@ export async function submitToAirtable(firstName: string, email: string, phoneNu
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    records: [{ fields: { "First Name": firstName, "Email": email } }]
+                    records: [{ fields: { "First Name": firstName, "Email": email, "Profile Code": profileData?.code || "N/A" } }]
                 })
+
             });
 
             if (!response.ok) return { success: false, error: "Airtable API error" };

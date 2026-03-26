@@ -28,8 +28,15 @@ export const AEOFAQ = () => {
         },
         {
             question: "Where can I find real-time security and visa requirements for my destination?",
-            answer: "Our Global Travel Advice portal provides aggregated real-time intelligence from INTERPOL, WHO, and sovereign agencies. You can access integrated security alerts, health requirements, and visa direction for 119 countries by visiting our Travel Portal at /traveladvice."
+            answer: (
+                <span>
+                    Our Global Travel Advice portal provides aggregated real-time intelligence from INTERPOL, WHO, and sovereign agencies. 
+                    You can access integrated security alerts, health requirements, and visa direction for 119 countries by visiting our 
+                    <a href="/traveladvice" className="text-indigo-600 hover:underline ml-1 font-black underline-offset-4">Travel Portal here</a>.
+                </span>
+            )
         }
+
 
     ];
 

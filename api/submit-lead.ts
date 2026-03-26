@@ -92,8 +92,10 @@ export default async function handler(req: any, res: any) {
                     {
                         fields: {
                             "First Name": firstName,
-                            "Email": email
+                            "Email": email,
+                            "Profile Code": profileData?.code || "N/A"
                         }
+
                     }
                 ]
             })
