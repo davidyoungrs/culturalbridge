@@ -4,37 +4,62 @@ const cdc = (slug: string) => `https://wwwnc.cdc.gov/travel/destinations/travele
 const thp = (id: number, slug: string) => `https://travelhealthpro.org.uk/country/${id}/${slug}#Vaccine_Recommendations`;
 
 export const europeData: Record<string, CountryTravelData> = {
-  'United Kingdom': { countryId:'GB', countryName:'United Kingdom',
+  'United Kingdom': { countryId:'GB', countryName:'United Kingdom', capital:'London',
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['The UK is generally safe. Terrorism remains a persistent threat, with the national threat level at "Substantial" (attack is likely). Be vigilant in public places and transport hubs.','Petty crime (pickpocketing, bag snatching, mobile phone theft) is common in London (Oxford Street, West End, Westminster) and other major cities.','Protests and demonstrations occur frequently in London and can disrupt transport. Avoid large crowds during industrial action or political rallies.','The UK drives on the left. High volume of traffic in cities like London, Manchester, and Birmingham.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:false, visaInfo:'Most Western nationals (US, EU, CA, AU, NZ) do not require a visa for stays up to 6 months for tourism. The UK is not part of the Schengen Area.', iataReference:iata('GB'), entryNotes:['Standard visitor rules apply — no working allowed without a specific work visa.'] },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/gbr/', cdcUrl:cdc('united-kingdom'), travelHealthProUrl:thp(234, 'united-kingdom'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '999', ambulance: '999', fire: '999' },
+      currency: { name: 'British Pound', code: 'GBP', symbol: '£' },
+      plugTypes: ['G'],
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/united-kingdom-travel-advisory.html',flag:'🇺🇸'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-kingdom',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/united-kingdom',flag:'🇳🇿'}] },
 
-  'Germany': { countryId:'DE', countryName:'Germany',
+  'Germany': { countryId:'DE', countryName:'Germany', capital:'Berlin',
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Germany is very safe. Terrorism is a persistent threat, with recent incidents targeting public spaces and events. Enhanced security is common at large gatherings.','Petty crime (pickpocketing) is prevalent at major tourist sites, airports, and train stations (Berlin Hauptbahnhof, Munich Hbf).','Political demonstrations occur in major cities and can occasionally lead to clashes with police.','Proximity to the Russia–Ukraine conflict: Germany is a key hub for NATO support; while not under direct threat, energy and security policies are highly affected.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'3 months beyond intended departure; issued within last 10 years', visaRequired:false, visaInfo:'Germany is a member of the Schengen Area. US, UK, CA, AU, NZ citizens can enter for 90 days in any 180-day period visa-free.', iataReference:iata('DE') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'},{name:'Tick-borne Encephalitis',requirement:'Optional',notes:'Recommended for outdoor activities in forested areas of southern Germany (Bavaria, Baden-Württemberg).'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/deu/', cdcUrl:cdc('germany'), travelHealthProUrl:thp(88, 'germany'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '110', ambulance: '112', fire: '112' },
+      currency: { name: 'Euro', code: 'EUR', symbol: '€' },
+      plugTypes: ['C', 'F'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/germany-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/germany',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/germany',flag:'🇨🇦'}] },
 
-  'France': { countryId:'FR', countryName:'France',
+  'France': { countryId:'FR', countryName:'France', capital:'Paris',
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Terrorism: France remains at a high security alert level (Vigipirate). Multiple attacks have targeted public spaces, transport, and landmarks (Eiffel Tower, Louvre). Heavy police and military presence ("Opération Sentinelle") is common.','Civil unrest: Protests (e.g., Pension reforms, Yellow Vests) are frequent and can become violent. Industrial action can severely disrupt rail, air, and local transport.','Crime: Pickpocketing and bag snatching are extremely common at major Parisian landmarks, on the Métro, and at airports (CDG, Orly).','Demonstrations related to the Israel-Gaza conflict occur frequently. Avoid all large gatherings.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'3 months beyond intended departure', visaRequired:false, visaInfo:'France is in the Schengen Area. 90-day visa-free entry for US, UK, CA, AU, NZ citizens. The upcoming ETIAS (European Travel Information and Authorisation System) will apply from 2025.', iataReference:iata('FR') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/fra/', cdcUrl:cdc('france'), travelHealthProUrl:thp(81, 'france'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '17', ambulance: '15', fire: '18' },
+      currency: { name: 'Euro', code: 'EUR', symbol: '€' },
+      plugTypes: ['C', 'E'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/france-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/france',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/france',flag:'🇳🇿'}] },
 
-  'Italy': { countryId:'IT', countryName:'Italy',
+  'Italy': { countryId:'IT', countryName:'Italy', capital:'Rome',
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Italy is safe for tourists. Petty crime (pickpocketing) is the primary concern in major cities like Rome (Termini Station, Colosseum), Florence, Venice, and Naples.','Terrorism: There is a persistent threat from international extremist groups. Security measures are significant at major landmarks and the Vatican.','Natural hazards: Italy is seismically active. Significant earthquakes occur in the Apennines (e.g., 2016 Amatrice). Active volcanoes include Mt. Vesuvius (near Naples) and Mt. Etna (Sicily).','Civil unrest: Protests and strikes in the transport sector (SCREV) are frequent and occur on short notice.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'3 months beyond intended departure', visaRequired:false, visaInfo:'Italy is in the Schengen Area. 90-day visa-free entry for US, UK, CA, AU, NZ citizens.', iataReference:iata('IT') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/ita/', cdcUrl:cdc('italy'), travelHealthProUrl:thp(111, 'italy'), polioAlert:false, healthNotes:['Tick-borne encephalitis exists in some northern forested areas.'] },
+    essentials: { 
+      emergencyNumbers: { police: '112', ambulance: '112', fire: '112' },
+      currency: { name: 'Euro', code: 'EUR', symbol: '€' },
+      plugTypes: ['C', 'F', 'L'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/italy-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/italy',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/italy',flag:'🇨🇦'}] },
+
 
   'Spain': { countryId:'ES', countryName:'Spain',
     security:{ overallStatus:'Exercise Normal Precautions',

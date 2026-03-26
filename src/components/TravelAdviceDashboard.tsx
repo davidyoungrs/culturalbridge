@@ -20,6 +20,8 @@ import SearchableSelect from './SearchableSelect';
 import { getTravelAdvice } from '../lib/travelService';
 import type { CountryTravelData } from '../lib/travelService';
 import { cn } from '../lib/utils';
+import { WeatherForecast } from './WeatherForecast';
+import { TravelerEssentials } from './TravelerEssentials';
 
 const countryOptions = COUNTRIES.map((c) => ({ value: c.name, label: c.name }));
 
@@ -349,6 +351,19 @@ const TravelAdviceDashboard: React.FC = () => {
                                     )}
                                 </div>
                             </div>
+                        </section>
+
+                        {/* Traveler Essentials & Weather */}
+                        <section className="space-y-6">
+                            <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400 px-1 flex items-center gap-2">
+                                <Info className="w-4 h-4 text-indigo-500" /> Destination Intelligence
+                            </h4>
+                            <TravelerEssentials essentials={report.essentials} />
+                            <WeatherForecast 
+                                countryName={report.countryName} 
+                                capital={report.capital} 
+                                coordinates={report.coordinates} 
+                            />
                         </section>
 
                         {/* Official Sources */}

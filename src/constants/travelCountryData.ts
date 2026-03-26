@@ -34,9 +34,26 @@ export interface OfficialSource {
   flag?: string;
 }
 
+export interface TravelerEssentials {
+  emergencyNumbers: {
+    police: string;
+    ambulance: string;
+    fire: string;
+  };
+  currency: {
+    name: string;
+    code: string;
+    symbol: string;
+  };
+  plugTypes: string[];
+  drivingSide: 'left' | 'right';
+}
+
 export interface CountryTravelData {
   countryId: string;
   countryName: string;
+  capital?: string;
+  coordinates?: { lat: number; lng: number };
   lastUpdated?: string;
   security: {
     overallStatus: AdvisoryLevel;
@@ -52,14 +69,15 @@ export interface CountryTravelData {
   };
   health: {
     vaccinations: VaccinationEntry[];
-    yellowFeverRisk?: string;          // e.g. "No risk" / "Risk present" / "Mandatory on arrival from endemic countries"
+    yellowFeverRisk?: string;
     malariaRisk: string;
-    whoCountryUrl?: string;            // WHO country page for malaria/health details
-    cdcUrl?: string;                   // CDC country-specific health link
-    travelHealthProUrl?: string;       // TravelHealthPro (UK) country-specific health link
+    whoCountryUrl?: string;
+    cdcUrl?: string;
+    travelHealthProUrl?: string;
     polioAlert: boolean;
     healthNotes?: string[];
   };
+  essentials?: TravelerEssentials;
   officialSources: OfficialSource[];
 }
 
@@ -115,6 +133,12 @@ export const getFallbackCountryData = (countryName: string): CountryTravelData =
       travelHealthProUrl: `https://travelhealthpro.org.uk/countries`,
       polioAlert: false,
       healthNotes: ['Consult a travel health clinic or GP at least 6–8 weeks before departure for personalised vaccination advice.'],
+    },
+    essentials: {
+      emergencyNumbers: { police: '112', ambulance: '112', fire: '112' },
+      currency: { name: 'Local Currency', code: '---', symbol: '¤' },
+      plugTypes: ['C', 'F'],
+      drivingSide: 'right'
     },
     officialSources: [
       { agency: 'US State Dept', url: `https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/${slug}-travel-advisory.html`, flag: '🇺🇸' },

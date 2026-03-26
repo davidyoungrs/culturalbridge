@@ -4,29 +4,48 @@ const cdc = (slug: string) => `https://wwwnc.cdc.gov/travel/destinations/travele
 const thp = (id: number, slug: string) => `https://travelhealthpro.org.uk/country/${id}/${slug}#Vaccine_Recommendations`;
 
 export const americasData: Record<string, CountryTravelData> = {
-  'USA': { countryId:'US', countryName:'United States',
+  'USA': { countryId:'US', countryName:'United States', capital:'Washington D.C.',
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['The US is generally safe but experiences higher rates of gun violence than most Western European, Canadian, or Australian counterparts. Incidents of mass shootings occur periodically in public spaces.','Petty crime (pickpocketing, car break-ins) is common in major tourist hubs: San Francisco (Lombard St, Fisherman\'s Wharf), New York City (Times Square, Subway), and New Orleans (French Quarter).','Civil unrest: Protests related to political and social issues are frequent in major cities and can disrupt transport. Avoid large demonstrations.','Natural hazards: Hurricane season (June–November) affects the Gulf Coast and East Coast; wildfires are common in the West (California, Oregon); tornadoes frequent in the Midwest.','Healthcare is extremely expensive. Comprehensive travel insurance is mandatory.'],
       interpolNotices:[{title:'INTERPOL Washington News',url:'https://www.interpol.int/en/Who-we-are/Member-countries/Americas/UNITED-STATES'}] },
     visaEntry:{ passportValidity:'6 months beyond intended stay (waived for some countries)', visaRequired:false, visaInfo:'Citizens of 41 countries under the Visa Waiver Program (including UK, EU, AU, NZ) must obtain an ESTA (esta.cbp.dhs.gov) at least 72 hours before travel. Canadian citizens generally do not need a visa or ESTA. Others require a B1/B2 visa.', iataReference:iata('US'), entryNotes:['ESTA is valid for 2 years (or until passport expires) for multiple entries up to 90 days.'] },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/usa/', cdcUrl:cdc('united-states'), travelHealthProUrl:thp(235, 'usa'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
+      currency: { name: 'US Dollar', code: 'USD', symbol: '$' },
+      plugTypes: ['A', 'B'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/usa',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-states',flag:'🇨🇦'}] },
 
-  'Brazil': { countryId:'BR', countryName:'Brazil',
+  'Brazil': { countryId:'BR', countryName:'Brazil', capital:'Brasilia',
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Violent crime is a high concern: Armed robbery, carjacking, and assault are frequent in major cities (Rio de Janeiro, São Paulo, Recife, Salvador). Favelas (informal settlements) should not be entered even with "tours" as they are under gang control.','Express kidnappings: Victims are abducted and forced to withdraw money from ATMs. Avoid using ATMs on deserted streets or at night.','Petty crime: Pickpocketing is extremely common on Rio\'s beaches (Copacabana, Ipanema) and during Carnival.','Do Not Travel to: Border regions with Colombia, Peru, and Bolivia due to narcotics trafficking and organized crime.','Civil unrest: Political protests can turn violent — avoid large gatherings.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Visa-free for 90 days for most Western nationals (UK, EU, NZ). US, Canadian, and Australian citizens will require an e-Visa from April 2025 (postponed from 2024).', iataReference:iata('BR') },
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Highly recommended for the majority of Brazil, including Rio and São Paulo.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'High malaria risk in the Amazon basin (Amazonas, Acre, Rondônia). Low risk in Rio de Janeiro, São Paulo, and southern coastal cities.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/bra/', cdcUrl:cdc('brazil'), travelHealthProUrl:thp(34, 'brazil'), polioAlert:false, healthNotes:['Dengue, Zika, and Chikungunya are widespread.'] },
+    essentials: { 
+      emergencyNumbers: { police: '190', ambulance: '192', fire: '193' },
+      currency: { name: 'Brazilian Real', code: 'BRL', symbol: 'R$' },
+      plugTypes: ['N'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/brazil-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/brazil',flag:'🇬🇧'}] },
 
-  'Mexico': { countryId:'MX', countryName:'Mexico',
+  'Mexico': { countryId:'MX', countryName:'Mexico', capital:'Mexico City',
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Violent crime: Murder, kidnapping, and carjacking are widespread. High-profile drug cartel violence is concentrated in Guanajuato, Guerrero, Michoacán, and border states (Sinaloa, Tamaulipas). Do Not Travel to these states.','Tourist areas like Cancun, Playa del Carmen, and Tulum have seen increase in gang-related shootings in public spaces; while tourists are rarely the deliberate targets, bystander risk exists.','Kidnapping for ransom: Both "express" and traditional kidnappings of foreign nationals have been reported.','Taxi scams and highway robbery is a risk on rural roads at night — use toll (cuota) roads only.','Natural hazards: Hurricane season (June–November) on both coasts; seismic risk in Mexico City and southern states.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:false, visaInfo:'Most Western nationals (US, UK, EU, CA, AU, NZ) enter visa-free for 180 days for tourism. Must complete an FMM (Multiple Immigration Form). Ensure you are stamped — without an entry stamp, you may be detained.', iataReference:iata('MX') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'Low risk in rural areas of Chiapas and southern states. No risk in Mexico City, Cancun, or Cabo.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/mex/', cdcUrl:cdc('mexico'), travelHealthProUrl:thp(147, 'mexico'), polioAlert:false, healthNotes:['Dengue fever is common.','Tap water is not safe — use bottled water.'] },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '911', fire: '911' },
+      currency: { name: 'Mexican Peso', code: 'MXN', symbol: '$' },
+      plugTypes: ['A', 'B'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/mexico',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/mexico',flag:'🇨🇦'}] },
+
 
   'Colombia': { countryId:'CO', countryName:'Colombia',
     security:{ overallStatus:'Exercise Increased Caution',
@@ -36,13 +55,20 @@ export const americasData: Record<string, CountryTravelData> = {
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Required for entry to national parks.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'High malaria risk in low-altitude rural areas (Pacific coast, Amazon basin). No risk in Bogota, Medellin, or Cartagena.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/col/', cdcUrl:cdc('colombia'), travelHealthProUrl:thp(53, 'colombia'), polioAlert:false, healthNotes:['Zika and Dengue are present below 2,300m.'] },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/colombia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/colombia',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/colombia',flag:'🇨🇦'}] },
 
-  'Argentina': { countryId:'AR', countryName:'Argentina',
+  'Argentina': { countryId:'AR', countryName:'Argentina', capital:'Buenos Aires',
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Argentina is relatively safe. Petty crime (pickpocketing, bag snatching) is high in Buenos Aires (San Telmo, La Boca, Retiro, Recoleta).','Protests: Frequent demonstrations (piquetes) in Buenos Aires can cause major traffic disruption.','Eco-terrorism/Forest Fires: Wildfires are common in the Patagonia and Cordoba regions during summer.','Economic instability: Inflation is extremely high; use of the "blue dollar" (parallel exchange rate) is common for better value — exercise caution when exchanging currency on the street.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'Valid for duration of stay', visaRequired:false, visaInfo:'Most Western nationals enter visa-free for 90 days. Reciprocity fee for US and Canadian citizens has been suspended/abolished.', iataReference:iata('AR') },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'}], malariaRisk:'Very low risk in northern Salta and Misiones provinces. No risk in Buenos Aires or Patagonia.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/arg/', cdcUrl:cdc('argentina'), travelHealthProUrl:thp(11, 'argentina'), polioAlert:false },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '107', fire: '100' },
+      currency: { name: 'Argentine Peso', code: 'ARS', symbol: '$' },
+      plugTypes: ['C', 'I'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/argentina-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/argentina',flag:'🇬🇧'}] },
+
 
   'Australia': { countryId:'AU', countryName:'Australia',
     security:{ overallStatus:'Exercise Normal Precautions',

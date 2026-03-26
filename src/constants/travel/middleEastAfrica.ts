@@ -4,21 +4,35 @@ const cdc = (slug: string) => `https://wwwnc.cdc.gov/travel/destinations/travele
 const thp = (id: number, slug: string) => `https://travelhealthpro.org.uk/country/${id}/${slug}#Vaccine_Recommendations`;
 
 export const middleEastAfricaData: Record<string, CountryTravelData> = {
-  'Saudi Arabia': { countryId:'SA', countryName:'Saudi Arabia',
+  'Saudi Arabia': { countryId:'SA', countryName:'Saudi Arabia', capital:'Riyadh',
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Yemen conflict: Houthi forces in Yemen have launched numerous missile and drone attacks into Saudi territory, targeting civil infrastructure including airports (Abha, Jiddah) and energy facilities (Aramco). Do Not Travel to within 80km of the Yemen border.','Regional Tensions: The ongoing Iran–Israel and broader regional conflict involves high risk of escalation. Iran\'s ballistic missile capability and proximity to US military bases in the Kingdom pose a persistent threat.','Terrorism: Islamic State and Al-Qaeda have conducted attacks on Westerners, government buildings, and places of worship. Vigilance is required in Eastern Province.','Strict Islamic Law: Public practice of any religion other than Islam is illegal. Public dress should be modest. Public display of affection or LGBTQ+ identity is prohibited and carries severe penalties including imprisonment and lashes.','Cybersecurity: Social media posts critical of the government, Royal Family, or Islam can result in long prison sentences for both residents and visitors.','Alcohol is strictly prohibited. Drug trafficking carries the death penalty.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'e-Visa available for tourism (1 year, multiple entry, 90 days per visit) for 49 countries including US, UK, EU, CA, AU, NZ. Apply at visitsaudi.com. Umrah pilgrims follow different visa protocols. Business visas require invitations.', iataReference:iata('SA'), entryNotes:['Passport must not have evidence of travel to Israel (official policy says this is okay now but some issues may persist for visitors).','Register for "Absher" app for many official services if staying long-term.'] },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Meningitis (ACWY)',requirement:'Mandatory',notes:'For Hajj and Umrah pilgrims.'}], malariaRisk:'Low risk in southwestern regions (Jizan, Asir, Al Bahah) bordering Yemen. No risk in Riyadh, Jeddah, Mecca, or Medina.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/sau/', cdcUrl:cdc('saudi-arabia'), travelHealthProUrl:thp(191, 'saudi-arabia'), polioAlert:false, healthNotes:['MERS-CoV (Middle East Respiratory Syndrome) risk — avoid contact with camels and raw camel milk.','Extreme heat (May–September) can exceed 50°C — risk of life-threatening heatstroke.'] },
+    essentials: { 
+      emergencyNumbers: { police: '911', ambulance: '997', fire: '998' },
+      currency: { name: 'Saudi Riyal', code: 'SAR', symbol: 'SR' },
+      plugTypes: ['G'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saudi-arabia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/saudi-arabia',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/saudi-arabia',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/saudi-arabia',flag:'🇳🇿'},{agency:'iVisa Saudi e-Visa',url:'https://www.ivisa.com/saudi-arabia',flag:'🌐'}] },
 
-  'UAE': { countryId:'AE', countryName:'United Arab Emirates',
+
+  'UAE': { countryId:'AE', countryName:'United Arab Emirates', capital:'Abu Dhabi',
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['The UAE (Dubai, Abu Dhabi) is generally very safe. Crime rates for tourists are extremely low and public order is strictly maintained.','Regional Tensions: Houthi forces in Yemen have previously launched drone and missile attacks at Abu Dhabi (2022). While UAE-Yemen involvement has decreased, regional conflict (Iran/Israel) maintains a high baseline threat.','Terrorism: Extremist groups have threatened attacks against Western interests in the UAE. Security measures are pervasive.','Cybercrime laws: Posting content critical of the government or individuals on social media can result in arrest, large fines, and deportation. Photography of government and military sites is strictly prohibited.','LGBTQ+ identity and public displays of affection are prohibited and can result in prosecution. Same-sex relationships are criminalised.','Public intoxication and zero tolerance for drugs — even trace amounts in blood can result in imprisonment.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:false, visaInfo:'Citizens of US, UK, EU, CA, AU, NZ receive a free 30–90 day visa-on-arrival (length depends on specific nationality agreements). e-Visa available for others.', iataReference:iata('AE') },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/are/', cdcUrl:cdc('united-arab-emirates'), travelHealthProUrl:thp(233, 'united-arab-emirates'), polioAlert:false, healthNotes:['Extreme heat in summer — stay hydrated.'] },
+    essentials: { 
+      emergencyNumbers: { police: '999', ambulance: '998', fire: '997' },
+      currency: { name: 'UAE Dirham', code: 'AED', symbol: 'د.إ' },
+      plugTypes: ['G'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/united-arab-emirates-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/united-arab-emirates',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-arab-emirates',flag:'🇨🇦'}] },
+
 
   'Israel': { countryId:'IL', countryName:'Israel',
     security:{ overallStatus:'Reconsider Travel',
@@ -60,13 +74,20 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'No malaria risk.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/lbn/', cdcUrl:cdc('lebanon'), travelHealthProUrl:thp(126, 'lebanon'), polioAlert:false, healthNotes:['Severe medicine shortages — carry a full supply of all essentials.','Waterborne diseases are increasing due to infrastructure failure.'] },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lebanon-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/lebanon',flag:'🇬🇧'}] },
 
-  'Egypt': { countryId:'EG', countryName:'Egypt',
+  'Egypt': { countryId:'EG', countryName:'Egypt', capital:'Cairo',
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Terrorism: ISIS-Sinai is active in North Sinai. Terrorism threat also exists in Cairo, the Western Desert, and at tourist sites (Giza, Luxor). Security presence is heavy.','Do Not Travel: Sinai Peninsula (except Sharm El Sheikh) and the Western Desert border regions with Libya. All travel within 50km of the Gaza border is strictly prohibited.','Political protests: Avoid demonstrations as they can turn violent. The 2011 and 2013 revolutions illustrate the volatility.','Sexual harassment and assault of foreign women has been reported — exercise heightened caution after dark and when using local transport.','Scams targeting tourists are pervasive at major landmarks (Pyramids, Valley of the Kings).','Photographing military or government buildings is strictly illegal.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'6 months beyond arrival', visaRequired:true, visaInfo:'Visa on Arrival available at Cairo airport for many nationalities (US, UK, EU, CA, AU, NZ) for USD $25. e-Visa also available via visa2egypt.gov.eg — apply at least 7 days before. Verify if your resort package (e.g. Sharm el Sheikh) includes a Sinai-only free 15-day entry.', iataReference:iata('EG'), entryNotes:['Evidence of drone carriage (even hobby drones) without Egyptian Ministry of Defense permit will lead to confiscation and potentially arrest.'] },
     health:{ vaccinations:[{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'}], malariaRisk:'Very low localized risk in El Faiyum gov. No risk in Cairo, Alexandria, or Red Sea resorts.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/egy/', cdcUrl:cdc('egypt'), travelHealthProUrl:thp(71, 'egypt'), polioAlert:false, healthNotes:['Schistosomiasis (bilharzia) risk in the Nile — avoid swimming in the river or slow-moving canals.','Air pollution in Cairo is hazardous.'] },
+    essentials: { 
+      emergencyNumbers: { police: '122', ambulance: '123', fire: '180' },
+      currency: { name: 'Egyptian Pound', code: 'EGP', symbol: 'E£' },
+      plugTypes: ['C', 'F'],
+      drivingSide: 'right'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/egypt-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/egypt',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/egypt',flag:'🇳🇿'}] },
+
 
   'Nigeria': { countryId:'NG', countryName:'Nigeria',
     security:{ overallStatus:'Reconsider Travel',
@@ -84,13 +105,20 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
     health:{ vaccinations:[{name:'Yellow Fever',requirement:'Recommended',notes:'Certificate required if arriving from an endemic country.'},{name:'Hepatitis A',requirement:'Recommended'},{name:'Typhoid',requirement:'Recommended'},{name:'Polio',requirement:'Recommended'},{name:'Rabies',requirement:'Optional'}], malariaRisk:'High malaria risk throughout Kenya, including safari parks (Maasai Mara, Samburu), coastal regions (Mombasa, Lamu), and Western Kenya. Low risk in Nairobi city centre and highlands above 2,500m.', yellowFeverRisk:'Recommended', whoCountryUrl:'https://www.who.int/countries/ken/', cdcUrl:cdc('kenya'), travelHealthProUrl:thp(117, 'kenya'), polioAlert:false, healthNotes:['Dengue and Chikungunya are present on the coast.','Drink only bottled or filtered water.','Cholera outbreaks occur sporadically.'] },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kenya-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/kenya',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/kenya',flag:'🇳🇿'}] },
 
-  'South Africa': { countryId:'ZA', countryName:'South Africa',
+  'South Africa': { countryId:'ZA', countryName:'South Africa', capital:'Pretoria',
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Violent crime is a severe concern: South Africa has one of the world\'s highest rates of murder, armed robbery, and carjacking. Crimes targeting tourists occur in major cities (Johannesburg, Cape Town, Durban) and even on Table Mountain trails.','Civil unrest: Large-scale protests and strikes can turn violent (e.g., July 2021 unrest). Stay clear of any demonstrations.','Power supply (Load Shedding): Regular scheduled power cuts disrupt transport, security alarms, and mobile signals. Monitor "EskomSePush" app.','ATM skimming and bank-related fraud is very high — never accept help from "bystanders" at ATMs.','Scams: "Cape Town diamond scams" and fraudulent tour operators are widespread.','Road safety: Carjackings occur frequently at intersections. Keep doors locked and windows up.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
     visaEntry:{ passportValidity:'30 days beyond stay (recommend 6 months); must have 2 blank pages', visaRequired:false, visaInfo:'Citizens of US, UK, EU, CA, AU, NZ enter visa-free for 90 days. For those who require a visa, e-Visa is available for 14+ countries but processing can be slow.', iataReference:iata('ZA'), entryNotes:['UNACCOMPANIED MINORS: Very strict documentation rules for children travelling with one or no parents — check specific SA Dept of Home Affairs requirements for birth certificates and parental affidavits.'] },
     health:{ vaccinations:[{name:'Routine vaccinations',requirement:'Recommended'},{name:'Yellow Fever',requirement:'Mandatory',notes:'Certificate required if arriving from an endemic country.'}], malariaRisk:'Malaria risk in low-altitude areas of Limpopo, Mpumalanga (including Kruger National Park), and northeastern KwaZulu-Natal. Peak risk October–May. No risk in Cape Town, Johannesburg, or Garden Route.', yellowFeverRisk:'No risk', whoCountryUrl:'https://www.who.int/countries/zaf/', cdcUrl:cdc('south-africa'), travelHealthProUrl:thp(201, 'south-africa'), polioAlert:false, healthNotes:['Dengue risk in northern areas.','Sun exposure risk is extreme — use high SPF protection.'] },
+    essentials: { 
+      emergencyNumbers: { police: '10111', ambulance: '10177', fire: '10177' },
+      currency: { name: 'South African Rand', code: 'ZAR', symbol: 'R' },
+      plugTypes: ['C', 'M', 'N'],
+      drivingSide: 'left'
+    },
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/south-africa-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/south-africa',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/south-africa',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/south-africa',flag:'🇳🇿'}] },
+
 
   'Morocco': { countryId:'MA', countryName:'Morocco',
     security:{ overallStatus:'Exercise Normal Precautions',
