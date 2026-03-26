@@ -398,6 +398,37 @@ const TravelAdviceDashboard: React.FC = () => {
                 )}
             </main>
 
+            {/* eSIM Affiliate Section */}
+            <div className="max-w-5xl mx-auto px-4 mb-20">
+                <div className="relative overflow-hidden rounded-[2rem] bg-indigo-900 p-8 md:p-12 text-white shadow-2xl shadow-indigo-200">
+                    {/* Decorative Elements */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-500/20 rounded-full translate-y-1/2 -translate-x-1/4 blur-2xl pointer-events-none" />
+                    
+                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div className="max-w-md text-center md:text-left">
+                            <span className="inline-flex items-center gap-2 bg-white/20 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-4 backdrop-blur-sm border border-white/10">
+                                <Globe className="w-3 h-3" /> Global Connectivity
+                            </span>
+                            <h3 className="text-3xl md:text-4xl font-black mb-4 tracking-tight leading-none">A better way to stay connected</h3>
+                            <p className="text-indigo-100 font-medium leading-relaxed opacity-90">
+                                Buy eSIMs for affordable, flexible coverage around the world — choose from 200+ locations and stay productive without the roaming fees.
+                            </p>
+                        </div>
+                        <div className="shrink-0">
+                            <a 
+                                href="#" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 bg-white text-indigo-900 px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-slate-100 hover:scale-102 hover:shadow-xl transition-all group"
+                            >
+                                Get Your eSIM <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Footer Information & Site Navigation */}
             <div className="max-w-7xl mx-auto px-4 md:px-6 mt-20 opacity-90">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-slate-400 pb-12 border-b border-slate-200">
