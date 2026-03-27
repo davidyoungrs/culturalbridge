@@ -52,6 +52,15 @@ const SiteFooter: React.FC = () => {
                 >
                     Affiliate Program
                 </a>
+
+                <div className="w-px h-3 bg-slate-200 hidden sm:block" />
+
+                <a 
+                    href="/faq" 
+                    className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors flex items-center gap-1.5"
+                >
+                    FAQ
+                </a>
                 
                 <div className="text-[10px] font-bold uppercase tracking-widest">
                     {t('footer.copyright', '© 2026 Cultural Assist. Educational / Non-Commercial Research Project.')}

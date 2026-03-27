@@ -155,12 +155,12 @@ const Home = () => {
           </div>
 
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-6 shadow-2xl shadow-slate-200/60 border border-white/40 flex-1 overflow-hidden flex flex-col max-h-[505px]">
+            <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-6 shadow-2xl shadow-slate-200/60 border border-white/40">
               <h3 className="text-slate-400 text-[11px] font-black uppercase tracking-widest mb-6 flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-indigo-500" /> {t('gaps.title', 'Critical Gaps & Recommendations')}
               </h3>
 
-              <div className="flex-1 overflow-y-auto pr-2 space-y-4 custom-scrollbar">
+              <div className="space-y-4">
                 {culturalInsights.map((insight, i) => (
                   <div key={i} className={cn(
                     "flex flex-col gap-2 p-4 rounded-2xl border transition-all hover:scale-[1.02] duration-300",

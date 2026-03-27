@@ -5,6 +5,12 @@ const thp = (id: number, slug: string) => `https://travelhealthpro.org.uk/countr
 
 export const asiaPacificData: Record<string, CountryTravelData> = {
   'Japan': { countryId:'JP', countryName:'Japan', capital:'Tokyo',
+    coordinates: { lat: 35.6762, lng: 139.6503 },
+    majorCities: [
+      { name: 'Tokyo', lat: 35.6762, lng: 139.6503 },
+      { name: 'Osaka', lat: 34.6937, lng: 135.5023 },
+      { name: 'Kyoto', lat: 35.0116, lng: 135.7681 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Japan is consistently rated one of the world\'s safest countries. Violent crime against tourists is extremely rare.','Natural hazards: Highly active seismic zone. Know the evacuation routes for earthquakes and tsunamis. Follow official advice during typhoon season (June-October).','Social etiquette: High emphasis on public order and politeness. Noisy behavior or lack of masks in certain settings may be frowned upon.','Healthcare: Excellent medical facilities, but language barriers can exist in some clinics.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -21,6 +27,12 @@ export const asiaPacificData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/japan-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/japan',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/japan',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/japan',flag:'🇳🇿'},{agency:'iVisa Visa Check',url:'https://www.ivisa.com/japan',flag:'🌐'}] },
 
   'China': { countryId:'CN', countryName:'China', capital:'Beijing',
+    coordinates: { lat: 39.9042, lng: 116.4074 },
+    majorCities: [
+      { name: 'Beijing', lat: 39.9042, lng: 116.4074 },
+      { name: 'Shanghai', lat: 31.2304, lng: 121.4737 },
+      { name: 'Guangzhou', lat: 23.1291, lng: 113.2644 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Arbitrary enforcement of local laws: Foreigners have been detained for "endangering national security." Use of "exit bans" can prevent individuals from leaving China during investigations.','High surveillance: Pervasive facial recognition and digital monitoring. Avoid discussing politically sensitive topics online or in public.','Regional risks: Increased security in Xinjiang and Tibet regions. Foreigners may face additional restrictions and monitoring.','Commercial disputes: Foreign business travelers may be detained in relation to civil disputes.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -38,6 +50,12 @@ export const asiaPacificData: Record<string, CountryTravelData> = {
 
 
   'India': { countryId:'IN', countryName:'India', capital:'New Delhi',
+    coordinates: { lat: 28.6139, lng: 77.2090 },
+    majorCities: [
+      { name: 'New Delhi', lat: 28.6139, lng: 77.2090 },
+      { name: 'Mumbai', lat: 19.0760, lng: 72.8777 },
+      { name: 'Bangalore', lat: 12.9716, lng: 77.5946 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Do Not Travel to: Jammu & Kashmir (except Ladakh via direct flight from Delhi). The region remains heavily militarised; shelling and militant activity occur.','Terrorism risk is elevated across India, particularly in Jammu & Kashmir, states bordering Bangladesh (Assam), and parts of northeast India.','Maoist (Naxalite) insurgency is active in the "Red Corridor" (Chhattisgarh, Jharkhand, Odisha border regions).','Petty crime (bag and laptop snatching, pickpocketing) is common at tourist sites, airports, and railway stations in Delhi, Mumbai, and Agra.','Scams targeting tourists are pervasive — from fake "government tourism offices" in Delhi to rigged meter taxis.','Women travellers should exercise heightened personal security, particularly after dark. Sexual harassment and assault of foreign nationals has been reported.','India–Pakistan relations remain volatile with the disputed Kashmir Line of Control a persistent flashpoint. Cross-border skirmishes have occurred.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -71,6 +89,12 @@ export const asiaPacificData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/indonesia-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/indonesia',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/indonesia',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/indonesia',flag:'🇳🇿'},{agency:'iVisa Indonesia',url:'https://www.ivisa.com/indonesia',flag:'🌐'}] },
 
   'Thailand': { countryId:'TH', countryName:'Thailand', capital:'Bangkok',
+    coordinates: { lat: 13.7563, lng: 100.5018 },
+    majorCities: [
+      { name: 'Bangkok', lat: 13.7563, lng: 100.5018 },
+      { name: 'Chiang Mai', lat: 18.7883, lng: 98.9853 },
+      { name: 'Phuket', lat: 7.8804, lng: 98.3923 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Ongoing armed insurgency in the Deep South (Yala, Pattani, Narathiwat, and Songkhla provinces) — Malay-Muslim separatists regularly detonate bombs and conduct shootings. Do Not Travel to these border provinces.','Political instability: Thailand has experienced multiple coups (most recently 2014) and political protests are frequent. Large-scale demonstrations (2020–2021 pro-democracy movement) can turn violent.','Drug laws are extremely strict — trafficking carries the death penalty. Consumption of drugs can result in imprisonment.','Drink spiking and tourist scams are extremely common in Bangkok (particularly Khao San Road, Patpong) and Phuket.','Accidents involving tuk-tuks, motorbikes, and unregistered tour boats cause tourist injuries and deaths.','Thailand is in a seismically active region — the 2004 Indian Ocean tsunami affected coastal regions.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -153,6 +177,13 @@ export const asiaPacificData: Record<string, CountryTravelData> = {
 
 
   'Australia': { countryId:'AU', countryName:'Australia', capital:'Canberra',
+    coordinates: { lat: -35.2809, lng: 149.1300 },
+    majorCities: [
+      { name: 'Canberra', lat: -35.2809, lng: 149.1300 },
+      { name: 'Sydney', lat: -33.8688, lng: 151.2093 },
+      { name: 'Melbourne', lat: -37.8136, lng: 144.9631 },
+      { name: 'Brisbane', lat: -27.4705, lng: 153.0260 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Australia is exceptionally safe. Terrorism threat level is "Possible".','Natural hazards: Bushfires (November–March) are a severe risk. Flooding is common in Queensland and NSW.','Wildlife: While deadly snake/spider encounters are rare in cities, follow signpost warnings. High risk of shark attacks and jellyfish (stingers) in northern waters and West Australia.','UV Exposure: Australia has some of the world\'s highest skin cancer rates. Strong sun protection is mandatory.','Ocean safety: Thousands of drownings occur — only swim between the red and yellow flags on patrolled beaches.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -185,6 +216,10 @@ export const asiaPacificData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/hong-kong-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/hong-kong',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/hong-kong',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/hong-kong',flag:'🇳🇿'}] },
 
   'Singapore': { countryId:'SG', countryName:'Singapore',
+    coordinates: { lat: 1.3521, lng: 103.8198 },
+    majorCities: [
+      { name: 'Singapore', lat: 1.3521, lng: 103.8198 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Singapore is consistently ranked one of the world\'s safest cities. Violent crime is extremely rare and the government maintains strict law and order.','Strict laws apply to all residents and visitors: drug trafficking carries mandatory death penalty; possession of small amounts is a serious offence. e-cigarette ownership is illegal; chewing gum import is restricted; vandalism carries caning.','Terrorism threat is assessed as "moderate." Singapore has disrupted multiple plots and radicalised individuals.','Dengue fever outbreaks occur periodically — check NEA dengue alert maps.','LGBTQ+ rights: Section 377A criminalising male same-sex acts was struck down in 2022, but same-sex marriage is not recognised and public expression of LGBTQ+ identities faces social and regulatory friction.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },

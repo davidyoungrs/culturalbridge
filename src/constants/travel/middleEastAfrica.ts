@@ -5,6 +5,12 @@ const thp = (id: number, slug: string) => `https://travelhealthpro.org.uk/countr
 
 export const middleEastAfricaData: Record<string, CountryTravelData> = {
   'Saudi Arabia': { countryId:'SA', countryName:'Saudi Arabia', capital:'Riyadh',
+    coordinates: { lat: 24.7136, lng: 46.6753 },
+    majorCities: [
+      { name: 'Riyadh', lat: 24.7136, lng: 46.6753 },
+      { name: 'Jeddah', lat: 21.5433, lng: 39.1728 },
+      { name: 'Mecca', lat: 21.3891, lng: 39.8579 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Yemen conflict: Houthi forces in Yemen have launched numerous missile and drone attacks into Saudi territory, targeting civil infrastructure including airports (Abha, Jiddah) and energy facilities (Aramco). Do Not Travel to within 80km of the Yemen border.','Regional Tensions: The ongoing Iran–Israel and broader regional conflict involves high risk of escalation. Iran\'s ballistic missile capability and proximity to US military bases in the Kingdom pose a persistent threat.','Terrorism: Islamic State and Al-Qaeda have conducted attacks on Westerners, government buildings, and places of worship. Vigilance is required in Eastern Province.','Strict Islamic Law: Public practice of any religion other than Islam is illegal. Public dress should be modest. Public display of affection or LGBTQ+ identity is prohibited and carries severe penalties including imprisonment and lashes.','Cybersecurity: Social media posts critical of the government, Royal Family, or Islam can result in long prison sentences for both residents and visitors.','Alcohol is strictly prohibited. Drug trafficking carries the death penalty.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -22,6 +28,12 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
 
 
   'UAE': { countryId:'AE', countryName:'United Arab Emirates', capital:'Abu Dhabi',
+    coordinates: { lat: 24.4539, lng: 54.3773 },
+    majorCities: [
+      { name: 'Abu Dhabi', lat: 24.4539, lng: 54.3773 },
+      { name: 'Dubai', lat: 25.2048, lng: 55.2708 },
+      { name: 'Sharjah', lat: 25.3463, lng: 55.4209 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['The UAE (Dubai, Abu Dhabi) is generally very safe. Crime rates for tourists are extremely low and public order is strictly maintained.','Regional Tensions: Houthi forces in Yemen have previously launched drone and missile attacks at Abu Dhabi (2022). While UAE-Yemen involvement has decreased, regional conflict (Iran/Israel) maintains a high baseline threat.','Terrorism: Extremist groups have threatened attacks against Western interests in the UAE. Security measures are pervasive.','Cybercrime laws: Posting content critical of the government or individuals on social media can result in arrest, large fines, and deportation. Photography of government and military sites is strictly prohibited.','LGBTQ+ identity and public displays of affection are prohibited and can result in prosecution. Same-sex relationships are criminalised.','Public intoxication and zero tolerance for drugs — even trace amounts in blood can result in imprisonment.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -38,7 +50,13 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/united-arab-emirates-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/united-arab-emirates',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-arab-emirates',flag:'🇨🇦'}] },
 
 
-  'Israel': { countryId:'IL', countryName:'Israel',
+  'Israel': { countryId:'IL', countryName:'Israel', capital:'Jerusalem',
+    coordinates: { lat: 31.7683, lng: 35.2137 },
+    majorCities: [
+      { name: 'Jerusalem', lat: 31.7683, lng: 35.2137 },
+      { name: 'Tel Aviv', lat: 32.0853, lng: 34.7818 },
+      { name: 'Haifa', lat: 32.7940, lng: 34.9896 }
+    ],
     security:{ overallStatus:'Reconsider Travel',
       highlights:['Active conflict: Israel is in a state of war with Hamas (Gaza) and Hezbollah (Lebanon) since October 2023. Regional conflict with Iran has involved direct missile and drone attacks.','Do Not Travel to: Gaza and the Gaza periphery. Reconsider Travel to: Northern Israel (within 10km of Lebanon border) and the West Bank due to ongoing military operations.','Missile and rocket fire occurs with little to no warming — listen for Home Front Command sirens and locate the nearest "Mamad" (shelter).','Terrorism: Stabbings, shootings, and vehicle rammings frequently occur in Jerusalem and the West Bank.','Political instability: Large political demonstrations occur frequently in Tel Aviv and Jerusalem — stay clear of protest areas.','Border crossings between Israel and Jordan/Egypt can close with little notice.'],
       interpolNotices:[{title:'Security Alert: Ongoing conflict in the region',url:'https://www.gov.uk/foreign-travel-advice/israel'}] },
@@ -123,6 +141,12 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
 
 
   'Egypt': { countryId:'EG', countryName:'Egypt', capital:'Cairo',
+    coordinates: { lat: 30.0444, lng: 31.2357 },
+    majorCities: [
+      { name: 'Cairo', lat: 30.0444, lng: 31.2357 },
+      { name: 'Alexandria', lat: 31.2001, lng: 29.9187 },
+      { name: 'Giza', lat: 30.0131, lng: 31.2089 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Terrorism: ISIS-Sinai is active in North Sinai. Terrorism threat also exists in Cairo, the Western Desert, and at tourist sites (Giza, Luxor). Security presence is heavy.','Do Not Travel: Sinai Peninsula (except Sharm El Sheikh) and the Western Desert border regions with Libya. All travel within 50km of the Gaza border is strictly prohibited.','Political protests: Avoid demonstrations as they can turn violent. The 2011 and 2013 revolutions illustrate the volatility.','Sexual harassment and assault of foreign women has been reported — exercise heightened caution after dark and when using local transport.','Scams targeting tourists are pervasive at major landmarks (Pyramids, Valley of the Kings).','Photographing military or government buildings is strictly illegal.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -173,6 +197,12 @@ export const middleEastAfricaData: Record<string, CountryTravelData> = {
 
 
   'South Africa': { countryId:'ZA', countryName:'South Africa', capital:'Pretoria',
+    coordinates: { lat: -25.7479, lng: 28.2293 },
+    majorCities: [
+      { name: 'Pretoria', lat: -25.7479, lng: 28.2293 },
+      { name: 'Johannesburg', lat: -26.2041, lng: 28.0473 },
+      { name: 'Cape Town', lat: -33.9249, lng: 18.4241 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Violent crime is a severe concern: South Africa has one of the world\'s highest rates of murder, armed robbery, and carjacking. Crimes targeting tourists occur in major cities (Johannesburg, Cape Town, Durban) and even on Table Mountain trails.','Civil unrest: Large-scale protests and strikes can turn violent (e.g., July 2021 unrest). Stay clear of any demonstrations.','Power supply (Load Shedding): Regular scheduled power cuts disrupt transport, security alarms, and mobile signals. Monitor "EskomSePush" app.','ATM skimming and bank-related fraud is very high — never accept help from "bystanders" at ATMs.','Scams: "Cape Town diamond scams" and fraudulent tour operators are widespread.','Road safety: Carjackings occur frequently at intersections. Keep doors locked and windows up.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },

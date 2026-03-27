@@ -56,6 +56,7 @@ export interface CountryTravelData {
   countryName: string;
   capital?: string;
   coordinates?: { lat: number; lng: number };
+  majorCities?: { name: string; lat: number; lng: number }[];
   lastUpdated?: string;
   security: {
     overallStatus: AdvisoryLevel;

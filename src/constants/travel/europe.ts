@@ -5,6 +5,13 @@ const thp = (id: number, slug: string) => `https://travelhealthpro.org.uk/countr
 
 export const europeData: Record<string, CountryTravelData> = {
   'UK': { countryId:'GB', countryName:'UK', capital:'London',
+    coordinates: { lat: 51.5074, lng: -0.1278 },
+    majorCities: [
+      { name: 'London', lat: 51.5074, lng: -0.1278 },
+      { name: 'Manchester', lat: 53.4808, lng: -2.2426 },
+      { name: 'Edinburgh', lat: 55.9533, lng: -3.1883 },
+      { name: 'Birmingham', lat: 52.4862, lng: -1.8904 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['The UK is generally safe. Terrorism remains a persistent threat, with the national threat level at "Substantial" (attack is likely). Be vigilant in public places and transport hubs.','Petty crime (pickpocketing, bag snatching, mobile phone theft) is common in London (Oxford Street, West End, Westminster) and other major cities.','Protests and demonstrations occur frequently in London and can disrupt transport. Avoid large crowds during industrial action or political rallies.','The UK drives on the left. High volume of traffic in cities like London, Manchester, and Birmingham.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -21,6 +28,13 @@ export const europeData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/united-kingdom-travel-advisory.html',flag:'🇺🇸'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-kingdom',flag:'🇨🇦'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/united-kingdom',flag:'🇳🇿'}] },
 
   'Germany': { countryId:'DE', countryName:'Germany', capital:'Berlin',
+    coordinates: { lat: 52.5200, lng: 13.4050 },
+    majorCities: [
+      { name: 'Berlin', lat: 52.5200, lng: 13.4050 },
+      { name: 'Munich', lat: 48.1351, lng: 11.5820 },
+      { name: 'Frankfurt', lat: 50.1109, lng: 8.6821 },
+      { name: 'Hamburg', lat: 53.5511, lng: 9.9937 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Germany is very safe. Terrorism is a persistent threat, with recent incidents targeting public spaces and events. Enhanced security is common at large gatherings.','Petty crime (pickpocketing) is prevalent at major tourist sites, airports, and train stations (Berlin Hauptbahnhof, Munich Hbf).','Political demonstrations occur in major cities and can occasionally lead to clashes with police.','Proximity to the Russia–Ukraine conflict: Germany is a key hub for NATO support; while not under direct threat, energy and security policies are highly affected.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -37,6 +51,13 @@ export const europeData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/germany-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/germany',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/germany',flag:'🇨🇦'}] },
 
   'France': { countryId:'FR', countryName:'France', capital:'Paris',
+    coordinates: { lat: 48.8566, lng: 2.3522 },
+    majorCities: [
+      { name: 'Paris', lat: 48.8566, lng: 2.3522 },
+      { name: 'Lyon', lat: 45.7640, lng: 4.8357 },
+      { name: 'Marseille', lat: 43.2965, lng: 5.3698 },
+      { name: 'Nice', lat: 43.7102, lng: 7.2620 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Terrorism: France remains at a high security alert level (Vigipirate). Multiple attacks have targeted public spaces, transport, and landmarks (Eiffel Tower, Louvre). Heavy police and military presence ("Opération Sentinelle") is common.','Civil unrest: Protests (e.g., Pension reforms, Yellow Vests) are frequent and can become violent. Industrial action can severely disrupt rail, air, and local transport.','Crime: Pickpocketing and bag snatching are extremely common at major Parisian landmarks, on the Métro, and at airports (CDG, Orly).','Demonstrations related to the Israel-Gaza conflict occur frequently. Avoid all large gatherings.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -53,6 +74,13 @@ export const europeData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/france-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/france',flag:'🇬🇧'},{agency:'SafeTravel NZ',url:'https://www.safetravel.govt.nz/france',flag:'🇳🇿'}] },
 
   'Italy': { countryId:'IT', countryName:'Italy', capital:'Rome',
+    coordinates: { lat: 41.9028, lng: 12.4964 },
+    majorCities: [
+      { name: 'Rome', lat: 41.9028, lng: 12.4964 },
+      { name: 'Milan', lat: 45.4642, lng: 9.1900 },
+      { name: 'Venice', lat: 45.4408, lng: 12.3155 },
+      { name: 'Florence', lat: 43.7696, lng: 11.2558 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Italy is safe for tourists. Petty crime (pickpocketing) is the primary concern in major cities like Rome (Termini Station, Colosseum), Florence, Venice, and Naples.','Terrorism: There is a persistent threat from international extremist groups. Security measures are significant at major landmarks and the Vatican.','Natural hazards: Italy is seismically active. Significant earthquakes occur in the Apennines (e.g., 2016 Amatrice). Active volcanoes include Mt. Vesuvius (near Naples) and Mt. Etna (Sicily).','Civil unrest: Protests and strikes in the transport sector (SCREV) are frequent and occur on short notice.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -70,6 +98,12 @@ export const europeData: Record<string, CountryTravelData> = {
 
 
   'Spain': { countryId:'ES', countryName:'Spain',
+    coordinates: { lat: 40.4168, lng: -3.7038 },
+    majorCities: [
+      { name: 'Madrid', lat: 40.4168, lng: -3.7038 },
+      { name: 'Barcelona', lat: 41.3851, lng: 2.1734 },
+      { name: 'Valencia', lat: 39.4699, lng: -0.3763 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Spain is generally very safe. High rates of pickpocketing and bag snatching occur in Barcelona (Las Ramblas, beaches) and Madrid (Puerta del Sol, Prado area).','Terrorism: Persistent threat remains. Historical ETA threat is gone, but extremist Islamist groups maintain a presence.','Civil unrest: Protests related to Catalan independence occur in Barcelona and can affect transport.','Natural hazard: Wildfires are common in summer months across the south and islands (Canaries).'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -135,7 +169,13 @@ export const europeData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/poland-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/poland',flag:'🇬🇧'}] },
 
 
-  'Netherlands': { countryId:'NL', countryName:'Netherlands',
+  'Netherlands': { countryId:'NL', countryName:'Netherlands', capital:'Amsterdam',
+    coordinates: { lat: 52.3676, lng: 4.9041 },
+    majorCities: [
+      { name: 'Amsterdam', lat: 52.3676, lng: 4.9041 },
+      { name: 'Rotterdam', lat: 51.9225, lng: 4.4792 },
+      { name: 'The Hague', lat: 52.0705, lng: 4.3007 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['The Netherlands is very safe. Petty crime (bag snatching, pickpocketing, bicycle theft) is extremely high in Amsterdam (Central Station, Red Light District, museum areas).','Terrorism: Persistent threat remains at a "Significant" level. Vigilance at major hubs and events is required.','Bicycle culture: Watch for cyclists in Amsterdsm — they have right-of-way and collisions with pedestrians are frequent.','Drug laws: Use of soft drugs is "tolerated" in coffeeshops under strict conditions (Wietpas); use in public is often discouraged and can be illegal depending on local municipal rules.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },

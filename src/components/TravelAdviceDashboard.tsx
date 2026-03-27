@@ -363,7 +363,11 @@ const TravelAdviceDashboard: React.FC = () => {
                             <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400 px-1 flex items-center gap-2">
                                 <Info className="w-4 h-4 text-indigo-500" /> Destination Intelligence
                             </h4>
-                            <TravelerEssentials essentials={report.essentials} />
+                            <TravelerEssentials 
+                                essentials={report.essentials} 
+                                coordinates={report.coordinates} 
+                                majorCities={report.majorCities}
+                            />
                         </section>
 
                         {/* Official Sources */}

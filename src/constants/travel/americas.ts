@@ -5,6 +5,14 @@ const thp = (id: number, slug: string) => `https://travelhealthpro.org.uk/countr
 
 export const americasData: Record<string, CountryTravelData> = {
   'USA': { countryId:'US', countryName:'United States', capital:'Washington D.C.',
+    coordinates: { lat: 38.8951, lng: -77.0364 },
+    majorCities: [
+      { name: 'Washington D.C.', lat: 38.8951, lng: -77.0364 },
+      { name: 'New York', lat: 40.7128, lng: -74.0060 },
+      { name: 'Los Angeles', lat: 34.0522, lng: -118.2437 },
+      { name: 'Chicago', lat: 41.8781, lng: -87.6298 },
+      { name: 'Houston', lat: 29.7604, lng: -95.3698 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['The US is generally safe but experiences higher rates of gun violence than most Western European, Canadian, or Australian counterparts. Incidents of mass shootings occur periodically in public spaces.','Petty crime (pickpocketing, car break-ins) is common in major tourist hubs: San Francisco (Lombard St, Fisherman\'s Wharf), New York City (Times Square, Subway), and New Orleans (French Quarter).','Civil unrest: Protests related to political and social issues are frequent in major cities and can disrupt transport. Avoid large demonstrations.','Natural hazards: Hurricane season (June–November) affects the Gulf Coast and East Coast; wildfires are common in the West (California, Oregon); tornadoes frequent in the Midwest.','Healthcare is extremely expensive. Comprehensive travel insurance is mandatory.'],
       interpolNotices:[{title:'INTERPOL Washington News',url:'https://www.interpol.int/en/Who-we-are/Member-countries/Americas/UNITED-STATES'}] },
@@ -21,6 +29,12 @@ export const americasData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/usa',flag:'🇬🇧'},{agency:'Canada Travel',url:'https://travel.gc.ca/destinations/united-states',flag:'🇨🇦'}] },
 
   'Brazil': { countryId:'BR', countryName:'Brazil', capital:'Brasilia',
+    coordinates: { lat: -15.7975, lng: -47.8919 },
+    majorCities: [
+      { name: 'Brasilia', lat: -15.7975, lng: -47.8919 },
+      { name: 'São Paulo', lat: -23.5505, lng: -46.6333 },
+      { name: 'Rio de Janeiro', lat: -22.9068, lng: -43.1729 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Violent crime is a high concern: Armed robbery, carjacking, and assault are frequent in major cities (Rio de Janeiro, São Paulo, Recife, Salvador). Favelas (informal settlements) should not be entered even with "tours" as they are under gang control.','Express kidnappings: Victims are abducted and forced to withdraw money from ATMs. Avoid using ATMs on deserted streets or at night.','Petty crime: Pickpocketing is extremely common on Rio\'s beaches (Copacabana, Ipanema) and during Carnival.','Do Not Travel to: Border regions with Colombia, Peru, and Bolivia due to narcotics trafficking and organized crime.','Civil unrest: Political protests can turn violent — avoid large gatherings.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -37,6 +51,12 @@ export const americasData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/brazil-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/brazil',flag:'🇬🇧'}] },
 
   'Mexico': { countryId:'MX', countryName:'Mexico', capital:'Mexico City',
+    coordinates: { lat: 19.4326, lng: -99.1332 },
+    majorCities: [
+      { name: 'Mexico City', lat: 19.4326, lng: -99.1332 },
+      { name: 'Cancún', lat: 21.1619, lng: -86.8515 },
+      { name: 'Guadalajara', lat: 20.6597, lng: -103.3496 }
+    ],
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Violent crime: Murder, kidnapping, and carjacking are widespread. High-profile drug cartel violence is concentrated in Guanajuato, Guerrero, Michoacán, and border states (Sinaloa, Tamaulipas). Do Not Travel to these states.','Tourist areas like Cancun, Playa del Carmen, and Tulum have seen increase in gang-related shootings in public spaces; while tourists are rarely the deliberate targets, bystander risk exists.','Kidnapping for ransom: Both "express" and traditional kidnappings of foreign nationals have been reported.','Taxi scams and highway robbery is a risk on rural roads at night — use toll (cuota) roads only.','Natural hazards: Hurricane season (June–November) on both coasts; seismic risk in Mexico City and southern states.'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -54,6 +74,7 @@ export const americasData: Record<string, CountryTravelData> = {
 
 
   'Colombia': { countryId:'CO', countryName:'Colombia',
+    coordinates: { lat: 4.7110, lng: -74.0721 },
     security:{ overallStatus:'Exercise Increased Caution',
       highlights:['Violent crime: Homicide and assault are significant in major cities. Armed robbery involving firearms or knives is common.','Dating App Scams: Use of sedative drugs (Scopolamine/Burundanga) to incapacitate and rob foreign men met on dating apps has resulted in multiple deaths in Medellin and Bogota.','Reconsider Travel: Border areas with Venezuela, Ecuador, and Panama (Darien Gap) due to ELN and FARC dissidents and narcotics trafficking.','Terrorism: ELN (National Liberation Army) remains active and conducts bombings targeting police and infrastructure.','Protests can turn violent — avoid demonstrations in Bogota (Plaza de Bolívar).'],
       interpolNotices:[{title:'INTERPOL General Secretariat News',url:'https://www.interpol.int/en/News-and-Events/News'}] },
@@ -204,6 +225,13 @@ export const americasData: Record<string, CountryTravelData> = {
     officialSources:[{agency:'US State Dept',url:'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/guatemala-travel-advisory.html',flag:'🇺🇸'},{agency:'UK FCDO',url:'https://www.gov.uk/foreign-travel-advice/guatemala',flag:'🇬🇧'}] },
 
   'Canada': { countryId:'CA', countryName:'Canada', capital:'Ottawa',
+    coordinates: { lat: 45.4215, lng: -75.6972 },
+    majorCities: [
+      { name: 'Ottawa', lat: 45.4215, lng: -75.6972 },
+      { name: 'Toronto', lat: 43.6532, lng: -79.3832 },
+      { name: 'Vancouver', lat: 49.2827, lng: -123.1207 },
+      { name: 'Montreal', lat: 45.5017, lng: -73.5673 }
+    ],
     security:{ overallStatus:'Exercise Normal Precautions',
       highlights:['Canada is very safe. Major cities like Toronto, Vancouver, and Montreal have very low violent crime rates compared to US counterparts.','Natural hazards: Severe winter weather (Dec–Mar) can cause flight cancellations and hazardous driving. Wildfires are common in summer in Western Canada (BC, Alberta).','Public demonstrations occur in major cities, particularly around Parliament Hill in Ottawa, but are generally peaceful.'],
       interpolNotices:[{title:'INTERPOL Ottawa News',url:'https://www.interpol.int/en/Who-we-are/Member-countries/Americas/CANADA'}] },
